@@ -11,7 +11,7 @@
 }
 
 .sectionWrapper {
-  @apply flex flex-wrap justify-center gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop grow;
+  @apply flex flex-wrap justify-center gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop grow my-open-xl tablet:my-open-5xl desktop:my-open-5xl;
 }
 
 .downloadWrapper {
