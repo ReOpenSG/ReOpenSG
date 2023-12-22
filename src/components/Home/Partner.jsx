@@ -85,7 +85,7 @@ function Partner() {
           <span className={styles.gradient}>OpenSG</span>
         </p>
 
-        <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="100">
+        <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="150">
           <span>최정상 기업들과 함께한 경험으로,</span>
 
           <span>고객사가 찾는 최적의 솔루션을 제공합니다</span>
