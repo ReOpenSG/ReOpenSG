@@ -35,11 +35,11 @@ function Products() {
     <section className={styles.products}>
       <h3 className={styles.title}>Our Products</h3>
       <div className={styles.summaryWrapper}>
-        <div className={styles.main}>
+        <div className={styles.main} data-aos="fade-in">
           <p>스마트 자동화의</p>
           <p>모든 것.</p>
         </div>
-        <p className={styles.sub}>
+        <p className={styles.sub} data-aos="fade-left" data-aos-delay="200">
           <span className="flex flex-col -text--open-gray-400">
             <span>기획부터 시뮬레이션까지 </span>
             <span>솔루션부터 디바이스까지</span>
@@ -51,8 +51,13 @@ function Products() {
         </p>
       </div>
       <div className={styles.cardContainer}>
-        {productData.map((product) => (
-          <Link to={`${product.route}`} key={product.id}>
+        {productData.map((product, index) => (
+          <Link
+            to={`${product.route}`}
+            key={product.id}
+            data-aos="fade-up"
+            data-aos-delay={200 + index * 100}
+          >
             <ProductCard
               key={product.id}
               name={product.name}
