@@ -15,7 +15,7 @@
 }
 
 .yearSwiper {
-  @apply w-full h-full flex flex-col justify-center items-center;
+  @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
 
   & .yearSwiperSlide {
     @apply flex flex-col justify-center items-center;
@@ -36,7 +36,7 @@
 }
 
 .historySwiper {
-  @apply w-full h-full flex flex-col justify-center items-center;
+  @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
 
   & .historySwiperSlide{
     @apply rounded-[20px];

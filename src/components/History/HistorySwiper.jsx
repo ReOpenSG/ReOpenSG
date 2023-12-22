@@ -5,7 +5,7 @@ import {
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 import styles from '@/components/History/History.module.css';
 import YearSlide from '@/components/History/YearSlide';
 import HistorySlide from '@/components/History/HistorySlide';
@@ -50,6 +50,7 @@ function HistorySwiper({ historyData }) {
             onSwiper={setYearSwiper}
             controller={{ by: 'container', control: historySwiper }}
             className={styles.yearSwiper}
+            slideToClickedSlide
           >
             {historyDataSorted.map(([key]) => (
               <SwiperSlide className={styles.yearSwiperSlide} key={key}>
@@ -86,6 +87,7 @@ function HistorySwiper({ historyData }) {
             onSwiper={setHistorySwiper}
             controller={{ by: 'container', control: yearSwiper }}
             className={styles.historySwiper}
+            slideToClickedSlide
           >
             {historyDataSorted.map(([key, value]) => (
               <SwiperSlide className={styles.historySwiperSlide} key={key}>
