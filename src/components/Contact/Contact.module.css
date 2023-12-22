@@ -77,7 +77,7 @@
 }
 
 .personalInfoWrapper {
-  @apply flex flex-row flex-wrap grow gap-open-xl py-open-2xl border-b -border--open-gray-200;
+  @apply flex flex-wrap grow gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
 }
 
 .regWrapper {
