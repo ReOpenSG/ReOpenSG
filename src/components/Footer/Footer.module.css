@@ -41,3 +41,11 @@
     @apply font-open-paragraph;
   }
 }
+
+.sideWrapper {
+  @apply flex flex-col gap-open-xl fixed bottom-open-6xl right-open-xl;
+}
+
+.iconStyle {
+  @apply w-7 h-7 tablet:w-14 tablet:h-14 desktop:w-14 desktop:h-14;
+}

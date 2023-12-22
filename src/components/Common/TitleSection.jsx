@@ -6,7 +6,7 @@ function TitleSection({
   background, category, title, subTitle, textAlign,
 }) {
   return (
-    <div className={`${styles.titleWrapper} ${background}`}>
+    <section className={`${styles.titleWrapper} ${background}`}>
       <div className={`${styles.titleInner} ${textAlign}`}>
         <h2>{category}</h2>
         <p>
@@ -14,7 +14,7 @@ function TitleSection({
           <span>{subTitle}</span>
         </p>
       </div>
-    </div>
+    </section>
   );
 }
 

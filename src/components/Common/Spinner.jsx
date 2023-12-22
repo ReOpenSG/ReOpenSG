@@ -7,6 +7,7 @@ function Spinner({ size, message, colors }) {
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: '100vh',
+    backgroundColor: '#000',
   };
   return (
     <div style={containerStyle}>
@@ -38,7 +39,7 @@ function Spinner({ size, message, colors }) {
             dur="1.282051282051282s"
             keyTimes="0;1"
             repeatCount="indefinite"
-            values="#93dbe9;#689cc5"
+            values="#0071E3;#3fa9f5"
           />
         </circle>
         <circle cx="35" cy="75.981" r="5" fill={colors[1]}>
@@ -61,7 +62,7 @@ function Spinner({ size, message, colors }) {
             dur="1.282051282051282s"
             keyTimes="0;1"
             repeatCount="indefinite"
-            values="#689cc5;#5e6fa3"
+            values="#3fa9f5;#0b6399"
           />
         </circle>
         <circle cx="35" cy="24.019" r="5" fill={colors[2]}>
@@ -84,7 +85,7 @@ function Spinner({ size, message, colors }) {
             dur="1.282051282051282s"
             keyTimes="0;1"
             repeatCount="indefinite"
-            values="#5e6fa3;#93dbe9"
+            values="#0b6399;#0071E3"
           />
         </circle>
       </svg>

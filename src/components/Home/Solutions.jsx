@@ -128,8 +128,9 @@ function Solutions() {
             </>
           )}
         </div>
-        <div className={styles.imageWrapper}>
+        <div className="w-full overflow-hidden mx-auto">
           <img
+            className={styles.image}
             alt={selectedItem && solutionData[selectedItem].name}
             src={selectedItem ? `${solutionData[selectedItem].img}` : `${Solution0}`}
           />

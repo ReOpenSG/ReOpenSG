@@ -18,7 +18,7 @@ function Home() {
         <meta property="og:url" content="https://reopensg.github.io/ReOpenSG/" />
         <meta
           property="og:description"
-          content="고객에게 열려있는 기업, 고객의 미래를 여는 기업 OpenSG 가 고객과 함께 미래로 가는 길을 엽니다"
+          content="고객에게 열려있는 기업, 고객의 미래를 여는 기업 OpenSG가 고객과 함께 미래로 가는 길을 엽니다"
         />
         <meta
           property="og:image"
@@ -28,7 +28,7 @@ function Home() {
       </Helmet>
       <section className={styles.home}>
         <h2 className="sr-only">메인 페이지</h2>
-        <div className={styles.black}>
+        <div className="-bg--openfoundation-black w-full h-full">
           <Slogan />
         </div>
         <Universe />

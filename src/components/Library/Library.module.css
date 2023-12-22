@@ -11,7 +11,21 @@
 }
 
 .cardWrapper {
-  @apply border -border--open-gray-300 rounded-[20px] px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl flex-1;
+  @apply border -border--open-gray-300 rounded-[20px] px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl flex-1 hover:-bg--open-accent-accent;
+}
+
+.cardWrapper:hover {
+  .cardTitle {
+    @apply -text--openfoundation-secondary;
+  }
+
+  .cardCategoryText {
+    @apply -text--openfoundation-secondary;
+  }
+
+  .iconChange {
+    @apply -fill--openfoundation-secondary;
+  }
 }
 
 .cardContainer {
@@ -36,4 +50,8 @@
 
 .iconStyle {
   @apply w-6 h-6 tablet:w-9 tablet:h-9 desktop:w-9 desktop:h-9;
+}
+
+.iconChange {
+  @apply -fill--openfoundation-primary;
 }

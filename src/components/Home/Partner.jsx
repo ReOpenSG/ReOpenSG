@@ -77,7 +77,7 @@ function Partner() {
 
       <div className={styles.titleWrapper}>
         <p className={styles.mainKeyword}>
-          <span>최고기업들이 선택한&nbsp;</span>
+          <span>최고 기업들이 선택한&nbsp;</span>
           <span className={styles.gradient}>OpenSG</span>
         </p>
 
@@ -91,19 +91,19 @@ function Partner() {
       <div className="w-full">
         <Swiper
           className={`mySwiper ${styles.partnerSwiper}`}
-          spaceBetween={60}
+          spaceBetween={20}
           slidesPerView="auto"
           breakpoints={{
             375: {
-              slidesPerView: 2,
-            },
-
-            1024: {
               slidesPerView: 3,
             },
 
-            1440: {
+            1024: {
               slidesPerView: 4,
+            },
+
+            1440: {
+              slidesPerView: 6,
             },
           }}
           loop
@@ -120,8 +120,8 @@ function Partner() {
           }}
         >
           {partnerData.map((item) => (
-            <SwiperSlide key={item.id}>
-              <img src={item.img} alt="partner" className="w-300px object-cover" />
+            <SwiperSlide key={item.id} className="w-[300px]">
+              <img src={item.img} alt="partner" className="w-[240px] object-cover" />
             </SwiperSlide>
           ))}
         </Swiper>

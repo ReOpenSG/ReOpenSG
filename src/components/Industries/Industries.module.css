@@ -41,7 +41,6 @@
         @apply desktop:gap-desktop-gap;
         @apply tablet:gap-desktop-gap;
 
-
         & .image {
           @apply w-open-5xl;
           @apply desktop:w-open-7xl;
@@ -52,7 +51,6 @@
           @apply flex-1 py-open-lg px-open-lg flex flex-col gap-open-xl;
           @apply desktop:px-open-xl desktop:py-open-xl;
           @apply tablet:px-open-xl tablet:py-open-xl;
-
 
           & .itemName {
             @apply mb-[-20px] font-open-heading text-open-font-large;
@@ -86,8 +84,8 @@
     & .list {
       @apply flex flex-col gap-open-gutter-mobile -text--open-gray-300 font-open-label text-open-font-large;
 
-      & .item a {
-        @apply -text--openfoundation-secondary -bg--open-accent-accent px-open-md;
+      & .item button {
+        @apply -text--open-accent-accent;
       }
       & .link {
         @apply px-open-sm py-open-md;

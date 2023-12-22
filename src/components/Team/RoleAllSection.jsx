@@ -7,17 +7,15 @@ function RoleAllSection() {
 
   return (
     <>
-      {data.map((list) =>
-        list[1].map((item) => (
-          <RoleCard
-            src={item.img}
-            alt={item.team}
-            title={item.team}
-            text={item.desc}
-            key={item.team}
-          />
-        )),
-      )}
+      {data.map((list) => list[1].map((item) => (
+        <RoleCard
+          src={item.img}
+          alt={item.team}
+          title={item.team}
+          text={item.desc}
+          key={item.team}
+        />
+      )))}
     </>
   );
 }

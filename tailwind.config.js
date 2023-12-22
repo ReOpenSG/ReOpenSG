@@ -42,9 +42,9 @@ export const theme = {
       'open-font-large': ['18px', '140%'],
       'open-font-xl': ['21px', '140%'],
       'open-font-xxl': ['30px', '140%'],
-      'open-font-xxxl': ['48px', '140%'],
-      'open-font-xxxxl': ['60px', '140%'],
-      'open-font-xxxxxl': ['80px', '140%'],
+      'open-font-xxxl': ['36px', '140%'],
+      'open-font-xxxxl': ['48px', '140%'],
+      'open-font-xxxxxl': ['60px', '140%'],
     },
     fontWeight: {
       'open-heading': ['700'],
