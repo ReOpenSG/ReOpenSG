@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
-import RootLayout from '../layout/RootLayout';
-import About from '../views/About';
-import Home from '../views/Home';
-import History from '../views/History';
-import Team from '../views/Team';
-import Location from '../views/Location';
-import Solutions from '../views/Solutions';
-import MachinesDevices from '../views/MachinesDevices';
-import Library from '../views/Library';
-import Industries from '../views/Industries';
-import Contact from '../views/Contact';
-import Community from '../views/Community';
-import CommunityDetail from '@/views/CommunityDetail';
-import CommunityForm from '@/views/CommunityForm';
-import CommunityEdit from '@/components/Community/CommunityEdit';
-import Admin from '@/views/Admin';
+
+const RootLayout = lazy(() => import('@/layout/RootLayout'));
+const About = lazy(() => import('@/views/About'));
+const Home = lazy(() => import('@/views/Home'));
+const History = lazy(() => import('@/views/History'));
+const Team = lazy(() => import('@/views/Team'));
+const Location = lazy(() => import('@/views/Location'));
+const Solutions = lazy(() => import('@/views/Solutions'));
+const MachinesDevices = lazy(() => import('@/views/MachinesDevices'));
+const Library = lazy(() => import('@/views/Library'));
+const Industries = lazy(() => import('@/views/Industries'));
+const Contact = lazy(() => import('@/views/Contact'));
+const Community = lazy(() => import('@/views/Community'));
+const CommunityDetail = lazy(() => import('@/views/CommunityDetail'));
+const CommunityForm = lazy(() => import('@/views/CommunityForm'));
+const CommunityEdit = lazy(() => import('@/components/Community/CommunityEdit'));
+const Admin = lazy(() => import('@/views/Admin'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +39,9 @@ const router = createBrowserRouter(
       <Route path="/admin" element={<Admin />} />
     </Route>,
   ),
+  {
+    basename: import.meta.env.PUBLIC_URL,
+  },
 );
 
 export default router;

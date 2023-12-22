@@ -12,9 +12,9 @@ function Team() {
   return (
     <div className={styles.teamWrapper}>
       <TitleSection
-        category="About Us"
-        title="직무소개"
-        background="bg-[url('@/assets/team_background.svg')]"
+        category="직무소개"
+        title="OPENSG의 업무"
+        background="bg-[url('@/assets/aboutUs_background.svg')]"
         textAlign="text-center"
       />
       <div className={styles.teamContainer}>

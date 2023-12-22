@@ -3,29 +3,29 @@ import PropTypes from 'prop-types';
 import styles from './TitleSection.module.css';
 
 function TitleSection({
-  background, category, title, textAlign,
+  background, category, title, subTitle, textAlign,
 }) {
   return (
     <div className={`${styles.titleWrapper} ${background}`}>
-      <div
-        className={`${styles.titleContainer} ${textAlign}`}
-      >
-        <div className={styles.titleInner}>
-          <h2>
-            {category}
-          </h2>
-          <h3>
-            {title}
-          </h3>
-        </div>
+      <div className={`${styles.titleInner} ${textAlign}`}>
+        <h2>{category}</h2>
+        <p>
+          <span>{title}</span>
+          <span>{subTitle}</span>
+        </p>
       </div>
     </div>
   );
 }
 
+TitleSection.defaultProps = {
+  subTitle: '',
+};
+
 TitleSection.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
   textAlign: PropTypes.string.isRequired,
   background: PropTypes.string.isRequired,
 };

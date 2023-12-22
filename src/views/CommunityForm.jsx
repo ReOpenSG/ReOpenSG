@@ -127,7 +127,7 @@ function CommunityForm({ isEditing = false, data = null }) {
 
   return (
     <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
-      <BannerSection category="Support" part="커뮤니티" />
+      <BannerSection category="Support" title="커뮤니티" />
       <div className="flex flex-col px-open-gutter-mobile desktop:px-open-gutter-desktop ">
         <InputSection
           title={title}

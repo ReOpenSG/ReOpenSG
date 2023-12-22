@@ -10,8 +10,8 @@ function Keywords() {
     // Set canvas size based on viewport width
     const updateCanvasSize = () => {
       if (window.innerWidth <= 1023) {
-        setCanvasSize({ width: 330, height: 330 });
-        setTextHeight(15);
+        setCanvasSize({ width: 280, height: 280 });
+        setTextHeight(14);
       } else {
         setCanvasSize({ width: 550, height: 550 });
         setTextHeight(21);

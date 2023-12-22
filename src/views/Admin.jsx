@@ -40,7 +40,7 @@ function Admin() {
 
   return (
     <div className={styles.container}>
-      <BannerSection category="Admin" part="관리자 페이지" />
+      <BannerSection category="Admin" title="관리자 페이지" />
       <section className={styles.section}>
         {!isLoggedIn ? (
           <form onSubmit={handleSubmit} className={styles.form}>
@@ -74,7 +74,9 @@ function Admin() {
           </form>
         ) : (
           <div className={styles.buttonWrapper}>
-            <h3 className="text-open-font-xl">환영합니다, 관리자님!</h3>
+            <h3 className="text-open-font-xl tablet:text-open-font-xxl desktop:text-open-font-xxl">
+              환영합니다, 관리자님!
+            </h3>
             <button type="button" onClick={handleLogout} className={styles.button}>
               로그아웃
             </button>

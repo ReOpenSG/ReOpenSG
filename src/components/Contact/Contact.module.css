@@ -2,21 +2,6 @@
   @apply max-w-[1320px] w-full m-auto;
 }
 
-.titleWrapper {
-  @apply flex flex-col gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl text-center py-[60px] tablet:py-open-6xl desktop:py-open-6xl;
-}
-
-.titleCategory {
-  @apply -text--openfoundation-primary font-open-label text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl;
-}
-.title {
-  @apply -text--openfoundation-primary font-open-heading text-open-font-xxl tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
-}
-
-.titleDesc {
-  @apply -text--openfoundation-primary font-open-paragraph text-open-font-medium tablet:text-open-font-xl desktop:text-open-font-xl;
-}
-
 .wrapper {
   @apply flex gap-open-xl items-center grow;
 }

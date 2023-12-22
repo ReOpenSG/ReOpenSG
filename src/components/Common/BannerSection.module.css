@@ -1,0 +1,11 @@
+.titleWrapper {
+  @apply flex flex-col gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl text-center py-open-4xl tablet:py-open-7xl desktop:py-open-7xl;
+}
+
+.titleCategory {
+  @apply -text--openfoundation-primary font-open-label text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl;
+}
+
+.titleText {
+  @apply -text--openfoundation-primary font-open-heading text-open-font-xxl tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
+}

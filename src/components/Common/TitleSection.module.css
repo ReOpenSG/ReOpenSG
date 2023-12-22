@@ -2,18 +2,18 @@
   @apply bg-cover py-open-4xl tablet:py-open-7xl desktop:py-open-7xl;
 }
 
-.titleContainer {
-  @apply mx-open-margin-mobile tablet:mx-open-margin-desktop desktop:mx-open-margin-desktop flex flex-col gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl;
-}
-
 .titleInner {
-  @apply max-w-[1320px] w-full m-auto;
+  @apply w-full flex flex-col gap-open-lg tablet:gap-open-2xl desktop:gap-open-2xl text-center px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 
   & h2 {
     @apply -text--openfoundation-secondary font-open-label text-open-font-medium tablet:text-open-font-xl desktop:text-open-font-xl;
   }
 
-  & h3 {
+  & p {
+    @apply flex flex-col;
+  }
+
+  & span {
     @apply -text--openfoundation-secondary font-open-heading text-open-font-xl tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
   }
 }

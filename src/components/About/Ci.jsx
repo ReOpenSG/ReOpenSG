@@ -1,6 +1,7 @@
 import React from 'react';
 import Palette from './Common/Palette';
 import styles from './About.module.css';
+import ciImage from '@/assets/about_ci.png';
 
 function Ci() {
   return (
@@ -32,7 +33,7 @@ function Ci() {
         </ul>
       </div>
       <div className={styles.imgWrapper}>
-        <img src="/ci.png" alt="CI 로고" className={styles.ciImg} />
+        <img src={ciImage} alt="CI 로고" className={styles.ciImg} />
       </div>
     </section>
   );

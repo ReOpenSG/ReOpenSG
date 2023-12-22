@@ -7,8 +7,8 @@ import PersonalInfo from '@/components/Contact/PersonalInfo';
 import InquiryType from '@/components/Contact/InquiryType';
 import Content from '@/components/Contact/Content';
 import Agreement from '@/components/Contact/Agreement';
-import ContactTitleSection from '@/components/Contact/ContactTitleSection';
 import ContactButton from '@/components/Contact/ContactButton';
+import BannerSection from '@/components/Common/BannerSection';
 
 function Contact() {
   const form = useRef(null);
@@ -40,11 +40,7 @@ function Contact() {
   return (
     <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
       <form ref={form} onSubmit={sendEmail} className={styles.formWrapper}>
-        <ContactTitleSection
-          category="Support"
-          title="고객문의"
-          desc="상세하게 작성해 주시면 더 빠르게 답변드릴 수 있습니다."
-        />
+        <BannerSection category="Support" title="고객문의" />
         <InquiryType />
         <PersonalInfo />
         <Content />

@@ -42,12 +42,12 @@ function Community() {
   return (
     <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
       <BannerSection category="Support" part="커뮤니티" />
-      <div
-        className="w-full flex justify-end
+      {isLoggedIn ? (
+        <div
+          className="w-full flex justify-end
       p-open-gutter-mobile
       tablet:p-open-gutter-desktop desktop:p-open-gutter-desktop  animate-bounce"
-      >
-        {isLoggedIn ? (
+        >
           <button
             type="button"
             className="p-open-lg tablet:p-open-xl desktop:p-open-xl text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl bg-slate-400 -text--openfoundation-black rounded-md"
@@ -55,10 +55,10 @@ function Community() {
           >
             글쓰러 가기
           </button>
-        ) : (
-          ''
-        )}
-      </div>
+        </div>
+      ) : (
+        ''
+      )}
       <NoticeSection sortedNotices={sortedNotices} />
     </div>
   );

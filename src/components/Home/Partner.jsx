@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import 'swiper/css';
 import { v4 as uuid } from 'uuid';
 
 import { Autoplay } from 'swiper/modules';

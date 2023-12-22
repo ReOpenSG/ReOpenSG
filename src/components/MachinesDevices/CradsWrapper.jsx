@@ -14,6 +14,7 @@ function CradsWrapper({ data, currentLocation }) {
             title={title}
             subTitle={subTitle}
             currentLocation={currentLocation}
+            data={data}
           />
         )),
       )}
@@ -26,7 +27,12 @@ CradsWrapper.propTypes = {
     PropTypes.objectOf(
       PropTypes.objectOf(
         PropTypes.shape({
-          char: PropTypes.arrayOf(PropTypes.string),
+          char: PropTypes.arrayOf(
+            PropTypes.shape({
+              icon: PropTypes.string,
+              text: PropTypes.string,
+            }),
+          ),
           desc: PropTypes.arrayOf(PropTypes.string),
         }),
       ),

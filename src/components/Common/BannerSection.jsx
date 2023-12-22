@@ -1,21 +1,21 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+import styles from '@/components/Common/BannerSection.module.css';
 
-function BannerSection({ category, part }) {
+function BannerSection({ category, title }) {
   return (
-    <section className="w-full py-open-6xl flex flex-col items-center gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl">
-      <p className="text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl font-open-label">
-        {category}
-      </p>
-      <h2 className="text-open-font-xxl desktop:text-open-font-xxxxl  tablet:text-open-font-xxxxl font-open-heading">
-        {part}
-      </h2>
-    </section>
+    <div className={styles.titleWrapper}>
+      <h2 className={styles.titleCategory}>{category}</h2>
+      <h3 className={styles.titleText}>
+        {title}
+      </h3>
+    </div>
   );
 }
 
-export default BannerSection;
 BannerSection.propTypes = {
   category: PropTypes.string.isRequired,
-  part: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
+
+export default BannerSection;

@@ -1,15 +1,3 @@
-.titleWrapper {
-  @apply flex flex-col gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl text-center py-[60px] tablet:py-open-6xl desktop:py-open-6xl;
-}
-
-.titleCategory {
-  @apply -text--openfoundation-primary font-open-label text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl;
-}
-
-.titleText {
-  @apply -text--openfoundation-primary font-open-heading text-open-font-xxl tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
-}
-
 .sectionWrapper {
   @apply flex flex-wrap justify-center gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop grow py-open-xl tablet:py-open-5xl desktop:py-open-5xl;
 }
