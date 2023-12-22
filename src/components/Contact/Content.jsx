@@ -13,6 +13,7 @@ function Content() {
         inputType="text"
         name="title"
         placeholderText="제목을 입력해 주세요."
+        maxLength="100"
       />
       <div className={styles.wrapper}>
         <label htmlFor={textareaId}>
@@ -25,6 +26,7 @@ function Content() {
           rows="10"
           placeholder="내용을 입력해 주세요."
           className={styles.textarea}
+          maxLength="500"
           required
         />
       </div>
