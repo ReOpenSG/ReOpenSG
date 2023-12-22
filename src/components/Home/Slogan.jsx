@@ -5,7 +5,7 @@ import BgVideo from '@/assets/home_slogan.mp4';
 function Slogan() {
   return (
     <section className={styles.slogan}>
-      <video muted autoPlay loop className="object-cover absolute w-full h-screen">
+      <video muted autoPlay loop playsInline className="object-cover absolute w-full h-screen">
         <source src={BgVideo} type="video/mp4" />
       </video>
       <div className={styles.wrapper}>
