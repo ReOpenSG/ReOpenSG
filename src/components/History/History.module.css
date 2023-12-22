@@ -1,12 +1,12 @@
 .sectionWrapper {
-  @apply w-full h-full desktop:block tablet:block mobile:hidden;
+  @apply w-full h-full desktop:block tablet:block hidden;
 }
 
 .section {
   @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 }
 
-.hidden {
+.srOnly {
   @apply sr-only;
 }
 

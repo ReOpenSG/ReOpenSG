@@ -20,7 +20,7 @@ function HistorySwiper({ historyData }) {
   return (
     <div className={styles.sectionWrapper}>
       <section className={styles.section}>
-        <h2 className={styles.hidden}>오픈에스지 연혁</h2>
+        <h2 className={styles.srOnly}>오픈에스지 연혁</h2>
         <div className={styles.swiperWrapper}>
           <Swiper
             mousewheel
