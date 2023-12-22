@@ -16,6 +16,7 @@
 
   & button {
     @apply px-open-xl tablet:px-open-2xl desktop:px-open-2xl py-open-sm rounded-[20px] -bg--openfoundation-quaternary;
+    @apply border border-transparent tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
 
     &.isClicked {
       @apply -bg--open-accent-accent;
@@ -23,18 +24,13 @@
   }
 }
 
-.iconStyle {
-  @apply w-10 h-10;
-  @apply tablet:w-20 tablet:h-20 desktop:w-32 desktop:h-32;
-}
-
 .cardWrapper {
   @apply mobile:w-full mobile:gap-open-xl mobile:mb-open-gutter-mobile mobile:p-open-xl;
-  @apply -bg--openfoundation-quaternary border-2 border-transparent hover:-border--open-accent-accent rounded-[20px] flex items-center;
-  @apply tablet:flex-col desktop:flex-col tablet:gap-open-xl desktop:gap-open-xl tablet:flex-1 desktop:flex-1 tablet:p-open-xl desktop:p-open-xl;
+  @apply -bg--openfoundation-quaternary border-2 border-transparent tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent rounded-[20px] flex items-center;
+  @apply tablet:flex-col desktop:flex-col tablet:gap-open-2xl desktop:gap-open-2xl tablet:flex-1 desktop:flex-1 tablet:p-open-2xl desktop:p-open-2xl;
 
   & div {
-    @apply flex flex-col tablet:text-center desktop:text-center min-w-[248px];
+    @apply flex flex-col gap-open-xl tablet:text-center desktop:text-center min-w-[248px];
   }
 
   & h3 {
@@ -42,7 +38,11 @@
   }
 
   & p {
-    @apply -text--openfoundation-secondary font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-large;
+    @apply -text--openfoundation-secondary font-open-paragraph text-open-font-medium tablet:text-open-font-medium desktop:text-open-font-medium;
+  }
+
+  & img {
+    @apply mobile:w-12 tablet:w-32 desktop:w-32;
   }
 }
 
