@@ -10,8 +10,8 @@ function About() {
     <div className="w-full">
       <TitleSection
         category="회사 개요"
-        title="We Are OPNESG"
-        background="bg-[url('@/assets/aboutUs_background.svg')]"
+        title="We Are OpenSG"
+        background="bg-[url('@/assets/aboutUs_background.png')]"
         textAlign="text-center"
       />
       <Group />

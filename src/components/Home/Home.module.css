@@ -14,12 +14,11 @@
   }
 
   & .slogan {
-    @apply w-full h-[900px] flex items-center justify-center mx-auto py-open-4xl  -bg--openfoundation-black max-w-[1320px];
-    @apply tablet:py-open-5xl desktop:py-open-5xl;
+    @apply w-full h-screen relative items-center justify-center  -bg--openfoundation-black overflow-hidden mx-auto z-10 object-fill;
 
     & .wrapper {
-      @apply w-full flex flex-col items-center   gap-open-xl;
-      @apply tablet:items-stretch desktop:items-stretch tablet:gap-open-3xl desktop:gap-open-3xl;
+      @apply w-full flex flex-col items-center gap-open-xl absolute top-1/2 max-w-[1320px] -translate-y-1/3 left-1/2 -translate-x-1/2 px-open-gutter-mobile desktop:px-0;
+      @apply tablet:items-stretch desktop:items-stretch tablet:gap-open-3xl desktop:gap-open-3xl z-20;
 
       & .title {
         @apply block text-center -text--openfoundation-white font-open-heading text-open-font-xxxl;
@@ -76,10 +75,10 @@
     }
 
     & .listWrapper {
-      @apply w-full flex justify-between gap-open-4xl tablet:h-[400px] desktop:h-[500px];
+      @apply w-full flex justify-between gap-open-4xl tablet:gap-open-2xl;
 
       & .description {
-        @apply w-[330px] flex flex-col items-start gap-open-3xl;
+        @apply min-w-[330px] w-[330px] tablet:min-w-[280px] tablet:w-[280px] flex flex-col items-start gap-open-3xl;
 
         & .title {
           @apply font-open-heading  text-open-font-xl;
@@ -95,7 +94,7 @@
         }
       }
       & .image {
-        @apply flex flex-1 justify-center items-center w-full object-cover border-none;
+        @apply object-cover border-none;
       }
     }
   }

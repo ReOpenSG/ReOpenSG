@@ -9,7 +9,7 @@ function RoleCard({
     <div className={styles.cardWrapper}>
       <img src={src} alt={alt} aria-hidden="true" className={styles.iconStyle} />
       <div>
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         <p>{text}</p>
       </div>
     </div>

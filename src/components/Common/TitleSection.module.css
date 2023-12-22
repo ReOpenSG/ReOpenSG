@@ -1,12 +1,12 @@
 .titleWrapper {
-  @apply bg-cover py-open-4xl tablet:py-open-7xl desktop:py-open-7xl;
+  @apply bg-cover pt-[70px] pb-open-4xl tablet:pt-[160px] tablet:pb-open-7xl desktop:pt-[160px] desktop:pb-open-7xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 }
 
 .titleInner {
-  @apply w-full flex flex-col gap-open-lg tablet:gap-open-2xl desktop:gap-open-2xl text-center px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  @apply max-w-[1320px] m-auto flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
 
   & h2 {
-    @apply -text--openfoundation-secondary font-open-label text-open-font-medium tablet:text-open-font-xl desktop:text-open-font-xl;
+    @apply -text--openfoundation-secondary font-open-label text-open-font-medium tablet:text-open-font-xxl desktop:text-open-font-xxl;
   }
 
   & p {

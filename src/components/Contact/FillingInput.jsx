@@ -10,7 +10,7 @@ function FillingInput({
   return (
     <div className={styles.wrapper}>
       <label htmlFor={id}>
-        <h4 className={styles.label}>{labelText}</h4>
+        <h3 className={styles.label}>{labelText}</h3>
       </label>
       <input
         type={inputType}

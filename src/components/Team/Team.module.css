@@ -30,14 +30,14 @@
 
 .cardWrapper {
   @apply mobile:w-full mobile:gap-open-xl mobile:mb-open-gutter-mobile mobile:p-open-xl;
-  @apply -bg--openfoundation-quaternary border-4 border-transparent hover:-border--open-accent-accent rounded-[20px] flex items-center;
+  @apply -bg--openfoundation-quaternary border-2 border-transparent hover:-border--open-accent-accent rounded-[20px] flex items-center;
   @apply tablet:flex-col desktop:flex-col tablet:gap-open-xl desktop:gap-open-xl tablet:flex-1 desktop:flex-1 tablet:p-open-xl desktop:p-open-xl;
 
   & div {
     @apply flex flex-col tablet:text-center desktop:text-center min-w-[248px];
   }
 
-  & h4 {
+  & h3 {
     @apply -text--openfoundation-secondary font-open-label text-open-font-medium tablet:text-open-font-xl desktop:text-open-font-xl;
   }
 

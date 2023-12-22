@@ -6,7 +6,6 @@ function SoultionBanner({ currentLocation, prevLocation }) {
   return (
     <section className={styles.SolutionBanner}>
       <div className={styles.wrapper}>
-        <h3 className={styles.title}>솔루션 배너</h3>
         <p className={styles.nav}>
           {prevLocation}
           &nbsp; &gt; &nbsp;
@@ -14,11 +13,11 @@ function SoultionBanner({ currentLocation, prevLocation }) {
         </p>
         <div className={styles.banner}>
           <p className={styles.desc}>물류 자동화의 첫 걸음</p>
-          <p className={styles.solution}>
+          <h3 className={styles.solution}>
             Open
             {currentLocation}
             &reg;
-          </p>
+          </h3>
         </div>
       </div>
     </section>

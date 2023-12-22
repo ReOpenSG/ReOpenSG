@@ -11,8 +11,8 @@ function Location() {
     <div className={styles.wrapper}>
       <TitleSection
         category="오시는 길"
-        title="세계로 보는 OPENSG"
-        background="bg-[url('@/assets/aboutUs_background.svg')]"
+        title="세계로 보는 OpenSG"
+        background="-bg--openfoundation-primary"
         textAlign="text-center"
       />
       <div className={styles.mapContainer}>

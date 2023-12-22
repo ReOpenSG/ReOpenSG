@@ -20,7 +20,8 @@ function Solutions() {
       title: (
         <>
           설계부터
-          <br /> 시뮬레이션까지.
+          <br />
+          시뮬레이션까지.
         </>
       ),
       desc: '물류 자동화의 시작을 오픈에스지와 함께 해보세요.',
@@ -119,13 +120,17 @@ function Solutions() {
             </>
           ) : (
             <>
-              <h4 className={`${styles.title}`}>{solutionData[0].title}</h4>
-              <p className={styles.summary}>{solutionData[0].desc}.</p>
+              <p className={`${styles.title}`}>{solutionData[0].title}</p>
+              <p className={styles.summary}>
+                {solutionData[0].desc}
+                .
+              </p>
             </>
           )}
         </div>
-        <div className={styles.imageWrapper}>
+        <div className="w-full overflow-hidden mx-auto">
           <img
+            className={styles.image}
             alt={selectedItem && solutionData[selectedItem].name}
             src={selectedItem ? `${solutionData[selectedItem].img}` : `${Solution0}`}
           />

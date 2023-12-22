@@ -19,7 +19,7 @@ function LocationContainer({
       <img className={styles.locationImage} src={locationImage} alt="본사 전경" />
       <address className={styles.locationAddress}>
         <div className={styles.locationInfoContainer}>
-          <p className={styles.locationName}>{locationName}</p>
+          <h3 className={styles.locationName}>{locationName}</h3>
           <div className={styles.addressWrapper}>
             <p>{locationPostal}</p>
             <p>{locationAddress}</p>

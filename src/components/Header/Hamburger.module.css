@@ -1,0 +1,52 @@
+.burger {
+  @apply w-[30px] h-[24px] border-none bg-transparent relative cursor-pointer ;
+}
+
+.burger:after, .burger:before, .burger > span {
+  @apply w-full h-[2px] rounded-[100px] absolute block -bg--openfoundation-secondary;
+}
+
+.burger:after, .burger:before {
+  @apply content-[''] transition-[width] duration-300 delay-[0.4s];
+}
+
+.burger:after {
+  @apply top-0 left-0 mt-0;
+}
+
+.burger:before {
+  @apply bottom-0 right-0 mb-0;
+}
+
+.burger > span {
+  @apply top-1/2 mt-[-2px] transition-transform delay-300;
+}
+
+.burger > span:before {
+  @apply content-[''] -bg--openfoundation-secondary w-full h-[2px] rounded-[100px] absolute left-0 transition-transform delay-300;
+}
+
+.burgerOn:after {
+  @apply transition-all delay-200 w-0 left-0;
+}
+
+.burgerOn:before {
+  @apply transition-all delay-200 w-0 right-0;
+}
+
+.burgerOn span {
+  @apply transition-transform duration-300 delay-[0.4s] rotate-45
+}
+
+.burgerOn span:before {
+  @apply transition-transform duration-300 delay-[0.4s] rotate-90
+}
+
+
+.burgerBlack:after, .burgerBlack:before, .burgerBlack > span {
+  @apply -bg--openfoundation-tertiary;
+}
+
+.burgerBlack > span:before {
+  @apply -bg--openfoundation-tertiary;
+}

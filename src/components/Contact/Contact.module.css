@@ -22,7 +22,7 @@
 .agreementText {
   @apply -text--openfoundation-primary font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-large;
 
-  & h4 {
+  & h3 {
     @apply -text--openfoundation-primary font-open-label text-open-font-xl tablet:text-open-font-xxl desktop:text-open-font-xxl;
   }
 

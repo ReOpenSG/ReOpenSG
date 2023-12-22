@@ -48,7 +48,7 @@ function NoticeSection({ sortedNotices }) {
   };
   return (
     <section className={styles.NoticeWrapper}>
-      <h3 className="sr-only">커뮤니티 리스트</h3>
+      <span className="sr-only">커뮤니티 리스트</span>
       <p className={styles.pageCount}>
         Total: {sortedNotices?.length} [{currentPage} / {ListButtonsProps.pageCount}]
       </p>

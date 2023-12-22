@@ -3,20 +3,18 @@ import PropTypes from 'prop-types';
 import DownloadIcon from './DownloadIcon';
 import styles from '@/components/Library/Library.module.css';
 
-function DownloadCard({
-  mainText, subText, category, href, download, ariaLabel,
-}) {
+function DownloadCard({ mainText, subText, category, href, download, ariaLabel }) {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardContainer}>
         <div className={styles.cardInner}>
-          <h4 className={styles.cardTitle}>
+          <p className={styles.cardTitle}>
             <span>
               {mainText}
               <br />
               {subText}
             </span>
-          </h4>
+          </p>
           <span className={styles.cardCategoryText}>{category}</span>
         </div>
         <div className={styles.cardLinkWrapper}>

@@ -41,7 +41,7 @@ function Community() {
   };
   return (
     <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
-      <BannerSection category="Support" part="커뮤니티" />
+      <BannerSection category="Support" title="커뮤니티" />
       {isLoggedIn ? (
         <div
           className="w-full flex justify-end

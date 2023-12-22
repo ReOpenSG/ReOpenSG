@@ -41,7 +41,7 @@ function InputSection({
   };
   return (
     <>
-      <h3 className="sr-only">커뮤니티 폼 입력 섹션</h3>
+      <span className="sr-only">커뮤니티 폼 입력 섹션</span>
       <div className={styles.titleWrapper}>
         <input
           type="text"

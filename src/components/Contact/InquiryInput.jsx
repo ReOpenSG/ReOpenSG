@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './Contact.module.css';
 import ProductIcon from './icons/ProductIcon';
+import PurchaseIcon from './icons/PurchaseIcon';
+import ASIcon from './icons/ASIcon';
+import EtcIcon from './icons/EtcIcon';
 
 function InquiryInput({
   type, id, name, defaultValue, labelText,
@@ -16,15 +19,14 @@ function InquiryInput({
         className={styles.inquiryInput}
       />
       <label htmlFor={id} className={styles.inquiryLabel}>
-        {/* 추후 아이콘 변경사항을 반영하기 위해 임의로 작성해둔 코드입니다. */}
         {labelText === '제품 문의' ? (
           <ProductIcon />
         ) : labelText === '구매 문의' ? (
-          <ProductIcon />
+          <PurchaseIcon />
         ) : labelText === 'AS 문의' ? (
-          <ProductIcon />
+          <ASIcon />
         ) : (
-          <ProductIcon />
+          <EtcIcon />
         )}
         <span>{labelText}</span>
       </label>

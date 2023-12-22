@@ -11,10 +11,26 @@ function PersonalInfo() {
     <fieldset className={styles.personalInfoWrapper}>
       <div className={styles.regWrapper}>
         <FillingInput
+          labelText="소속"
+          inputType="text"
+          name="office"
+          placeholderText="회사 또는 부서를 입력해 주세요."
+        />
+      </div>
+      <div className={styles.regWrapper}>
+        <FillingInput
+          labelText="성명"
+          inputType="text"
+          name="name"
+          placeholderText="성함을 입력해 주세요."
+        />
+      </div>
+      <div className={styles.regWrapper}>
+        <FillingInput
           labelText="받으실 이메일"
           inputType="email"
           name="email"
-          placeholderText="abc@abcd.com"
+          placeholderText="이메일을 입력해 주세요."
           onChange={(e) => {
             setEmailReg(e.target.value);
           }}

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {
-  Controller, EffectCoverflow, Mousewheel,
-} from 'swiper/modules';
+import { Controller, EffectCoverflow, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import PropTypes, { number } from 'prop-types';

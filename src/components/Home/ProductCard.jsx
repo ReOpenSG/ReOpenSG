@@ -6,9 +6,7 @@ function ProductCard({ name, desc, imgUrl }) {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.summaryWrapper}>
-        <h4 className={styles.mainKeyword}>
-          <span>{name}</span>
-        </h4>
+        <span className={styles.mainKeyword}>{name}</span>
         <div className={styles.subWrapper}>
           <p className={styles.subKeyword}>{desc}</p>
           <button type="button" className={styles.button}>

@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+
 import styles from './Solutions.module.css';
 
-function Char({ currentLocation, data, refs }) {
+function Char({ currentLocation, data, headingRef, sectionRef }) {
   return (
-    <section id="Char" ref={refs} className={styles.Char}>
+    <section id="Char" ref={sectionRef} className={styles.Char}>
       <span className={styles.subTitle}>
         Open
         {currentLocation}
       </span>
-      <h3 className={styles.title}>제품 및 특징</h3>
+      <h4 ref={headingRef} className={styles.title}>
+        제품 및 특징
+      </h4>
       <div className={styles.container}>
         <p className={styles.containerTitle}>제품</p>
         <p className={styles.product}>{data && data[currentLocation].제품설명}</p>
@@ -44,7 +47,11 @@ Char.propTypes = {
       산업군: PropTypes.arrayOf(PropTypes.string),
     }),
   ).isRequired,
-  refs: PropTypes.oneOfType([
+  headingRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]).isRequired,
+  sectionRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,

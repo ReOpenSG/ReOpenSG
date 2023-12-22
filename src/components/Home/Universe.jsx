@@ -8,7 +8,7 @@ function Universe() {
     <section className={styles.universe} style={{ backgroundImage: `url('${BgImg}')` }}>
       <div className={styles.titleWrapper}>
         <p className={styles.subtitle}>Explore OpenSG</p>
-        <h3 className={styles.title}>OPENSG의 세계관을 만나보세요</h3>
+        <h3 className={styles.title}>OpenSG의 세계관을 만나보세요</h3>
       </div>
       <Keywords />
     </section>

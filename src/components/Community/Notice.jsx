@@ -16,7 +16,7 @@ function Notice({ notice, notices }) {
   return (
     <NavLink to={`/community/${notice?.id}`} state={{ currentNotice: notice, notices }}>
       <div className={styles.noticeItem}>
-        <h4 className={styles.noticeTitle}>{notice?.data?.title}</h4>
+        <h3 className={styles.noticeTitle}>{notice?.data?.title}</h3>
         <time className={styles.noticeCreatedAt} dateTime={formattedDate}>
           {formattedDate}
         </time>

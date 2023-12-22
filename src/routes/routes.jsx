@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-import { Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, createHashRouter, createRoutesFromElements } from 'react-router-dom';
 
 const RootLayout = lazy(() => import('@/layout/RootLayout'));
 const About = lazy(() => import('@/views/About'));
@@ -18,7 +18,7 @@ const CommunityForm = lazy(() => import('@/views/CommunityForm'));
 const CommunityEdit = lazy(() => import('@/components/Community/CommunityEdit'));
 const Admin = lazy(() => import('@/views/Admin'));
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
@@ -39,9 +39,6 @@ const router = createBrowserRouter(
       <Route path="/admin" element={<Admin />} />
     </Route>,
   ),
-  {
-    basename: import.meta.env.PUBLIC_URL,
-  },
 );
 
 export default router;

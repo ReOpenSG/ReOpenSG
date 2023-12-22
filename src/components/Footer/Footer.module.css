@@ -1,5 +1,5 @@
 .contactUsWrapper {
-  @apply bg-[url('@/assets/footer_background.svg')] bg-cover;
+  @apply bg-[url('@/assets/footer_background.png')] bg-cover;
 
   .link {
     @apply block py-open-3xl tablet:py-open-6xl desktop:py-open-6xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
@@ -40,4 +40,12 @@
   .copyright {
     @apply font-open-paragraph;
   }
+}
+
+.sideWrapper {
+  @apply flex flex-col gap-open-xl fixed bottom-open-6xl right-open-xl;
+}
+
+.iconStyle {
+  @apply w-7 h-7 tablet:w-14 tablet:h-14 desktop:w-14 desktop:h-14;
 }

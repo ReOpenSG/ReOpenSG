@@ -12,13 +12,11 @@ function ButtonSection({ isEditing, handleSave }) {
   };
   return (
     <section className={styles.buttonWrapper}>
-      <h3 className="sr-only">커뮤니티 폼 버튼 섹션</h3>
+      <p className="sr-only">커뮤니티 폼 버튼 섹션</p>
       <button type="button" className={`${styles.button} bg-blue-400`} onClick={handleSave}>
-        {' '}
-        <span className="block font-medium">{isEditing ? '수정하기' : '등록하기'} </span>
+        <span className="block font-medium">{isEditing ? '수정하기' : '등록하기'}</span>
       </button>
       <button type="button" className={`${styles.button} bg-red-400`} onClick={handleCancel}>
-        {' '}
         <span className="block font-medium">취소하기</span>
       </button>
     </section>

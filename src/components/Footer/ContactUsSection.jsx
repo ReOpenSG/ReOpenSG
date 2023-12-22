@@ -10,8 +10,8 @@ function ContactUsSection() {
         <div className={styles.container}>
           <div className={styles.inner}>
             <div className={styles.content}>
-              <h3 className={styles.title}>Contact Us</h3>
-              <p className={styles.text}>OPENSG의 전문 엔지니어들과 미래를 열어 보세요</p>
+              <span className={styles.title}>Contact Us</span>
+              <span className={styles.text}>OpenSG의 전문 엔지니어들과 미래를 열어 보세요</span>
             </div>
             <MoveButton />
           </div>

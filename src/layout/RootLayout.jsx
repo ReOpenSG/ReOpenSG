@@ -9,7 +9,7 @@ function RootLayout() {
   return (
     <div className="min-h-screen flex flex-col w-full">
       <Header />
-      <main className="flex justify-center mx-auto font-open-font pt-[50px] tablet:pt-[80px] desktop:pt-[80px] flex-1 w-full">
+      <main className="flex justify-center mx-auto font-open-font flex-1 w-full">
         <ScrollRestoration />
         <Outlet />
       </main>

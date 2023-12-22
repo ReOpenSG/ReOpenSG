@@ -9,8 +9,8 @@ function History() {
     <div className="w-full">
       <TitleSection
         category="연혁"
-        title="OPNESG가 걸어온 길"
-        background="bg-[url('@/assets/aboutUs_background.svg')]"
+        title="OpenSG가 걸어온 길"
+        background="bg-[url('@/assets/aboutUs_background.png')]"
         textAlign="text-center"
       />
       <div>

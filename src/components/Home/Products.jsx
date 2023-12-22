@@ -46,7 +46,7 @@ function Products() {
           </span>
           <span className="flex flex-col">
             <span>스마트 자동화에 필요한 모든 것,</span>
-            <span>OpenSG 가 함께합니다.</span>{' '}
+            <span>OpenSG 가 함께합니다.</span>
           </span>
         </p>
       </div>

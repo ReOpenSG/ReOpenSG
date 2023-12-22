@@ -11,7 +11,7 @@ function InquiryType() {
   };
   return (
     <fieldset className={styles.inquiryWrapper}>
-      <h4 className={styles.label}>문의유형</h4>
+      <h3 className={styles.label}>문의유형</h3>
       <div>
         {data.map(({ id, defaultValue }) => (
           <InquiryInput

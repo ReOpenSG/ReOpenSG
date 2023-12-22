@@ -46,14 +46,15 @@ function MachinesDevices() {
           category="Open Smart Machine"
           title="자동화의 시작과 끝,"
           subTitle="Smart Machine"
-          background="bg-[url('@/assets/products_background.svg')]"
+          background="bg-[url('@/assets/products_background.png')]"
           textAlign="text-left"
         />
       ) : (
         <TitleSection
           category="Open Device"
-          title="미래를 여는 오픈 디바이스"
-          background="bg-[url('@/assets/products_background.svg')]"
+          title="미래를 여는"
+          subTitle="오픈 디바이스"
+          background="bg-[url('@/assets/products_background.png')]"
           textAlign="text-left"
         />
       )}
@@ -63,7 +64,6 @@ function MachinesDevices() {
         </section>
         <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile">
           <div className="w-full flex flex-col items-center">
-            <h2 className="sr-only">제품 소개</h2>
             <Desc
               descProps={desc}
               id={id}
@@ -75,7 +75,7 @@ function MachinesDevices() {
         </section>
         <section className="-bg--open-gray-50 w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile ">
           <div className="w-full flex flex-col items-center">
-            <h2 className="sr-only">기능 및 특징</h2>
+            <h4 className="sr-only">기능 및 특징</h4>
             <FuncChar descProps={desc} id={id} selectedProduct={selectedProduct} />
           </div>
         </section>
