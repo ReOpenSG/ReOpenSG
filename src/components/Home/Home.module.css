@@ -70,7 +70,8 @@
       @apply tablet:text-open-font-medium desktop:text-open-font-medium;
 
       & .button {
-        @apply px-open-gutter-mobile py-open-sm rounded-3xl;
+        @apply px-open-gutter-mobile py-open-sm rounded-3xl relative;
+        @apply transition-all duration-1000 ease-in-out;
       }
     }
 
