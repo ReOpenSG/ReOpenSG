@@ -17,6 +17,8 @@ const CommunityDetail = lazy(() => import('@/views/CommunityDetail'));
 const CommunityForm = lazy(() => import('@/views/CommunityForm'));
 const CommunityEdit = lazy(() => import('@/components/Community/CommunityEdit'));
 const Admin = lazy(() => import('@/views/Admin'));
+const ContactFail = lazy(() => import('@/views/ContactFail'));
+const ContactSuccess = lazy(() => import('@/views/ContactSuccess'));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +34,8 @@ const router = createBrowserRouter(
       <Route path="/industries/:id" element={<Industries />} />
       <Route path="/library" element={<Library />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/contact/success" element={<ContactSuccess />} />
+      <Route path="/contact/fail" element={<ContactFail />} />
       <Route path="/community" element={<Community />} />
       <Route path="/community/:id" element={<CommunityDetail />} />
       <Route path="/community/write" element={<CommunityForm />} />
