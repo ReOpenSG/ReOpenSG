@@ -43,7 +43,6 @@ function ContactRe() {
       .then(
         () => {
           navigate('/contact/success');
-          // navigate('/contact/fail');
         },
         () => {
           navigate('/contact/fail');

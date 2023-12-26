@@ -29,10 +29,7 @@ function Contact() {
           navigate('/contact/fail');
         },
       );
-  };
 
-  const sendEmail2 = (e) => {
-    e.preventDefault();
     emailjs
       .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ceoApiKey)
       .then(
@@ -53,12 +50,7 @@ function Contact() {
 
   return (
     <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className={styles.formWrapper}
-        onSubmitCapture={sendEmail2}
-      >
+      <form ref={form} onSubmit={sendEmail} className={styles.formWrapper}>
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />
         <PersonalInfo />
