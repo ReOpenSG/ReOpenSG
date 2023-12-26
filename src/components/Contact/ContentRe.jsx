@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import FillingInput from './FillingInput';
 import styles from './Contact.module.css';
 
-function Content() {
+function ContentRe() {
   const textareaId = uuidv4();
-  const [titleValue, setTitleValue] = useState(null);
-  const [messageValue, setMessageValue] = useState(null);
-
-  useEffect(() => {
-    if (titleValue !== null) {
-      localStorage.setItem('title', titleValue);
-    }
-
-    if (messageValue !== null) {
-      localStorage.setItem('message', messageValue);
-    }
-  });
 
   return (
     <fieldset className={styles.contentWrapper}>
@@ -24,11 +12,8 @@ function Content() {
         labelText="제목"
         inputType="text"
         name="title"
-        placeholderText="제목을 입력해 주세요."
         maxLength="100"
-        onChange={(e) => {
-          setTitleValue(e.target.value);
-        }}
+        defaultValue={localStorage.getItem('title')}
       />
       <div className={styles.wrapper}>
         <label htmlFor={textareaId}>
@@ -42,14 +27,11 @@ function Content() {
           placeholder="내용을 입력해 주세요."
           className={styles.textarea}
           maxLength="500"
-          required
-          onChange={(e) => {
-            setMessageValue(e.target.value);
-          }}
+          defaultValue={localStorage.getItem('message')}
         />
       </div>
     </fieldset>
   );
 }
 
-export default Content;
+export default ContentRe;

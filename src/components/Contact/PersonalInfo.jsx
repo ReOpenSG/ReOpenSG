@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Contact.module.css';
 import FillingInput from './FillingInput';
 
 function PersonalInfo() {
+  const [officeValue, setOfficeValue] = useState(null);
+  const [nameValue, setNameValue] = useState(null);
   const [emailReg, setEmailReg] = useState('');
   const [telNumber, setTelNumber] = useState('');
   const emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  useEffect(() => {
+    if (officeValue !== null) {
+      localStorage.setItem('office', officeValue);
+    }
+
+    if (nameValue !== null) {
+      localStorage.setItem('name', nameValue);
+    }
+
+    if (emailReg !== null) {
+      localStorage.setItem('email', emailReg);
+    }
+
+    if (telNumber !== null) {
+      localStorage.setItem('tel', telNumber);
+    }
+  });
 
   return (
     <fieldset className="py-open-2xl border-b -border--open-gray-200 flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl">
@@ -16,6 +36,9 @@ function PersonalInfo() {
             inputType="text"
             name="office"
             placeholderText="회사 또는 부서를 입력해 주세요."
+            onChange={(e) => {
+              setOfficeValue(e.target.value);
+            }}
           />
         </div>
         <div className={styles.regWrapper}>
@@ -24,6 +47,9 @@ function PersonalInfo() {
             inputType="text"
             name="name"
             placeholderText="성함을 입력해 주세요."
+            onChange={(e) => {
+              setNameValue(e.target.value);
+            }}
           />
         </div>
       </div>

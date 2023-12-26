@@ -17,6 +17,7 @@ function InquiryInput({
         name={name}
         defaultValue={defaultValue}
         className={styles.inquiryInput}
+        required
       />
       <label htmlFor={id} className={styles.inquiryLabel}>
         {labelText === '제품 문의' ? (

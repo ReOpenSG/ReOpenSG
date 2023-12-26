@@ -1,11 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
-import emailjs from '@emailjs/browser';
 import NoticeButton from '@/components/Contact/CheckButton';
 import NoticeContent from '@/components/Contact/NoticeContent';
 import FailIcon from '@/components/Contact/icons/FailIcon';
-import { emailConfig } from '@/data/emailConfig';
 
 function ContactFail() {
   const navigate = useNavigate();
@@ -24,16 +21,17 @@ function ContactFail() {
           className="-text--openfoundation-secondary font-open-label text-open-font-xl -bg--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
           text="다시 시도"
           onClick={() => {
-            // 로직 추가 예정입니다.
+            navigate('/contact/retry');
           }}
         />
         <NoticeButton
           type="button"
-          onClick={() => {
-            navigate('/');
-          }}
           className="-text--open-accent-accent font-open-label text-open-font-xl border-2 -border--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
           text="메인으로"
+          onClick={() => {
+            navigate('/');
+            localStorage.clear();
+          }}
         />
       </div>
     </div>

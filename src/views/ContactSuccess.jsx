@@ -17,6 +17,7 @@ function ContactSuccess() {
         type="button"
         onClick={() => {
           navigate('/');
+          localStorage.clear();
         }}
         className="-text--openfoundation-secondary font-open-label text-open-font-xl -bg--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
         text="확인"

@@ -27,6 +27,7 @@ function FillingInput({
 }
 
 FillingInput.defaultProps = {
+  placeholderText: '',
   maxLength: '',
 };
 
@@ -34,7 +35,7 @@ FillingInput.propTypes = {
   labelText: PropTypes.string.isRequired,
   inputType: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  placeholderText: PropTypes.string.isRequired,
+  placeholderText: PropTypes.string,
   maxLength: PropTypes.string,
 };
 
