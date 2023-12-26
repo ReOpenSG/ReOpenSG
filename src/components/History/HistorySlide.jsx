@@ -8,7 +8,6 @@ function HistorySlide({
   const slideRef = useRef(null);
 
   useEffect(() => {
-    console.log(isActive);
     if (isActive) {
       slideRef.current.tabIndex = 0;
       slideRef.current.focus();
