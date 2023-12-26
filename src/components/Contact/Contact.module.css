@@ -81,10 +81,10 @@
 }
 
 .regWrapper {
-  @apply relative grow;
+  @apply grow;
 }
 
 .message {
-  @apply text-red-500 font-open-paragraph text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium text-right;
-  @apply absolute right-0;
+  @apply text-red-500 font-open-paragraph text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium;
+  @apply block text-right;
 }
