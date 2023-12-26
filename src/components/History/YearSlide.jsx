@@ -4,7 +4,6 @@ import styles from '@/components/History/History.module.css';
 import HistoryCircleIcon from './icons/HistoryCircleIcon';
 
 function YearSlide({ isActive, year }) {
-  console.log(year);
   return (
     <div className={`${styles.yearSlide} ${isActive ? styles.isActive : styles.isInActive}`}>
       <span>{year}</span>
