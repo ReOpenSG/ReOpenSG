@@ -16,7 +16,7 @@ function Content() {
     if (messageValue !== null) {
       localStorage.setItem('message', messageValue);
     }
-  });
+  }, [messageValue, titleValue]);
 
   return (
     <fieldset className={styles.contentWrapper}>
