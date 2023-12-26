@@ -31,6 +31,20 @@ function Contact() {
       );
   };
 
+  const sendEmail2 = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ceoApiKey)
+      .then(
+        () => {
+          navigate('/contact/success');
+        },
+        () => {
+          navigate('/contact/fail');
+        },
+      );
+  };
+
   const handleErrorMessage = () => {
     if (!agreementStatus) {
       toast.error('개인정보 활용동의에 체크해 주세요.');
@@ -39,7 +53,12 @@ function Contact() {
 
   return (
     <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
-      <form ref={form} onSubmit={sendEmail} className={styles.formWrapper}>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className={styles.formWrapper}
+        onSubmitCapture={sendEmail2}
+      >
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />
         <PersonalInfo />
