@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
-  Controller, EffectCoverflow, Keyboard, Mousewheel, Navigation,
+  Controller, EffectCoverflow, Mousewheel, Navigation,
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
