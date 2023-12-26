@@ -1,5 +1,14 @@
 .header {
-  @apply fixed flex justify-between items-center w-full py-open-lg px-open-margin-mobile tablet:px-open-gutter-desktop desktop:px-open-4xl -bg--openfoundation-primary -text--openfoundation-secondary font-open-font text-open-font-large font-open-paragraph h-[50px] tablet:h-[80px] desktop:h-[80px] z-20;
+  @apply fixed flex justify-between items-center w-full py-open-lg px-open-margin-mobile tablet:px-open-gutter-desktop desktop:px-open-4xl -text--openfoundation-secondary font-open-font text-open-font-large font-open-paragraph h-[50px] tablet:h-[80px] desktop:h-[80px] z-[100];
+}
+
+
+.headerBlack {
+  @apply -bg--openfoundation-primary
+}
+
+.scrolled {
+  @apply -bg--openfoundation-primary opacity-[90%]
 }
 
 .menuLink:after {
@@ -28,7 +37,7 @@
 }
 
 .headerMenu {
-  @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary  -text--openfoundation-secondary opacity-80
+  @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary -text--openfoundation-secondary opacity-80 backdrop-blur-sm
 }
 
 .about {
@@ -40,7 +49,7 @@
 }
 
 .support {
-  @apply tablet:pl-[404px] desktop:pl-[480px]
+  @apply tablet:pl-[476px] desktop:pl-[550px]
 }
 
 .accordionItemSmall {

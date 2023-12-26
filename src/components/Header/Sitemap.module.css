@@ -1,15 +1,43 @@
+.sitemapDesktop {
+  @apply w-full h-full hidden desktop:block tablet:block mobile:hidden translate-x-full px-open-gutter-desktop
+}
+
+.isOpen {
+  @apply translate-x-0 transition-transform duration-200 delay-200 ease-in-out
+}
+
 .sitemapList {
-  @apply flex flex-row justify-center gap-open-xl px-open-gutter-desktop py-open-lg -bg--openfoundation-primary
+  @apply w-full h-full flex flex-row py-open-7xl -text--openfoundation-secondary justify-between gap-open-xl
 }
 
 .aboutUsList {
-  @apply flex flex-col gap-open-md py-open-xl text-open-font-large font-open-paragraph border-t-[1px] -border--openfoundation-secondary
+  @apply flex flex-col gap-open-md py-open-xl text-open-font-large  -text--open-gray-300 font-open-paragraph 
 }
 
 .productList {
- @apply flex flex-col pl-open-sm pt-open-md gap-open-md text-open-font-medium -text--openfoundation-secondary font-open-paragraph
+ @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph 
+}
+
+.solutionList {
+  @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph px-1 pb-3 mt-2 rounded-b-xl border-x-2 border-b-2 -border--open-accent-accent-1 border-opacity-30
 }
 
 .supportList {
-  @apply flex flex-col pl-open-sm pt-open-md gap-open-md text-open-font-medium font-open-paragraph -text--openfoundation-secondary
+  @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph -text--open-gray-300  py-open-xl
+}
+
+.sitemapListMobile {
+  @apply flex flex-col justify-center gap-open-lg px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary
+}
+
+.aboutUsListMobile {
+  @apply flex flex-col gap-open-md py-open-lg text-open-font-large font-open-paragraph
+}
+
+.productListMobile {
+ @apply flex flex-col gap-open-lg py-open-lg text-open-font-large font-open-label
+}
+
+.subListMobile {
+  @apply flex flex-col pl-open-sm pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph
 }

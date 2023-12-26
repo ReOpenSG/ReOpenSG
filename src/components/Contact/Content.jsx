@@ -12,7 +12,7 @@ function Content() {
         labelText="제목"
         inputType="text"
         name="title"
-        placeholderText="AGV 구매 문의"
+        placeholderText="제목을 입력해 주세요."
       />
       <div className={styles.wrapper}>
         <label htmlFor={textareaId}>
@@ -23,7 +23,7 @@ function Content() {
           id={textareaId}
           cols="30"
           rows="10"
-          placeholder="AGV 2대 견적 문의드립니다."
+          placeholder="내용을 입력해 주세요."
           className={styles.textarea}
           required
         />

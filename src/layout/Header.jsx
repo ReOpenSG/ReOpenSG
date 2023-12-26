@@ -3,19 +3,20 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import MenuLink from '@/components/Header/MenuLink';
 import Sitemap from '@/components/Header/Sitemap';
-import SitemapMobile from '@/components/Header/SitemapMobile';
 import opensgLogo from '@/assets/header_opensg.png';
-import opensgLogoBlue from '@/assets/header_opensgBlue.png';
 import styles from '@/components/Header/Header.module.css';
 import hamburger from '@/components/Header/Hamburger.module.css';
 
 function Header() {
-  const [whiteHeader, setWhiteHeader] = useState(null);
+  const [whitePage, setWhitePage] = useState(null);
+  const [isHeaderBlack, setIsHeaderBlack] = useState(false); //
+  const [isSitemapOpen, setIsSitemapOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [activeLanguage, setActiveLanguage] = useState(null);
   const [activeBurger, setActiveBurger] = useState(false);
   const menuRef = useRef(null);
   const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleLanguageActive = (lang) => {
     setActiveLanguage(lang);
@@ -23,89 +24,77 @@ function Header() {
 
   const handleMenuActive = (menu) => {
     setActiveMenu(menu);
+    setIsHeaderBlack(true);
+    if (menu === null) {
+      setIsHeaderBlack(false);
+    }
   };
 
   const handleBurgerActive = (active) => {
     setActiveBurger(active);
     if (active) {
-      setActiveMenu('Sitemap');
+      setIsSitemapOpen(true);
     } else {
-      setActiveMenu(null);
+      setIsSitemapOpen(false);
     }
   };
 
   useEffect(() => {
     handleMenuActive(null);
+    setIsHeaderBlack(false);
+    setIsSitemapOpen(false);
     setActiveBurger(false);
   }, [location]);
 
   useEffect(() => {
-    if (activeMenu === 'Sitemap') {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (location.pathname === '/community' || location.pathname === '/library' || location.pathname === '/contact') {
+      setWhitePage(true);
+    } else {
+      setWhitePage(false);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    if (isSitemapOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [activeMenu]);
 
-  useEffect(() => {
-    if (activeMenu) {
-      const menuElement = menuRef.current;
-      const focusableElements = menuElement.querySelectorAll(
-        '[href]',
-      );
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      const handleTabKeyPress = (event) => {
-        if (event.key === 'Tab') {
-          if (event.shiftKey && document.activeElement === firstElement) {
-            event.preventDefault();
-            lastElement.focus();
-          } else if (
-            !event.shiftKey
-            && document.activeElement === lastElement
-          ) {
-            event.preventDefault();
-            firstElement.focus();
-          }
-        }
-      };
-
-      const handleEscapeKeyPress = (event) => {
-        if (event.key === 'Escape') {
-          setActiveMenu(null);
-        }
-      };
-
-      menuElement.addEventListener('keydown', handleTabKeyPress);
-      menuElement.addEventListener('keydown', handleEscapeKeyPress);
-
-      return () => {
-        menuElement.removeEventListener('keydown', handleTabKeyPress);
-        menuElement.removeEventListener('keydown', handleEscapeKeyPress);
-      };
-    }
-  }, [activeMenu, setActiveMenu]);
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isSitemapOpen]);
 
   return (
     <header
       role="banner"
-      className={`${styles.header}`}
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${whitePage ? styles.headerBlack : ''} ${isHeaderBlack ? styles.headerBlack : ''}`}
     >
-      {activeMenu === 'Sitemap' && (
-      <div className="block w-[100vw] h-[100vh] absolute top-[80px] left-0 backdrop-blur-sm">
-        <div className="w-full h-full -bg--openfoundation-secondary opacity-20" />
-      </div>
-      )}
       <h1 className="sr-only">
         오픈에스지
       </h1>
       <nav className="flex">
         <ul className="flex justify-center items-center gap-open-gutter-mobile desktop:gap-open-gutter-desktop">
           <li>
-            <Link className="px-open-md py-open-sm" to="/"><img className="w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl" src={whiteHeader ? opensgLogoBlue : opensgLogo} alt="오픈에스지" /></Link>
+            <Link className="px-open-md py-open-sm" to="/"><img className="w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl" src={opensgLogo} alt="오픈에스지" /></Link>
           </li>
-          {activeMenu !== 'Sitemap' && (
+          {!isSitemapOpen && (
             <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('AboutUs')}>
               <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('AboutUs')}>About Us</button>
               {activeMenu === 'AboutUs' && (
@@ -120,9 +109,9 @@ function Header() {
               )}
             </li>
           )}
-          {activeMenu !== 'Sitemap' && (
+          {!isSitemapOpen && (
           <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('Products')}>
-            <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('Products')}>Products</button>
+            <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('Products')}>Service & Solution</button>
             {activeMenu === 'Products' && (
             <div className="absolute left-0 top-[80px] w-full backdrop-blur-[2px]" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
               <ul className={`${styles.headerMenu} ${styles.product}`}>
@@ -133,7 +122,7 @@ function Header() {
                       <div className="-text--open-accent-accent-1">
                         Equipment Control System
                       </div>
-                      <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium ">
+                      <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium">
                         <MenuLink linkName="ACS/FMS" tooltip="AGV Control System / Fleet Management System" linkAddress="solutions/ACS" />
                         <MenuLink linkName="OCS" tooltip="OHT Control System" linkAddress="solutions/OCS" />
                         <MenuLink linkName="SCS" tooltip="Stocker Control System" linkAddress="solutions/SCS" />
@@ -201,7 +190,7 @@ function Header() {
             )}
           </li>
           )}
-          {activeMenu !== 'Sitemap' && (
+          {!isSitemapOpen && (
           <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('Support')}>
             <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('Support')}>Support</button>
             {activeMenu === 'Support' && (
@@ -229,17 +218,11 @@ function Header() {
           <button
             type="button"
             onClick={() => handleBurgerActive(!activeBurger)}
-            className={`${hamburger.burger} ${activeBurger ? hamburger.burgerOn : ''} ${whiteHeader ? hamburger.burgerBlack : ''}`}
+            className={`${hamburger.burger} ${activeBurger ? hamburger.burgerOn : ''}`}
           >
             <span />
           </button>
-          {activeMenu === 'Sitemap'
-            && (
-            <>
-              <Sitemap sitemapRef={menuRef} />
-              <SitemapMobile sitemapRef={menuRef} />
-            </>
-            )}
+          <Sitemap isOpen={isSitemapOpen} />
         </li>
       </ul>
     </header>

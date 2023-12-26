@@ -1,5 +1,5 @@
 .titleWrapper {
-  @apply bg-cover py-open-4xl tablet:py-open-7xl desktop:py-open-7xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  @apply bg-cover pt-[70px] pb-open-4xl tablet:pt-[160px] tablet:pb-open-7xl desktop:pt-[160px] desktop:pb-open-7xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 }
 
 .titleInner {

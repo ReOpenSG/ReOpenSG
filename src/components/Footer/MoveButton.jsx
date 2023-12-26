@@ -8,7 +8,7 @@ function MoveButton() {
       viewBox="0 0 158 158"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-[59px] h-[59px] tablet:w-[158px] tablet:h-[158px] desktop:w-[158px] desktop:h-[158px]"
+      className="tablet:w-[158px] tablet:h-[158px] desktop:w-[158px] desktop:h-[158px] mobile:hidden"
     >
       <circle cx="79" cy="79" r="79" transform="rotate(90 79 79)" fill="#151F2D" />
       <path

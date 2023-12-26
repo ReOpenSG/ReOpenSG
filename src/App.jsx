@@ -2,7 +2,6 @@ import React, { Suspense, useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { onAuthStateChanged } from 'firebase/auth';
-import { HelmetProvider } from 'react-helmet-async';
 import router from './routes/routes';
 import { isLoggedInState } from '@/recoil/atoms/authStore';
 import { authService } from '../firebase';
@@ -28,9 +27,7 @@ function App() {
 
   return (
     <Suspense fallback={<Spinner />}>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
+      <RouterProvider router={router} />
     </Suspense>
   );
 }
