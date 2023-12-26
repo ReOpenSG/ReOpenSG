@@ -14,6 +14,7 @@
     "@emailjs/browser": "^3.11.0",
     "@vheemstra/vite-plugin-imagemin": "^1.1.5",
     "@vitejs/plugin-react": "^4.2.0",
+    "aos": "^2.3.4",
     "firebase": "^10.7.1",
     "framer-motion": "^10.16.5",
     "imagemin-pngquant": "^9.0.2",
