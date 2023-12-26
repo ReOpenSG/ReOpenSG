@@ -47,7 +47,8 @@
   @apply flex items-center justify-end pt-open-lg pb-open-2xl tablet:pt-open-2xl desktop:pt-open-2xl tablet:pb-open-3xl desktop:pb-open-3xl;
 
   & input {
-    @apply appearance-none w-open-xl h-open-xl border-2 -border--open-gray-300 rounded-[2px] -bg--openfoundation-secondary checked:-bg--open-accent-accent checked:border-0;
+    @apply appearance-none w-open-xl h-open-xl border-[1.5px] -border--open-gray-300 rounded-[2px] -bg--openfoundation-secondary;
+    @apply checked:bg-[url('@/assets/solutions_check.svg')] bg-cover checked:-border--open-accent-accent;
   }
 }
 
