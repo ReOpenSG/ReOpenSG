@@ -12,7 +12,7 @@
 
 .input,
 .textarea {
-  @apply -text--openfoundation-primary font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-large -bg--open-gray-50 px-open-xl grow py-open-lg w-full;
+  @apply -text--openfoundation-primary font-open-paragraph text-open-font-small tablet:text-open-font-large desktop:text-open-font-large -bg--open-gray-50 px-open-xl grow py-open-lg w-full;
 }
 
 .iconStyle {

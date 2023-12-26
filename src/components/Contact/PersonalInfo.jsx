@@ -25,33 +25,30 @@ function PersonalInfo() {
     if (telNumber !== null) {
       localStorage.setItem('tel', telNumber);
     }
-  });
+  }, [emailReg, nameValue, officeValue, telNumber]);
 
   return (
     <fieldset className="py-open-2xl border-b -border--open-gray-200 flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl">
       <div className={styles.personalInfoWrapper}>
-        <div className={styles.regWrapper}>
-          <FillingInput
-            labelText="소속"
-            inputType="text"
-            name="office"
-            placeholderText="회사 또는 부서를 입력해 주세요."
-            onChange={(e) => {
-              setOfficeValue(e.target.value);
-            }}
-          />
-        </div>
-        <div className={styles.regWrapper}>
-          <FillingInput
-            labelText="성명"
-            inputType="text"
-            name="name"
-            placeholderText="성함을 입력해 주세요."
-            onChange={(e) => {
-              setNameValue(e.target.value);
-            }}
-          />
-        </div>
+        <FillingInput
+          labelText="소속"
+          inputType="text"
+          name="office"
+          placeholderText="회사/부서를 입력해 주세요."
+          onChange={(e) => {
+            setOfficeValue(e.target.value);
+          }}
+        />
+
+        <FillingInput
+          labelText="성명"
+          inputType="text"
+          name="name"
+          placeholderText="성함을 입력해 주세요."
+          onChange={(e) => {
+            setNameValue(e.target.value);
+          }}
+        />
       </div>
       <div className={styles.personalInfoWrapper}>
         <div className={styles.regWrapper}>
