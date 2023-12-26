@@ -1,5 +1,5 @@
 .Lnb {
-  @apply flex justify-center mt-open-2xl;
+  @apply flex justify-center mt-open-2xl desktop:sticky desktop:top-[80px] desktop:z-[999];
 
   & .list {
     @apply max-w-[1320px] flex flex-wrap gap-mobile-gap justify-between -bg--open-gray-50 rounded-[20px] w-full;
@@ -13,7 +13,7 @@
         @apply inline-flex transition-colors duration-500 px-open-xl py-open-sm;
       }
       & .activeLink {
-        @apply inline-flex -text--openfoundation-secondary -bg--open-accent-accent rounded-[20px] transition-colors duration-500 px-open-xl py-open-sm;
+        @apply inline-flex -text--openfoundation-secondary -bg--open-accent-accent rounded-[20px] transition-colors duration-500 px-open-xl py-open-lg;
       }
     }
   }
@@ -36,7 +36,7 @@
     }
 
     & .banner {
-      @apply w-full h-[300px] flex flex-col justify-center px-open-7xl -bg--open-gray-50 rounded-[20px];
+      @apply w-full h-[300px] flex flex-col justify-center px-open-7xl -bg--open-gray-50 rounded-[20px] relative overflow-hidden;
       @apply tablet:text-center;
 
       & .solution {
@@ -172,9 +172,10 @@
     @apply flex flex-col gap-open-lg;
 
     & .item {
-      @apply list-disc list-inside font-open-paragraph text-open-font-medium;
+      @apply list-inside font-open-paragraph text-open-font-medium flex items-center gap-open-md;
       @apply desktop:text-open-font-large;
       @apply tablet:text-open-font-large;
+      @apply before:content-[url('@/assets/solutions_check.svg')];
     }
   }
 }
