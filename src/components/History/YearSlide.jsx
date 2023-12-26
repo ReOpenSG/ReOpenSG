@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@/components/History/History.module.css';
-import historyCirlce from '@/assets/history_circle.svg';
-import historyCirlceLine from '@/assets/history_circleline.svg';
+import HistoryCircleIcon from './icons/HistoryCircleIcon';
 
 function YearSlide({ isActive, year }) {
+  console.log(year);
   return (
     <div className={`${styles.yearSlide} ${isActive ? styles.isActive : styles.isInActive}`}>
       <span>{year}</span>
-      <img src={`${isActive ? historyCirlce : historyCirlceLine}`} alt="" aria-hidden />
+      {isActive
+        ? <HistoryCircleIcon width={12} height={12} fill="#fff" stroke="#fff" />
+        : <HistoryCircleIcon width={10} height={10} fill="none" stroke="#fff" />}
     </div>
   );
 }

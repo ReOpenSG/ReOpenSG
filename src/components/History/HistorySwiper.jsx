@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Controller, EffectCoverflow, Mousewheel } from 'swiper/modules';
+import {
+  Controller, EffectCoverflow, Keyboard, Mousewheel,
+} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from '@/components/History/History.module.css';
 import YearSlide from '@/components/History/YearSlide';
 import HistorySlide from '@/components/History/HistorySlide';
@@ -12,6 +14,7 @@ function HistorySwiper({ historyData }) {
   // 연도 Swiper 와 카드 Swiper 가 움직일 때 마다 함께 연동되도록 controller 설정을 하기 위한 상태 관리
   const [yearSwiper, setYearSwiper] = useState(null);
   const [historySwiper, setHistorySwiper] = useState(null);
+
 
   // 연혁 내림차순으로 정렬
   const historyDataSorted = Object.entries(historyData).toSorted((a, b) => b[0] - a[0]);
@@ -23,7 +26,7 @@ function HistorySwiper({ historyData }) {
           <Swiper
             mousewheel
             centeredSlides
-            modules={[Controller, EffectCoverflow, Mousewheel]}
+            modules={[Controller, EffectCoverflow, Mousewheel, Keyboard]}
             effect="coverflow"
             breakpoints={{
               375: {
@@ -49,6 +52,7 @@ function HistorySwiper({ historyData }) {
             controller={{ by: 'container', control: historySwiper }}
             className={styles.yearSwiper}
             slideToClickedSlide
+            keyboard={{ enabled: true }}
           >
             {historyDataSorted.map(([key]) => (
               <SwiperSlide className={styles.yearSwiperSlide} key={key}>
@@ -62,7 +66,7 @@ function HistorySwiper({ historyData }) {
           <Swiper
             mousewheel
             centeredSlides
-            modules={[Controller, EffectCoverflow, Mousewheel]}
+            modules={[Controller, EffectCoverflow, Mousewheel, Keyboard]}
             effect="coverflow"
             breakpoints={{
               375: {
@@ -86,6 +90,7 @@ function HistorySwiper({ historyData }) {
             controller={{ by: 'container', control: yearSwiper }}
             className={styles.historySwiper}
             slideToClickedSlide
+            keyboard={{ enabled: true }}
           >
             {historyDataSorted.map(([key, value]) => (
               <SwiperSlide className={styles.historySwiperSlide} key={key}>

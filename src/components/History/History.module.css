@@ -36,7 +36,7 @@
 }
 
 .historySwiper {
-  @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
+  @apply w-full h-full flex flex-col justify-center items-center;
 
   & .historySwiperSlide{
     @apply rounded-[20px];
