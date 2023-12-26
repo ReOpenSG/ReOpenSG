@@ -43,7 +43,7 @@
         @apply w-[30px] h-[46px] -border--openfoundation-white border-2 rounded-2xl mx-auto;
 
         & .pointer {
-          @apply w-[6px] h-[6px]  mx-auto my-open-md -bg--openfoundation-white rounded-full animate-circle";
+          @apply w-[6px] h-[6px]  mx-auto my-open-md -bg--openfoundation-white rounded-full animate-circle;
         }
       }
 
