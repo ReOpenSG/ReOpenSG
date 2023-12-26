@@ -17,7 +17,8 @@
 
       & .noticeTitle {
         @apply text-open-font-large font-open-label -decoration--open-gray-600;
-        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl hover:underline;
+        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl hover:underline hover:decoration-1
+        hover:underline-offset-4;
       }
 
       & .noticeCreatedAt {
