@@ -3,7 +3,7 @@
   @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 
   & .pageCount {
-    @apply p-open-lg;
+    @apply p-open-lg tablet:p-open-xl desktop:p-open-xl;
     @apply text-right font-open-paragraph text-open-font-small;
     @apply tablet:text-open-font-large desktop:text-open-font-large;
   }
@@ -12,7 +12,7 @@
     @apply border-b -border--open-gray-300 w-full;
 
     & .noticeItem {
-      @apply flex w-full items-center justify-between py-open-xl border-t -border--open-gray-300;
+      @apply flex w-full items-center justify-between px-open-lg tablet:px-open-xl desktop:px-open-xl py-open-xl border-t -border--open-gray-300;
       @apply tablet:py-open-2xl desktop:py-open-2xl;
 
       & .noticeTitle {
@@ -132,11 +132,11 @@
   }
 
   & .contentWrapper {
-    @apply flex flex-col items-start h-full overflow-y-scroll p-open-2xl border-b -border--open-gray-300;
+    @apply flex flex-col items-start h-full overflow-y-scroll p-open-xl tablet:p-open-2xl desktop:p-open-2xl border-b -border--open-gray-300;
 
     & .imagePreview {
-      @apply w-open-6xl h-open-6xl object-cover;
-      @apply tablet:w-open-7xl tablet:h-open-7xl desktop:w-open-7xl desktop:h-open-7xl;
+      @apply w-[200px] h-[200px] object-cover p-open-lg;
+      @apply tablet:w-[300px] tablet:h-[300px] desktop:w-[300px] desktop:h-[300px];
     }
 
     & .contentText {
@@ -148,13 +148,13 @@
     @apply flex flex-col list-none;
 
     & .list {
-      @apply text-open-font-large  p-open-lg border-b -border--open-gray-300;
+      @apply text-open-font-large py-open-lg  tablet:py-open-xl desktop:py-open-xl px-open-xl tablet:px-open-2xl desktop:px-open-2xl  border-b -border--open-gray-300;
       @apply tablet:text-open-font-xl desktop:text-open-font-xl;
     }
   }
 
   & .comebackButton {
-    @apply flex justify-end gap-open-lg  p-open-lg;
+    @apply flex justify-end gap-open-lg p-open-lg tablet:p-open-xl desktop:p-open-xl;
     @apply text-open-font-large;
     @apply tablet:text-open-font-xl desktop:text-open-font-xl;
   }
