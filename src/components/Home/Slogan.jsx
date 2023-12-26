@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './Home.module.css';
 import BgVideo from '@/assets/home_slogan.mp4';
+import Arrow from '@/assets/home_arrow.svg';
 
 function Slogan() {
   return (
     <section className={styles.slogan}>
-      <video muted autoPlay loop className="object-cover absolute w-full h-screen">
+      <video muted autoPlay loop playsInline className="object-cover absolute w-full h-screen">
         <source src={BgVideo} type="video/mp4" />
       </video>
       <div className={styles.wrapper}>
@@ -20,6 +21,15 @@ function Slogan() {
           <br />
           OpenSG가 고객과 함께 미래로 가는 길을 엽니다
         </small>
+      </div>
+      <div className="w-full">
+        <div className={styles.scrollWrapper}>
+          <div className={styles.mouse}>
+            <div className={styles.pointer} />
+          </div>
+          <p className="text-[18px] my-open-md">scroll down</p>
+          <div className={styles.arrow} style={{ backgroundImage: `url('${Arrow}')` }} />
+        </div>
       </div>
     </section>
   );

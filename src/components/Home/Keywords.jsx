@@ -7,7 +7,6 @@ function Keywords() {
   const [canvasSize, setCanvasSize] = useState({ width: 550, height: 550 });
   const [textHeight, setTextHeight] = useState(21);
   useEffect(() => {
-    // Set canvas size based on viewport width
     const updateCanvasSize = () => {
       if (window.innerWidth <= 1023) {
         setCanvasSize({ width: 280, height: 280 });
@@ -18,14 +17,11 @@ function Keywords() {
       }
     };
 
-    // Update canvas size when window is resized
     window.addEventListener('resize', updateCanvasSize);
 
-    // Update canvas size on initial render
     updateCanvasSize();
 
     return () => {
-      // Remove event listener on clean up
       window.removeEventListener('resize', updateCanvasSize);
     };
   }, []);
@@ -40,6 +36,7 @@ function Keywords() {
         outlineMethod: 'none',
         textHeight,
         wheelZoom: false,
+        pulsateTo: 1.2,
       });
     } catch (e) {
       document.getElementById('myCanvasContainer').style.display = 'none';
@@ -47,8 +44,12 @@ function Keywords() {
   }, [canvasSize]);
 
   return (
-    <div style={{ backgroundImage: `url('${BgCircle}')` }} className="border-none bg-cover">
-      <div id="myCanvasContainer" className="">
+    <div
+      style={{ backgroundImage: `url('${BgCircle}')` }}
+      className="border-none bg-cover"
+      data-aos="zoom-in"
+    >
+      <div id="myCanvasContainer">
         <canvas id="myCanvas" width={canvasSize.width} height={canvasSize.height}>
           <p>
             Anything in here will be replaced on browsers that do not support the canvas element

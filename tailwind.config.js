@@ -100,6 +100,15 @@ export const theme = {
       'open-margin-mobile': '16px',
       'open-margin-desktop': '64px',
     },
+    keyframes: {
+      circle: {
+        '0%': { marginTop: '8px', opacity: '1' },
+        '100%': { marginTop: '36px', opacity: '0' },
+      },
+    },
+    animation: {
+      circle: 'circle 2s ease-in-out infinite',
+    },
   },
 };
 export const plugins = [];
