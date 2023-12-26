@@ -3,7 +3,7 @@
 }
 
 .section {
-  @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary py-open-5xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 }
 
 .srOnly {
