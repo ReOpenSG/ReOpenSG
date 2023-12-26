@@ -62,7 +62,7 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    if (location.pathname === '/community' || location.pathname === '/library' || location.pathname === '/contact') {
+    if (location.pathname === '/community' || location.pathname === '/library' || location.pathname.includes('/contact')) {
       setWhitePage(true);
     } else {
       setWhitePage(false);
