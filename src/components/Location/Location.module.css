@@ -67,8 +67,9 @@
 }
 
 .locationLink {
-  @apply w-fit h-auto inline
+  @apply w-fit h-auto inline cursor-pointer
 }
+
 
 .linkIcon {
   @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px]

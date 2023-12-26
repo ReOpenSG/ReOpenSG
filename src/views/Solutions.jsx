@@ -6,7 +6,7 @@ import Lnb from '@/components/Solutions/Lnb';
 import SoultionBanner from '@/components/Solutions/SoultionBanner';
 import MeoizedChar from '@/components/Solutions/Char';
 import Snb from '@/components/Solutions/Snb';
-import Func from '@/components/Solutions/Func';
+import MemoizedFunc from '@/components/Solutions/Func';
 import Effect from '@/components/Solutions/Effect';
 import TitleSection from '@/components/Common/TitleSection';
 
@@ -65,7 +65,7 @@ function Solutions() {
                 data={Data}
                 sectionRef={refs.charSectionRef}
               />
-              <Func
+              <MemoizedFunc
                 headingRef={refFuncHeading}
                 currentLocation={LnbData.current}
                 data={Data}

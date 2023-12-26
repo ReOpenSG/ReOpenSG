@@ -10,7 +10,7 @@ function Team() {
   const [category, setCategory] = useState('전체');
 
   return (
-    <div className={styles.teamWrapper}>
+    <div className={category === '전체' ? styles.teamWrapper : `${styles.teamWrapper} pb-open-6xl`}>
       <TitleSection
         category="직무소개"
         title="OpenSG의 업무"

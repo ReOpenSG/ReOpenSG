@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
 import Solution0 from '@/assets/home_solutions0.png';
 import Solution1 from '@/assets/home_solutions1.png';
 import Solution2 from '@/assets/home_solutions2.png';
@@ -10,9 +11,6 @@ import Solution6 from '@/assets/home_solutions6.png';
 import styles from './Home.module.css';
 
 function Solutions() {
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const navigate = useNavigate();
   const solutionData = [
     {
       id: 0,
@@ -77,17 +75,24 @@ function Solutions() {
       route: '/solutions/OCS',
     },
   ];
-  const handleItemClick = (index) => {
-    setSelectedItem(index);
+  const [selectedItem, setSelectedItem] = useState(solutionData[0]);
+
+  const navigate = useNavigate();
+
+  const handleItemClick = async (index) => {
+    const item = solutionData.find((v) => v.id === index);
+    setSelectedItem(item);
+    await AOS.refresh();
   };
+
   const handleMore = () => {
-    if (selectedItem != null) {
-      navigate(`${solutionData[selectedItem - 1].route}`);
+    if (selectedItem !== solutionData[0]) {
+      navigate(`${solutionData.route}`);
     }
   };
 
   return (
-    <section className={styles.solutions}>
+    <section className={styles.solutions} data-aos="fade-up">
       <div className="w-full flex justify-between">
         <h3 className={styles.title}>Open Solutions</h3>
         <ul className={styles.ul}>
@@ -97,9 +102,9 @@ function Solutions() {
                 type="button"
                 onClick={() => handleItemClick(item.id)}
                 className={`${styles.button} ${
-                  selectedItem === item.id || (selectedItem === null && item.id === 0)
-                    ? '-bg--open-accent-accent'
-                    : ''
+                  selectedItem.id === item.id
+                    ? '-bg--open-accent-accent after:translate-x-0'
+                    : 'after:content-none after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-3xl after:-translate-x-full'
                 }`}
               >
                 {item.name}
@@ -110,30 +115,18 @@ function Solutions() {
       </div>
       <div className={styles.listWrapper}>
         <div className={styles.description}>
-          {selectedItem ? (
-            <>
-              <h4 className={styles.title}>{solutionData[selectedItem].name}</h4>
-              <p className={styles.summary}>{solutionData[selectedItem].desc}</p>
-              <button type="button" className={styles.more} onClick={handleMore}>
-                Learn More &gt;
-              </button>
-            </>
-          ) : (
-            <>
-              <p className={`${styles.title}`}>{solutionData[0].title}</p>
-              <p className={styles.summary}>
-                {solutionData[0].desc}
-                .
-              </p>
-            </>
-          )}
+          <h4 className={styles.title} data-aos="fade-in" data-aos-delay="300">
+            {selectedItem.title}
+          </h4>
+          <p className={styles.summary} data-aos="fade-in" data-aos-delay="500">
+            {selectedItem.desc}
+          </p>
+          <button type="button" className={styles.more} onClick={handleMore}>
+            Learn More &gt;
+          </button>
         </div>
-        <div className="w-full overflow-hidden mx-auto">
-          <img
-            className={styles.image}
-            alt={selectedItem && solutionData[selectedItem].name}
-            src={selectedItem ? `${solutionData[selectedItem].img}` : `${Solution0}`}
-          />
+        <div className="w-full overflow-hidden mx-auto" data-aos="fade-in" data-aos-delay="100">
+          <img className={styles.image} alt={selectedItem.name} src={selectedItem.img} />
         </div>
       </div>
     </section>
