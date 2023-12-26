@@ -10,7 +10,7 @@
       @apply tablet:text-open-font-large;
 
       & .link {
-        @apply inline-flex transition-colors duration-500 px-open-xl py-open-sm;
+        @apply inline-flex transition-colors duration-500 px-open-xl py-open-lg;
       }
       & .activeLink {
         @apply inline-flex -text--openfoundation-secondary -bg--open-accent-accent rounded-[20px] transition-colors duration-500 px-open-xl py-open-lg;
