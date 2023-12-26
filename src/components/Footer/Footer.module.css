@@ -43,10 +43,9 @@
 }
 
 .sideWrapper {
-  @apply flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl fixed bottom-open-2xl tablet:bottom-open-4xl desktop:bottom-open-4xl right-open-xl z-[99999999];
+  @apply flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl fixed bottom-open-2xl tablet:bottom-open-4xl desktop:bottom-open-4xl right-open-xl desktop:right-open-2xl z-[99999999];
 }
 
 .iconStyle {
-  @apply w-8 h-8 tablet:w-10 tablet:h-10 desktop:w-14 desktop:h-14;
+  @apply w-8 h-8 tablet:w-10 tablet:h-10 desktop:w-[52px] desktop:h-[52px];
 }
-
