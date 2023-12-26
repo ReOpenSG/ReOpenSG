@@ -36,6 +36,21 @@
         @apply tablet:text-open-font-xl desktop:text-open-font-xl;
       }
     }
+    & .scrollWrapper {
+      @apply absolute left-1/2 bottom-open-xl -translate-x-1/2 -text--openfoundation-white;
+
+      & .mouse {
+        @apply w-[30px] h-[46px] -border--openfoundation-white border-2 rounded-2xl mx-auto;
+
+        & .pointer {
+          @apply w-[6px] h-[6px]  mx-auto my-open-md -bg--openfoundation-white rounded-full animate-circle";
+        }
+      }
+
+      & .arrow {
+        @apply block w-[26px] h-[26px] mx-auto -text--openfoundation-white animate-bounce;
+      }
+    }
   }
   & .universe {
     @apply flex flex-col justify-center items-center py-open-4xl  gap-open-4xl -bg--openfoundation-black bg-cover px-open-gutter-mobile;
