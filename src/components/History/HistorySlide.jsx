@@ -10,16 +10,20 @@ function HistorySlide({
   useEffect(() => {
     if (isActive) {
       slideRef.current.tabIndex = 0;
-      slideRef.current.focus();
     } else {
       slideRef.current.tabIndex = -1;
     }
-  }, [isActive]);
+  }, [isActive, slideRef, year]);
 
   return (
     <div className={`${styles.historySlide} ${isActive ? styles.isActive : styles.isInActive}`}>
       <span className={styles.historySlideTitle}>{year}</span>
-      <ul ref={slideRef} aria-label={year} className={styles.historySlideDescription}>
+      <ul
+        ref={slideRef}
+        aria-label={`
+      ${year}년`}
+        className={styles.historySlideDescription}
+      >
         {history.map((item) => (
           <li key={item}>{item}</li>
         ))}

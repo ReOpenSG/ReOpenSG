@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Controller, EffectCoverflow, Mousewheel, Navigation,
@@ -52,7 +52,6 @@ function HistorySwiper({ historyData }) {
             controller={{ by: 'container', control: historySwiper }}
             className={styles.yearSwiper}
             slideToClickedSlide
-            keyboard={{ enabled: true }}
           >
             {historyDataSorted.map(([key]) => (
               <SwiperSlide className={styles.yearSwiperSlide} key={key}>
@@ -93,11 +92,6 @@ function HistorySwiper({ historyData }) {
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
-            }}
-            accessibility={{
-              firstSlideMessage: '첫번째 슬라이드',
-              nextSlideMessage: '다음 슬라이드',
-              lastSlideMessage: '마지막 슬라이드',
             }}
           >
             {historyDataSorted.map(([key, value]) => (
