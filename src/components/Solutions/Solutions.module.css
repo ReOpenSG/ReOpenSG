@@ -172,9 +172,10 @@
     @apply flex flex-col gap-open-lg;
 
     & .item {
-      @apply list-disc list-inside font-open-paragraph text-open-font-medium;
+      @apply list-inside font-open-paragraph text-open-font-medium flex items-center gap-open-md;
       @apply desktop:text-open-font-large;
       @apply tablet:text-open-font-large;
+      @apply before:content-[url('@/assets/solutions_check.svg')];
     }
   }
 }
