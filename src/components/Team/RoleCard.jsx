@@ -12,7 +12,7 @@ function RoleCard({
   });
 
   return (
-    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="1000">
+    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
       <img
         src={src}
         alt={alt}
