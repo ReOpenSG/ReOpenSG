@@ -41,7 +41,7 @@
 }
 
 .about {
-  @apply tablet:pl-[196px] desktop:pl-[230px]
+  @apply tablet:pl-[196px] desktop:pl-[230px] font-open-paragraph
 }
 
 .product {
@@ -49,5 +49,5 @@
 }
 
 .support {
-  @apply tablet:pl-[476px] desktop:pl-[550px]
+  @apply tablet:pl-[476px] desktop:pl-[550px] font-open-paragraph
 }
