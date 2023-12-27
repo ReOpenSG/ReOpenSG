@@ -32,14 +32,29 @@
     @apply tablet:gap-open-2xl;
 
     & .ProductLink {
-      @apply flex gap-mobile-gap hover:underline;
+      @apply flex gap-mobile-gap;
       @apply desktop:gap-desktop-gap;
       @apply tablet:gap-desktop-gap;
 
+      & dt span {
+        @apply relative;
+      }
+      & dt span::before {
+        @apply absolute left-0 bottom-0 content-[""] w-[0%] h-[10px] -bg--open-accent-accent opacity-50 transition-all duration-500 ease-in-out;
+      }
+      &:hover {
+        @apply -translate-y-open-md;
+      }
+      &:hover dt span::before {
+        @apply w-[100%];
+      }
+
       & .linkWrapper {
-        @apply flex gap-mobile-gap;
+        @apply flex gap-mobile-gap py-open-lg;
         @apply desktop:gap-desktop-gap;
         @apply tablet:gap-desktop-gap;
+        @apply desktop:py-open-xl;
+        @apply tablet:py-open-xl;
 
         & .image {
           @apply w-open-5xl;
@@ -48,9 +63,7 @@
         }
 
         & .list {
-          @apply flex-1 py-open-lg px-open-lg flex flex-col gap-open-xl;
-          @apply desktop:px-open-xl desktop:py-open-xl;
-          @apply tablet:px-open-xl tablet:py-open-xl;
+          @apply flex-1 flex flex-col gap-open-xl;
 
           & .itemName {
             @apply mb-[-20px] font-open-heading text-open-font-large;
