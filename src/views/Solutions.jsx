@@ -43,7 +43,7 @@ function Solutions() {
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
-      <section className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
+      <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
         <Lnb LnbArray={LnbData.array} />
         <SoultionBanner currentLocation={LnbData.current} prevLocation={LnbData.prev} />
         <div className="flex justify-center">
