@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from './Team.module.css';
 
 function RoleCard({
   src, alt, title, text,
 }) {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
-    <div className={styles.cardWrapper}>
+    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="2000">
       <img
         src={src}
         alt={alt}
