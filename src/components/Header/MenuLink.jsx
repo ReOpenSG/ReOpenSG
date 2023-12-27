@@ -5,7 +5,7 @@ import styles from '@/components/Header/Header.module.css';
 
 function MenuLink({ linkName, linkAddress, tooltip }) {
   return (
-    <li>
+    <li className="h-[24px]">
       <Link to={linkAddress} className={styles.linkName}>
         <span className={styles.tooltip}>
           {tooltip}
