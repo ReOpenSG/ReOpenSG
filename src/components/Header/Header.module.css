@@ -8,7 +8,7 @@
 }
 
 .scrolled {
-  @apply -bg--openfoundation-primary opacity-[90%]
+  @apply -bg--openfoundation-primary
 }
 
 .menuLink:after {
