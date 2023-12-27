@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './MachinesDevices.module.css';
@@ -6,6 +8,11 @@ import imageMap from './importImage.js';
 
 function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProduct }) {
   const [typesLength, setTypesLength] = useState(0);
+  const selectedProductImage = imageMap[selectedProduct];
+
+  useEffect(() => {
+    AOS.init();
+  });
 
   useEffect(() => {
     setTypesLength(Object.keys(descProps.types).length);
@@ -20,8 +27,6 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
   function clickProduct(e) {
     setSelectedProduct(e.target.value);
   }
-
-  const selectedProductImage = imageMap[selectedProduct];
 
   return (
     <div className={styles.Desc}>
@@ -48,12 +53,17 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
         </ul>
       )}
       <div className={styles.descContentsWrapper}>
-        <div className={styles.imgWrapper}>
+        <div className={styles.imgWrapper} data-aos="fade-in" data-aos-duration="2500">
           {selectedProductImage && (
             <img src={selectedProductImage} alt="Machines" className={styles.img} />
           )}
         </div>
-        <div className={styles.textWrapper}>
+        <div
+          className={styles.textWrapper}
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          data-aos-delay="500"
+        >
           <ul>
             {descProps.types &&
               descProps.types[selectedProduct]?.desc.map((item) => (
