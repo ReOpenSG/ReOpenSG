@@ -53,7 +53,7 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
         </ul>
       )}
       <div className={styles.descContentsWrapper}>
-        <div className={styles.imgWrapper} data-aos="fade-in" data-aos-duration="2500">
+        <div className={styles.imgWrapper} data-aos="fade-in" data-aos-duration="1500">
           {selectedProductImage && (
             <img src={selectedProductImage} alt="Machines" className={styles.img} />
           )}
@@ -61,7 +61,7 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
         <div
           className={styles.textWrapper}
           data-aos="fade-up"
-          data-aos-duration="2500"
+          data-aos-duration="1500"
           data-aos-delay="500"
         >
           <ul>
