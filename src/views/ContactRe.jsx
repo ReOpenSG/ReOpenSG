@@ -29,10 +29,7 @@ function ContactRe() {
           navigate('/contact/fail');
         },
       );
-  };
 
-  const sendEmail2 = (e) => {
-    e.preventDefault();
     emailjs
       .sendForm(
         emailConfig.serviceId,
@@ -58,12 +55,7 @@ function ContactRe() {
 
   return (
     <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
-      <form
-        ref={formRe}
-        onSubmit={sendEmail}
-        className={styles.formWrapper}
-        onSubmitCapture={sendEmail2}
-      >
+      <form ref={formRe} onSubmit={sendEmail} className={styles.formWrapper}>
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />
         <PersonalInfoRe />
