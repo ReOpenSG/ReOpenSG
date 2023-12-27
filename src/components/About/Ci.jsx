@@ -22,13 +22,20 @@ function Ci() {
             cmyk="C 98 / M 82 / Y 41 / K 6"
             hex="#06406C"
             roundedLeft
+            delay="0"
           />
-          <Palette rgb="R 76 / G 140 / B 200" cmyk="C 70 / M 36 / Y 2 / K" hex="#4C8CC8" />
+          <Palette
+            rgb="R 76 / G 140 / B 200"
+            cmyk="C 70 / M 36 / Y 2 / K"
+            hex="#4C8CC8"
+            delay="300"
+          />
           <Palette
             rgb="R 201 / G 202 / B 203"
             cmyk="C 0 / M 0 / Y 0 / K 30"
             hex="#C9CACB"
             roundedRight
+            delay="600"
           />
         </ul>
       </div>
