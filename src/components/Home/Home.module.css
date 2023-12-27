@@ -219,7 +219,7 @@
         @apply tablet:items-stretch desktop:items-stretch tablet:py-open-2xl desktop:py-open-2xl  tablet:gap-open-margin-mobile desktop:gap-open-margin-mobile;
 
         & .card {
-          @apply w-full min-w-[270px] max-w-[705px] flex flex-1 flex-col justify-center  flex-wrap bg-cover rounded-[20px] brightness-50 h-[180px]  gap-open-sm   -text--openfoundation-tertiary;
+          @apply w-full min-w-[270px] max-w-[705px] flex flex-1 flex-col justify-center  flex-wrap bg-cover rounded-[20px] brightness-90 h-[180px]  gap-open-sm   -text--openfoundation-white;
           @apply tablet:justify-normal desktop:justify-normal tablet:h-[360px] desktop:h-[360px] pointerhover:hover:brightness-100 pointerhover:hover:scale-105 pointerhover:hover:z-10 pointerhover:hover:-text--openfoundation-white overflow-visible active:brightness-100 active:scale-105 active:z-10 active:-text--openfoundation-white;
 
           & .krTitle {
