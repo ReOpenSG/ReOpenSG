@@ -159,8 +159,8 @@
 
 .Effect {
   @apply flex flex-col gap-open-xl pt-open-3xl pb-open-5xl;
-  @apply desktop:gap-open-2xl desktop:pt-open-5xl desktop:pb-open-7xl;
-  @apply tablet:gap-open-2xl tablet:pt-open-5xl tablet:pb-open-7xl;
+  @apply desktop:gap-open-2xl desktop:pt-open-5xl desktop:pb-open-6xl;
+  @apply tablet:gap-open-2xl tablet:pt-open-5xl tablet:pb-open-6xl;
 
   & .title {
     @apply font-open-label text-open-font-xl;
