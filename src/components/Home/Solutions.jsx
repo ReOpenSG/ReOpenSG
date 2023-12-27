@@ -128,7 +128,7 @@ function Solutions() {
 
         <div className="w-full overflow-visible mx-auto">
           <img
-            className={`${styles.image} ${animate ? 'animate-fadeIn' : ''}`}
+            className={`${styles.image} ${animate ? 'animate-bounceFade' : ''}`}
             alt={selectedItem.name}
             src={selectedItem.img}
           />
