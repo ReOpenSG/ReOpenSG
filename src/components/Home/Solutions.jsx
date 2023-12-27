@@ -87,9 +87,7 @@ function Solutions() {
   };
 
   const handleMore = () => {
-    if (selectedItem !== solutionData[0]) {
-      navigate(`${solutionData.route}`);
-    }
+    navigate(`${selectedItem.route}`);
   };
 
   return (
@@ -121,9 +119,11 @@ function Solutions() {
 
           <p className={`${styles.summary}`}>{selectedItem.desc}</p>
 
-          <button type="button" className={`${styles.more}`} onClick={handleMore}>
-            Learn More &gt;
-          </button>
+          {selectedItem.id !== 0 && (
+            <button type="button" className={`${styles.more}`} onClick={handleMore}>
+              Learn More &gt;
+            </button>
+          )}
         </div>
 
         <div className="w-full overflow-visible mx-auto">
