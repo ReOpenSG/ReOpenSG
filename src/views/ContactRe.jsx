@@ -2,17 +2,17 @@ import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import BannerSection from '@/components/Common/BannerSection';
-import Agreement from '@/components/Contact/Agreement';
-import styles from '@/components/Contact/Contact.module.css';
-import ContactButton from '@/components/Contact/ContactButton';
-import Content from '@/components/Contact/Content';
-import InquiryType from '@/components/Contact/InquiryType';
-import PersonalInfo from '@/components/Contact/PersonalInfo';
 import { emailConfig } from '@/data/emailConfig';
+import styles from '@/components/Contact/Contact.module.css';
+import BannerSection from '@/components/Common/BannerSection';
+import InquiryType from '@/components/Contact/InquiryType';
+import Agreement from '@/components/Contact/Agreement';
+import ContactButton from '@/components/Contact/ContactButton';
+import PersonalInfoRe from '@/components/Contact/PersonalInfoRe';
+import ContentRe from '@/components/Contact/ContentRe';
 
-function Contact() {
-  const form = useRef(null);
+function ContactRe() {
+  const formRe = useRef(null);
   const [agreementStatus, setAgreementStatus] = useState(false);
 
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.apiKey)
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, formRe.current, emailConfig.apiKey)
       .then(
         () => {
           navigate('/contact/success');
@@ -29,9 +29,17 @@ function Contact() {
           navigate('/contact/fail');
         },
       );
+  };
 
+  const sendEmail2 = (e) => {
+    e.preventDefault();
     emailjs
-      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ceoApiKey)
+      .sendForm(
+        emailConfig.serviceId,
+        emailConfig.templateId,
+        formRe.current,
+        emailConfig.ceoApiKey,
+      )
       .then(
         () => {
           navigate('/contact/success');
@@ -50,11 +58,16 @@ function Contact() {
 
   return (
     <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
-      <form ref={form} onSubmit={sendEmail} className={styles.formWrapper}>
+      <form
+        ref={formRe}
+        onSubmit={sendEmail}
+        className={styles.formWrapper}
+        onSubmitCapture={sendEmail2}
+      >
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />
-        <PersonalInfo />
-        <Content />
+        <PersonalInfoRe />
+        <ContentRe />
         <Agreement state={agreementStatus} setState={setAgreementStatus} />
         <ContactButton
           buttonText="문의하기"
@@ -67,4 +80,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactRe;
