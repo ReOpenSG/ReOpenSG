@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes, { array } from 'prop-types';
+import { v4 as uuid } from 'uuid';
 import styles from './Team.module.css';
 import RoleCard from './RoleCard';
 import RoleAllSection from './RoleAllSection';
@@ -14,16 +15,19 @@ function RoleSection({ data, state }) {
   return (
     <ul>
       <li className={styles.roleSectionWrapper}>
-        {state === '전체' && <RoleAllSection />}
-        {content?.map((item) => (
-          <RoleCard
-            src={item.img}
-            alt={item.team}
-            title={item.team}
-            text={item.desc}
-            key={item.team}
-          />
-        ))}
+        {state === '전체' ? (
+          <RoleAllSection />
+        ) : (
+          content?.map((item) => (
+            <RoleCard
+              src={item.img}
+              alt={item.team}
+              title={item.team}
+              text={item.desc}
+              key={uuid()}
+            />
+          ))
+        )}
       </li>
     </ul>
   );
