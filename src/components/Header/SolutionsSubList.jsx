@@ -30,7 +30,7 @@ function SolutionsSubList({
       <AnimatePresence initial>
         {isOpen && (
         <motion.ul
-          className="flex flex-col gap-open-md text-open-font-large font-open-paragraph -text--openfoundation-tertiary"
+          className="flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-tertiary"
           key="content"
           initial="collapsed"
           animate="open"

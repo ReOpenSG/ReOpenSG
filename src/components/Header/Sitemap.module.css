@@ -43,7 +43,7 @@
 }
 
 .accordionItemSmall {
-  @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm rounded-[20px]  -text--open-accent-accent-1;
+  @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm my-open-sm rounded-[20px]  -text--open-accent-accent-1;
 }
 
 .accordionItemMedium {
