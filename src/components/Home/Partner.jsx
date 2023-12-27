@@ -3,14 +3,15 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { v4 as uuid } from 'uuid';
-
 import { Autoplay } from 'swiper/modules';
-
 import Image1 from '@/assets/home_partner1.png';
-
 import Image2 from '@/assets/home_partner2.png';
-
 import Image3 from '@/assets/home_partner3.png';
+import Image4 from '@/assets/home_partner4.png';
+import Image5 from '@/assets/home_partner5.png';
+import Image6 from '@/assets/home_partner6.png';
+import Image7 from '@/assets/home_partner7.png';
+import Image8 from '@/assets/home_partner8.png';
 
 import styles from './Home.module.css';
 
@@ -37,37 +38,31 @@ function Partner() {
     {
       id: uuid(),
 
-      img: Image1,
+      img: Image4,
     },
 
     {
       id: uuid(),
 
-      img: Image2,
+      img: Image5,
     },
 
     {
       id: uuid(),
 
-      img: Image3,
+      img: Image6,
     },
 
     {
       id: uuid(),
 
-      img: Image1,
+      img: Image7,
     },
 
     {
       id: uuid(),
 
-      img: Image2,
-    },
-
-    {
-      id: uuid(),
-
-      img: Image3,
+      img: Image8,
     },
   ];
 
@@ -76,12 +71,12 @@ function Partner() {
       <h3 className="sr-only">Partner</h3>
 
       <div className={styles.titleWrapper}>
-        <p className={styles.mainKeyword}>
+        <p className={styles.mainKeyword} data-aos="fade-up">
           <span>최고 기업들이 선택한&nbsp;</span>
           <span className={styles.gradient}>OpenSG</span>
         </p>
 
-        <small className={styles.subKeyword}>
+        <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="150">
           <span>최정상 기업들과 함께한 경험으로,</span>
 
           <span>고객사가 찾는 최적의 솔루션을 제공합니다</span>

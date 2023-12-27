@@ -4,7 +4,7 @@ import styles from './Industries.module.css';
 
 function Snb({ inViewChar, inViewProduct, refs }) {
   function onClickToSection(e) {
-    const offset = 80; // 원하는 offset 값 설정
+    const offset = 120; // 원하는 offset 값 설정
     const targetElement = e.current;
 
     if (targetElement) {

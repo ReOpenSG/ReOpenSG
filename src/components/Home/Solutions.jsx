@@ -10,9 +10,6 @@ import Solution6 from '@/assets/home_solutions6.png';
 import styles from './Home.module.css';
 
 function Solutions() {
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const navigate = useNavigate();
   const solutionData = [
     {
       id: 0,
@@ -26,7 +23,7 @@ function Solutions() {
       ),
       desc: '물류 자동화의 시작을 오픈에스지와 함께 해보세요.',
       img: Solution0,
-      route: '/#',
+      route: '/solutions/AIMS',
     },
     {
       id: 1,
@@ -77,17 +74,26 @@ function Solutions() {
       route: '/solutions/OCS',
     },
   ];
+  const [selectedItem, setSelectedItem] = useState(solutionData[0]);
+  const [animate, setAnimate] = useState(false);
+  const navigate = useNavigate();
+
   const handleItemClick = (index) => {
-    setSelectedItem(index);
+    const item = solutionData.find((v) => v.id === index);
+    setAnimate(false);
+
+    setSelectedItem(item);
+    setTimeout(() => setAnimate(true), 5);
   };
+
   const handleMore = () => {
-    if (selectedItem != null) {
-      navigate(`${solutionData[selectedItem - 1].route}`);
+    if (selectedItem !== solutionData[0]) {
+      navigate(`${solutionData.route}`);
     }
   };
 
   return (
-    <section className={styles.solutions}>
+    <section className={styles.solutions} data-aos="fade-up">
       <div className="w-full flex justify-between">
         <h3 className={styles.title}>Open Solutions</h3>
         <ul className={styles.ul}>
@@ -95,11 +101,12 @@ function Solutions() {
             <li key={item.id}>
               <button
                 type="button"
+                id="trigger"
                 onClick={() => handleItemClick(item.id)}
                 className={`${styles.button} ${
-                  selectedItem === item.id || (selectedItem === null && item.id === 0)
-                    ? '-bg--open-accent-accent'
-                    : ''
+                  selectedItem.id === item.id
+                    ? '-bg--open-accent-accent after:translate-x-0'
+                    : 'after:content-none after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-3xl after:-translate-x-full'
                 }`}
               >
                 {item.name}
@@ -110,29 +117,20 @@ function Solutions() {
       </div>
       <div className={styles.listWrapper}>
         <div className={styles.description}>
-          {selectedItem ? (
-            <>
-              <h4 className={styles.title}>{solutionData[selectedItem].name}</h4>
-              <p className={styles.summary}>{solutionData[selectedItem].desc}</p>
-              <button type="button" className={styles.more} onClick={handleMore}>
-                Learn More &gt;
-              </button>
-            </>
-          ) : (
-            <>
-              <p className={`${styles.title}`}>{solutionData[0].title}</p>
-              <p className={styles.summary}>
-                {solutionData[0].desc}
-                .
-              </p>
-            </>
-          )}
+          <h4 className={`${styles.title} `}>{selectedItem.title}</h4>
+
+          <p className={`${styles.summary}`}>{selectedItem.desc}</p>
+
+          <button type="button" className={`${styles.more}`} onClick={handleMore}>
+            Learn More &gt;
+          </button>
         </div>
-        <div className="w-full overflow-hidden mx-auto">
+
+        <div className="w-full overflow-visible mx-auto">
           <img
-            className={styles.image}
-            alt={selectedItem && solutionData[selectedItem].name}
-            src={selectedItem ? `${solutionData[selectedItem].img}` : `${Solution0}`}
+            className={`${styles.image} ${animate ? 'animate-bounceFade' : ''}`}
+            alt={selectedItem.name}
+            src={selectedItem.img}
           />
         </div>
       </div>

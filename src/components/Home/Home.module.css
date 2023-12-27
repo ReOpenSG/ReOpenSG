@@ -36,6 +36,21 @@
         @apply tablet:text-open-font-xl desktop:text-open-font-xl;
       }
     }
+    & .scrollWrapper {
+      @apply absolute left-1/2 bottom-open-xl -translate-x-1/2 -text--openfoundation-white;
+
+      & .mouse {
+        @apply w-[30px] h-[46px] -border--openfoundation-white border-2 rounded-2xl mx-auto;
+
+        & .pointer {
+          @apply w-[6px] h-[6px]  mx-auto my-open-md -bg--openfoundation-white rounded-full animate-circle;
+        }
+      }
+
+      & .arrow {
+        @apply block w-[26px] h-[26px] mx-auto -text--openfoundation-white animate-bounce;
+      }
+    }
   }
   & .universe {
     @apply flex flex-col justify-center items-center py-open-4xl  gap-open-4xl -bg--openfoundation-black bg-cover px-open-gutter-mobile;
@@ -57,7 +72,7 @@
   }
   & .solutions {
     @apply hidden mx-auto flex-col items-center  gap-open-5xl pt-open-6xl -text--openfoundation-white max-w-[1320px];
-    @apply tablet:flex desktop:flex tablet:pt-open-7xl desktop:pt-open-7xl;
+    @apply tablet:flex desktop:flex tablet:pt-open-7xl desktop:pt-open-7xl transition-opacity;
 
     & .title {
       @apply font-open-heading text-open-font-xl;
@@ -70,18 +85,19 @@
       @apply tablet:text-open-font-medium desktop:text-open-font-medium;
 
       & .button {
-        @apply px-open-gutter-mobile py-open-sm rounded-3xl;
+        @apply px-open-gutter-mobile py-open-sm rounded-3xl relative;
+        @apply transition-all duration-1000 ease-in-out;
       }
     }
 
     & .listWrapper {
-      @apply w-full flex justify-between gap-open-4xl tablet:gap-open-2xl;
+      @apply w-full flex justify-between gap-open-4xl tablet:gap-open-2xl overflow-visible;
 
       & .description {
         @apply min-w-[330px] w-[330px] tablet:min-w-[280px] tablet:w-[280px] flex flex-col items-start gap-open-3xl;
 
         & .title {
-          @apply font-open-heading  text-open-font-xl;
+          @apply font-open-heading text-open-font-xl;
           @apply tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
         }
         & .summary {
@@ -203,7 +219,7 @@
         @apply tablet:items-stretch desktop:items-stretch tablet:py-open-2xl desktop:py-open-2xl  tablet:gap-open-margin-mobile desktop:gap-open-margin-mobile;
 
         & .card {
-          @apply w-full min-w-[270px] max-w-[705px] flex flex-1 flex-col justify-center  flex-wrap bg-cover rounded-[20px] brightness-50 h-[180px]  gap-open-sm   -text--openfoundation-tertiary;
+          @apply w-full min-w-[270px] max-w-[705px] flex flex-1 flex-col justify-center  flex-wrap bg-cover rounded-[20px] brightness-90 h-[180px]  gap-open-sm   -text--openfoundation-white;
           @apply tablet:justify-normal desktop:justify-normal tablet:h-[360px] desktop:h-[360px] pointerhover:hover:brightness-100 pointerhover:hover:scale-105 pointerhover:hover:z-10 pointerhover:hover:-text--openfoundation-white overflow-visible active:brightness-100 active:scale-105 active:z-10 active:-text--openfoundation-white;
 
           & .krTitle {

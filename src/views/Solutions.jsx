@@ -6,7 +6,7 @@ import Lnb from '@/components/Solutions/Lnb';
 import SoultionBanner from '@/components/Solutions/SoultionBanner';
 import MeoizedChar from '@/components/Solutions/Char';
 import Snb from '@/components/Solutions/Snb';
-import Func from '@/components/Solutions/Func';
+import MemoizedFunc from '@/components/Solutions/Func';
 import Effect from '@/components/Solutions/Effect';
 import TitleSection from '@/components/Common/TitleSection';
 
@@ -43,7 +43,7 @@ function Solutions() {
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
-      <section className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
+      <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
         <Lnb LnbArray={LnbData.array} />
         <SoultionBanner currentLocation={LnbData.current} prevLocation={LnbData.prev} />
         <div className="flex justify-center">
@@ -65,7 +65,7 @@ function Solutions() {
                 data={Data}
                 sectionRef={refs.charSectionRef}
               />
-              <Func
+              <MemoizedFunc
                 headingRef={refFuncHeading}
                 currentLocation={LnbData.current}
                 data={Data}

@@ -100,6 +100,21 @@ export const theme = {
       'open-margin-mobile': '16px',
       'open-margin-desktop': '64px',
     },
+    keyframes: {
+      circle: {
+        '0%': { marginTop: '8px', opacity: '1' },
+        '100%': { marginTop: '36px', opacity: '0' },
+      },
+      bounceFade: {
+        '0%': { opacity: '1', transform: 'translateY(0)' },
+        '50%': { opacity: '0.8', transform: 'translateY(-10px)' },
+        '100%': { opacity: '1', transform: 'translateY(0)' },
+      },
+    },
+    animation: {
+      circle: 'circle 2s ease-in infinite',
+      bounceFade: 'bounceFade 2s ease-in-out 0.1s',
+    },
   },
 };
 export const plugins = [];

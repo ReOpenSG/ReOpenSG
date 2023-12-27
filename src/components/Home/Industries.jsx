@@ -39,25 +39,29 @@ function Industries() {
     },
   ];
   return (
-    <section className={styles.industry}>
+    <section className={styles.industry} data-aos="fade-up">
       <div className={styles.titleWrapper}>
         <h3 className={styles.title}>Industries</h3>
         <div className="flex flex-col  gap-open-lg">
-          <p className={styles.mainKeyword}>
+          <p className={styles.mainKeyword} data-aos="fade-up">
             다양한 산업군에서 빛나는&nbsp;
             <span className={styles.gradient}>OpenSG</span>
           </p>
-          <small className={styles.subKeyword}>OpenSG 제품의 무한한 가능성을 경험하세요.</small>
+          <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="150">
+            OpenSG 제품의 무한한 가능성을 경험하세요.
+          </small>
         </div>
       </div>
 
       <div className={styles.industriesContainer}>
         <div className={styles.cardWrapper}>
-          {industryData.map((item) => (
+          {industryData.map((item, index) => (
             <div
               key={item.id}
               className={styles.card}
               style={{ backgroundImage: `url('${item.img}')` }}
+              data-aos="zoom-out"
+              data-aos-delay={150 + index * 50}
             >
               <Link to={`/industries/${item.route}`} className="block p-open-2xl h-full">
                 <p className={styles.krTitle}>{item.krTitle}</p>
