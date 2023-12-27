@@ -72,7 +72,7 @@
   }
   & .solutions {
     @apply hidden mx-auto flex-col items-center  gap-open-5xl pt-open-6xl -text--openfoundation-white max-w-[1320px];
-    @apply tablet:flex desktop:flex tablet:pt-open-7xl desktop:pt-open-7xl;
+    @apply tablet:flex desktop:flex tablet:pt-open-7xl desktop:pt-open-7xl transition-opacity;
 
     & .title {
       @apply font-open-heading text-open-font-xl;
@@ -91,13 +91,13 @@
     }
 
     & .listWrapper {
-      @apply w-full flex justify-between gap-open-4xl tablet:gap-open-2xl;
+      @apply w-full flex justify-between gap-open-4xl tablet:gap-open-2xl overflow-visible;
 
       & .description {
         @apply min-w-[330px] w-[330px] tablet:min-w-[280px] tablet:w-[280px] flex flex-col items-start gap-open-3xl;
 
         & .title {
-          @apply font-open-heading  text-open-font-xl;
+          @apply font-open-heading text-open-font-xl;
           @apply tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
         }
         & .summary {
