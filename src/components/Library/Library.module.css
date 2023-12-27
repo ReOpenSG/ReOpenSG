@@ -11,7 +11,7 @@
 }
 
 .cardWrapper {
-  @apply border -border--open-gray-300 rounded-[20px] px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl flex-1 tablet:hover:border-2 desktop:hover:border-2 tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
+  @apply border-2 -border--open-gray-200 rounded-[20px] px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl flex-1 tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
 }
 
 .cardWrapper:hover {
