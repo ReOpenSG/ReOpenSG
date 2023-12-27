@@ -19,7 +19,7 @@ function Products() {
       id: 2,
       name: 'Smart Machine',
       desc: 'OpenSG의 machine을 경험해보세요.',
-      route: '/machines/Lift Type',
+      route: '/machines/Lift Type1',
       imgUrl: Product2,
     },
     {

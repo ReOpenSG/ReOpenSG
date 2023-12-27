@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './MachinesDevices.module.css';
 import iconMap from './imporIcon.js';
 
 function FuncChar({ descProps, selectedProduct }) {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
     <div className={styles.FuncChar}>
       <p className={styles.title}>기능 및 특징</p>
       <ul className={styles.list}>
         {descProps.types &&
-          descProps.types[selectedProduct]?.char.map((item) => (
-            <li key={uuidv4()} className={styles.item}>
+          descProps.types[selectedProduct]?.char.map((item, index) => (
+            <li
+              key={uuidv4()}
+              className={styles.item}
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay={index * 350}
+            >
               {/* <img src="http://via.placeholder.com/120x120" alt="Machines" /> */}
               <img
                 src={iconMap[item.icon]}

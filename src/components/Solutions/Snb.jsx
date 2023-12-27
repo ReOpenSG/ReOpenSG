@@ -4,7 +4,16 @@ import styles from './Solutions.module.css';
 
 function Snb({ inViewChar, inViewFunc, inViewEffect, refs }) {
   function onClickToSection(e) {
-    e.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const offset = 80;
+    const targetElement = e.current;
+
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: targetPosition - offset,
+        behavior: 'smooth',
+      });
+    }
   }
 
   return (

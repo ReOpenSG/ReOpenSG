@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@/components/Header/Header.module.css';
+import styles from '@/components/Header/Sitemap.module.css';
 
 function SitemapArrow({ down }) {
   return (

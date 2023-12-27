@@ -25,7 +25,7 @@ function SoultionBanner({ currentLocation, prevLocation }) {
             {currentLocation}
             &reg;
           </h3>
-          <div className="tablet:hidden mobile:hidden absolute overflow-hidden right-[200px] top-1/3">
+          <div className="mobile:hidden tablet:hidden absolute overflow-hidden desktop:right-[200px] tablet:right-[50px]">
             <img src={ImagArray[currentLocation]} alt="배너 이미지" />
           </div>
         </div>

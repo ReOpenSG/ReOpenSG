@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import styles from './TitleSection.module.css';
 
 function TitleSection({
   background, category, title, subTitle, textAlign,
 }) {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
     <section className={`${styles.titleWrapper} ${background}`}>
-      <div className={`${styles.titleInner} ${textAlign}`}>
+      <div
+        className={`${styles.titleInner} ${textAlign}`}
+        data-aos={textAlign === 'text-center' ? 'fade-up' : 'fade-right'}
+        data-aos-duration="2000"
+      >
         <h2>{category}</h2>
         <p>
           <span>{title}</span>

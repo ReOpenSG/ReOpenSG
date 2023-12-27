@@ -1,10 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './MachinesDevices.module.css';
 import imageMap from './importImage.js';
 
 function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProduct }) {
+  const [typesLength, setTypesLength] = useState(0);
+  const selectedProductImage = imageMap[selectedProduct];
+
+  useEffect(() => {
+    AOS.init();
+  });
+
+  useEffect(() => {
+    setTypesLength(Object.keys(descProps.types).length);
+  }, [descProps.types]);
+
   useEffect(() => {
     if (descProps && Object.values(descProps).length > 0) {
       setSelectedProduct(Object.keys(descProps.types)[0]);
@@ -15,8 +28,6 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
     setSelectedProduct(e.target.value);
   }
 
-  const selectedProductImage = imageMap[selectedProduct];
-
   return (
     <div className={styles.Desc}>
       <h3 className={`${styles.title} ${currentLocation === 'devices' ? 'text-center' : ''}`}>
@@ -24,28 +35,35 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
         <span> - </span>
         {id}
       </h3>
-      <ul className={styles.buttonList}>
-        {descProps.types &&
-          Object.keys(descProps.types).map((item) => (
-            <li key={uuidv4()}>
-              <button
-                type="button"
-                value={item}
-                onClick={clickProduct}
-                className={`${selectedProduct === item ? styles.isClicked : ''} ${styles.button}`}
-              >
-                {item}
-              </button>
-            </li>
-          ))}
-      </ul>
+      {typesLength > 1 && (
+        <ul className={styles.buttonList}>
+          {descProps.types &&
+            Object.keys(descProps.types).map((item) => (
+              <li key={uuidv4()}>
+                <button
+                  type="button"
+                  value={item}
+                  onClick={clickProduct}
+                  className={`${selectedProduct === item ? styles.isClicked : ''} ${styles.button}`}
+                >
+                  {item}
+                </button>
+              </li>
+            ))}
+        </ul>
+      )}
       <div className={styles.descContentsWrapper}>
-        <div className={styles.imgWrapper}>
+        <div className={styles.imgWrapper} data-aos="fade-in" data-aos-duration="1500">
           {selectedProductImage && (
             <img src={selectedProductImage} alt="Machines" className={styles.img} />
           )}
         </div>
-        <div className={styles.textWrapper}>
+        <div
+          className={styles.textWrapper}
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-delay="500"
+        >
           <ul>
             {descProps.types &&
               descProps.types[selectedProduct]?.desc.map((item) => (

@@ -1,5 +1,5 @@
 .burger {
-  @apply w-[30px] h-[24px] border-none bg-transparent relative cursor-pointer ;
+  @apply w-[24px] h-[20px] tablet:w-[30px] desktop:w-[30px] tablet:h-[24px] desktop:h-[24px] border-none bg-transparent relative cursor-pointer ;
 }
 
 .burger:after, .burger:before, .burger > span {
@@ -19,7 +19,7 @@
 }
 
 .burger > span {
-  @apply top-1/2 mt-[-2px] transition-transform delay-300;
+  @apply top-1/2 mt-[-1px] transition-transform delay-300;
 }
 
 .burger > span:before {

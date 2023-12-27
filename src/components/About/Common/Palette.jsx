@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import styles from '../About.module.css';
 
-function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight }) {
+function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight, delay }) {
+  useEffect(() => {
+    AOS.init();
+  });
   return (
     <li
       style={{ backgroundColor: hex }}
@@ -11,6 +16,9 @@ function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight }) {
         ${roundedLeft && styles.left}
         ${roundedRight && styles.right}
       `}
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-delay={delay}
     >
       <ul className={styles.innerList}>
         <li>{rgb}</li>
@@ -27,6 +35,7 @@ Palette.propTypes = {
   hex: PropTypes.string.isRequired,
   roundedLeft: PropTypes.bool,
   roundedRight: PropTypes.bool,
+  delay: PropTypes.string.isRequired,
 };
 Palette.defaultProps = {
   roundedLeft: false,
