@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import styles from './MachinesDevices.module.css';
 
 function CradsWrapper({ data, currentLocation }) {
+  const [cardLength, setCardLength] = useState(0);
+
+  useEffect(() => {
+    Object.keys(data).length > 0 && setCardLength(Object.keys(Object.values(data)[0]).length);
+  }, [data]);
+
   return (
-    <nav className={styles.CardWrapper}>
-      {Object.entries(data).map(([title, types]) =>
-        Object.entries(types).map(([subTitle]) => (
-          <Card
-            key={uuidv4()}
-            title={title}
-            subTitle={subTitle}
-            currentLocation={currentLocation}
-            data={data}
-          />
-        )),
-      )}
-    </nav>
+    cardLength > 1 && (
+      <nav className={styles.CardWrapper}>
+        {Object.entries(data).map(([title, types]) =>
+          Object.entries(types).map(([subTitle]) => (
+            <Card
+              key={uuidv4()}
+              title={title}
+              subTitle={subTitle}
+              currentLocation={currentLocation}
+              data={data}
+            />
+          )),
+        )}
+      </nav>
+    )
   );
 }
 
