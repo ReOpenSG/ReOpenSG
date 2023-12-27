@@ -5,7 +5,7 @@ import styles from '@/components/Header/Sitemap.module.css';
 
 function SitemapDesktop({ isOpen }) {
   return (
-    <div className={`${styles.sitemapDesktop} ${isOpen ? styles.isOpen : styles.isClosed}`}>
+    <div className={`${styles.sitemapDesktop}`}>
       <div className="w-full h-full flex justify-center">
         <ul className={styles.sitemapList}>
           <li className="py-open-sm text-open-font-xl font-open-label text-center flex-1">

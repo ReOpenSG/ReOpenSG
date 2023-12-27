@@ -98,7 +98,7 @@ function Header() {
             <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('AboutUs')}>
               <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('AboutUs')}>About Us</button>
               {activeMenu === 'AboutUs' && (
-              <div className="absolute left-0 top-[80px] w-full backdrop-blur-[2px]" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
+              <div className="absolute left-0 top-[80px] w-full backdrop-blur" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
                 <ul className={`${styles.headerMenu} ${styles.about}`}>
                   <MenuLink linkName="회사개요" linkAddress="/about" />
                   <MenuLink linkName="연혁" linkAddress="/history" />
@@ -113,7 +113,7 @@ function Header() {
           <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('Products')}>
             <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('Products')}>Service & Solution</button>
             {activeMenu === 'Products' && (
-            <div className="absolute left-0 top-[80px] w-full backdrop-blur-[2px]" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
+            <div className="absolute left-0 top-[80px] w-full backdrop-blur" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
               <ul className={`${styles.headerMenu} ${styles.product}`}>
                 <li>
                   Solutions
@@ -122,6 +122,7 @@ function Header() {
                       <div className="-text--open-accent-accent-1">
                         Equipment Control System
                       </div>
+                      <span className="-text--openfoundation-tertiary text-open-font-small">스마트팩토리 장비 제어 시스템</span>
                       <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium">
                         <MenuLink linkName="ACS/FMS" tooltip="AGV Control System / Fleet Management System" linkAddress="solutions/ACS" />
                         <MenuLink linkName="OCS" tooltip="OHT Control System" linkAddress="solutions/OCS" />
@@ -134,6 +135,7 @@ function Header() {
                       <div className="-text--open-accent-accent-1">
                         Smart Tools
                       </div>
+                      <span className="-text--openfoundation-tertiary text-open-font-small">스마트팩토리 시뮬레이터</span>
                       <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium  ">
                         <MenuLink linkName="Map Designer" linkAddress="solutions/Map Designer" />
                         <MenuLink linkName="ACS Simulator" tooltip="AGV Control System Simulator" linkAddress="solutions/ACS Simulator" />
@@ -144,6 +146,7 @@ function Header() {
                       <div className="-text--open-accent-accent-1 -text-">
                         Monitoring Solution
                       </div>
+                      <span className="-text--openfoundation-tertiary text-open-font-small">스마트팩토리 모니터링 솔루션</span>
                       <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium ">
                         <MenuLink linkName="AIMS" tooltip="Advanced Integrated Monitoring Solution" linkAddress="solutions/AIMS" />
                       </ul>
@@ -152,6 +155,7 @@ function Header() {
                       <div className="-text--open-accent-accent-1">
                         Comm Driver
                       </div>
+                      <span className="-text--openfoundation-tertiary text-open-font-small">스마트팩토리 통신 시스템</span>
                       <ul className="flex flex-col pt-open-md gap-open-md text-open-font-medium ">
                         <MenuLink linkName="Open HSMS" linkAddress="solutions/HSMS" />
                       </ul>
@@ -194,7 +198,7 @@ function Header() {
           <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('Support')}>
             <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('Support')}>Support</button>
             {activeMenu === 'Support' && (
-            <div className="absolute left-0 top-[80px] w-full backdrop-blur-[2px]" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
+            <div className="absolute left-0 top-[80px] w-full backdrop-blur" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
               <ul className={`${styles.headerMenu} ${styles.support}`}>
                 <MenuLink linkName="커뮤니티" linkAddress="/community" />
                 <MenuLink linkName="라이브러리" linkAddress="/library" />
