@@ -37,11 +37,18 @@
     }
 
     & .banner {
-      @apply w-full h-[300px] flex flex-col justify-center px-open-7xl -bg--open-gray-50 rounded-[20px] relative overflow-hidden;
-      @apply tablet:text-center;
+      @apply w-full h-[300px] flex flex-col justify-center px-open-7xl bg-[#091C2B] -text--openfoundation-secondary rounded-[20px] relative overflow-hidden;
+
+      & .simulator {
+        @apply absolute -top-[40px] -left-[95px] bg-[#143547] w-[230px] h-[120px] flex flex-col items-center justify-end font-open-label text-open-font-xl -rotate-45 pb-open-lg;
+      }
 
       & .solution {
-        @apply font-open-heading text-open-font-xxxxxl;
+        @apply font-open-heading text-open-font-xxxxxl flex flex-wrap;
+
+        & span:last-child {
+          @apply flex-1  min-w-[690px];
+        }
       }
 
       & .desc {
