@@ -16,7 +16,7 @@ function TitleSection({
       <div
         className={`${styles.titleInner} ${textAlign}`}
         data-aos={textAlign === 'text-center' ? 'fade-up' : 'fade-right'}
-        data-aos-duration="2000"
+        data-aos-duration="1200"
       >
         <h2>{category}</h2>
         <p>
