@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 import SitemapArrow from '@/icons/SitemapArrow';
-import styles from '@/components/Header/Header.module.css';
+import styles from '@/components/Header/Sitemap.module.css';
 
-function AccordionItem({ title, children, small }) {
+function AccordionItem({
+  title, children, small, medium,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -11,13 +14,33 @@ function AccordionItem({ title, children, small }) {
   };
 
   return (
-    <li className={small ? styles.accordionItemSmall : styles.accordionItemLarge}>
-      <button type="button" onClick={toggle} className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
-        <div>{title}</div>
-        <SitemapArrow down={!isOpen} />
-      </button>
-      {isOpen && <ul>{children}</ul>}
-    </li>
+    <>
+      <motion.li className={`${styles.accordionItem} ${small ? styles.accordionItemSmall : ''} ${medium ? styles.accordionItemMedium : ''}`}>
+        <button type="button" onClick={toggle} className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+          <div>{title}</div>
+          <SitemapArrow down={!isOpen} />
+        </button>
+      </motion.li>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+        <motion.ul
+          className={styles.subListMobile}
+          key="content"
+          initial="collapsed"
+          animate="open"
+          exit="collapsed"
+          variants={{
+            open: { opacity: 1, height: 'auto' },
+            collapsed: { opacity: 0, height: 0 },
+          }}
+          transition={{ duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }}
+        >
+          {children}
+        </motion.ul>
+        )}
+      </AnimatePresence>
+
+    </>
   );
 }
 
@@ -25,10 +48,12 @@ AccordionItem.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   small: PropTypes.bool,
+  medium: PropTypes.bool,
 };
 
 AccordionItem.defaultProps = {
   small: false,
+  medium: false,
 };
 
 export default AccordionItem;

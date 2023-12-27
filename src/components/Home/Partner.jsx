@@ -9,6 +9,9 @@ import Image2 from '@/assets/home_partner2.png';
 import Image3 from '@/assets/home_partner3.png';
 import Image4 from '@/assets/home_partner4.png';
 import Image5 from '@/assets/home_partner5.png';
+import Image6 from '@/assets/home_partner6.png';
+import Image7 from '@/assets/home_partner7.png';
+import Image8 from '@/assets/home_partner8.png';
 
 import styles from './Home.module.css';
 
@@ -47,31 +50,19 @@ function Partner() {
     {
       id: uuid(),
 
-      img: Image1,
+      img: Image6,
     },
 
     {
       id: uuid(),
 
-      img: Image2,
+      img: Image7,
     },
 
     {
       id: uuid(),
 
-      img: Image3,
-    },
-
-    {
-      id: uuid(),
-
-      img: Image4,
-    },
-
-    {
-      id: uuid(),
-
-      img: Image5,
+      img: Image8,
     },
   ];
 

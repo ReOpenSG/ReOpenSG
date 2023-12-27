@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AOS from 'aos';
 import Solution0 from '@/assets/home_solutions0.png';
 import Solution1 from '@/assets/home_solutions1.png';
 import Solution2 from '@/assets/home_solutions2.png';
@@ -24,7 +23,7 @@ function Solutions() {
       ),
       desc: '물류 자동화의 시작을 오픈에스지와 함께 해보세요.',
       img: Solution0,
-      route: '/#',
+      route: '/solutions/AIMS',
     },
     {
       id: 1,
@@ -76,13 +75,15 @@ function Solutions() {
     },
   ];
   const [selectedItem, setSelectedItem] = useState(solutionData[0]);
-
+  const [animate, setAnimate] = useState(false);
   const navigate = useNavigate();
 
-  const handleItemClick = async (index) => {
+  const handleItemClick = (index) => {
     const item = solutionData.find((v) => v.id === index);
+    setAnimate(false);
+
     setSelectedItem(item);
-    await AOS.refresh();
+    setTimeout(() => setAnimate(true), 5);
   };
 
   const handleMore = () => {
@@ -100,6 +101,7 @@ function Solutions() {
             <li key={item.id}>
               <button
                 type="button"
+                id="trigger"
                 onClick={() => handleItemClick(item.id)}
                 className={`${styles.button} ${
                   selectedItem.id === item.id
@@ -115,18 +117,21 @@ function Solutions() {
       </div>
       <div className={styles.listWrapper}>
         <div className={styles.description}>
-          <h4 className={styles.title} data-aos="fade-in" data-aos-delay="300">
-            {selectedItem.title}
-          </h4>
-          <p className={styles.summary} data-aos="fade-in" data-aos-delay="500">
-            {selectedItem.desc}
-          </p>
-          <button type="button" className={styles.more} onClick={handleMore}>
+          <h4 className={`${styles.title} `}>{selectedItem.title}</h4>
+
+          <p className={`${styles.summary}`}>{selectedItem.desc}</p>
+
+          <button type="button" className={`${styles.more}`} onClick={handleMore}>
             Learn More &gt;
           </button>
         </div>
-        <div className="w-full overflow-hidden mx-auto" data-aos="fade-in" data-aos-delay="100">
-          <img className={styles.image} alt={selectedItem.name} src={selectedItem.img} />
+
+        <div className="w-full overflow-visible mx-auto">
+          <img
+            className={`${styles.image} ${animate ? 'animate-bounceFade' : ''}`}
+            alt={selectedItem.name}
+            src={selectedItem.img}
+          />
         </div>
       </div>
     </section>
