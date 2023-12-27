@@ -56,7 +56,7 @@
   @apply tablet:block tablet:pt-open-5xl;
 
   & .nav {
-    @apply sticky top-open-7xl;
+    @apply sticky top-[160px];
 
     & .list {
       @apply flex flex-col gap-open-margin-mobile font-open-label text-open-font-large -text--open-gray-300;
