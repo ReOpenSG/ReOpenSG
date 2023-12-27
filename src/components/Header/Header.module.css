@@ -51,19 +51,3 @@
 .support {
   @apply tablet:pl-[476px] desktop:pl-[550px]
 }
-
-.accordionItemSmall {
-  @apply -bg--open-gray-950 px-open-gutter-mobile rounded-[20px] py-open-sm;
-}
-
-.accrodioItemLarge {
-  @apply -bg--open-gray-950 px-open-md py-open-sm text-open-font-xl font-open-heading;
-}
-
-.arrowDefault {
-  @apply transition-all duration-300;
-}
-
-.arrowDown {
-  @apply transition-all duration-300 rotate-180;
-}

@@ -27,17 +27,45 @@
 }
 
 .sitemapListMobile {
-  @apply flex flex-col justify-center gap-open-lg px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary
+  @apply flex flex-col justify-center px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary
 }
 
 .aboutUsListMobile {
-  @apply flex flex-col gap-open-md py-open-lg text-open-font-large font-open-paragraph
+  @apply flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-secondary
 }
 
 .productListMobile {
- @apply flex flex-col gap-open-lg py-open-lg text-open-font-large font-open-label
+ @apply flex flex-col text-open-font-large font-open-label
 }
 
 .subListMobile {
-  @apply flex flex-col pl-open-sm pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph
+  @apply flex flex-col gap-open-sm text-open-font-medium -text--open-gray-300 font-open-paragraph
+}
+
+.accordionItemSmall {
+  @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm rounded-[20px]  -text--open-accent-accent-1;
+}
+
+.accordionItemMedium {
+  @apply px-open-lg py-open-lg mb-open-lg text-open-font-large font-open-label border-b-[1px] -border--openfoundation-tertiary border-opacity-30;
+}
+
+.accordionItem {
+  @apply font-open-label;
+}
+
+.arrowDefault {
+  @apply transition-all duration-300;
+}
+
+.arrowDown {
+  @apply transition-all duration-300 rotate-180;
+}
+
+.linkNameMobile {
+  @apply relative px-open-lg py-open-sm -text--openfoundation-secondary opacity-80;
+
+  &:hover {
+    @apply -text--open-accent-accent-1
+  }
 }
