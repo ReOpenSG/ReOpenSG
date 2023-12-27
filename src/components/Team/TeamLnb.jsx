@@ -13,7 +13,7 @@ function TeamLnb({ data, state, setState }) {
   });
 
   return (
-    <ul className={styles.lnbUl} data-aos="fade-in" data-aos-duration="2000">
+    <ul className={styles.lnbUl} data-aos="fade-in" data-aos-duration="1200">
       <li>
         <button
           type="button"
