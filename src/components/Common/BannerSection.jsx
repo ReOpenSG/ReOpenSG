@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import styles from '@/components/Common/BannerSection.module.css';
 
 function BannerSection({ category, title }) {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
-    <div className={styles.titleWrapper}>
-      <h2 className={styles.titleText}>
-        {title}
-      </h2>
+    <section className={styles.titleWrapper} data-aos="fade-up" data-aos-duration="2000">
+      <h2 className={styles.titleText}>{title}</h2>
       <p className={styles.titleCategory}>{category}</p>
-    </div>
+    </section>
   );
 }
 

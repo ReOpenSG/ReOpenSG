@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from './Team.module.css';
 
 function RoleCard({
   src, alt, title, text,
 }) {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
-    <div className={styles.cardWrapper}>
-      <img src={src} alt={alt} aria-hidden="true" className={styles.iconStyle} />
+    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="1000">
+      <img
+        src={src}
+        alt={alt}
+        aria-hidden="true"
+        className={
+          title === 'PM&제조팀' || title === 'R&D' || title === 'BS팀' || title === 'UX팀'
+            ? 'tablet:ml-6 desktop:ml-6'
+            : ''
+        }
+      />
       <div>
         <h3>{title}</h3>
         <p>{text}</p>

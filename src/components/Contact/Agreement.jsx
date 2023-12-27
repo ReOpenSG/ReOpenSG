@@ -11,7 +11,7 @@ function Agreement({ state, setState }) {
     <fieldset className={styles.agreementText}>
       <h3>개인정보 활용동의</h3>
       <p>
-        OPENSG는 개인정보보호법 및 관련 법령에 의거 고객님들의 의견 접수와 관련한 성실한 답변을
+        OpenSG는 개인정보보호법 및 관련 법령에 의거 고객님들의 의견 접수와 관련한 성실한 답변을
         드리기 위해 필요한 최소한의 개인정보를 아래와 같이 수집, 이용하고자 합니다.
       </p>
       <ol className={styles.agreementOl}>

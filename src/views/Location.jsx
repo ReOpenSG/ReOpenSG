@@ -1,4 +1,6 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import mapImage from '@/assets/location_map.png';
 import LocationPinIcon from '@/components/Location/LocationPinIcon';
 import mTowerImage from '@/assets/location_mTower.png';
@@ -7,16 +9,17 @@ import styles from '@/components/Location/Location.module.css';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Location() {
+  AOS.init();
   return (
     <div className={styles.wrapper}>
       <TitleSection
         category="오시는 길"
-        title="세계로 보는 OPENSG"
-        background="bg-[url('@/assets/aboutUs_background.png')]"
+        title="세계로 보는 OpenSG"
+        background="-bg--openfoundation-primary"
         textAlign="text-center"
       />
       <div className={styles.mapContainer}>
-        <img className={styles.mapImage} src={mapImage} alt="세계지도" />
+        <img data-aos="fade-in" data-aos-delay="100" data-aos-duration="2000" className={styles.mapImage} src={mapImage} alt="세계지도" />
         <LocationPinIcon />
         <LocationPinIcon usa />
       </div>
@@ -29,7 +32,8 @@ function Location() {
             locationTel="031-373-2612"
             locationFax="031-377-2615"
             locationImage={mTowerImage}
-            locationLink="https://maps.app.goo.gl/Lda5XHqKMYWHyQpYA"
+            locationLink="https://maps.app.goo.gl/TGzErogM6Cg5aTny8"
+            delay="0"
           />
           <LocationContainer
             locationName="자동화 연구소"
@@ -37,15 +41,16 @@ function Location() {
             locationAddress="충청남도 천안시 서북구 백석동 1206 천안미래에이스하이테크시티 406호"
             locationTel="041-566-2612"
             locationFax="041-566-2613"
-            locationLink="https://maps.app.goo.gl/qMbgiatVSPKXaVGUA"
+            locationLink="https://maps.app.goo.gl/uR3KbjmXAYLqC93E7"
+            delay="20"
           />
           <LocationContainer
-            locationName="오픈에스지 미국지사"
-            locationPostal="미국지사 우편번호"
-            locationAddress="미국 지사 주소가 들어갈 예정입니다."
-            locationTel="미국 지사 전화번호"
-            locationFax="미국 지사 팩스번호"
-            locationLink="https://maps.app.goo.gl/Kh6KERRkfst5Xt3f7"
+            locationName="OPENSG USA INC"
+            locationAddress="2180 Satellite Blvd Suite 400-02, Duluth, GA 30097"
+            locationTel="TBD"
+            locationFax="TBD"
+            locationLink="https://maps.app.goo.gl/9LVCL9tcsmi3Qdds8"
+            delay="40"
           />
         </div>
       </section>

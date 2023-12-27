@@ -1,18 +1,21 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import { emailConfig } from '@/data/emailConfig';
-import styles from '@/components/Contact/Contact.module.css';
-import PersonalInfo from '@/components/Contact/PersonalInfo';
-import InquiryType from '@/components/Contact/InquiryType';
-import Content from '@/components/Contact/Content';
-import Agreement from '@/components/Contact/Agreement';
-import ContactButton from '@/components/Contact/ContactButton';
 import BannerSection from '@/components/Common/BannerSection';
+import Agreement from '@/components/Contact/Agreement';
+import styles from '@/components/Contact/Contact.module.css';
+import ContactButton from '@/components/Contact/ContactButton';
+import Content from '@/components/Contact/Content';
+import InquiryType from '@/components/Contact/InquiryType';
+import PersonalInfo from '@/components/Contact/PersonalInfo';
+import { emailConfig } from '@/data/emailConfig';
 
 function Contact() {
   const form = useRef(null);
   const [agreementStatus, setAgreementStatus] = useState(false);
+
+  const navigate = useNavigate();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,13 +23,21 @@ function Contact() {
       .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.apiKey)
       .then(
         () => {
-          toast.success('전송되었습니다.');
-          setTimeout(() => {
-            window.location.reload();
-          }, 4000);
+          navigate('/contact/success');
         },
         () => {
-          toast.error('전송에 실패하였습니다.');
+          navigate('/contact/fail');
+        },
+      );
+
+    emailjs
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ceoApiKey)
+      .then(
+        () => {
+          navigate('/contact/success');
+        },
+        () => {
+          navigate('/contact/fail');
         },
       );
   };

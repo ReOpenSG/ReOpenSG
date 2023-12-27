@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Char from '@/components/Industries/Char';
@@ -12,6 +12,12 @@ function Industries() {
   const { id } = useParams();
   const [industryChar, setIndustryChar] = useState('');
   const [industryProducts, setIndustryProducts] = useState({});
+  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refProductHeading, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const refs = {
+    charSectionRef: useRef(null),
+    productSectionRef: useRef(null),
+  };
 
   useEffect(() => {
     setIndustryChar(IndustriesData[id].desc);
@@ -24,8 +30,6 @@ function Industries() {
     );
   }, [id]);
 
-  const [refChar, inViewChar] = useInView({ triggerOnce: false, threshold: 0.1 });
-  const [refProduct, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.1 });
   return (
     <div className="w-full">
       <TitleSection
@@ -35,13 +39,31 @@ function Industries() {
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
-      <section className="max-w-[1320px] desktop:pb-open-5xl tablet:pb-open-5xl pb-open-2xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile">
+      <section className="flex flex-col items-center desktop:pb-open-5xl tablet:pb-open-5xl pb-open-2xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile">
         <h3 className="sr-only">{IndustriesData[id].name}</h3>
-        <div className="flex desktop:gap-open-4xl tablet:gap-open-4xl">
-          <Snb inViewChar={inViewChar} inViewProduct={inViewProduct} />
+        <div className="flex max-w-[1320px] desktop:gap-open-4xl tablet:gap-open-4xl">
+          <Snb
+            inViewChar={inViewChar}
+            alThing
+            inViewProduct={inViewProduct}
+            refs={{
+              charSectionRef: refs.charSectionRef,
+              productSectionRef: refs.productSectionRef,
+            }}
+          />
           <div className="flex-1">
-            <Char refs={refChar} currentLocation={id} industryDesc={industryChar} />
-            <Product refs={refProduct} currentLocation={id} industryProducts={industryProducts} />
+            <Char
+              headingRef={refCharHeading}
+              sectionRef={refs.charSectionRef}
+              currentLocation={id}
+              industryDesc={industryChar}
+            />
+            <Product
+              headingRef={refProductHeading}
+              sectionRef={refs.productSectionRef}
+              currentLocation={id}
+              industryProducts={industryProducts}
+            />
           </div>
         </div>
       </section>

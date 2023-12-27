@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Data from '@/data/solutionsData.json';
 import Lnb from '@/components/Solutions/Lnb';
 import SoultionBanner from '@/components/Solutions/SoultionBanner';
-import Char from '@/components/Solutions/Char';
+import MeoizedChar from '@/components/Solutions/Char';
 import Snb from '@/components/Solutions/Snb';
-import Func from '@/components/Solutions/Func';
+import MemoizedFunc from '@/components/Solutions/Func';
 import Effect from '@/components/Solutions/Effect';
 import TitleSection from '@/components/Common/TitleSection';
 
@@ -18,10 +18,14 @@ function Solutions() {
     current: id,
     prev: Data[id].솔루션,
   };
-
-  const [refChar, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refFunc, inViewFunc] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refEffect, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const refs = {
+    charSectionRef: useRef(null),
+    funcSectionRef: useRef(null),
+    effectSectionRef: useRef(null),
+  };
+  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [refFuncHeading, inViewFunc] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [refEffectHeading, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
 
   useEffect(() => {
     const filteredData = Object.entries(Data).filter(
@@ -44,11 +48,35 @@ function Solutions() {
         <SoultionBanner currentLocation={LnbData.current} prevLocation={LnbData.prev} />
         <div className="flex justify-center">
           <div className="w-full max-w-[1320px] flex desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop">
-            <Snb inViewChar={inViewChar} inViewFunc={inViewFunc} inViewEffect={inViewEffect} />
+            <Snb
+              inViewChar={inViewChar}
+              inViewFunc={inViewFunc}
+              inViewEffect={inViewEffect}
+              refs={{
+                charSectionRef: refs.charSectionRef,
+                funcSectionRef: refs.funcSectionRef,
+                effectSectionRef: refs.effectSectionRef,
+              }}
+            />
             <div className="flex flex-col">
-              <Char refs={refChar} currentLocation={LnbData.current} data={Data} />
-              <Func refs={refFunc} currentLocation={LnbData.current} data={Data} />
-              <Effect refs={refEffect} currentLocation={LnbData.current} data={Data} />
+              <MeoizedChar
+                headingRef={refCharHeading}
+                currentLocation={LnbData.current}
+                data={Data}
+                sectionRef={refs.charSectionRef}
+              />
+              <MemoizedFunc
+                headingRef={refFuncHeading}
+                currentLocation={LnbData.current}
+                data={Data}
+                sectionRef={refs.funcSectionRef}
+              />
+              <Effect
+                headingRef={refEffectHeading}
+                currentLocation={LnbData.current}
+                data={Data}
+                sectionRef={refs.effectSectionRef}
+              />
             </div>
           </div>
         </div>

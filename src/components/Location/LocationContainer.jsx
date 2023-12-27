@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import defaultImage from '@/assets/location_defaultImage.png';
 import linkIcon from '@/assets/location_link.svg';
@@ -13,9 +14,11 @@ function LocationContainer({
   locationFax,
   locationImage,
   locationLink,
+  delay,
 }) {
+  AOS.init();
   return (
-    <div className={styles.locationContainer}>
+    <div data-aos="fade-up" data-aos-delay={delay} data-aos-duration="2000" className={styles.locationContainer}>
       <img className={styles.locationImage} src={locationImage} alt="본사 전경" />
       <address className={styles.locationAddress}>
         <div className={styles.locationInfoContainer}>
@@ -25,10 +28,10 @@ function LocationContainer({
             <p>{locationAddress}</p>
           </div>
           <div className={styles.locationContact}>
-            <Link className={styles.locationTel} to={locationTel}>
+            <p>
               Tel. &nbsp;
               {locationTel}
-            </Link>
+            </p>
             <p>
               Fax. &nbsp;
               {locationFax}
@@ -45,15 +48,17 @@ function LocationContainer({
 
 LocationContainer.propTypes = {
   locationName: PropTypes.string.isRequired,
-  locationPostal: PropTypes.string.isRequired,
+  locationPostal: PropTypes.string,
   locationAddress: PropTypes.string.isRequired,
   locationTel: PropTypes.string.isRequired,
   locationFax: PropTypes.string.isRequired,
   locationImage: PropTypes.string,
   locationLink: PropTypes.string.isRequired,
+  delay: PropTypes.string.isRequired,
 };
 
 LocationContainer.defaultProps = {
+  locationPostal: '',
   locationImage: defaultImage,
 };
 
