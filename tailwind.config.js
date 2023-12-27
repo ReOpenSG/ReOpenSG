@@ -111,6 +111,9 @@ export const theme = {
         '100%': { opacity: '1', transform: 'translateY(0)' },
       },
     },
+    boxShadow: {
+      industry: '8px 8px 10px 0px rgba(0, 0, 0, 0.20)',
+    },
     animation: {
       circle: 'circle 2s ease-in infinite',
       bounceFade: 'bounceFade 2s ease-in-out 0.1s',
