@@ -1,5 +1,5 @@
 .Lnb {
-  @apply flex justify-center mt-open-2xl desktop:sticky desktop:top-[80px] desktop:z-[999];
+  @apply flex justify-center mt-open-2xl desktop:sticky desktop:top-[80px] desktop:z-[9];
 
   & .list {
     @apply max-w-[1320px] flex flex-wrap gap-mobile-gap justify-between -bg--open-gray-50 rounded-[20px] w-full;
