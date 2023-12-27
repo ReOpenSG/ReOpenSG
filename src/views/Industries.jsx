@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Char from '@/components/Industries/Char';
-import Product from '@/components/Industries/Product';
+import MemoizedProduct from '@/components/Industries/Product';
 import Snb from '@/components/Industries/Snb';
 import IndustriesData from '@/data/industriesData.js';
 import solutionsData from '@/data/solutionsData.json';
@@ -58,7 +58,7 @@ function Industries() {
               currentLocation={id}
               industryDesc={industryChar}
             />
-            <Product
+            <MemoizedProduct
               headingRef={refProductHeading}
               sectionRef={refs.productSectionRef}
               currentLocation={id}
