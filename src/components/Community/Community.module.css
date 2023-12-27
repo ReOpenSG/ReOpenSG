@@ -50,7 +50,7 @@
   @apply tablet:px-open-2xl desktop:px-open-2xl tablet:py-open-xl desktop:py-open-xl;
 
   & .title {
-    @apply text-open-font-large font-open-label p-2;
+    @apply text-open-font-large font-open-label;
     @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
   }
 }
@@ -77,9 +77,9 @@
     }
   }
   & .contentText {
-    @apply h-auto p-open-lg w-full;
+    @apply h-auto w-full;
     @apply text-open-font-large;
-    @apply tablet:text-open-font-xl desktop:text-open-font-xl tablet:p-open-2xl desktop:p-open-2xl;
+    @apply tablet:text-open-font-xl desktop:text-open-font-xl;
   }
 }
 
@@ -135,7 +135,7 @@
     @apply flex flex-col items-start h-full overflow-y-scroll p-open-xl tablet:p-open-2xl desktop:p-open-2xl border-b -border--open-gray-300;
 
     & .imagePreview {
-      @apply w-[200px] h-[200px] object-cover p-open-lg;
+      @apply w-[200px] h-[200px] object-cover;
       @apply tablet:w-[300px] tablet:h-[300px] desktop:w-[300px] desktop:h-[300px];
     }
 
