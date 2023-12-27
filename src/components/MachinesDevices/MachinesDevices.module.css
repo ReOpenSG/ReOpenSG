@@ -2,6 +2,7 @@
   @apply text-center items-center border -border--open-gray-200 rounded-[20px] p-open-lg gap-open-lg -text--open-gray-200 w-[140px];
   @apply desktop:w-open-8xl;
   @apply tablet:w-open-8xl;
+  @apply transition-colors duration-500 hover:-text--open-accent-accent hover:-border--open-accent-accent;
 
   &[aria-current='page'] {
     @apply -text--openfoundation-secondary -bg--open-accent-accent -border--open-accent-accent;
@@ -85,6 +86,7 @@
       @apply font-open-heading text-open-font-medium px-open-lg py-open-md rounded-[10px] -text--open-gray-200 border -border--open-gray-200;
       @apply desktop:text-open-font-large desktop:px-open-2xl desktop:py-open-xl desktop:rounded-[20px];
       @apply tablet:text-open-font-large tablet:px-open-2xl tablet:py-open-xl tablet:rounded-[20px];
+      @apply transition-colors duration-500 hover:-text--open-accent-accent hover:-border--open-accent-accent;
 
       &.isClicked {
         @apply -bg--open-accent-accent -text--openfoundation-secondary -border--open-accent-accent;
