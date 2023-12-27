@@ -61,7 +61,7 @@ function Industries() {
               className={styles.card}
               style={{ backgroundImage: `url('${item.img}')` }}
               data-aos="zoom-out"
-              data-aos-delay={150 + index * 100}
+              data-aos-delay={150 + index * 50}
             >
               <Link to={`/industries/${item.route}`} className="block p-open-2xl h-full">
                 <p className={styles.krTitle}>{item.krTitle}</p>
