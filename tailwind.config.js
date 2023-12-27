@@ -106,16 +106,14 @@ export const theme = {
         '100%': { marginTop: '36px', opacity: '0' },
       },
       fadeIn: {
-        '0%': { opacity: '0', transform: 'translateY(20px)' },
-        '50%': { opacity: '0.5', transform: 'translateY(10px)' },
+        '0%': { opacity: '1', transform: 'translateY(0)' },
+        '50%': { opacity: '0.8', transform: 'translateY(-10px)' },
         '100%': { opacity: '1', transform: 'translateY(0)' },
       },
     },
     animation: {
       circle: 'circle 2s ease-in infinite',
-      fadeIn1: 'fadeIn 2s ease-in forwards 0.2s',
-      fadeIn2: 'fadeIn 2s ease-in forwards 0.4s',
-      fadeIn3: 'fadeIn 2s ease-in forwards 0.6s',
+      fadeIn: 'fadeIn 2s ease-in-out 0.1s',
     },
   },
 };
