@@ -587,10 +587,12 @@
       }
     }
 
+    /* 화살표 아이콘 */
     .arrowDefault {
       @apply transition-all duration-300;
     }
-    
+
+    /* 화살표 아이콘 */
     .arrowDown {
       @apply transition-all duration-300 rotate-180;
     }
@@ -644,9 +646,6 @@
         @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
       } 
     }
-
-
-
   }
 
 }
