@@ -6,7 +6,9 @@ import bannerImage from '@/assets/about_banner.png';
 
 function BannerImage() {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   });
   return (
     <section className={styles.BannerImage}>
