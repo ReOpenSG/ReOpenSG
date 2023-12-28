@@ -35,8 +35,8 @@ function Char({ currentLocation, data, headingRef, sectionRef }) {
                 data-aos="fade-up"
                 data-aos-duration="1500"
               >
-                <p className={styles.charItemTitle}>특징 제목</p>
-                <p>{item}</p>
+                <p className={styles.charItemTitle}>{Object.keys(item)}</p>
+                <p>{Object.values(item)}</p>
               </li>
             ))}
         </ul>
