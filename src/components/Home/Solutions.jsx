@@ -7,7 +7,7 @@ import Solution3 from '@/assets/home_solutions3.png';
 import Solution4 from '@/assets/home_solutions4.png';
 import Solution5 from '@/assets/home_solutions5.png';
 import Solution6 from '@/assets/home_solutions6.png';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Solutions() {
   const solutionData = [
@@ -92,7 +92,7 @@ function Solutions() {
 
   return (
     <section className={styles.solutions} data-aos="fade-up">
-      <div className="w-full flex justify-between">
+      <div className="flex w-full justify-between">
         <h3 className={styles.title}>Open Solutions</h3>
         <ul className={styles.ul}>
           {solutionData.map((item) => (
@@ -104,7 +104,7 @@ function Solutions() {
                 className={`${styles.button} ${
                   selectedItem.id === item.id
                     ? '-bg--open-accent-accent after:translate-x-0'
-                    : 'after:content-none after:absolute after:top-0 after:left-0 after:w-full after:h-full after:rounded-3xl after:-translate-x-full'
+                    : 'after:absolute after:left-0 after:top-0 after:h-full after:w-full after:-translate-x-full after:rounded-3xl after:content-none'
                 }`}
               >
                 {item.name}
@@ -126,7 +126,7 @@ function Solutions() {
           )}
         </div>
 
-        <div className="w-full overflow-visible mx-auto">
+        <div className="mx-auto w-full overflow-visible">
           <img
             className={`${styles.image} ${animate ? 'animate-bounceFade' : ''}`}
             alt={selectedItem.name}

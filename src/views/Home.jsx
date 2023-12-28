@@ -6,7 +6,7 @@ import Solutions from '@/components/Home/Solutions';
 import Products from '@/components/Home/Products';
 import Industries from '@/components/Home/Industries';
 import Partner from '@/components/Home/Partner';
-import styles from '@/components/Home/Home.module.css';
+import styles from '@/styles/styles.module.css';
 import 'aos/dist/aos.css';
 
 function Home() {
@@ -22,7 +22,7 @@ function Home() {
   return (
     <section className={styles.home}>
       <h2 className="sr-only">메인 페이지</h2>
-      <div className="-bg--openfoundation-black w-full h-full">
+      <div className="h-full w-full -bg--openfoundation-black">
         <Slogan />
       </div>
       <Universe />

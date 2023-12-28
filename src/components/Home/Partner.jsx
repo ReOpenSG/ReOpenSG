@@ -13,7 +13,7 @@ import Image6 from '@/assets/home_partner6.png';
 import Image7 from '@/assets/home_partner7.png';
 import Image8 from '@/assets/home_partner8.png';
 
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Partner() {
   const partnerData = [
@@ -119,7 +119,7 @@ function Partner() {
               <img
                 src={item.img}
                 alt="partner"
-                className="w-[150px] tablet:w-[240px] desktop:w-[240px]object-cover"
+                className="desktop:w-[240px]object-cover w-[150px] tablet:w-[240px]"
               />
             </SwiperSlide>
           ))}

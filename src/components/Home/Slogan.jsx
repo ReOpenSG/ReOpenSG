@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 import BgVideo from '@/assets/home_slogan.mp4';
 import Arrow from '@/assets/home_arrow.svg';
 
 function Slogan() {
   return (
     <section className={styles.slogan}>
-      <div className="absolute w-full h-screen -bg--openfoundation-black opacity-90 z-10">
-        <video muted autoPlay loop playsInline className="object-cover absolute w-full h-screen">
+      <div className="absolute z-10 h-screen w-full -bg--openfoundation-black opacity-90">
+        <video muted autoPlay loop playsInline className="absolute h-screen w-full object-cover">
           <source src={BgVideo} type="video/mp4" />
         </video>
         <div className={styles.wrapper}>
@@ -28,7 +28,7 @@ function Slogan() {
             <div className={styles.mouse}>
               <div className={styles.pointer} />
             </div>
-            <p className="text-[18px] my-open-md">scroll down</p>
+            <p className="my-open-md text-[18px]">scroll down</p>
             <div className={styles.arrow} style={{ backgroundImage: `url('${Arrow}')` }} />
           </div>
         </div>
