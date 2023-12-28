@@ -17,17 +17,17 @@
     @apply w-full h-screen relative items-center justify-center  -bg--openfoundation-black overflow-hidden mx-auto z-10 object-fill;
 
     & .wrapper {
-      @apply w-full flex flex-col items-center gap-open-xl absolute top-1/2 max-w-[1320px] -translate-y-1/3 left-1/2 -translate-x-1/2 px-open-gutter-mobile desktop:px-0;
+      @apply w-full flex flex-col items-center gap-open-xl absolute top-1/2 max-w-[1320px] -translate-y-1/3 left-1/2 -translate-x-1/2 px-open-gutter-mobile desktop:px-0 drop-shadow-2xl shadow-black;
       @apply tablet:items-stretch desktop:items-stretch tablet:gap-open-3xl desktop:gap-open-3xl z-20;
 
       & .title {
-        @apply block text-center -text--openfoundation-white font-open-heading text-open-font-xxxl;
+        @apply block text-center -text--openfoundation-white font-open-heading text-open-font-xxxl brightness-125;
         @apply tablet:text-start desktop:text-start tablet:text-open-font-xxxxxl desktop:text-open-font-xxxxxl;
 
         & .gradient {
           @apply inline-block
           bg-clip-text
-        text-transparent bg-gradient-to-r -from--open-accent-accent-1 -to--open-accent-accent-2;
+        text-transparent bg-gradient-to-r -from--open-accent-accent-1 -to--open-accent-accent-2 brightness-125;
         }
       }
       & .subtitle {
