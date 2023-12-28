@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Data from '@/data/solutionsData.json';
@@ -7,7 +9,7 @@ import SoultionBanner from '@/components/Solutions/SoultionBanner';
 import MeoizedChar from '@/components/Solutions/Char';
 import Snb from '@/components/Solutions/Snb';
 import MemoizedFunc from '@/components/Solutions/Func';
-import Effect from '@/components/Solutions/Effect';
+import MemoizedEffect from '@/components/Solutions/Effect';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Solutions() {
@@ -26,6 +28,12 @@ function Solutions() {
   const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refFuncHeading, inViewFunc] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refEffectHeading, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
 
   useEffect(() => {
     const filteredData = Object.entries(Data).filter(
@@ -71,7 +79,7 @@ function Solutions() {
                 data={Data}
                 sectionRef={refs.funcSectionRef}
               />
-              <Effect
+              <MemoizedEffect
                 headingRef={refEffectHeading}
                 currentLocation={LnbData.current}
                 data={Data}

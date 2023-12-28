@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './Solutions.module.css';
 
-function Effect({ currentLocation, data, headingRef, sectionRef }) {
+function Effect({
+  currentLocation, data, headingRef, sectionRef,
+}) {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
   return (
     <section id="Effect" ref={sectionRef} className={styles.Effect}>
       <h4 ref={headingRef} className={styles.title}>
         기대효과
       </h4>
       <ul className={styles.list}>
-        {data &&
-          data[currentLocation].기대효과.map((item) => (
-            <li key={uuidv4()} className={styles.item}>
-              {item}
-            </li>
-          ))}
+        {data
+        && data[currentLocation].기대효과.map((item) => (
+          <li
+            key={uuidv4()}
+            className={styles.item}
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-delay="100"
+          >
+            {item}
+          </li>
+        ))}
       </ul>
     </section>
   );
@@ -44,4 +60,6 @@ Effect.propTypes = {
   ]).isRequired,
 };
 
-export default Effect;
+const MemoizedEffect = React.memo(Effect);
+
+export default MemoizedEffect;
