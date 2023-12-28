@@ -6,7 +6,9 @@ import styles from '../About.module.css';
 
 function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight, delay }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   });
   return (
     <li
