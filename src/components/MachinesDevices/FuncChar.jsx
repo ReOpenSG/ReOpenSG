@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './MachinesDevices.module.css';
 import iconMap from './imporIcon.js';
 
 function FuncChar({ descProps, selectedProduct }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <div className={styles.FuncChar}>
       <p className={styles.title}>기능 및 특징</p>

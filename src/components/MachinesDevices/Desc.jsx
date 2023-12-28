@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from './MachinesDevices.module.css';
@@ -9,11 +7,6 @@ import imageMap from './importImage.js';
 function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProduct }) {
   const [typesLength, setTypesLength] = useState(0);
   const selectedProductImage = imageMap[selectedProduct];
-
-  useEffect(() => {
-    AOS.init();
-  });
-
   useEffect(() => {
     setTypesLength(Object.keys(descProps.types).length);
   }, [descProps.types]);
