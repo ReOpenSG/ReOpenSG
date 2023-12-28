@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import styles from './Solutions.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Effect({ currentLocation, data, headingRef, sectionRef }) {
   return (
-    <section id="Effect" ref={sectionRef} className={styles.Effect}>
-      <h4 ref={headingRef} className={styles.title}>
+    <section id="Effect" ref={sectionRef} className={styles.effect}>
+      <h3 ref={headingRef} className={styles.title}>
         기대효과
-      </h4>
-      <ul className={styles.list}>
+      </h3>
+      <ul className={styles.effectList}>
         {data &&
           data[currentLocation].기대효과.map((item) => (
             <li key={uuidv4()} className={styles.item}>

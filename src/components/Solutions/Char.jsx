@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
-
-import styles from './Solutions.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Char({ currentLocation, data, headingRef, sectionRef }) {
   useEffect(() => {
@@ -12,19 +11,19 @@ function Char({ currentLocation, data, headingRef, sectionRef }) {
   });
 
   return (
-    <section id="Char" ref={sectionRef} className={styles.Char}>
+    <section id="Char" ref={sectionRef} className={styles.char}>
       <span className={styles.subTitle}>
         Open
         {currentLocation}
       </span>
-      <h4 ref={headingRef} className={styles.title}>
+      <h3 ref={headingRef} className={styles.title}>
         제품 및 특징
-      </h4>
-      <div className={styles.container}>
+      </h3>
+      <div className={styles.productCharLisrContainer}>
         <p className={styles.containerTitle}>제품</p>
-        <p className={styles.product}>{data && data[currentLocation].제품설명}</p>
+        <p className={styles.productDesc}>{data && data[currentLocation].제품설명}</p>
       </div>
-      <div className={styles.container}>
+      <div className={styles.productCharLisrContainer}>
         <p className={styles.containerTitle}>특징</p>
         <ul className={styles.charList}>
           {data &&

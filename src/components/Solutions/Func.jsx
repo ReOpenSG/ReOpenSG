@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styles from './Solutions.module.css';
-import ImagArray from './imageImport';
+import styles from '@/styles/styles.module.css';
+import ImagArray from './solutionsFuncImage.js'; // 솔루션 기능 배너 변경을 원하시면 현재 파일과 동일한 위치의 "./solutionsFuncImage.js"로 이동 후
 
 function Func({ currentLocation, data, headingRef, sectionRef }) {
   useEffect(() => {
@@ -12,14 +12,14 @@ function Func({ currentLocation, data, headingRef, sectionRef }) {
   });
 
   return (
-    <section id="Func" ref={sectionRef} className={styles.Func}>
-      <h4 ref={headingRef} className={styles.title}>
+    <section id="Func" ref={sectionRef} className={styles.func}>
+      <h3 ref={headingRef} className={styles.title}>
         기능
-      </h4>
-      <div className={styles.imageWrapper} data-aos="fade-in" data-aos-duration="2000">
-        <img src={ImagArray[currentLocation]} className={styles.image} alt="솔루션 기능" />
+      </h3>
+      <div className={styles.imageContainer} data-aos="fade-in" data-aos-duration="2000">
+        <img src={ImagArray[currentLocation]} className={styles.image} alt="기능 배너 이미지" />
       </div>
-      <ul className={styles.list}>
+      <ul className={styles.funcList}>
         {data &&
           data[currentLocation].기능.map((item) => (
             <li
