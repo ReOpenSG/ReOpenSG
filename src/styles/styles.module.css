@@ -1,0 +1,36 @@
+.header {
+  @apply fixed flex justify-between items-center w-full py-open-lg px-open-margin-mobile tablet:px-open-gutter-desktop desktop:px-open-4xl -text--openfoundation-secondary font-open-font text-open-font-large font-open-paragraph h-[50px] tablet:h-[80px] desktop:h-[80px] z-[9999];
+
+  &.scrolled {
+    @apply -bg--openfoundation-primary
+  }
+
+  &.black {
+    @apply -bg--openfoundation-primary
+  }
+
+  & .headerTitle {
+    @apply sr-only
+  }
+
+  & .headerNavigation {
+    @apply flex
+
+    & .headerList {
+      @apply justify-center items-center gap-open-gutter-mobile desktop:gap-open-gutter-desktop
+
+      & .logoLink {
+        @apply px-open-md py-open-sm
+
+        & .logoImage {
+          @apply w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl
+        }
+      }
+
+      &. aboutUs {
+        @apply px-open-md py-open-sm desktop:block tablet:block hidden
+      }
+    }
+  }
+
+}

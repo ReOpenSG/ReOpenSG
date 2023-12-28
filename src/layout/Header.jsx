@@ -84,18 +84,18 @@ function Header() {
   return (
     <header
       role="banner"
-      className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${whitePage ? styles.headerBlack : ''} ${isHeaderBlack ? styles.headerBlack : ''}`}
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${whitePage ? styles.black : ''} ${isHeaderBlack ? styles.black : ''}`}
     >
-      <h1 className="sr-only">
+      <h1 className={styles.headerTitle}>
         오픈에스지
       </h1>
-      <nav className="flex">
-        <ul className="flex justify-center items-center gap-open-gutter-mobile desktop:gap-open-gutter-desktop">
+      <nav className={styles.headerNavigation}>
+        <ul className={styles.headerList}>
           <li>
-            <Link className="px-open-md py-open-sm" to="/"><img className="w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl" src={opensgLogo} alt="오픈에스지" /></Link>
+            <Link className={styles.logoLink} to="/"><img className={styles.logoImage} src={opensgLogo} alt="오픈에스지" /></Link>
           </li>
           {!isSitemapOpen && (
-            <li className="px-open-md py-open-sm desktop:block tablet:block hidden" onMouseEnter={() => handleMenuActive('AboutUs')}>
+            <li className={styles.aboutUs} onMouseEnter={() => handleMenuActive('AboutUs')}>
               <button className={styles.menuLink} type="button" onClick={() => handleMenuActive('AboutUs')}>About Us</button>
               {activeMenu === 'AboutUs' && (
               <div className="absolute left-0 top-[80px] w-full backdrop-blur" ref={menuRef} onMouseLeave={() => handleMenuActive(null)}>
