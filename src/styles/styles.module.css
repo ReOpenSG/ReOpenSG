@@ -434,3 +434,49 @@
     }
   }
 }
+
+.admin {
+  @apply flex w-full flex-col items-center justify-center;
+  @apply mx-auto h-screen max-w-[500px] gap-open-gutter-mobile tablet:max-w-[700px] tablet:gap-open-gutter-desktop desktop:max-w-[700px] desktop:gap-open-gutter-desktop;
+  @apply px-open-gutter-mobile tablet:px-open-gutter-desktop desktop:px-open-gutter-desktop;
+
+  & .section {
+    @apply mx-auto flex w-full flex-col items-center justify-center gap-open-gutter-mobile pb-open-7xl tablet:pb-open-8xl desktop:pb-open-8xl;
+    @apply tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+    & .form {
+      @apply mx-auto flex w-full flex-col items-center justify-center gap-open-2xl;
+      @apply tablet:gap-open-3xl desktop:gap-open-3xl;
+
+      & .inputWrapper {
+        @apply flex w-full items-center justify-center gap-open-xl;
+
+        & .label {
+          @apply min-w-[80px] text-center text-open-font-large tablet:w-[200px] desktop:w-[200px];
+          @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+        }
+
+        & .input {
+          @apply w-full flex-1 rounded  border -border--open-gray-300 p-open-lg text-open-font-medium;
+          @apply tablet:p-open-xl tablet:text-open-font-xl desktop:p-open-xl desktop:text-open-font-xl;
+        }
+      }
+      & .button {
+        @apply w-2/3 -bg--open-accent-accent py-open-xl;
+        @apply my-open-2xl  rounded-xl text-open-font-large -text--openfoundation-white;
+        @apply tablet:py-open-xl tablet:text-open-font-xl desktop:py-open-xl desktop:text-open-font-xl;
+      }
+    }
+  }
+
+  & .buttonWrapper {
+    @apply flex w-full flex-col items-center justify-center gap-open-4xl;
+    @apply tablet:gap-open-6xl desktop:gap-open-6xl;
+
+    & .button {
+      @apply w-2/3 -bg--open-accent-accent;
+      @apply rounded-xl  text-open-font-large -text--openfoundation-white;
+      @apply py-open-xl tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+}
