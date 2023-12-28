@@ -35,7 +35,7 @@ function ContactRe() {
         emailConfig.serviceId,
         emailConfig.templateId,
         formRe.current,
-        emailConfig.ceoApiKey,
+        emailConfig.ctoApiKey,
       )
       .then(
         () => {
