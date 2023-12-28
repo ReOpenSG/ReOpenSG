@@ -6,7 +6,9 @@ import styles from '../About.module.css';
 
 function Card({ title, desc, children, delay }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   });
   return (
     <li
