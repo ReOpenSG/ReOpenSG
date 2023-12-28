@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import styles from './About.module.css';
 import bannerImage from '@/assets/about_banner.png';
 
 function BannerImage() {
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  });
   return (
     <section className={styles.BannerImage}>
       <h3 className={styles.title}>소개 이미지</h3>

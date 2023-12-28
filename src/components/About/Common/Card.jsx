@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../About.module.css';
 
 function Card({ title, desc, children, delay }) {
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  });
   return (
     <li
       className={styles.CommomCard}
