@@ -1,11 +1,13 @@
 import React from 'react';
+import AOS from 'aos';
 import PropTypes from 'prop-types';
 import MenuLink from '@/components/Header/MenuLink';
 import styles from '@/components/Header/Sitemap.module.css';
 
 function SitemapDesktop({ isOpen }) {
+  AOS.init();
   return (
-    <div className={`${styles.sitemapDesktop} ${isOpen ? styles.isOpen : styles.isClosed}`}>
+    <div data-aos="fade-up" data-aos-offset="10" data-aos-delay="100" data-aos-duration="1200" className={`${styles.sitemapDesktop}`}>
       <div className="w-full h-full flex justify-center">
         <ul className={styles.sitemapList}>
           <li className="py-open-sm text-open-font-xl font-open-label text-center flex-1">

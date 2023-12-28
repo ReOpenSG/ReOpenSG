@@ -27,17 +27,21 @@
   }
 
   &:hover .tooltip {
-    @apply block;
+    @apply block visible opacity-100 px-open-md;
   }
 
   & .tooltip {
-    @apply absolute hidden px-open-sm rounded left-[120px] z-20 min-w-[200px] -bg--openfoundation-secondary -text--openfoundation-primary;
+    @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
   }
-  
+
+  &:hover:after {
+    @apply block visible opacity-100;
+  }
+
 }
 
 .headerMenu {
-  @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary -text--openfoundation-secondary opacity-80 backdrop-blur-sm
+  @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary -text--openfoundation-secondary opacity-80 backdrop-blur-lg
 }
 
 .about {
@@ -45,7 +49,7 @@
 }
 
 .product {
-  @apply flex-row tablet:pl-[308px] desktop:pl-[362px]
+  @apply flex-row tablet:pl-[308px] desktop:pl-[362px] gap-open-xl
 }
 
 .support {
