@@ -5,13 +5,13 @@ import mapImage from '@/assets/location_map.png';
 import LocationPinIcon from '@/components/Location/LocationPinIcon';
 import mTowerImage from '@/assets/location_mTower.png';
 import LocationContainer from '@/components/Location/LocationContainer';
-import styles from '@/components/Location/Location.module.css';
+import styles from '@/styles/styles.module.css';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Location() {
-  AOS.init();
+  AOS.init({ once: true });
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.location}>
       <TitleSection
         category="오시는 길"
         title="세계로 보는 OpenSG"

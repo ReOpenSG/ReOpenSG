@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import defaultImage from '@/assets/location_defaultImage.png';
 import linkIcon from '@/assets/location_link.svg';
-import styles from '@/components/Location/Location.module.css';
+import styles from '@/styles/styles.module.css';
 
 function LocationContainer({
   locationName,
