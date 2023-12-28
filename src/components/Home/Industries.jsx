@@ -1,38 +1,38 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 import { Link } from 'react-router-dom';
-import Image1 from '@/assets/home_industry1.png';
-import Image2 from '@/assets/home_industry2.png';
-import Image3 from '@/assets/home_industry3.png';
-import Image4 from '@/assets/home_industry4.png';
+import Image2 from '@/assets/home_industry1.png';
+import Image1 from '@/assets/home_industry4.png';
+import Image3 from '@/assets/home_industry2.png';
+import Image4 from '@/assets/home_industry3.png';
 import styles from './Home.module.css';
 
 function Industries() {
   const industryData = [
     {
       id: uuid(),
-      img: Image4,
+      img: Image1,
       enTitle: 'Secondary Battery',
       krTitle: '2차 전지',
       route: 'battery',
     },
     {
       id: uuid(),
-      img: Image1,
+      img: Image2,
       enTitle: 'Display',
       krTitle: '디스플레이',
       route: 'display',
     },
     {
       id: uuid(),
-      img: Image2,
+      img: Image3,
       enTitle: 'Port',
       krTitle: '항만',
       route: 'port',
     },
     {
       id: uuid(),
-      img: Image3,
+      img: Image4,
       enTitle: 'Semi-conductor',
       krTitle: '반도체',
       route: 'semiconductor',
@@ -64,7 +64,7 @@ function Industries() {
               data-aos-duration="700"
               data-aos-delay="50"
             >
-              <Link to={`/industries/${item.route}`} className="block p-open-2xl h-full">
+              <Link to={`/industries/${item.route}`} className="block p-open-2xl h-full ">
                 <p className={styles.krTitle}>{item.krTitle}</p>
                 <p className={styles.enTitle}>{item.enTitle}</p>
               </Link>
