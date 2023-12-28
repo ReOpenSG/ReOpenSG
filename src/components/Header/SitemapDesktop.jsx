@@ -1,10 +1,9 @@
 import React from 'react';
 import AOS from 'aos';
-import PropTypes from 'prop-types';
 import MenuLink from '@/components/Header/MenuLink';
 import styles from '@/components/Header/Sitemap.module.css';
 
-function SitemapDesktop({ isOpen }) {
+function SitemapDesktop() {
   AOS.init();
   return (
     <div data-aos="fade-up" data-aos-offset="10" data-aos-delay="100" data-aos-duration="1200" className={`${styles.sitemapDesktop}`}>
@@ -98,9 +97,5 @@ function SitemapDesktop({ isOpen }) {
     </div>
   );
 }
-
-SitemapDesktop.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-};
 
 export default SitemapDesktop;
