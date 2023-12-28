@@ -260,3 +260,177 @@
     }
   }
 }
+
+.community {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  & .noticeWrapper {
+    @apply flex w-full flex-col items-end px-open-gutter-mobile;
+    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    & .pageCount {
+      @apply p-open-lg tablet:p-open-xl desktop:p-open-xl;
+      @apply text-right text-open-font-small font-open-paragraph;
+      @apply tablet:text-open-font-large desktop:text-open-font-large;
+    }
+
+    & .noticeList {
+      @apply w-full border-b -border--open-gray-300;
+
+      & .noticeItem {
+        @apply flex w-full items-center justify-between border-t -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl desktop:px-open-xl;
+        @apply tablet:py-open-2xl desktop:py-open-2xl;
+
+        & .noticeTitle {
+          @apply text-open-font-large font-open-label -decoration--open-gray-600;
+          @apply hover:underline hover:decoration-1 hover:underline-offset-4 tablet:text-open-font-xxl
+        desktop:text-open-font-xxl;
+        }
+
+        & .noticeCreatedAt {
+          @apply text-open-font-small font-open-paragraph -text--open-gray-600;
+          @apply tablet:text-open-font-large desktop:text-open-font-large;
+        }
+      }
+    }
+
+    & .listButtons {
+      @apply flex w-full justify-center gap-open-gutter-mobile py-open-2xl;
+      @apply text-open-font-small font-open-label;
+      @apply tablet:gap-open-gutter-desktop tablet:text-open-font-medium desktop:gap-open-gutter-desktop desktop:text-open-font-medium;
+
+      & .pageNum {
+        @apply h-6 w-6;
+        @apply rounded-full -text--openfoundation-black;
+        @apply tablet:h-6 tablet:w-6  desktop:h-9 desktop:w-9;
+      }
+
+      & .currentPage {
+        @apply rounded-full -bg--openfoundation-black -text--openfoundation-white;
+      }
+    }
+  }
+}
+
+.communityDetail {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  & .detailWrapper {
+    @apply flex w-full flex-col px-open-gutter-mobile;
+    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    & .titleWrapper {
+      @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg tablet:px-open-2xl desktop:px-open-2xl;
+
+      & .title {
+        @apply text-open-font-xl decoration-slate-600;
+        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+      }
+
+      & .updatedAt {
+        @apply text-open-font-medium -text--open-gray-600;
+        @apply tablet:text-open-font-large desktop:text-open-font-large;
+      }
+    }
+
+    & .buttonWrapper {
+      @apply flex flex-row justify-end gap-open-xl px-open-xl py-open-md;
+      @apply tablet:gap-open-2xl tablet:py-open-lg
+    desktop:gap-open-2xl desktop:py-open-lg;
+
+      & .button {
+        @apply rounded px-open-xl py-open-md;
+        @apply text-open-font-large  -text--openfoundation-white;
+        @apply tablet:px-open-2xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-lg desktop:text-open-font-xl;
+      }
+      & .editButton {
+        @apply bg-gray-700;
+      }
+
+      & .deleteButton {
+        @apply bg-gray-400;
+      }
+    }
+
+    & .contentWrapper {
+      @apply flex h-full flex-col items-start overflow-y-scroll border-b -border--open-gray-300 p-open-xl tablet:p-open-2xl desktop:p-open-2xl;
+
+      & .imagePreview {
+        @apply h-[200px] w-[200px] object-cover;
+        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
+      }
+
+      & .contentText {
+        @apply text-open-font-large;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+    & .navWrapper {
+      @apply flex list-none flex-col;
+
+      & .list {
+        @apply border-b -border--open-gray-300  px-open-xl py-open-lg text-open-font-large tablet:px-open-2xl tablet:py-open-xl  desktop:px-open-2xl desktop:py-open-xl;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+
+    & .comebackButton {
+      @apply flex justify-end gap-open-lg p-open-lg tablet:p-open-xl desktop:p-open-xl;
+      @apply text-open-font-large;
+      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+}
+
+.communityForm {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  & .titleWrapper {
+    @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg;
+
+    @apply tablet:px-open-2xl tablet:py-open-xl desktop:px-open-2xl desktop:py-open-xl;
+
+    & .title {
+      @apply text-open-font-large font-open-label;
+      @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+  }
+  & .contentWrapper {
+    @apply flex h-full flex-col items-center gap-open-xl overflow-y-scroll  border-b -border--open-gray-300 border-opacity-0 p-open-2xl;
+
+    & .imageContainer {
+      @apply flex w-full items-center justify-center gap-open-xl py-open-md;
+      @apply tablet:gap-open-4xl desktop:gap-open-4xl;
+
+      & .imagePreview {
+        @apply h-[200px] w-[200px] object-cover;
+        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
+      }
+      & .imageLabel {
+        @apply inline-block cursor-pointer rounded -bg--open-gray-400  p-open-md;
+        @apply align-middle text-open-font-medium font-open-paragraph -text--openfoundation-white;
+        @apply tablet:p-open-lg tablet:text-open-font-large desktop:p-open-lg desktop:text-open-font-large;
+      }
+      & .imageInput {
+        @apply inline-block w-1/3 rounded border -border--open-gray-400 p-open-lg;
+        @apply align-middle;
+        @apply tablet:p-open-xl desktop:p-open-xl;
+      }
+    }
+    & .contentText {
+      @apply h-auto w-full;
+      @apply text-open-font-large;
+      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  & .buttonWrapper {
+    @apply flex justify-center gap-open-xl px-open-md py-open-2xl;
+    @apply tablet:gap-open-3xl tablet:px-open-xl desktop:gap-open-3xl desktop:px-open-xl;
+
+    & .button {
+      @apply flex items-center justify-center gap-open-md rounded px-open-xl py-open-lg;
+      @apply text-open-font-large -text--openfoundation-white;
+      @apply tablet:px-open-2xl tablet:py-open-xl tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-xl desktop:text-open-font-xl;
+    }
+  }
+}

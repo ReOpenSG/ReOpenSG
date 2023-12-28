@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import BannerSection from '@/components/Common/BannerSection';
 import ContentsSection from '@/components/Community/ContentsSection';
+import styles from '@/styles/styles.module.css';
 
 function CommunityDetail() {
   const location = useLocation();
@@ -34,7 +35,7 @@ function CommunityDetail() {
   }, [location.state, params.id]);
 
   return (
-    <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
+    <div className={styles.communityDetail}>
       <BannerSection category="Support" title="커뮤니티" />
       <ContentsSection
         notices={notices}

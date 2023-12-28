@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import NoticeList from './NoticeList';
 import ListButtons from './ListButtons';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function NoticeSection({ sortedNotices }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,7 +47,7 @@ function NoticeSection({ sortedNotices }) {
     handleLastPage,
   };
   return (
-    <section className={styles.NoticeWrapper}>
+    <section className={styles.noticeWrapper}>
       <span className="sr-only">커뮤니티 리스트</span>
       <p className={styles.pageCount}>
         Total: {sortedNotices?.length} [{currentPage} / {ListButtonsProps.pageCount}]

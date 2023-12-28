@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Notice({ notice, notices }) {
   const updatedAtDate = notice?.data?.updatedAt
