@@ -90,15 +90,15 @@ function Partner() {
           slidesPerView="auto"
           breakpoints={{
             375: {
-              slidesPerView: 3,
+              slidesPerView: 5,
             },
 
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 6,
             },
 
             1440: {
-              slidesPerView: 6,
+              slidesPerView: 6.5,
             },
           }}
           loop
@@ -115,8 +115,12 @@ function Partner() {
           }}
         >
           {partnerData.map((item) => (
-            <SwiperSlide key={item.id} className="w-[300px]">
-              <img src={item.img} alt="partner" className="w-[240px] object-cover" />
+            <SwiperSlide key={item.id} className="w-[240px] tablet:w-[300px] desktop:w-[300px]">
+              <img
+                src={item.img}
+                alt="partner"
+                className="w-[150px] tablet:w-[240px] desktop:w-[240px]object-cover"
+              />
             </SwiperSlide>
           ))}
         </Swiper>

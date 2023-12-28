@@ -12,8 +12,8 @@ function Industries() {
   const { id } = useParams();
   const [industryChar, setIndustryChar] = useState('');
   const [industryProducts, setIndustryProducts] = useState({});
-  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.1 });
-  const [refProductHeading, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.1 });
+  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [refProductHeading, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.3 });
   const refs = {
     charSectionRef: useRef(null),
     productSectionRef: useRef(null),

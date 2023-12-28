@@ -1,5 +1,5 @@
 .sitemapDesktop {
-  @apply w-full h-full hidden desktop:block tablet:block mobile:hidden translate-x-full px-open-gutter-desktop
+  @apply w-full h-full hidden desktop:block tablet:block mobile:hidden px-open-gutter-desktop
 }
 
 .isOpen {
