@@ -1,14 +1,13 @@
 import React from 'react';
-
 import Title from './Common/Title';
 import Card from './Common/Card';
-import styles from './About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Vision() {
   return (
-    <section className={styles.Vision}>
+    <section className={styles.vision}>
       <Title title="OUR VISION" subtitle="오픈에스지가 추구하는 길" />
-      <ul className={styles.list}>
+      <ul className={styles.cardList}>
         <Card
           title="Respect"
           desc="우리는 수평적이고 개방적인 문화를 통해 모든 직원들 의견을 존중, 공유할 수 있는 환경을 조성하며, 협력과 열린 소통을 통해 함께 성장하는 가치를 추구합니다."

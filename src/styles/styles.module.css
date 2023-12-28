@@ -260,3 +260,193 @@
     }
   }
 }
+
+/* About(회사 개요) */
+.about {
+  @apply w-full;
+
+  /* About 1번째 섹션 - Group 컴포넌트 */
+  & .group {
+    @apply flex flex-col items-center -bg--openfoundation-primary px-open-margin-mobile py-open-margin-desktop -text--openfoundation-secondary;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 1번째 섹션 - Group 컴포넌트 - 설명 텍스트 */
+    & .desc {
+      @apply text-open-font-medium font-open-label;
+      @apply desktop:text-open-font-xxl;
+      @apply tablet:text-open-font-xxl;
+    }
+  }
+
+  /* About 2번째 섹션 - BannerImage 컴포넌트 */
+  & .bannerImage {
+    @apply h-[320px];
+    @apply desktop:h-[720px];
+    @apply tablet:h-[480px];
+
+    /* About 2번째 섹션 - BannerImage 컴포넌트 - title(웹 접근성, 숨김 처리) */
+    & .title {
+      @apply sr-only;
+    }
+
+    /* About 2번째 섹션 - BannerImage 컴포넌트 - 이미지 */
+    & .img {
+      @apply h-full w-full bg-black object-cover;
+    }
+  }
+
+  /* About 3번째 섹션 - Vision 컴포넌트 */
+  & .vision {
+    @apply flex flex-col items-center gap-open-5xl -bg--openfoundation-primary px-open-margin-mobile py-open-margin-desktop -text--openfoundation-secondary;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 3번째 섹션 - Vision 컴포넌트 - Card 목록 */
+    & .cardList {
+      @apply flex max-w-[1320px] flex-wrap gap-open-gutter-mobile;
+      @apply desktop:gap-open-gutter-desktop;
+      @apply tablet:gap-open-gutter-desktop;
+    }
+  }
+
+  /* About 4번째 섹션 - Ci 컴포넌트 */
+  & .ci {
+    @apply flex flex-col items-center px-open-margin-mobile py-open-margin-desktop;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 4번째 섹션 - Ci 컴포넌트 컨테이너 */
+    & .ciContainer {
+      @apply flex w-full  max-w-[1320px] flex-col gap-open-2xl;
+      @apply desktop:gap-open-5xl;
+      @apply tablet:gap-open-5xl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 타이틀 */
+    & .title {
+      @apply text-open-font-large font-open-heading -text--open-accent-accent;
+      @apply desktop:text-open-font-xxxxl;
+      @apply tablet:text-open-font-xxxxl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 설명 */
+    & .desc {
+      @apply text-open-font-medium font-open-paragraph;
+      @apply desktop:text-open-font-xl;
+      @apply tablet:text-open-font-xl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 파레트 */
+    & .paletteList {
+      @apply flex flex-col flex-wrap text-open-font-medium font-open-paragraph -text--openfoundation-secondary;
+      @apply desktop:flex-row desktop:text-open-font-large;
+      @apply tablet:flex-row tablet:text-open-font-large;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 로고 이미지 컨테이너 */
+    & .imgContainer {
+      @apply mt-open-2xl flex w-full max-w-[1320px] justify-end;
+
+      /* About 4번째 섹션 - Ci 컴포넌트 - 로고 이미지 */
+      & .ciImg {
+        @apply w-[200px];
+        @apply desktop:w-[300px];
+        @apply tablet:w-[300px];
+      }
+    }
+  }
+
+  /* About 페이지에서 공통으로 사용되는 컴포넌트들 */
+  /* About 1번째 섹션, 3번째 섹선 - Grpup 컴포넌트, Vison 컴포넌트 - 공통으로 사용되는 Title 컴포넌트 */
+  & .commonTitle {
+    @apply flex w-full max-w-[1320px] flex-col gap-open-2xl;
+
+    /* 공통으로 사용되는 Title 컴포넌트 - 제목 */
+    & .title {
+      @apply text-open-font-large font-open-heading -text--open-accent-accent;
+      @apply desktop:text-open-font-xxl;
+      @apply tablet:text-open-font-xxl;
+    }
+
+    /* 공통으로 사용되는 Title 컴포넌트 - 서브 제목 컨테이너 */
+    & .subTitleContainer {
+      @apply flex flex-col gap-open-xl;
+
+      /* 공통으로 사용되는 Title 컴포넌트 - 서브 제목 */
+      & .subTitle {
+        @apply text-open-font-xl font-open-heading;
+        @apply desktop:text-open-font-xxxl;
+        @apply tablet:text-open-font-xxxl;
+      }
+    }
+  }
+
+  /* About 3번째 섹션 - Vision 컴포넌트 - 공통으로 사용되는 Card 컴포넌트 */
+  & .commonCard {
+    @apply flex-1 basis-[288px] rounded-[20px] -bg--open-gray-950 p-open-gutter-desktop;
+    @apply desktop:min-h-[400px];
+    @apply tablet:min-h-[400px];
+
+    /* 공통으로 사용되는 Card 컴포넌트 - Card 컴포넌트 컨테이너 */
+    & .cardContainer {
+      @apply flex flex-col gap-open-2xl;
+      @apply desktop:gap-open-margin-desktop;
+      @apply tablet:gap-open-margin-desktop;
+
+      /* 공통으로 사용되는 Card 컴포넌트 - 타이틀, 서브타이틀 컨테이너*/
+      & .titleSubTitleContainer {
+        @apply flex flex-col gap-open-xl;
+        @apply desktop:gap-open-2xl;
+        @apply tablet:gap-open-2xl;
+
+        /* 공통으로 사용되는 Card 컴포넌트 - 타이틀 */
+        & .titleText {
+          @apply text-open-font-medium font-open-heading;
+          @apply desktop:text-open-font-large;
+          @apply tablet:text-open-font-large;
+        }
+
+        /* 공통으로 사용되는 Card 컴포넌트 - 서브타이틀 */
+        & .subTitleText {
+          @apply flex flex-col text-open-font-large font-open-heading;
+          @apply desktop:text-open-font-xl;
+          @apply tablet:text-open-font-xl;
+        }
+      }
+
+      /* 공통으로 사용되는 Card 컴포넌트 - 설명 */
+      & .desc {
+        @apply text-open-font-medium font-open-paragraph;
+        @apply desktop:text-open-font-large;
+        @apply tablet:text-open-font-large;
+      }
+    }
+  }
+
+  /* About 4번째 섹션 - Ci 컴포넌트 - 공통으로 사용되는 Palette 컴포넌트 */
+  & .commonPalette {
+    @apply flex flex-1 items-end px-open-xl py-open-xl;
+    @apply desktop:h-open-8xl desktop:px-open-2xl;
+    @apply tablet:h-open-8xl tablet:px-open-2xl;
+    @apply mobile:rounded-l-[20px];
+
+    /* 공통으로 사용되는 Palette 컴포넌트 - 좌측 */
+    &.left {
+      @apply desktop:rounded-l-[20px];
+      @apply tablet:rounded-l-[20px];
+    }
+    /* 공통으로 사용되는 Palette 컴포넌트 - 우측 */
+    &.right {
+      @apply desktop:rounded-r-[20px];
+      @apply tablet:rounded-r-[20px];
+    }
+
+    /* 공통으로 사용되는 Palette 컴포넌트 - 내용 텍스트 */
+    & .innerList {
+      @apply flex w-full flex-col items-end gap-open-sm;
+      @apply desktop:gap-open-md;
+      @apply tablet:gap-open-md;
+    }
+  }
+}

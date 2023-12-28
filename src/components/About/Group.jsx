@@ -1,15 +1,15 @@
 import React from 'react';
 import Title from './Common/Title';
-import styles from './About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Group() {
   return (
-    <section className={styles.Group}>
+    <section className={styles.group}>
       <Title title="WHAT WE DO" subtitle="Open Solution Group">
-        <p className={styles.desc}>
-          <span>고객이 원하는 성과창출에</span>
-          <span>기여 할 수 있는 최고의 파트너</span>
-        </p>
+        <div className={styles.desc}>
+          <p>고객이 원하는 성과창출에</p>
+          <p>기여 할 수 있는 최고의 파트너</p>
+        </div>
       </Title>
     </section>
   );

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
-import styles from '../About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight, delay }) {
   useEffect(() => {
@@ -12,7 +12,7 @@ function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight, delay }) {
     <li
       style={{ backgroundColor: hex }}
       className={`
-        ${styles.CommonPalette}
+        ${styles.commonPalette}
         ${roundedLeft && styles.left}
         ${roundedRight && styles.right}
       `}
