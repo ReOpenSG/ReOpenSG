@@ -359,6 +359,7 @@
     & .tooltip {
       @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
     }
+
   }
 
   /* Service & Solutions 의 서브 메뉴를 위한 스타일링. 해당 메뉴는 구조가 단순하지 않기 때문에 추가 레이아웃 및 스타일링이 필요하였음 */
@@ -465,6 +466,187 @@
   
   .hamburgerOn span:before {
     @apply transition-transform duration-300 delay-[0.4s] rotate-90
+  }
+}
+
+/* 데스크탑/태블릿용 Sitemap 전체. 전체 양쪽 padding 적용. mobile 크기에서는 보이지 않도록 hidden 처리. */
+.sitemapDesktop {
+    @apply w-full h-full hidden desktop:block tablet:block mobile:hidden px-open-gutter-desktop;
+
+  /* 데스크탑/태블릿용 Sitemap 내부 컨테이너. 정렬을 위한 스타일링 적용. */
+  & .container {
+    @apply w-full h-full flex justify-center
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 메뉴 전체 리스트 */
+  & .list {
+    @apply w-full h-full flex flex-row py-open-7xl -text--openfoundation-secondary justify-between gap-open-xl
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 각 메뉴 (About Us, Support 박스 전체) */
+  & .listItem {
+    @apply py-open-sm text-open-font-xl font-open-label text-center flex-1
+  }
+
+  /* 위와 동일. 단, Service & Solution 에 한함. (About Us, Support 는 화면 크기에 따라 늘어나고, Service & Solution 은 크기를 그대로 유지하기 위해 별도로 적용) */
+  & .listService {
+    @apply py-open-sm text-open-font-xl font-open-label text-center
+  }
+
+  /* 각 메뉴 타이틀 (About Us, Service & Solution, Support) */
+  & .menu {
+    @apply pb-open-md border-b-[1px] -border--open-gray-300
+  }
+
+  /* About Us 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .aboutUs {
+    @apply flex flex-col gap-open-md py-open-xl text-open-font-large  -text--open-gray-300 font-open-paragraph 
+  }
+
+  /* Service & Solution 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .serviceAndSolution {
+    @apply flex flex-row py-open-xl text-open-font-large font-open-label gap-open-gutter-desktop text-start
+  }
+
+  /* Solutions 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutions {
+    @apply font-open-paragraph flex flex-col pt-open-md gap-open-xl
+  }
+
+  /* Solutions 의 하위 메뉴 중 파란색 메뉴 스타일링 */
+  & .solutionsBlue {
+    @apply -text--open-accent-accent-1 text-open-font-medium
+  }
+
+  /* 각 Solutions 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutionsSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph px-1 pb-3 mt-2 rounded-b-xl border-x-2 border-b-2 -border--open-accent-accent-1 border-opacity-30 
+  }
+
+  /* Solutons 제외 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .othersSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph  
+  }
+
+  /* Support 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .support {
+    @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph -text--open-gray-300  py-open-xl
+  }
+
+    /* 각 서브 메뉴 안의 링크 (MenuLink 컴포넌트) 공통 (회사소개, 연혁, 각 제품명, 커뮤니티 등 모든 흰색 링크) */
+    & .linkName {
+      @apply relative px-open-md py-open-sm font-open-paragraph;
+  
+      /* 링크 hover 시 색상 변경 */
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+    
+      /* tooltip (hover 후) */
+      &:hover .tooltip {
+        @apply block visible opacity-100 px-open-md;
+      }
+    
+      /* tooltip (hover 전 기본 세팅) */
+      & .tooltip {
+        @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
+      }
+  
+    }
+}
+
+/* 모바일용 Sitemap 전체 */
+.sitemapMobile {
+  @apply block tablet:hidden desktop:hidden absolute left-0 top-0 pt-[40px] w-full h-full overflow-auto;
+  
+  /* 모바일용 Sitemap 내부 container */
+  & .sitemapMobileContainer {
+    @apply flex flex-col justify-center px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary;
+  
+  /* 메뉴 리스트 전체 */
+    & .menuList {
+      @apply py-open-md cursor-pointer;
+    }
+
+    /* 메뉴 이름 및 화살표 묶음 버튼 */
+    & .menuButton {
+      @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile;
+    }
+
+    /* 하위 메뉴 리스트 전체 (Service & Solution 제외) */
+    & .menuSubList {
+      @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph
+    }
+
+    /* 각 흰색 메뉴 링크 (모바일용) */
+    & .linkNameMobile {
+      @apply relative px-open-lg py-open-sm -text--openfoundation-secondary opacity-80;
+    
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+    }
+
+    .arrowDefault {
+      @apply transition-all duration-300;
+    }
+    
+    .arrowDown {
+      @apply transition-all duration-300 rotate-180;
+    }
+
+    /* Service & Solution 의 하위 메뉴 리스트 전체 */
+    & .serviceAndSolutions {
+      @apply flex flex-col text-open-font-large font-open-label;
+      
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 기본 스타일링 */
+      & .accordionItem {
+        @apply font-open-label;
+      }
+      
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (bottom 에 흰색 border 있는 메뉴)  */
+      & .accordionItemMedium {
+        @apply px-open-lg py-open-lg mb-open-lg text-open-font-large font-open-label border-b-[1px] -border--openfoundation-tertiary border-opacity-30;
+      }
+      
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (위 아코디언의 하위 메뉴로, 캡슐형, 텍스트 색상이 푸른 메뉴)  */
+      & .accordionItemSmall {
+        @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm my-open-sm rounded-[20px]  -text--open-accent-accent-1;
+      }
+
+      /* 각 아코디언 리스트의 하위 항목 기본 스타일 */
+      & .accordionItemList {
+        @apply flex flex-col gap-open-sm text-open-font-medium -text--open-gray-300 font-open-paragraph
+      }
+      
+      /* 서브 메뉴 버튼 (화살표 포함) 공통  */
+      & .subMenuButton {
+        @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile
+      }
+
+      /* solutions 하위 메뉴 리스트 전체 */
+      & .solutionsSubList {
+        @apply flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-tertiary;
+      }
+
+      /* Smart Machine 하위 메뉴 리스트 전체 */
+      & .machineSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Smart Device 하위 메뉴 리스트 전체 */
+      & .deviceSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Industries 하위 메뉴 리스트 전체 */
+      & .industriesSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+    }
+
+
+
   }
 
 }

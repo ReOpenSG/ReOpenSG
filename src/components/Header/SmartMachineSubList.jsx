@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import MenuLinkMobile from '@/components/Header/MenuLinkMobile';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 import SitemapArrow from '@/icons/SitemapArrow';
 
 function SmartMachineSubList({
@@ -20,7 +20,7 @@ function SmartMachineSubList({
     <>
       <motion.li onClick={() => setSubExpanded(isOpen ? 'none' : 'machine')}>
         <div className={styles.accordionItemMedium}>
-          <button type="button" className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+          <button type="button" className={styles.subMenuButton}>
             <div>Smart Machine</div>
             <SitemapArrow down={!isOpen} />
           </button>
@@ -29,7 +29,7 @@ function SmartMachineSubList({
       <AnimatePresence initial>
         {isOpen && (
         <motion.ul
-          className="flex flex-col gap-open-md text-open-font-medium font-open-paragraph"
+          className={styles.machineSubList}
           key="content"
           initial="collapsed"
           animate="open"

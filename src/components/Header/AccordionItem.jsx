@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import SitemapArrow from '@/icons/SitemapArrow';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 
 function AccordionItem({
   title, children, small, medium,
@@ -16,7 +16,7 @@ function AccordionItem({
   return (
     <>
       <motion.li className={`${styles.accordionItem} ${small ? styles.accordionItemSmall : ''} ${medium ? styles.accordionItemMedium : ''}`}>
-        <button type="button" onClick={toggle} className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+        <button type="button" onClick={toggle} className={styles.subMenuButton}>
           <div>{title}</div>
           <SitemapArrow down={!isOpen} />
         </button>
@@ -24,7 +24,7 @@ function AccordionItem({
       <AnimatePresence initial={false}>
         {isOpen && (
         <motion.ul
-          className={styles.subListMobile}
+          className={styles.accordionItemList}
           key="content"
           initial="collapsed"
           animate="open"

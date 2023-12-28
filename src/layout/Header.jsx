@@ -229,7 +229,7 @@ function Header() {
             <button className={activeLanguage === 'ENG' ? '' : styles.languageInactive} type="button" onClick={() => handleLanguageActive('ENG')}>ENG</button>
           </div>
         </li>
-        <li className={styles.hamburgerButtn}>
+        <li className={styles.hamburgerButton}>
           <button
             type="button"
             onClick={() => handleBurgerActive(!activeBurger)}

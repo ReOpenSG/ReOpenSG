@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 import SitemapArrow from '@/icons/SitemapArrow';
 import SolutionsSubList from './SolutionsSubList';
 import SmartMachineSubList from './SmartMachineSubList';
@@ -14,9 +14,9 @@ function ServiceAndSolution({ accName, expanded, setExpanded }) {
 
   return (
     <>
-      <motion.li onClick={() => setExpanded(isOpen ? 'none' : 'service')} className="py-open-md cursor-pointer">
-        <div className={styles.accordionItemLarge}>
-          <button type="button" className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+      <motion.li onClick={() => setExpanded(isOpen ? 'none' : 'service')} className={styles.menuList}>
+        <div>
+          <button type="button" className={styles.menuButton}>
             <div>Service & Solution</div>
             <SitemapArrow down={!isOpen} />
           </button>
@@ -25,7 +25,7 @@ function ServiceAndSolution({ accName, expanded, setExpanded }) {
       <AnimatePresence initial={false}>
         {(isOpen) && (
         <motion.ul
-          className={styles.productListMobile}
+          className={styles.serviceAndSolutions}
           key="content"
           initial="collapsed"
           animate="open"
