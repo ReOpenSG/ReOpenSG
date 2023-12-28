@@ -7,41 +7,42 @@ import Snb from '@/components/Industries/Snb';
 import IndustriesData from '@/data/industriesData.js';
 import solutionsData from '@/data/solutionsData.json';
 import TitleSection from '@/components/Common/TitleSection';
+import styles from '@/styles/styles.module.css';
 
 function Industries() {
   const { id } = useParams();
-  const [industryChar, setIndustryChar] = useState('');
+  const industryData = IndustriesData[id];
+  const [industryChar, setIndustryChar] = useState(industryData.desc);
   const [industryProducts, setIndustryProducts] = useState({});
-  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
-  const [refProductHeading, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.3 });
+  const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.2 });
+  const [refProductHeading, inViewProduct] = useInView({ triggerOnce: false, threshold: 0.2 });
   const refs = {
     charSectionRef: useRef(null),
     productSectionRef: useRef(null),
   };
 
   useEffect(() => {
-    setIndustryChar(IndustriesData[id].desc);
+    const products = industryData.solutions.reduce((acc, item) => {
+      acc[item] = solutionsData[item];
+      return acc;
+    }, {});
 
-    IndustriesData[id].solutions.map((item) =>
-      setIndustryProducts((prev) => ({
-        ...prev,
-        [item]: solutionsData[item],
-      })),
-    );
-  }, [id]);
+    setIndustryProducts(products);
+  }, [id, industryData]);
+
+  const title = industryData.name === '배터리' ? '2차 전지' : industryData.name;
 
   return (
-    <div className="w-full">
+    <div className={styles.industries}>
       <TitleSection
         category="Industries"
-        title={IndustriesData[id].name === '배터리' ? '2차 전지' : IndustriesData[id].name}
+        title={title}
         subTitle={id}
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
-      <section className="flex flex-col items-center desktop:pb-open-5xl tablet:pb-open-5xl pb-open-2xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile">
-        <h3 className="sr-only">{IndustriesData[id].name}</h3>
-        <div className="flex max-w-[1320px] desktop:gap-open-4xl tablet:gap-open-4xl">
+      <div className={styles.outerContainer}>
+        <div className={styles.innerContainer}>
           <Snb
             inViewChar={inViewChar}
             alThing
@@ -51,7 +52,7 @@ function Industries() {
               productSectionRef: refs.productSectionRef,
             }}
           />
-          <div className="flex-1">
+          <div>
             <Char
               headingRef={refCharHeading}
               sectionRef={refs.charSectionRef}
@@ -66,7 +67,7 @@ function Industries() {
             />
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

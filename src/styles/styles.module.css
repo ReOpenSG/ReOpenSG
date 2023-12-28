@@ -895,3 +895,150 @@
     }
   }
 }
+
+/* Industries */
+.industries {
+  @apply w-full;
+
+  /* Industries outerContainer*/
+  & .outerContainer {
+    @apply px-open-margin-mobile pb-open-2xl;
+    @apply desktop:px-open-margin-desktop desktop:pb-open-5xl;
+    @apply target:px-open-margin-desktop target:pb-open-5xl;
+
+    & .innerContainer {
+      @apply m-auto flex max-w-[1320px];
+
+      /* Industries 1번째 섹션 - Snb 컴포넌트 */
+      .snb {
+        @apply hidden min-w-[120px];
+        @apply desktop:block desktop:pt-open-5xl;
+        @apply tablet:block tablet:pt-open-5xl;
+
+        /* Industries 1번째 섹션 - Snb 컴포넌트 - nav */
+        & .nav {
+          @apply sticky top-open-7xl;
+
+          /* Industries 1번째 섹션 - Snb 컴포넌트 - section 목록 */
+          & .sectionList {
+            @apply flex flex-col gap-open-gutter-mobile text-open-font-large font-open-label -text--open-gray-300;
+
+            /* Industries 1번째 섹션 - Snb 컴포넌트 - 목록 아이템 버튼 */
+            & .button {
+              @apply px-open-sm py-open-md;
+            }
+
+            /* Industries 1번째 섹션 - Snb 컴포넌트 - 목록 아이템 버튼 (현재 섹션 위치) */
+            & .item button {
+              @apply -text--open-accent-accent;
+            }
+          }
+        }
+      }
+
+      /* Industries 2번째 섹션 - Char 컴포넌트 */
+      .char {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:pt-open-5xl tablet:desktop:gap-open-2xl;
+
+        /* Industries 2번째 섹션 - Char 컴포넌트 - 타이틀 */
+        & .charTitle {
+          @apply text-open-font-large font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Industries 2번째 섹션 - Char 컴포넌트 - 설명 */
+        & .charDesc {
+          @apply text-open-font-medium font-open-paragraph;
+          @apply desktop:text-open-font-large;
+          @apply tablet:text-open-font-large;
+        }
+      }
+
+      /* Industries 3번째 섹션 - Product 컴포넌트 */
+      .product {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:pt-open-5xl tablet:desktop:gap-open-2xl;
+
+        /* Industries 3번째 섹션 - Product 컴포넌트 - 타이틀 */
+        & .productTitle {
+          @apply text-open-font-large font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 컨테이너 */
+        & .productContainer {
+          @apply flex flex-col gap-mobile-gap;
+          @apply desktop:gap-open-2xl;
+          @apply tablet:gap-open-2xl;
+
+          /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 */
+          & .productLink {
+            @apply flex gap-mobile-gap;
+            @apply desktop:gap-desktop-gap;
+            @apply tablet:gap-desktop-gap;
+
+            /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 hover 텍스트 형광펜 애니메이션 */
+            & dt span {
+              @apply relative;
+            }
+            & dt span::before {
+              @apply absolute bottom-0 left-0 h-[10px] w-[0%] -bg--open-accent-accent opacity-50 transition-all duration-500 ease-in-out content-[""];
+            }
+            &:hover {
+              @apply -translate-y-open-md;
+            }
+            &:hover dt span::before {
+              @apply w-[100%];
+            }
+
+            /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 컨테이너 */
+            & .linkContainer {
+              @apply flex gap-mobile-gap py-open-lg;
+              @apply desktop:gap-desktop-gap;
+              @apply tablet:gap-desktop-gap;
+              @apply desktop:py-open-xl;
+              @apply tablet:py-open-xl;
+
+              /* Industries 3번째 섹션 - Product 컴포넌트 - 이미지 */
+              & .image {
+                @apply w-open-5xl;
+                @apply desktop:w-open-7xl;
+                @apply tablet:w-open-7xl;
+              }
+
+              /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 목록 */
+              & .list {
+                @apply flex flex-1 flex-col gap-open-xl;
+
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 이름 */
+                & .itemName {
+                  @apply mb-[-20px] text-open-font-large font-open-heading;
+                  @apply desktop:text-open-font-xxl;
+                  @apply tablet:text-open-font-xxl;
+                }
+
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 상세 이름 */
+                & .itemDetailName {
+                  @apply text-open-font-medium font-open-label;
+                  @apply desktop:text-open-font-xl;
+                  @apply tablet:text-open-font-xl;
+                }
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 설명 */
+                & .itemDesc {
+                  @apply text-open-font-medium font-open-paragraph;
+                  @apply desktop:text-open-font-large;
+                  @apply tablet:text-open-font-large;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

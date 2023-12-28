@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Industries.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Char({ industryDesc, headingRef, sectionRef }) {
   return (
-    <section ref={headingRef} id="Char" className={styles.Char}>
-      <h4 ref={sectionRef} className={styles.CharTitle}>
+    <section ref={headingRef} id="Char" className={styles.char}>
+      <h3 ref={sectionRef} className={styles.charTitle}>
         산업 특징
-      </h4>
-      <p className={styles.CharDesc}>{industryDesc}</p>
+      </h3>
+      <p className={styles.charDesc}>{industryDesc}</p>
     </section>
   );
 }
