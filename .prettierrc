@@ -16,12 +16,6 @@
   "rangeStart": 0,
   "requirePragma": false,
   "insertPragma": false,
-  "overrides": [
-    {
-      "files": "*.json",
-      "options": {
-        "printWidth": 200
-      }
-    }
-  ]
+  "overrides": [{ "files": "*.json", "options": { "printWidth": 200 } }],
+  "plugins": ["prettier-plugin-tailwindcss"]
 }

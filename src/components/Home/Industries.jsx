@@ -5,17 +5,18 @@ import Image2 from '@/assets/home_industry1.png';
 import Image1 from '@/assets/home_industry4.png';
 import Image3 from '@/assets/home_industry2.png';
 import Image4 from '@/assets/home_industry3.png';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Industries() {
   const industryData = [
     {
       id: uuid(),
-      img: Image1,
-      enTitle: 'Secondary Battery',
-      krTitle: '2차 전지',
-      route: 'battery',
+      img: Image4,
+      enTitle: 'Semi-conductor',
+      krTitle: '반도체',
+      route: 'semiconductor',
     },
+
     {
       id: uuid(),
       img: Image2,
@@ -25,17 +26,17 @@ function Industries() {
     },
     {
       id: uuid(),
+      img: Image1,
+      enTitle: 'Secondary Battery',
+      krTitle: '2차 전지',
+      route: 'battery',
+    },
+    {
+      id: uuid(),
       img: Image3,
       enTitle: 'Port',
       krTitle: '항만',
       route: 'port',
-    },
-    {
-      id: uuid(),
-      img: Image4,
-      enTitle: 'Semi-conductor',
-      krTitle: '반도체',
-      route: 'semiconductor',
     },
   ];
   return (
@@ -64,7 +65,7 @@ function Industries() {
               data-aos-duration="700"
               data-aos-delay="50"
             >
-              <Link to={`/industries/${item.route}`} className="block p-open-2xl h-full ">
+              <Link to={`/industries/${item.route}`} className="block h-full p-open-2xl ">
                 <p className={styles.krTitle}>{item.krTitle}</p>
                 <p className={styles.enTitle}>{item.enTitle}</p>
               </Link>
