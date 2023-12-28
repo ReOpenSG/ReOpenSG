@@ -1,0 +1,262 @@
+.home {
+  @apply mb-open-5xl h-full w-full break-keep;
+
+  & .black {
+    @apply h-full w-full -bg--openfoundation-black px-open-gutter-mobile;
+    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  }
+
+  & .white {
+    @apply h-full w-full -bg--openfoundation-white;
+  }
+
+  & .slogan {
+    @apply relative z-10 mx-auto h-screen w-full  items-center justify-center overflow-hidden -bg--openfoundation-black object-fill;
+
+    & .wrapper {
+      @apply absolute left-1/2 top-1/2 flex w-full max-w-[1320px] -translate-x-1/2 -translate-y-1/3 flex-col items-center gap-open-xl px-open-gutter-mobile shadow-black drop-shadow-2xl desktop:px-0;
+      @apply z-20 tablet:items-stretch tablet:gap-open-3xl desktop:items-stretch desktop:gap-open-3xl;
+
+      & .title {
+        @apply block text-center text-open-font-xxxl font-open-heading -text--openfoundation-white brightness-125;
+        @apply tablet:text-start tablet:text-open-font-xxxxxl desktop:text-start desktop:text-open-font-xxxxxl;
+
+        & .gradient {
+          @apply inline-block
+          bg-gradient-to-r
+        -from--open-accent-accent-1 -to--open-accent-accent-2 bg-clip-text text-transparent brightness-125;
+        }
+      }
+      & .subtitle {
+        @apply flex flex-col items-start justify-start;
+        @apply text-open-font-medium  font-open-paragraph -text--openfoundation-white;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+    & .scrollWrapper {
+      @apply absolute bottom-open-xl left-1/2 -translate-x-1/2 -text--openfoundation-white;
+
+      & .mouse {
+        @apply mx-auto h-[46px] w-[30px] rounded-2xl border-2 -border--openfoundation-white;
+
+        & .pointer {
+          @apply mx-auto my-open-md  h-[6px] w-[6px] animate-circle rounded-full -bg--openfoundation-white;
+        }
+      }
+
+      & .arrow {
+        @apply mx-auto block h-[26px] w-[26px] animate-bounce -text--openfoundation-white;
+      }
+    }
+  }
+  & .universe {
+    @apply flex flex-col items-center justify-center gap-open-4xl  -bg--openfoundation-black bg-cover px-open-gutter-mobile py-open-4xl;
+    @apply tablet:gap-open-5xl tablet:py-open-5xl desktop:gap-open-5xl desktop:py-open-5xl;
+
+    & .titleWrapper {
+      @apply flex flex-col items-center gap-open-lg -text--openfoundation-white;
+      @apply tablet:gap-open-xl desktop:gap-open-xl;
+
+      & .subtitle {
+        @apply text-open-font-large font-open-highlight;
+        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+      }
+      & .title {
+        @apply text-open-font-xxl font-open-heading;
+        @apply tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
+      }
+    }
+  }
+  & .solutions {
+    @apply mx-auto hidden max-w-[1320px] flex-col  items-center gap-open-5xl pt-open-6xl -text--openfoundation-white;
+    @apply transition-opacity tablet:flex tablet:pt-open-7xl desktop:flex desktop:pt-open-7xl;
+
+    & .title {
+      @apply text-open-font-xl font-open-heading;
+      @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    & .ul {
+      @apply flex items-center justify-center gap-open-lg;
+      @apply text-open-font-small font-open-highlight;
+      @apply tablet:text-open-font-medium desktop:text-open-font-medium;
+
+      & .button {
+        @apply relative rounded-3xl px-open-gutter-mobile py-open-sm;
+        @apply transition-all duration-1000 ease-in-out;
+      }
+    }
+
+    & .listWrapper {
+      @apply flex w-full justify-between gap-open-4xl overflow-visible tablet:gap-open-2xl;
+
+      & .description {
+        @apply flex w-[330px] min-w-[330px] flex-col items-start gap-open-3xl tablet:w-[280px] tablet:min-w-[280px];
+
+        & .title {
+          @apply text-open-font-xl font-open-heading;
+          @apply tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+        }
+        & .summary {
+          @apply text-open-font-medium font-open-paragraph;
+          @apply tablet:text-open-font-large desktop:text-open-font-large;
+        }
+        & .more {
+          @apply text-open-font-medium font-open-label;
+          @apply tablet:text-open-font-large desktop:text-open-font-large;
+        }
+      }
+      & .image {
+        @apply border-none object-cover;
+      }
+    }
+  }
+  & .products {
+    @apply mx-auto flex w-full max-w-[1320px] flex-col items-center  gap-open-2xl px-open-gutter-mobile  py-open-5xl;
+    @apply -text--openfoundation-white;
+    @apply tablet:items-stretch tablet:gap-open-4xl tablet:py-open-7xl desktop:items-stretch desktop:gap-open-4xl desktop:py-open-7xl;
+
+    & .title {
+      @apply text-start text-open-font-xl font-open-heading;
+      @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    & .summaryWrapper {
+      @apply flex w-full max-w-[1320px] justify-center;
+      @apply tablet:justify-between desktop:justify-between;
+
+      & .main {
+        @apply inline-block  bg-gradient-to-r -from--open-accent-accent-1 -to--open-accent-accent-2
+          bg-clip-text
+        text-center text-open-font-xxxl font-open-heading text-transparent;
+        @apply tablet:text-left desktop:text-left;
+      }
+
+      & .sub {
+        @apply hidden  flex-col text-end text-open-font-medium font-open-label;
+        @apply tablet:flex tablet:text-open-font-xl desktop:flex desktop:text-open-font-xl;
+      }
+    }
+
+    & .cardContainer {
+      @apply flex w-full flex-col gap-open-gutter-mobile;
+      @apply tablet:gap-open-2xl desktop:gap-open-2xl;
+
+      & .cardWrapper {
+        @apply flex w-full flex-1 items-center justify-between gap-open-4xl rounded-[30px] border-2 border-transparent -bg--open-gray-950 p-open-2xl tablet:h-[400px] desktop:h-[400px];
+
+        @apply z-10 active:-border--open-accent-accent pointerhover:hover:-border--open-accent-accent tablet:p-open-4xl desktop:px-open-5xl desktop:py-open-4xl;
+
+        & .summaryWrapper {
+          @apply flex flex-col items-center gap-open-xl;
+          @apply tablet:items-start desktop:items-start;
+          & .mainKeyword {
+            @apply flex gap-open-sm text-open-font-xxl font-open-label;
+            @apply tablet:flex-col tablet:text-open-font-xxxxl desktop:flex-col desktop:text-open-font-xxxxl;
+          }
+          & .subWrapper {
+            @apply flex flex-col items-center gap-open-lg;
+            @apply tablet:items-start desktop:items-start;
+
+            & .subKeyword {
+              @apply text-open-font-medium font-open-paragraph;
+              @apply tablet:text-open-font-large desktop:text-open-font-large;
+            }
+
+            & .button {
+              @apply text-open-font-small font-open-label;
+              @apply tablet:text-open-font-medium desktop:text-open-font-medium;
+            }
+          }
+        }
+        & .imageWrapper {
+          @apply hidden w-full  text-center -text--openfoundation-secondary;
+          @apply tablet:block tablet:w-[300px] desktop:block desktop:w-[400px];
+        }
+        & .image {
+          @apply hidden w-full  text-center -text--openfoundation-secondary;
+          @apply tablet:block tablet:w-[300px] desktop:block desktop:w-[400px];
+        }
+      }
+    }
+  }
+
+  & .industry {
+    @apply mx-auto flex w-full max-w-[1320px] flex-col  gap-open-3xl  px-open-margin-mobile  py-open-5xl;
+    @apply tablet:gap-open-5xl tablet:px-open-margin-desktop tablet:py-open-7xl desktop:gap-open-5xl desktop:px-open-margin-desktop desktop:py-open-7xl;
+
+    & .titleWrapper {
+      @apply flex flex-col gap-open-3xl;
+      @apply tablet:gap-open-5xl desktop:gap-open-5xl;
+
+      & .title {
+        @apply text-start text-open-font-xl font-open-heading -text--openfoundation-black;
+        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+      }
+      & .mainKeyword {
+        @apply flex flex-col  text-open-font-xxl font-open-heading;
+        @apply tablet:max-w-full tablet:flex-row tablet:text-open-font-xxxxl desktop:max-w-full desktop:flex-row  desktop:text-open-font-xxxxl;
+
+        & .gradient {
+          @apply bg-gradient-to-r
+        -from--open-accent-accent-1 -to--open-accent-accent-2 bg-clip-text text-transparent;
+        }
+      }
+      & .subKeyword {
+        @apply text-open-font-medium font-open-paragraph;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+
+    & .industriesContainer {
+      @apply flex w-full flex-col flex-wrap justify-center overflow-visible rounded-l-[30px];
+
+      & .cardWrapper {
+        @apply flex w-full grow flex-wrap  items-center justify-center gap-open-gutter-mobile py-open-xl;
+        @apply tablet:items-stretch tablet:gap-open-margin-mobile tablet:py-open-2xl desktop:items-stretch  desktop:gap-open-margin-mobile desktop:py-open-2xl;
+
+        & .card {
+          @apply flex h-[180px] w-full min-w-[270px] flex-1 flex-col flex-wrap justify-center gap-open-sm rounded-[20px] bg-250% bg-center bg-no-repeat -text--openfoundation-white brightness-100 transition-all duration-1000 ease-in-out hover:bg-300%;
+
+          @apply overflow-visible tablet:h-[360px] tablet:justify-normal desktop:h-[360px] desktop:justify-normal;
+
+          & .krTitle {
+            @apply text-open-font-medium font-open-paragraph shadow-black drop-shadow-2xl;
+            @apply tablet:text-open-font-large desktop:text-open-font-large;
+          }
+          & .enTitle {
+            @apply text-open-font-large font-open-heading shadow-black drop-shadow-2xl;
+            @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+          }
+        }
+      }
+    }
+  }
+
+  & .partner {
+    @apply flex w-full flex-col gap-open-2xl py-open-3xl;
+    @apply tablet:gap-open-5xl tablet:py-open-7xl desktop:gap-open-5xl desktop:py-open-7xl;
+
+    & .titleWrapper {
+      @apply mx-auto flex w-full max-w-[1320px] flex-col gap-open-xl  px-open-margin-mobile;
+      @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+      & .mainKeyword {
+        @apply flex flex-col text-open-font-xxl font-open-heading;
+        @apply tablet:max-w-full tablet:text-open-font-xxxxl desktop:max-w-full desktop:flex-row desktop:text-open-font-xxxxl;
+
+        & .gradient {
+          @apply bg-gradient-to-r
+        -from--open-accent-accent-1 -to--open-accent-accent-2 bg-clip-text text-transparent;
+        }
+      }
+      & .subKeyword {
+        @apply flex flex-col text-open-font-medium font-open-paragraph;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+    & .partnerSwiper > div {
+      @apply relative ease-linear;
+    }
+  }
+}
