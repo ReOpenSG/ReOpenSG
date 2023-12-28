@@ -111,6 +111,14 @@ export const theme = {
         '100%': { opacity: '1', transform: 'translateY(0)' },
       },
     },
+    backgroundSize: {
+      '100%': '100%',
+      '120%': '120%',
+      '150%': '150%',
+      '200%': '200%',
+      '250%': '250%',
+      '300%': '300%',
+    },
     boxShadow: {
       industry: '8px 8px 10px 0px rgba(0, 0, 0, 0.20)',
     },
