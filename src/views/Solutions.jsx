@@ -44,7 +44,11 @@ function Solutions() {
         textAlign="text-left"
       />
       <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
-        <Lnb LnbArray={LnbData.array} />
+        {
+          LnbData.array && LnbData.array.length > 1 && (
+            <Lnb LnbArray={LnbData.array} />
+          )
+        }
         <SoultionBanner currentLocation={LnbData.current} prevLocation={LnbData.prev} />
         <div className="flex justify-center">
           <div className="w-full max-w-[1320px] flex desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop">
