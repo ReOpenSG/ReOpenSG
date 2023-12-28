@@ -11,11 +11,12 @@ function Industries() {
   const industryData = [
     {
       id: uuid(),
-      img: Image1,
-      enTitle: 'Secondary Battery',
-      krTitle: '2차 전지',
-      route: 'battery',
+      img: Image4,
+      enTitle: 'Semi-conductor',
+      krTitle: '반도체',
+      route: 'semiconductor',
     },
+
     {
       id: uuid(),
       img: Image2,
@@ -25,17 +26,17 @@ function Industries() {
     },
     {
       id: uuid(),
+      img: Image1,
+      enTitle: 'Secondary Battery',
+      krTitle: '2차 전지',
+      route: 'battery',
+    },
+    {
+      id: uuid(),
       img: Image3,
       enTitle: 'Port',
       krTitle: '항만',
       route: 'port',
-    },
-    {
-      id: uuid(),
-      img: Image4,
-      enTitle: 'Semi-conductor',
-      krTitle: '반도체',
-      route: 'semiconductor',
     },
   ];
   return (
