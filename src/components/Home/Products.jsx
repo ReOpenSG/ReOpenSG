@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 import Product1 from '@/assets/home_products1.png';
 import Product2 from '@/assets/home_products2.png';
 import Product3 from '@/assets/home_products3.png';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Products() {
   const productData = [
