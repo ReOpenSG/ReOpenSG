@@ -703,3 +703,195 @@
     }
   }
 }
+
+/* Machines&Devices */
+.machinesDevice {
+  @apply w-full;
+
+  /* Machines&Devices 1번째 섹션 - CardWrapper 컴포넌트 */
+  & .cardWrapper {
+    @apply px-open-margin-mobile;
+    @apply desktop:px-open-margin-desktop;
+    @apply tablet:px-open-margin-desktop;
+
+    /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 타이틀 */
+    & .title {
+      @apply sr-only;
+    }
+
+    /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 리스트 */
+    & .cardList {
+      @apply m-auto flex max-w-[1320px] flex-wrap gap-open-gutter-mobile py-open-xl;
+      @apply desktop:gap-open-gutter-desktop desktop:py-open-2xl;
+      @apply tablet:gap-open-gutter-desktop tablet:py-open-2xl;
+
+      /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 */
+      & .card {
+        @apply w-[140px] items-center gap-open-lg rounded-[20px] border -border--open-gray-200 p-open-lg text-center -text--open-gray-200  transition-colors duration-500;
+        @apply desktop:w-open-8xl;
+        @apply tablet:w-open-8xl;
+        @apply hover:-border--open-accent-accent hover:-text--open-accent-accent;
+
+        /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 (클릭한 카드, 현재 페이지) */
+        &[aria-current='page'] {
+          @apply -border--open-accent-accent -bg--open-accent-accent -text--openfoundation-secondary;
+        }
+        /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner */
+        & .cardInner {
+          @apply flex flex-col justify-between gap-open-lg;
+
+          /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 이미지 컨테이너 */
+          & .imageContainer {
+            @apply flex justify-center;
+
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 이미지 */
+            & img {
+              @apply h-[50px] w-[85px] object-contain;
+            }
+          }
+
+          /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 타이틀, 서브타이틀 컨테이너 */
+          & .textContainer {
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 타이틀 */
+            & .title {
+              @apply text-open-font-medium font-open-heading;
+              @apply desktop:text-open-font-large;
+              @apply tablet:text-open-font-large;
+            }
+
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 서브타이틀 */
+            & .subtitle {
+              @apply text-open-font-medium font-open-label;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 */
+  .desc {
+    @apply px-open-margin-mobile;
+    @apply tablet:px-open-margin-desktop;
+    @apply desktop:px-open-margin-desktop;
+
+    /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - inner */
+    & .inner {
+      @apply m-auto flex w-full max-w-[1320px] flex-col gap-open-xl py-open-3xl;
+      @apply desktop:py-open-5xl;
+      @apply tablet:py-open-5xl;
+
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - title */
+      & .title {
+        @apply text-open-font-xl font-open-heading;
+        @apply desktop:text-open-font-xxxl;
+        @apply tablet:text-open-font-xxxl;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - title(가운데 정렬, 디바이스) */
+        &.titleCenter {
+          @apply text-center;
+        }
+      }
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 목록 */
+      & .buttonList {
+        @apply flex flex-wrap gap-open-gutter-mobile;
+        @apply desktop:gap-open-gutter-desktop;
+        @apply tablet:gap-open-gutter-desktop;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 */
+        & .button {
+          @apply rounded-[10px] border -border--open-gray-200 px-open-lg py-open-md text-open-font-medium font-open-heading -text--open-gray-200 transition-colors duration-500;
+          @apply desktop:rounded-[20px] desktop:px-open-2xl desktop:py-open-xl desktop:text-open-font-large;
+          @apply tablet:rounded-[20px] tablet:px-open-2xl tablet:py-open-xl tablet:text-open-font-large;
+          @apply hover:-border--open-accent-accent hover:-text--open-accent-accent;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 (클릭한 버튼, 현재 페이지) */
+          &.isClicked {
+            @apply -border--open-accent-accent -bg--open-accent-accent -text--openfoundation-secondary;
+          }
+        }
+      }
+
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 */
+      & .descContainer {
+        @apply flex flex-wrap justify-center gap-open-xl gap-x-open-margin-mobile;
+        @apply desktop:gap-x-open-margin-desktop;
+        @apply tablet:gap-x-open-margin-desktop;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 이미지 컨테이너 */
+        & .imgContainer {
+          @apply flex items-center justify-center rounded-[20px] -bg--open-gray-50 p-open-xl;
+          @apply mobile:w-full;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 이미지 */
+          & .img {
+            @apply h-[150px] tablet:h-[300px] desktop:h-[400px];
+            @apply w-[550px] object-contain;
+          }
+        }
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 컨테이너 */
+        & .textContainer {
+          @apply min-w-[288px] flex-1;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 목록 */
+          & .descList {
+            @apply flex flex-col gap-open-lg;
+          }
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 */
+          & .descText {
+            @apply text-open-font-medium font-open-paragraph;
+            @apply desktop:text-open-font-xl;
+            @apply tablet:text-open-font-xl;
+          }
+        }
+      }
+    }
+  }
+
+  /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 */
+  .funcChar {
+    @apply -bg--open-gray-50 px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - inner */
+    & .inner {
+      @apply m-auto flex w-full max-w-[1320px] flex-col gap-open-lg py-open-3xl;
+      @apply desktop:gap-open-xl desktop:py-open-5xl;
+      @apply tablet:gap-open-xl tablet:py-open-5xl;
+
+      /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - title */
+      & .title {
+        @apply text-open-font-large font-open-label;
+        @apply desktop:text-open-font-xxl;
+        @apply tablet:text-open-font-xxl;
+      }
+
+      /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 목록 */
+      & .funcCharList {
+        @apply flex flex-wrap gap-open-gutter-mobile;
+        @apply desktop:gap-open-gutter-desktop;
+        @apply tablet:gap-open-gutter-desktop;
+
+        /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 */
+        & .item {
+          @apply flex flex-1 basis-open-8xl flex-col items-center justify-center rounded-[20px] -bg--openfoundation-secondary p-open-2xl text-open-font-medium font-open-label;
+          @apply desktop:gap-open-2xl desktop:text-open-font-xl;
+          @apply gap-open-xl tablet:gap-open-2xl tablet:text-open-font-xl;
+
+          /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 이미지 */
+          & .img {
+            @apply h-open-2xl w-open-2xl;
+            @apply desktop:h-open-5xl desktop:w-open-5xl;
+            @apply tablet:h-open-5xl tablet:w-open-5xl;
+          }
+
+          /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 텍스트 */
+          & .itemText {
+            @apply flex-1;
+          }
+        }
+      }
+    }
+  }
+}
