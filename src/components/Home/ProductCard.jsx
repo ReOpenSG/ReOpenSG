@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function ProductCard({ name, desc, imgUrl }) {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Keywords from './Keywords';
 import BgImg from '@/assets/home_universe.png';
-import styles from './Home.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Universe() {
   return (
