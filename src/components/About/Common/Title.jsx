@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Title({ title, subtitle, children }) {
   return (
-    <div className={styles.CommonTitle}>
+    <div className={styles.commonTitle}>
       <h3 className={styles.title}>{title}</h3>
-      <div className={styles.subTitleWrapper}>
+      <div className={styles.subTitleContainer}>
         <p className={styles.subTitle}>{subtitle}</p>
         {children}
       </div>

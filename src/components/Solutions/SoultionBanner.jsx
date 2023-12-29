@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styles from './Solutions.module.css';
-import ImagArray from './importImageSolutions';
+import styles from '@/styles/styles.module.css';
+import ImagArray from './solutionsBannerImage.js'; // 솔루션 배너 아이콘 이미지 변경을 원하시면 현재 파일과 동일한 위치의 "./solutionsBannerImage.js"로 이동 후
 
 function SoultionBanner({ currentLocation, prevLocation }) {
   const [isSimulator, setIsSimulator] = useState(false);
@@ -16,8 +16,9 @@ function SoultionBanner({ currentLocation, prevLocation }) {
   }, [currentLocation]);
 
   return (
-    <section className={styles.SolutionBanner}>
-      <div className={styles.wrapper}>
+    <section className={styles.solutionBanner}>
+      <h3 className={styles.sectionTitle}>솔루션 배너 이미지</h3>
+      <div className={styles.navBannerContainer}>
         <p className={styles.nav}>
           {prevLocation}
           &nbsp; &gt; &nbsp;
@@ -29,17 +30,16 @@ function SoultionBanner({ currentLocation, prevLocation }) {
               <span>Simulator</span>
             </div>
           )}
-
           <p className={styles.desc}>물류 자동화의 첫 걸음</p>
-          <h3 className={styles.solution}>
+          <p className={styles.solution}>
             <span>Open</span>
             <span>
               {currentLocation}
               &reg;
             </span>
-          </h3>
-          <div className="mobile:hidden absolute overflow-hidden desktop:right-[100px] desktop:w-[320px] tablet:right-[20px] tablet:w-[280px]">
-            <img src={ImagArray[currentLocation]} alt="배너 이미지" />
+          </p>
+          <div className={styles.imageContainer}>
+            <img src={ImagArray[currentLocation]} alt="솔루션 배너 이미지" />
           </div>
         </div>
       </div>

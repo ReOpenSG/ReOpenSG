@@ -2,32 +2,37 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import Card from './Card';
-import styles from './MachinesDevices.module.css';
+import styles from '@/styles/styles.module.css';
 
 function CradsWrapper({ data, currentLocation }) {
   const [cardLength, setCardLength] = useState(0);
 
   useEffect(() => {
-    Object.keys(data).length > 0 && setCardLength(Object.keys(Object.values(data)[0]).length);
+    const firstDataItem = Object.values(data)[0];
+    if (firstDataItem) {
+      setCardLength(Object.keys(firstDataItem).length);
+    }
   }, [data]);
 
-  return (
-    cardLength > 1 && (
-      <nav className={styles.CardWrapper}>
-        {Object.entries(data).map(([title, types]) =>
-          Object.entries(types).map(([subTitle]) => (
-            <Card
-              key={uuidv4()}
-              title={title}
-              subTitle={subTitle}
-              currentLocation={currentLocation}
-              data={data}
-            />
-          )),
-        )}
-      </nav>
-    )
-  );
+  const renderCards = () =>
+    Object.entries(data).flatMap(([title, types]) =>
+      Object.keys(types).map((subTitle) => (
+        <Card
+          key={uuidv4()}
+          title={title}
+          subTitle={subTitle}
+          currentLocation={currentLocation}
+          data={data}
+        />
+      )),
+    );
+
+  return cardLength > 1 ? (
+    <section className={styles.cardWrapper}>
+      <h3 className={styles.title}>Machines Devices 버튼</h3>
+      <nav className={styles.cardList}>{renderCards()}</nav>
+    </section>
+  ) : null;
 }
 
 CradsWrapper.propTypes = {

@@ -1,12 +1,12 @@
 import React from 'react';
 import Palette from './Common/Palette';
-import styles from './About.module.css';
+import styles from '@/styles/styles.module.css';
 import ciImage from '@/assets/about_ci.png';
 
 function Ci() {
   return (
-    <section className={styles.Ci}>
-      <div className={styles.ciWrapper}>
+    <section className={styles.ci}>
+      <div className={styles.ciContainer}>
         <h3 className={styles.title}>CI</h3>
         <p className={styles.desc}>
           OpenSG의 ‘SG’는 ‘Solution Group’의 약자를 상징합니다.
@@ -16,7 +16,7 @@ function Ci() {
           로고 하단의 회색 그라디언트는 구성원 모두가 조직의 성공이라는 지향점을 향한다는 의미를
           담고 있습니다.
         </p>
-        <ul className={styles.list}>
+        <ul className={styles.paletteList}>
           <Palette
             rgb="R 6 / G 64 / B 108"
             cmyk="C 98 / M 82 / Y 41 / K 6"
@@ -39,7 +39,7 @@ function Ci() {
           />
         </ul>
       </div>
-      <div className={styles.imgWrapper}>
+      <div className={styles.imgContainer}>
         <img src={ciImage} alt="CI 로고" className={styles.ciImg} />
       </div>
     </section>
