@@ -11,7 +11,7 @@ function Universe() {
           Explore OpenSG
         </p>
         <h3 className={styles.title} data-aos="fade-up" data-aos-delay="100">
-          OPENSG의 세계관을 만나보세요
+          OpenSG의 세계관을 만나 보세요
         </h3>
       </div>
       <Keywords />

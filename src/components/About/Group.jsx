@@ -8,7 +8,7 @@ function Group() {
       <Title title="WHAT WE DO" subtitle="Open Solution Group">
         <p className={styles.desc}>
           <span>고객이 원하는 성과창출에</span>
-          <span>기여 할 수 있는 최고의 파트너</span>
+          <span>기여할 수 있는 최고의 파트너</span>
         </p>
       </Title>
     </section>

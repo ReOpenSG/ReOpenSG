@@ -1,10 +1,11 @@
 import React from 'react';
 import HistorySwiper from '@/components/History/HistorySwiper';
 import HistoryMobile from '@/components/History/HistoryMobile';
-import historyData from '../../historyData.json';
+import historyData from '@/data/historyData';
 import TitleSection from '@/components/Common/TitleSection';
 
 function History() {
+  console.log(historyData);
   return (
     <div className="w-full">
       <TitleSection

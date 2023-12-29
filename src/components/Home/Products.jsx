@@ -11,21 +11,21 @@ function Products() {
     {
       id: 1,
       name: 'Solutions',
-      desc: 'OpenSG의 solution을 경험해보세요.',
+      desc: 'OpenSG의 Solution을 경험해 보세요.',
       route: '/solutions/ACS',
       imgUrl: Product1,
     },
     {
       id: 2,
       name: 'Smart Machine',
-      desc: 'OpenSG의 machine을 경험해보세요.',
+      desc: 'OpenSG의 Machine을 경험해 보세요.',
       route: '/machines/Lift Type1',
       imgUrl: Product2,
     },
     {
       id: 3,
       name: 'Smart Device',
-      desc: 'OpenSG의 device를 경험해보세요.',
+      desc: 'OpenSG의 Device를 경험해 보세요.',
       route: '/devices/Microsoft',
       imgUrl: Product3,
     },
@@ -46,7 +46,7 @@ function Products() {
           </span>
           <span className="flex flex-col">
             <span>스마트 자동화에 필요한 모든 것,</span>
-            <span>OpenSG 가 함께합니다.</span>
+            <span>OpenSG가 함께합니다.</span>
           </span>
         </p>
       </div>

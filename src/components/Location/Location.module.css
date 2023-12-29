@@ -1,0 +1,76 @@
+.wrapper {
+  @apply w-full flex flex-col -bg--openfoundation-primary
+}
+
+.mapContainer {
+  @apply w-full relative
+}
+
+.mapImage {
+  @apply w-full block
+}
+
+.pinIcon {
+  @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[29.8%] left-[43.8%] translate-x-[-43.8%] translate-y-[-29.5%]
+}
+
+.pinIcon::after {
+  @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["본사/자동화연구소"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[160px] tablet:w-[160px] w-[120px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+}
+
+.pinIconUSA {
+  @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[30.5%] left-[82.8%] translate-x-[-83.8%] translate-y-[-29.5%]
+}
+
+.pinIconUSA::after {
+  @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["미국지사"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[120px] tablet:w-[120px] w-[80px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+}
+
+.locationSection {
+  @apply w-full h-full flex flex-col justify-center items-center desktop:py-open-7xl tablet:py-open-7xl py-open-5xl desktop:px-open-gutter-desktop tablet:px-open-gutter-desktop px-open-gutter-mobile -bg--openfoundation-primary -text--openfoundation-secondary
+}
+
+.locationWrapper {
+  @apply desktop:w-[1320px] flex flex-col gap-open-3xl desktop:gap-open-5xl tablet:gap-open-5xl 
+}
+
+.locationContainer {
+  @apply flex flex-row w-full justify-between items-start gap-open-gutter-mobile desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop
+}
+
+.locationImage {
+  @apply desktop:w-[400px] desktop:h-[400px] tablet:w-[400px] tablet:h-[400px] w-[160px] h-[160px] object-cover
+}
+
+.locationAddressWrapper {
+  @apply flex flex-col gap-0
+}
+
+.locationAddress {
+  @apply flex flex-col justify-center w-full h-full desktop:gap-open-2xl tablet:gap-open-2xl gap-open-md desktop:text-open-font-large tablet:text-open-font-large text-open-font-small font-open-paragraph not-italic
+}
+
+.locationInfoContainer{
+  @apply flex flex-col desktop:gap-open-xl tablet:gap-open-xl gap-open-sm
+}
+
+.locationName {
+  @apply desktop:text-open-font-xl desktop:font-open-heading tablet:text-open-font-xl tablet:font-open-heading text-open-font-medium font-open-label
+}
+
+.locationContact {
+  @apply flex flex-col desktop:gap-open-md tablet:gap-open-md gap-0
+}
+
+.locationTel:hover {
+  @apply underline underline-offset-2
+}
+
+.locationLink {
+  @apply w-fit h-auto inline cursor-pointer
+}
+
+
+.linkIcon {
+  @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px]
+}

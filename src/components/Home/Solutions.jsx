@@ -21,7 +21,7 @@ function Solutions() {
           시뮬레이션까지.
         </>
       ),
-      desc: '물류 자동화의 시작을 오픈에스지와 함께 해보세요.',
+      desc: '물류 자동화의 시작을 OpenSG와 함께 해보세요.',
       img: Solution0,
       route: '/solutions/AIMS',
     },
@@ -37,7 +37,7 @@ function Solutions() {
       id: 2,
       name: 'ACS',
       title: 'ACS',
-      desc: 'AGV를 이용한 물류 제어 시스템으로 실시간으로 AGV Traffic 을 제어하는 솔루션',
+      desc: 'AGV를 이용한 물류 제어 시스템으로 실시간으로 AGV Traffic을 제어하는 솔루션',
       img: Solution2,
       route: '/solutions/ACS',
     },
