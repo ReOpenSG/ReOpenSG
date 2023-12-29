@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import PropTypes, { array } from 'prop-types';
-import styles from './Team.module.css';
+import styles from '@/styles/styles.module.css';
 
 function TeamLnb({ data, state, setState }) {
   const id = useParams();

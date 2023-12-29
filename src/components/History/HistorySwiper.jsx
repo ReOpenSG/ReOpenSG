@@ -7,9 +7,9 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import PropTypes from 'prop-types';
-import styles from '@/components/History/History.module.css';
 import YearSlide from '@/components/History/YearSlide';
 import HistorySlide from '@/components/History/HistorySlide';
+import styles from '@/styles/styles.module.css';
 
 function HistorySwiper({ historyData }) {
   // 연도 Swiper 와 카드 Swiper 가 움직일 때 마다 함께 연동되도록 controller 설정을 하기 위한 상태 관리
@@ -20,8 +20,8 @@ function HistorySwiper({ historyData }) {
   const historyDataSorted = Object.entries(historyData);
 
   return (
-    <div className={styles.sectionWrapper}>
-      <section className={styles.section}>
+    <div className={styles.historyWrapper}>
+      <section className={styles.historySection}>
         <h2 className={styles.srOnly}>오픈에스지 연혁</h2>
         <div className={styles.swiperWrapper}>
           <Swiper

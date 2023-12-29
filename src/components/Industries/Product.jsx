@@ -2,40 +2,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
-
-import styles from './Industries.module.css';
-import imageArray from './importImage.js';
+import styles from '@/styles/styles.module.css';
+import imageArray from './industriesProductImage.js';
 
 function Product({ industryProducts, headingRef, sectionRef }) {
+  const productItems = Object.entries(industryProducts);
   return (
-    <section ref={headingRef} id="Product" className={styles.Product}>
-      <h4 ref={sectionRef} className={styles.ProductTitle}>
+    <section ref={headingRef} id="Product" className={styles.product}>
+      <h3 ref={sectionRef} className={styles.productTitle}>
         관련 제품
-      </h4>
-      <div className={styles.ProductWrapper}>
-        {Object.entries(industryProducts).map((item) => (
+      </h3>
+      <div className={styles.productContainer}>
+        {productItems.map(([key, value]) => (
           <Link
             key={uuidv4()}
-            to={`/solutions/${item[0]}`}
-            className={styles.ProductLink}
+            to={`/solutions/${key}`}
+            className={styles.productLink}
             data-aos="fade-up"
             data-aos-duration="1500"
           >
-            <div className={styles.linkWrapper}>
+            <div className={styles.linkContainer}>
               <div className={styles.image}>
-                <img src={imageArray[item[0]]} alt="제픔 사진" />
+                <img src={imageArray[key]} alt="제품 사진" />
               </div>
               <dl className={styles.list}>
                 <dt className={styles.itemName}>
-                  <span>
-                    Open
-                    {item[0]}
-                  </span>
+                  <span>Open {key}</span>
                 </dt>
-                <dt className={styles.itemSubName}>
-                  <span>{item[1].제품명}</span>
+                <dt className={styles.itemDetailName}>
+                  <span>{value.제품명}</span>
                 </dt>
-                <dd className={styles.itemDesc}>{item[1].제품설명}</dd>
+                <dd className={styles.itemDesc}>{value.제품설명}</dd>
               </dl>
             </div>
           </Link>
@@ -46,7 +43,7 @@ function Product({ industryProducts, headingRef, sectionRef }) {
 }
 
 Product.propTypes = {
-  industryProducts: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  industryProducts: PropTypes.object.isRequired,
   headingRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),

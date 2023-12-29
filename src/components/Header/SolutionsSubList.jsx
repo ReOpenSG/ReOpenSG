@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import AccordionItem from '@/components/Header/AccordionItem';
 import MenuLinkMobile from '@/components/Header/MenuLinkMobile';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 import SitemapArrow from '@/icons/SitemapArrow';
 
 function SolutionsSubList({
@@ -21,7 +21,7 @@ function SolutionsSubList({
     <>
       <motion.li onClick={() => setSubExpanded(isOpen ? 'none' : 'solutions')}>
         <div className={styles.accordionItemMedium}>
-          <button type="button" className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+          <button type="button" className={styles.subMenuButton}>
             <div>Solutions</div>
             <SitemapArrow down={!isOpen} />
           </button>
@@ -30,7 +30,7 @@ function SolutionsSubList({
       <AnimatePresence initial>
         {isOpen && (
         <motion.ul
-          className="flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-tertiary"
+          className={styles.solutionsSubList}
           key="content"
           initial="collapsed"
           animate="open"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from '@/components/Header/Header.module.css';
+import styles from '@/styles/styles.module.css';
 
 function MenuLink({ linkName, linkAddress, tooltip }) {
   return (

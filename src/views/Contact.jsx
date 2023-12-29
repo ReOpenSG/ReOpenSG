@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import BannerSection from '@/components/Common/BannerSection';
 import Agreement from '@/components/Contact/Agreement';
-import styles from '@/components/Contact/Contact.module.css';
+import styles from '@/styles/styles.module.css';
 import ContactButton from '@/components/Contact/ContactButton';
 import Content from '@/components/Contact/Content';
 import InquiryType from '@/components/Contact/InquiryType';
@@ -21,25 +21,21 @@ function Contact() {
     e.preventDefault();
     emailjs
       .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.apiKey)
-      .then(
-        () => {
-          navigate('/contact/success');
-        },
-        () => {
-          navigate('/contact/fail');
-        },
-      );
+      .then(() => {
+        navigate('/contact/success');
+      })
+      .catch(() => {
+        navigate('/contact/fail');
+      });
 
     emailjs
       .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ctoApiKey)
-      .then(
-        () => {
-          navigate('/contact/success');
-        },
-        () => {
-          navigate('/contact/fail');
-        },
-      );
+      .then(() => {
+        navigate('/contact/success');
+      })
+      .catch(() => {
+        navigate('/contact/fail');
+      });
   };
 
   const handleErrorMessage = () => {
@@ -49,7 +45,7 @@ function Contact() {
   };
 
   return (
-    <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
+    <div className={styles.contact}>
       <form ref={form} onSubmit={sendEmail} className={styles.formWrapper}>
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />

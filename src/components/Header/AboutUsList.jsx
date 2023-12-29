@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import MenuLinkMobile from '@/components/Header/MenuLinkMobile';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 import SitemapArrow from '@/icons/SitemapArrow';
 
 function AboutUsList({ accName, expanded, setExpanded }) {
   const isOpen = expanded === accName;
   return (
     <>
-      <motion.li onClick={() => setExpanded(isOpen ? 'none' : 'aboutus')} className="py-open-md cursor-pointer">
-        <div className={styles.accordionItemLarge}>
-          <button type="button" className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+      <motion.li onClick={() => setExpanded(isOpen ? 'none' : 'aboutus')} className={styles.menuList}>
+        <div>
+          <button type="button" className={styles.menuButton}>
             <div>About Us</div>
             <SitemapArrow down={!isOpen} />
           </button>
@@ -20,7 +20,7 @@ function AboutUsList({ accName, expanded, setExpanded }) {
       <AnimatePresence initial>
         {isOpen && (
         <motion.ul
-          className="flex flex-col gap-open-md text-open-font-large font-open-paragraph"
+          className={styles.menuSubList}
           key="content"
           initial="collapsed"
           animate="open"

@@ -2,7 +2,7 @@ import React from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
-import styles from '@/components/Location/Location.module.css';
+import styles from '@/styles/styles.module.css';
 
 function LocationPinIcon({ usa }) {
   AOS.init();

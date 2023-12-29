@@ -262,6 +262,452 @@
   }
 }
 
+/* Support 타이틀 */
+/* 타이틀를 감싸는 박스 영역 */
+.bannerSection {
+  @apply flex flex-col-reverse gap-open-xl pb-open-5xl pt-open-6xl text-center tablet:gap-open-2xl tablet:pb-open-7xl tablet:pt-[160px] desktop:gap-open-2xl desktop:pb-open-7xl desktop:pt-[160px];
+
+  /* Support 텍스트 영역 */
+  .titleCategory {
+    @apply text-open-font-large font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+  }
+
+  /* 커뮤니티, 라이브러리, 고객문의 텍스트 영역 */
+  .titleText {
+    @apply text-open-font-xxl font-open-heading -text--openfoundation-primary tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
+  }
+}
+
+/* AboutUs, Service&Solution 타이틀 */
+/* 타이틀를 감싸는 박스 영역 */
+.titleSection {
+  @apply bg-cover px-open-margin-mobile pb-open-5xl pt-open-6xl tablet:px-open-margin-desktop tablet:pb-open-7xl tablet:pt-[160px] desktop:px-open-margin-desktop desktop:pb-open-7xl desktop:pt-[160px];
+
+  /* 2줄의 텍스트를 감싸는 영역 */
+  .titleInner {
+    @apply m-auto flex max-w-[1320px] flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+
+    /* 회사개요, 연혁, 직무소개, 오시는길, Open Solution, Open Smart Machine, Open Device, Industries 등 텍스트 영역  */
+    & h2 {
+      @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    /* OpenSG가 걸어온 길, OpenSG의 업무 등 서브 타이틀을 감싸는 영역  */
+    & p {
+      @apply flex flex-col;
+    }
+
+    /* OpenSG가 걸어온 길, OpenSG의 업무 등 서브 타이틀 텍스트 각각  */
+    & span {
+      @apply text-open-font-xl font-open-heading -text--openfoundation-secondary tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+  }
+}
+
+/* 고객문의 */
+/* 고객문의 전체를 감싸는 영역 */
+.contact {
+  @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  /* 문의유형 작성 폼 전체를 감싸는 영역 */
+  .formWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  /* label과 input을 감싸는 영역 */
+  .wrapper {
+    @apply flex grow items-center gap-open-xl;
+  }
+
+  /* 소속, 성명, 받으실 이메일, 받으실 연락처, 제목, 내용 등 label 영역 */
+  .label {
+    @apply w-open-6xl text-open-font-medium font-open-label -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  /* 소속, 성명, 받으실 이메일, 받으실 연락처, 제목, 내용 등을 직접 입력하는 작성 영역 */
+  .input,
+  .textarea {
+    @apply w-full grow -bg--open-gray-50 px-open-xl py-open-lg text-open-font-small font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  /* 문의유형 아이콘 크기 */
+  .iconStyle {
+    @apply h-10 w-10 tablet:h-20 tablet:w-20 desktop:h-20 desktop:w-20;
+  }
+
+  /* 개인정보 활용동의를 감싸는 영역 */
+  .agreementText {
+    @apply text-open-font-medium font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+
+    /* 개인정보 활용동의 텍스트 */
+    & h3 {
+      @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    /* 제목 아래 1줄 설명(OpenSG는 개인정보보호법 및 관련 법령에 의거 고객님들의 의견 접수와 관련한 성실한 답변을 드리기 위해 필요한 최소한의 개인정보를 아래와 같이 수집, 이용하고자 합니다.) */
+    & p {
+      @apply my-open-xl tablet:my-open-2xl desktop:my-open-2xl;
+    }
+  }
+
+  /* 필수정보의 수집 목적, 필수 수집 항목, 보유 및 이용기간 등을 감싸는 영역 */
+  .agreementOl {
+    @apply rounded-[20px] border -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl tablet:py-open-2xl desktop:px-open-xl desktop:py-open-2xl;
+
+    /* 필수정보의 수집 목적, 필수 수집 항목, 보유 및 이용기간 등 텍스트 영역 */
+    & li {
+      @apply list-inside list-decimal;
+    }
+
+    /* 경고문구(※ 고객님께서는 본 동의를 거부하실 수 있으나 거부 시 필수정보의 수집 목적에 해당하는 사항의 처리가 제한될 수 있습니다.) 텍스트 영역 */
+    .warning {
+      @apply mt-open-md list-none text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+  }
+
+  /* 체크박스와 필수 동의 내용을 감싸는 영역 */
+  .checkboxWrapper {
+    @apply flex items-center justify-end pb-open-2xl pt-open-lg tablet:pb-open-3xl tablet:pt-open-2xl desktop:pb-open-3xl desktop:pt-open-2xl;
+
+    /* (필수) 위 개인정보 수집 및 이용에 동의합니다. */
+    & label {
+      @apply pl-open-lg;
+    }
+
+    /* 체크박스 */
+    & input {
+      @apply h-open-xl w-open-xl appearance-none rounded-[2px] border-2 -border--open-gray-300 -bg--openfoundation-secondary;
+      @apply bg-cover checked:-border--open-accent-accent checked:bg-[url('@/assets/contact_agreementCheck.svg')];
+    }
+  }
+
+  /* 문의내용(제목, 내용)을 감싸는 영역 */
+  .contentWrapper {
+    @apply flex grow flex-col gap-open-lg py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  /* 문의유형 아이콘의 Tab 접근성을 위해 작성한 CSS */
+  .industryWrapper {
+    @apply rounded-[20px] focus-within:ring-2 focus-within:ring-[#3B82F6];
+  }
+
+  /* 문의유형 체크박스 스타일링을 위해 기본 스타일을 숨겨둔 영역 */
+  .inquiryInput {
+    @apply sr-only;
+  }
+
+  /* 제품 문의, 구매 문의, AS 문의, 기타 문의 등 텍스트 영역 */
+  .inquiryLabel {
+    @apply flex min-w-[100px] flex-1 flex-col items-center gap-open-lg rounded-[20px] -bg--open-gray-50 px-open-xl py-open-xl;
+    @apply text-open-font-medium font-open-label tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  /* 문의유형 아이콘 클릭 시 배경색과 텍스트 색상을 변경하는 영역 */
+  .inquiryInput:checked + .inquiryLabel {
+    @apply -bg--open-accent-accent -text--openfoundation-secondary;
+  }
+
+  /* 문의유형 글자와 아이콘 전체를 감싸는 영역 */
+  .inquiryWrapper {
+    @apply flex flex-row gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl;
+
+    /* 문의유형 4개의 아이콘을 감싸는 영역 */
+    & div {
+      @apply flex flex-1 flex-wrap gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+    }
+  }
+
+  /* 소속 ~ 받으실 연락처를 감싸는 영역 */
+  .personalInfoWrapper {
+    @apply flex flex-col gap-open-lg border-b -border--open-gray-200 py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  /* 소속과 성명 1쌍, 받으실 이메일과 받으실 연락처 1쌍을 짝을 지어 반응형에서의 배치를 위해 묶어둔 영역  */
+  .personalInfoContainer {
+    @apply flex grow flex-wrap gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  /* 이메일과 연락처(유효성 검사(올바른 이메일을 입력했는가, 연락처 자동 하이픈 생성))의 작성 영역이 labal을 제외한 영역에 가득 차도록 설정한 영역 */
+  .regWrapper {
+    @apply grow;
+  }
+
+  /* 올바른 이메일을 입력하지 않았을 때 나오는 메시지 스타일링 영역 */
+  .message {
+    @apply text-open-font-small font-open-paragraph text-red-500 tablet:text-open-font-medium desktop:text-open-font-medium;
+    @apply block text-right;
+  }
+}
+
+/* 고객문의 전송 성공 페이지 */
+/* 고객문의 전송 성공 페이지를 감싸는 영역 */
+.contactSuccess {
+  @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
+
+  /* 전송 성공 메시지를 감싸는 영역 */
+  .noticeWrapper {
+    @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
+
+    /* 1번째 줄 텍스트(문의가 정상적으로 접수되었습니다.) 영역 */
+    .mainText {
+      @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+
+    /* 2번째 줄 텍스트(담당자가 문의를 처리할 예정이니 잠시만 기다려 주세요.) 영역 */
+    .subText {
+      @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  /* 확인 버튼 */
+  .mainButton {
+    @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+}
+
+/* 고객문의 전송 실패 페이지 */
+/* 고객문의 전송 실패 페이지를 감싸는 영역 */
+.contactFail {
+  @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
+
+  /* 전송 실패 메시지를 감싸는 영역 */
+  .noticeWrapper {
+    @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
+
+    /* 1번째 줄 텍스트(죄송합니다. 현재 일시적인 오류로 인해 접수가 불가합니다.) 영역 */
+    .mainText {
+      @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+
+    /* 2번째 줄 텍스트(담당자에게 별도로 문의하시면 최선을 다해 도움을 드리겠습니다. 문의 담당자 연락처: 031-373-2612) 영역 */
+    .subText {
+      @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  /* 다시 시도, 메인으로 버튼을 감싸는 영역 */
+  .buttonWrapper {
+    @apply flex gap-open-xl;
+  }
+
+  /* 다시 시도 버튼 */
+  .retryButton {
+    @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+
+  /* 메인으로 버튼 */
+  .mainButton {
+    @apply rounded-[20px] border-2 -border--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--open-accent-accent tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+}
+
+/* 라이브러리 */
+/* 라이브러리 전체 페이지 */
+.library {
+  @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  /* 라이브러리 전체를 감싸는 영역 */
+  .sectionWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  /* 소개서 및 브로슈어 다운로드 영역을 감싸는 영역 */
+  .sectionContainer {
+    @apply flex grow flex-wrap justify-center gap-open-gutter-mobile py-open-xl tablet:gap-open-gutter-desktop tablet:py-open-5xl desktop:gap-open-gutter-desktop desktop:py-open-5xl;
+  }
+
+  /* 다운로드 카드 1개 */
+  .cardWrapper {
+    @apply flex-1 rounded-[20px] border-2 -border--open-gray-200 px-open-2xl py-open-2xl tablet:py-open-4xl tablet:hover:-border--open-accent-accent desktop:py-open-4xl desktop:hover:-border--open-accent-accent;
+  }
+
+  /* 다운로드 카드 hover 시 효과 */
+  .cardWrapper:hover {
+    .iconChange {
+      @apply tablet:-fill--open-accent-accent desktop:-fill--open-accent-accent;
+    }
+  }
+
+  /* 다운로드 카드 안쪽 텍스트, 아이콘 영역 */
+  .cardContainer {
+    @apply flex min-w-[248px] flex-col gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+  }
+
+  /* 다운로드 카드 안쪽 텍스트 영역 */
+  .cardInner {
+    @apply flex flex-col-reverse gap-open-xl;
+  }
+
+  /* OpenSG 회사 소개서, OpenSG Company Overview, OpenSG 브로슈어, OpenSG Company Brochure 텍스트 영역 */
+  .cardTitle {
+    @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+  }
+
+  /* 소개서, Overview, 브로슈어, Brochure 글자 영역 */
+  .cardCategoryText {
+    @apply text-open-font-medium font-open-paragraph -text--open-gray-600 tablet:text-open-font-xl desktop:text-open-font-xl;
+  }
+
+  /* 다운로드 아이콘 영역 */
+  .cardLinkWrapper {
+    @apply flex justify-end;
+  }
+
+  /* 다운로드 아이콘 크기 */
+  .iconStyle {
+    @apply h-6 w-6 tablet:h-9 tablet:w-9 desktop:h-9 desktop:w-9;
+  }
+
+  /* 다운로드 아이콘 색상 */
+  .iconChange {
+    @apply -fill--openfoundation-primary;
+  }
+}
+
+/* 직무소개 */
+/* 직무소개 전체 페이지 */
+.team {
+  @apply w-full -bg--openfoundation-primary;
+
+  /* 직무소개 x축 여백 지정  */
+  .teamWrapper {
+    @apply mx-open-margin-mobile my-open-xl tablet:mx-open-margin-desktop tablet:my-open-5xl desktop:mx-open-margin-desktop desktop:my-open-5xl;
+  }
+
+  /* 직무소개 전체를 감싸는 영역  */
+  .sectionWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  /* 그룹(전체, FA, 경영지원, IT)을 감싸는 영역 */
+  .lnbUl {
+    @apply text-center text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    @apply mb-open-margin-mobile flex gap-open-md tablet:mb-open-xl tablet:gap-open-gutter-desktop desktop:mb-open-xl desktop:gap-open-gutter-desktop;
+
+    /* 전체, FA, 경영지원, IT 각각의 요소 */
+    & button {
+      @apply rounded-[20px] -bg--openfoundation-quaternary px-open-xl py-open-sm tablet:px-open-2xl desktop:px-open-2xl;
+      @apply border border-transparent tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
+
+      /* 전체, FA, 경영지원, IT 각각의 요소 클릭 시 색상 변경 */
+      &.isClicked {
+        @apply -bg--open-accent-accent;
+      }
+    }
+  }
+
+  /* 팀 소개 카드 1개 */
+  .cardWrapper {
+    @apply mobile:mb-open-gutter-mobile mobile:w-full mobile:gap-open-xl mobile:p-open-xl;
+    @apply flex items-center rounded-[20px] border-2 border-transparent -bg--openfoundation-quaternary tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
+    @apply tablet:flex-1 tablet:flex-col tablet:gap-open-2xl tablet:p-open-2xl desktop:flex-1 desktop:flex-col desktop:gap-open-2xl desktop:p-open-2xl;
+
+    /* 팀명 및 팀 업무소개 내용을 감싸는 영역 */
+    & div {
+      @apply flex min-w-[248px] flex-col gap-open-xl tablet:text-center desktop:text-center;
+    }
+
+    /* 팀명 */
+    & h3 {
+      @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+
+    /* 팀 업무소개 */
+    & p {
+      @apply text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+
+    /* 팀별 아이콘 크기 */
+    & img {
+      @apply mobile:w-12 tablet:w-32 desktop:w-32;
+    }
+  }
+
+  /* 팀 소개 카드들을 감싸는 영역 */
+  .roleSectionWrapper {
+    @apply flex mobile:w-full mobile:flex-col tablet:flex-wrap tablet:gap-open-gutter-desktop desktop:flex-wrap desktop:gap-open-gutter-desktop;
+  }
+}
+
+/* Footer */
+.footer {
+  /* Footer에서 고객문의 영역 */
+  .contactUsWrapper {
+    @apply bg-[url('@/assets/footer_background.png')] bg-cover;
+
+    /* Footer에서 고객문의 링크 클릭 영역 */
+    .link {
+      @apply block px-open-margin-mobile py-open-3xl tablet:px-open-margin-desktop tablet:py-open-6xl desktop:px-open-margin-desktop desktop:py-open-6xl;
+    }
+
+    /* Footer에서 텍스트의 최대크기 지정 */
+    .container {
+      @apply m-auto w-full max-w-[1320px];
+    }
+
+    /* Footer에서 고객문의 텍스트와 아이콘 영역 */
+    .inner {
+      @apply flex items-center justify-between;
+    }
+
+    /* Footer에서 고객문의 텍스트 영역 */
+    .content {
+      @apply flex flex-col;
+    }
+
+    /* Contact US 텍스트 */
+    .title {
+      @apply text-open-font-xxl font-open-label -text--openfoundation-secondary tablet:text-open-font-xxxxxl desktop:text-open-font-xxxxxl;
+    }
+
+    /* 설명(OpenSG의 전문 엔지니어들과 미래를 열어 보세요.) 텍스트 영역 */
+    .text {
+      @apply text-open-font-small font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+
+    /* 이동 아이콘(>) */
+    .moveButton {
+      @apply mobile:hidden tablet:h-[158px] tablet:w-[158px] desktop:h-[158px] desktop:w-[158px];
+    }
+  }
+
+  /* 회사정보 영역 */
+  .officeWrapper {
+    @apply flex flex-wrap items-end justify-between gap-open-lg -bg--openfoundation-primary px-open-margin-mobile py-open-lg tablet:px-open-margin-desktop tablet:py-open-xl desktop:px-open-4xl desktop:py-open-xl;
+
+    /* 텍스트 크기, 색상 등을 지정한 영역 */
+    .text {
+      @apply text-open-font-small not-italic -text--openfoundation-tertiary tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+
+    /* 회사정보, 연락처, 팩스번호를 감싸는 영역 */
+    .info {
+      @apply flex flex-col gap-open-sm font-open-paragraph;
+
+      /* 연락처, 팩스번호를 감싸는 영역 */
+      & div {
+        @apply flex gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+      }
+    }
+
+    /* 저작권 정보 영역 */
+    .copyright {
+      @apply font-open-paragraph;
+    }
+  }
+}
+
+/* 사이드바 */
+/* 유튜브, 페이스북, 상단으로 이동 버튼으로 구성된 영역 */
+.sideWrapper {
+  @apply fixed bottom-open-2xl right-open-xl z-[99999999] flex flex-col gap-open-lg tablet:bottom-open-4xl tablet:gap-open-xl desktop:bottom-open-4xl desktop:right-open-2xl desktop:gap-open-xl;
+
+  /* 유튜브, 페이스북, 상단으로 이동 아이콘 크기 */
+  .iconStyle {
+    @apply h-8 w-8 tablet:h-10 tablet:w-10 desktop:h-[52px] desktop:w-[52px];
+  }
+}
+
 /* 커뮤니티 페이지(게시글 리스트) */
 .community {
   @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
@@ -484,4 +930,1383 @@
       @apply py-open-xl tablet:text-open-font-xl desktop:text-open-font-xl;
     }
   }
+}
+
+/* About(회사 개요) */
+.about {
+  @apply w-full;
+
+  /* About 1번째 섹션 - Group 컴포넌트 */
+  & .group {
+    @apply flex flex-col items-center -bg--openfoundation-primary px-open-margin-mobile py-open-margin-desktop -text--openfoundation-secondary;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 1번째 섹션 - Group 컴포넌트 - 설명 텍스트 */
+    & .desc {
+      @apply text-open-font-medium font-open-label;
+      @apply desktop:text-open-font-xxl;
+      @apply tablet:text-open-font-xxl;
+    }
+  }
+
+  /* About 2번째 섹션 - BannerImage 컴포넌트 */
+  & .bannerImage {
+    @apply h-[320px];
+    @apply desktop:h-[720px];
+    @apply tablet:h-[480px];
+
+    /* About 2번째 섹션 - BannerImage 컴포넌트 - title(웹 접근성, 숨김 처리) */
+    & .title {
+      @apply sr-only;
+    }
+
+    /* About 2번째 섹션 - BannerImage 컴포넌트 - 이미지 */
+    & .img {
+      @apply h-full w-full bg-black object-cover;
+    }
+  }
+
+  /* About 3번째 섹션 - Vision 컴포넌트 */
+  & .vision {
+    @apply flex flex-col items-center gap-open-5xl -bg--openfoundation-primary px-open-margin-mobile py-open-margin-desktop -text--openfoundation-secondary;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 3번째 섹션 - Vision 컴포넌트 - Card 목록 */
+    & .cardList {
+      @apply flex max-w-[1320px] flex-wrap gap-open-gutter-mobile;
+      @apply desktop:gap-open-gutter-desktop;
+      @apply tablet:gap-open-gutter-desktop;
+    }
+  }
+
+  /* About 4번째 섹션 - Ci 컴포넌트 */
+  & .ci {
+    @apply flex flex-col items-center px-open-margin-mobile py-open-margin-desktop;
+    @apply desktop:px-open-margin-desktop desktop:py-open-7xl;
+    @apply tablet:px-open-margin-desktop tablet:py-open-7xl;
+
+    /* About 4번째 섹션 - Ci 컴포넌트 컨테이너 */
+    & .ciContainer {
+      @apply flex w-full  max-w-[1320px] flex-col gap-open-2xl;
+      @apply desktop:gap-open-5xl;
+      @apply tablet:gap-open-5xl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 타이틀 */
+    & .title {
+      @apply text-open-font-large font-open-heading -text--open-accent-accent;
+      @apply desktop:text-open-font-xxxxl;
+      @apply tablet:text-open-font-xxxxl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 설명 */
+    & .desc {
+      @apply text-open-font-medium font-open-paragraph;
+      @apply desktop:text-open-font-xl;
+      @apply tablet:text-open-font-xl;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 파레트 */
+    & .paletteList {
+      @apply flex flex-col flex-wrap text-open-font-medium font-open-paragraph -text--openfoundation-secondary;
+      @apply desktop:flex-row desktop:text-open-font-large;
+      @apply tablet:flex-row tablet:text-open-font-large;
+    }
+
+    /* About 4번째 섹션 - Ci 컴포넌트 - 로고 이미지 컨테이너 */
+    & .imgContainer {
+      @apply mt-open-2xl flex w-full max-w-[1320px] justify-end;
+
+      /* About 4번째 섹션 - Ci 컴포넌트 - 로고 이미지 */
+      & .ciImg {
+        @apply w-[200px];
+        @apply desktop:w-[300px];
+        @apply tablet:w-[300px];
+      }
+    }
+  }
+
+  /* About 페이지에서 공통으로 사용되는 컴포넌트들 */
+  /* About 1번째 섹션, 3번째 섹선 - Grpup 컴포넌트, Vison 컴포넌트 - 공통으로 사용되는 Title 컴포넌트 */
+  & .commonTitle {
+    @apply flex w-full max-w-[1320px] flex-col gap-open-2xl;
+
+    /* 공통으로 사용되는 Title 컴포넌트 - 제목 */
+    & .title {
+      @apply text-open-font-large font-open-heading -text--open-accent-accent;
+      @apply desktop:text-open-font-xxl;
+      @apply tablet:text-open-font-xxl;
+    }
+
+    /* 공통으로 사용되는 Title 컴포넌트 - 서브 제목 컨테이너 */
+    & .subTitleContainer {
+      @apply flex flex-col gap-open-xl;
+
+      /* 공통으로 사용되는 Title 컴포넌트 - 서브 제목 */
+      & .subTitle {
+        @apply text-open-font-xl font-open-heading;
+        @apply desktop:text-open-font-xxxl;
+        @apply tablet:text-open-font-xxxl;
+      }
+    }
+  }
+
+  /* About 3번째 섹션 - Vision 컴포넌트 - 공통으로 사용되는 Card 컴포넌트 */
+  & .commonCard {
+    @apply flex-1 basis-[288px] rounded-[20px] -bg--open-gray-950 p-open-gutter-desktop;
+    @apply desktop:min-h-[400px];
+    @apply tablet:min-h-[400px];
+
+    /* 공통으로 사용되는 Card 컴포넌트 - Card 컴포넌트 컨테이너 */
+    & .cardContainer {
+      @apply flex flex-col gap-open-2xl;
+      @apply desktop:gap-open-margin-desktop;
+      @apply tablet:gap-open-margin-desktop;
+
+      /* 공통으로 사용되는 Card 컴포넌트 - 타이틀, 서브타이틀 컨테이너*/
+      & .titleSubTitleContainer {
+        @apply flex flex-col gap-open-xl;
+        @apply desktop:gap-open-2xl;
+        @apply tablet:gap-open-2xl;
+
+        /* 공통으로 사용되는 Card 컴포넌트 - 타이틀 */
+        & .titleText {
+          @apply text-open-font-medium font-open-heading;
+          @apply desktop:text-open-font-large;
+          @apply tablet:text-open-font-large;
+        }
+
+        /* 공통으로 사용되는 Card 컴포넌트 - 서브타이틀 */
+        & .subTitleText {
+          @apply flex flex-col text-open-font-large font-open-heading;
+          @apply desktop:text-open-font-xl;
+          @apply tablet:text-open-font-xl;
+        }
+      }
+
+      /* 공통으로 사용되는 Card 컴포넌트 - 설명 */
+      & .desc {
+        @apply text-open-font-medium font-open-paragraph;
+        @apply desktop:text-open-font-large;
+        @apply tablet:text-open-font-large;
+      }
+    }
+  }
+
+  /* About 4번째 섹션 - Ci 컴포넌트 - 공통으로 사용되는 Palette 컴포넌트 */
+  & .commonPalette {
+    @apply flex flex-1 items-end px-open-xl py-open-xl;
+    @apply desktop:h-open-8xl desktop:px-open-2xl;
+    @apply tablet:h-open-8xl tablet:px-open-2xl;
+    @apply mobile:rounded-l-[20px];
+
+    /* 공통으로 사용되는 Palette 컴포넌트 - 좌측 */
+    &.left {
+      @apply desktop:rounded-l-[20px];
+      @apply tablet:rounded-l-[20px];
+    }
+    /* 공통으로 사용되는 Palette 컴포넌트 - 우측 */
+    &.right {
+      @apply desktop:rounded-r-[20px];
+      @apply tablet:rounded-r-[20px];
+    }
+
+    /* 공통으로 사용되는 Palette 컴포넌트 - 내용 텍스트 */
+    & .innerList {
+      @apply flex w-full flex-col items-end gap-open-sm;
+      @apply desktop:gap-open-md;
+      @apply tablet:gap-open-md;
+    }
+  }
+}
+
+/* Solutions */
+.solutions {
+  @apply w-full;
+
+  /* Lnb, SolutionBanner, (Snb, (Char, Func, Effect))를 묶고 있는 부모 컨테이너 */
+  & .solutionsOuterContainer {
+    @apply w-full px-open-gutter-mobile;
+    @apply desktop:px-open-margin-desktop;
+    @apply tablet:px-open-margin-desktop;
+
+    /* Solutions 1번째 섹션 - Lnb 컴포넌트 */
+    & .lnb {
+      @apply mt-open-2xl flex justify-center;
+      @apply desktop:sticky desktop:top-[80px] desktop:z-[9];
+
+      /* Solutions 1번째 섹션 - Lnb 컴포넌트 - 솔루션 리스트 */
+      & .solutionList {
+        @apply flex w-full max-w-[1320px] flex-wrap justify-between gap-mobile-gap rounded-[20px] -bg--open-gray-50;
+
+        /* Solutions 1번째 섹션 - Lnb 컴포넌트 - 솔루션 리스트 아이템 */
+        & .listItem {
+          @apply text-open-font-medium font-open-label -text--open-gray-300;
+          @apply desktop:text-open-font-large;
+          @apply tablet:text-open-font-large;
+
+          /* Solutions 1번째 섹션 - Lnb 컴포넌트 - 솔루션 리스트 아이템 링크 */
+          & .link {
+            @apply inline-flex px-open-xl py-open-lg transition-colors duration-500;
+            @apply hover:-text--open-accent-accent;
+          }
+          /* Solutions 1번째 섹션 - Lnb 컴포넌트 - 솔루션 리스트 아이템 링크 (클릭된 링크, 현재 페이지)*/
+          & .activeLink {
+            @apply inline-flex rounded-[20px] -bg--open-accent-accent px-open-xl py-open-lg -text--openfoundation-secondary;
+          }
+        }
+      }
+    }
+
+    /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 */
+    & .solutionBanner {
+      @apply flex justify-center;
+
+      /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - 제목 (웹 접근성, 숨김 처리) */
+      & .sectionTitle {
+        @apply sr-only;
+      }
+
+      /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - navigation과 banner를 묶는 컨테이너 */
+      & .navBannerContainer {
+        @apply hidden w-full max-w-[1320px] flex-col items-center gap-open-xl pt-open-5xl;
+        @apply desktop:flex;
+        @apply tablet:flex;
+
+        /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - navigation */
+        & .nav {
+          @apply w-full text-open-font-large font-open-paragraph;
+          @apply mobile:text-open-font-medium;
+        }
+
+        /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - banner */
+        & .banner {
+          @apply relative flex h-[300px] w-full flex-col justify-center overflow-hidden rounded-[20px] bg-[#091C2B] px-open-7xl -text--openfoundation-secondary;
+
+          /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - banner - 만약 시뮬레이터라면 나타날 왼쪽 상단의 뱃지 */
+          & .simulator {
+            @apply absolute -left-[95px] -top-[40px] flex h-[120px] w-[230px] -rotate-45 flex-col items-center justify-end bg-[#143547] pb-open-lg text-open-font-xl font-open-label;
+          }
+
+          /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - banner - 문구 (물류 자동화의 첫걸음) */
+          & .desc {
+            @apply text-open-font-xl font-open-label;
+          }
+          /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - banner - 해당 솔루션 이름 */
+          & .solution {
+            @apply flex flex-wrap text-open-font-xxxxxl font-open-heading;
+            & span:last-child {
+              @apply min-w-[690px] flex-1;
+            }
+          }
+
+          /* Solutions 2번째 섹션 - SolutionBanner 컴포넌트 - banner - 해당 솔루션 이미지 */
+          & .imageContainer {
+            @apply absolute overflow-hidden mobile:hidden;
+            @apply desktop:right-[100px] desktop:w-[320px];
+            @apply tablet:right-[20px] tablet:w-[280px];
+          }
+        }
+      }
+    }
+
+    /* Snb, (Char, Func, Effect)를 묶고 있는 부모 컨테이너 */
+    & .solutionsInnerContainer {
+      @apply m-auto flex w-full max-w-[1320px];
+      @apply desktop:gap-open-gutter-desktop;
+      @apply tablet:gap-open-gutter-desktop;
+
+      /* Solutions 3번째 섹션 - Snb 컴포넌트 */
+      .snb {
+        @apply hidden min-w-[120px] pt-open-3xl;
+        @apply desktop:block desktop:pt-open-5xl;
+        @apply tablet:block tablet:pt-open-5xl;
+
+        /* Solutions 3번째 섹션 - Snb 컴포넌트 안의 nav */
+        & .nav {
+          @apply sticky top-[160px];
+
+          /* Solutions 3번째 섹션 - Snb 컴포넌트 - Snb의 섹션 버튼 목록 */
+          & .sectionList {
+            @apply flex flex-col gap-open-margin-mobile text-open-font-large font-open-label -text--open-gray-300;
+
+            /* Solutions 3번째 섹션 - Snb 컴포넌트 - Snb의 섹션 버튼 */
+            & .button {
+              @apply px-open-md py-open-sm;
+            }
+            /* Solutions 3번째 섹션 - Snb 컴포넌트 - Snb의 섹션 버튼 (클릭한 버튼, 현재 위치) */
+            & .isActive {
+              @apply -text--open-accent-accent;
+            }
+          }
+        }
+      }
+
+      /* Solutions 4번째 섹션 - Char 컴포넌트 */
+      .char {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:gap-open-2xl tablet:pt-open-5xl;
+
+        /* Solutions 4번째 섹션 - Char 컴포넌트 - 서브 타이틀 */
+        & .subTitle {
+          @apply mb-[-20px] text-open-font-medium font-open-label;
+          @apply desktop:mb-[-30px] desktop:text-open-font-large;
+          @apply tablet:mb-[-30px] tablet:text-open-font-large;
+        }
+        /* Solutions 4번째 섹션 - Char 컴포넌트 - 타이틀 */
+        & .title {
+          @apply text-open-font-xl font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Solutions 4번째 섹션 - Char 컴포넌트 - 제품과 설명, 특징과 설명 컨테이너 */
+        & .productCharLisrContainer {
+          @apply flex gap-open-margin-mobile;
+          @apply desktop:gap-open-gutter-desktop;
+          @apply tablet:gap-open-gutter-desktop;
+
+          /* Solutions 4번째 섹션 - Char 컴포넌트 - 제품과 설명, 특징과 설명 컨테이너의 제목 */
+          & .containerTitle {
+            @apply text-open-font-medium font-open-label;
+            @apply desktop:text-open-font-large;
+            @apply tablet:text-open-font-large;
+          }
+
+          /* Solutions 4번째 섹션 - Char 컴포넌트 - 제품의 설명 */
+          & .productDesc {
+            @apply flex-1 text-open-font-medium font-open-paragraph;
+            @apply desktop:text-open-font-large;
+            @apply tablet:text-open-font-large;
+          }
+
+          /* Solutions 4번째 섹션 - Char 컴포넌트 - 특징의 목록 */
+          & .charList {
+            @apply flex flex-1 flex-wrap gap-[16px] text-open-font-medium font-open-paragraph;
+            @apply desktop:gap-open-gutter-desktop desktop:text-open-font-large;
+            @apply tablet:gap-open-gutter-desktop tablet:text-open-font-large;
+
+            /* Solutions 4번째 섹션 - Char 컴포넌트 - 특징의 목록 아이템 */
+            & .charItem {
+              @apply flex flex-1 flex-col gap-open-lg rounded-[20px] -bg--open-gray-50 px-open-2xl py-open-xl;
+              @apply desktop:min-w-[482px];
+              @apply tablet:min-w-[482px];
+              @apply min-w-[258px];
+
+              /* Solutions 4번째 섹션 - Char 컴포넌트 - 특징의 목록 아이템의 제목 */
+              & .charItemTitle {
+                @apply text-open-font-large font-open-label;
+                @apply desktop:text-open-font-xl;
+                @apply tablet:text-open-font-xl;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+      /* Solutions 5번째 섹션 - Func 컴포넌트 */
+      .func {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:gap-open-2xl tablet:pt-open-5xl;
+
+        /* Solutions 5번째 섹션 - Func 컴포넌트 - 제목 */
+        & .title {
+          @apply text-open-font-xl font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Solutions 5번째 섹션 - Func 컴포넌트 - 이미지 컨테이너 */
+        & .imageContainer {
+          @apply h-open-7xl w-full;
+          @apply desktop:h-[400px];
+          @apply tablet:h-[400px];
+
+          /* Solutions 5번째 섹션 - Func 컴포넌트 - 이미지 컨테이너 */
+          & .image {
+            @apply h-full w-full rounded-br-[20px] rounded-tr-[20px];
+          }
+        }
+
+        /* Solutions 5번째 섹션 - Func 컴포넌트 - 기능 목록 */
+        & .funcList {
+          @apply flex flex-col gap-open-lg;
+
+          /* Solutions 5번째 섹션 - Func 컴포넌트 - 기능 아이템 */
+          & .item {
+            @apply list-inside list-disc text-open-font-medium font-open-paragraph;
+            @apply desktop:text-open-font-large;
+            @apply tablet:text-open-font-large;
+          }
+        }
+      }
+
+      /* Solutions 6번째 섹션 - Effect 컴포넌트 */
+      .effect {
+        @apply flex flex-col gap-open-xl pb-open-5xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pb-open-6xl desktop:pt-open-5xl;
+        @apply tablet:gap-open-2xl tablet:pb-open-6xl tablet:pt-open-5xl;
+
+        /* Solutions 6번째 섹션 - Effect 컴포넌트 - 제목 */
+        & .title {
+          @apply text-open-font-xl font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Solutions 6번째 섹션 - Effect 컴포넌트 - 기대효과 목록 */
+        & .effectList {
+          @apply flex flex-col gap-open-lg;
+
+          /* Solutions 6번째 섹션 - Effect 컴포넌트 - 기대효과 아이템 */
+          & .item {
+            @apply flex list-inside items-center gap-open-md text-open-font-medium font-open-paragraph;
+            @apply desktop:text-open-font-large;
+            @apply tablet:text-open-font-large;
+            @apply before:content-[url('@/assets/solutions_check.svg')];
+          }
+        }
+      }
+    }
+
+/* Machines&Devices */
+.machinesDevice {
+  @apply w-full;
+
+  /* Machines&Devices 1번째 섹션 - CardWrapper 컴포넌트 */
+  & .cardWrapper {
+    @apply px-open-margin-mobile;
+    @apply desktop:px-open-margin-desktop;
+    @apply tablet:px-open-margin-desktop;
+
+    /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 타이틀 */
+    & .title {
+      @apply sr-only;
+    }
+
+    /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 리스트 */
+    & .cardList {
+      @apply m-auto flex max-w-[1320px] flex-wrap gap-open-gutter-mobile py-open-xl;
+      @apply desktop:gap-open-gutter-desktop desktop:py-open-2xl;
+      @apply tablet:gap-open-gutter-desktop tablet:py-open-2xl;
+
+      /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 */
+      & .card {
+        @apply w-[140px] items-center gap-open-lg rounded-[20px] border -border--open-gray-200 p-open-lg text-center -text--open-gray-200  transition-colors duration-500;
+        @apply desktop:w-open-8xl;
+        @apply tablet:w-open-8xl;
+        @apply hover:-border--open-accent-accent hover:-text--open-accent-accent;
+
+        /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 (클릭한 카드, 현재 페이지) */
+        &[aria-current='page'] {
+          @apply -border--open-accent-accent -bg--open-accent-accent -text--openfoundation-secondary;
+        }
+        /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner */
+        & .cardInner {
+          @apply flex flex-col justify-between gap-open-lg;
+
+          /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 이미지 컨테이너 */
+          & .imageContainer {
+            @apply flex justify-center;
+
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 이미지 */
+            & img {
+              @apply h-[50px] w-[85px] object-contain;
+            }
+          }
+
+          /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 타이틀, 서브타이틀 컨테이너 */
+          & .textContainer {
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 타이틀 */
+            & .title {
+              @apply text-open-font-medium font-open-heading;
+              @apply desktop:text-open-font-large;
+              @apply tablet:text-open-font-large;
+            }
+
+            /* Machines&Devices 1번째 섹션 - Card Wrapper 컴포넌트 - 제품 카드 inner 서브타이틀 */
+            & .subtitle {
+              @apply text-open-font-medium font-open-label;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 */
+  .desc {
+    @apply px-open-margin-mobile;
+    @apply tablet:px-open-margin-desktop;
+    @apply desktop:px-open-margin-desktop;
+
+    /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - inner */
+    & .inner {
+      @apply m-auto flex w-full max-w-[1320px] flex-col gap-open-xl py-open-3xl;
+      @apply desktop:py-open-5xl;
+      @apply tablet:py-open-5xl;
+
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - title */
+      & .title {
+        @apply text-open-font-xl font-open-heading;
+        @apply desktop:text-open-font-xxxl;
+        @apply tablet:text-open-font-xxxl;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - title(가운데 정렬, 디바이스) */
+        &.titleCenter {
+          @apply text-center;
+        }
+      }
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 목록 */
+      & .buttonList {
+        @apply flex flex-wrap gap-open-gutter-mobile;
+        @apply desktop:gap-open-gutter-desktop;
+        @apply tablet:gap-open-gutter-desktop;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 */
+        & .button {
+          @apply rounded-[10px] border -border--open-gray-200 px-open-lg py-open-md text-open-font-medium font-open-heading -text--open-gray-200 transition-colors duration-500;
+          @apply desktop:rounded-[20px] desktop:px-open-2xl desktop:py-open-xl desktop:text-open-font-large;
+          @apply tablet:rounded-[20px] tablet:px-open-2xl tablet:py-open-xl tablet:text-open-font-large;
+          @apply hover:-border--open-accent-accent hover:-text--open-accent-accent;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - Type 버튼 (클릭한 버튼, 현재 페이지) */
+          &.isClicked {
+            @apply -border--open-accent-accent -bg--open-accent-accent -text--openfoundation-secondary;
+          }
+        }
+      }
+
+      /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 */
+      & .descContainer {
+        @apply flex flex-wrap justify-center gap-open-xl gap-x-open-margin-mobile;
+        @apply desktop:gap-x-open-margin-desktop;
+        @apply tablet:gap-x-open-margin-desktop;
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 이미지 컨테이너 */
+        & .imgContainer {
+          @apply flex items-center justify-center rounded-[20px] -bg--open-gray-50 p-open-xl;
+          @apply mobile:w-full;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 이미지 */
+          & .img {
+            @apply h-[150px] tablet:h-[300px] desktop:h-[400px];
+            @apply w-[550px] object-contain;
+          }
+        }
+
+        /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 컨테이너 */
+        & .textContainer {
+          @apply min-w-[288px] flex-1;
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 목록 */
+          & .descList {
+            @apply flex flex-col gap-open-lg;
+          }
+
+          /* Machines&Devices 2번째 섹션 - Desc 컴포넌트 - desc 컨테이너 - 텍스트 */
+          & .descText {
+            @apply text-open-font-medium font-open-paragraph;
+            @apply desktop:text-open-font-xl;
+            @apply tablet:text-open-font-xl;
+          }
+        }
+      }
+    }
+  }
+
+  /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 */
+  .funcChar {
+    @apply -bg--open-gray-50 px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - inner */
+    & .inner {
+      @apply m-auto flex w-full max-w-[1320px] flex-col gap-open-lg py-open-3xl;
+      @apply desktop:gap-open-xl desktop:py-open-5xl;
+      @apply tablet:gap-open-xl tablet:py-open-5xl;
+
+      /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - title */
+      & .title {
+        @apply text-open-font-large font-open-label;
+        @apply desktop:text-open-font-xxl;
+        @apply tablet:text-open-font-xxl;
+      }
+
+      /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 목록 */
+      & .funcCharList {
+        @apply flex flex-wrap gap-open-gutter-mobile;
+        @apply desktop:gap-open-gutter-desktop;
+        @apply tablet:gap-open-gutter-desktop;
+
+        /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 */
+        & .item {
+          @apply flex flex-1 basis-open-8xl flex-col items-center justify-center rounded-[20px] -bg--openfoundation-secondary p-open-2xl text-open-font-medium font-open-label;
+          @apply desktop:gap-open-2xl desktop:text-open-font-xl;
+          @apply gap-open-xl tablet:gap-open-2xl tablet:text-open-font-xl;
+
+          /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 이미지 */
+          & .img {
+            @apply h-open-2xl w-open-2xl;
+            @apply desktop:h-open-5xl desktop:w-open-5xl;
+            @apply tablet:h-open-5xl tablet:w-open-5xl;
+          }
+
+          /* Machines&Devices 3번째 섹션 - FuncChar 컴포넌트 - 기능 및 특징 아이템 텍스트 */
+          & .itemText {
+            @apply flex-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Industries */
+.industries {
+  @apply w-full;
+
+  /* Industries outerContainer*/
+  & .outerContainer {
+    @apply px-open-margin-mobile pb-open-2xl;
+    @apply desktop:px-open-margin-desktop desktop:pb-open-5xl;
+    @apply target:px-open-margin-desktop target:pb-open-5xl;
+
+    & .innerContainer {
+      @apply m-auto flex max-w-[1320px];
+
+      /* Industries 1번째 섹션 - Snb 컴포넌트 */
+      .snb {
+        @apply hidden min-w-[120px];
+        @apply desktop:block desktop:pt-open-5xl;
+        @apply tablet:block tablet:pt-open-5xl;
+
+        /* Industries 1번째 섹션 - Snb 컴포넌트 - nav */
+        & .nav {
+          @apply sticky top-open-7xl;
+
+          /* Industries 1번째 섹션 - Snb 컴포넌트 - section 목록 */
+          & .sectionList {
+            @apply flex flex-col gap-open-gutter-mobile text-open-font-large font-open-label -text--open-gray-300;
+
+            /* Industries 1번째 섹션 - Snb 컴포넌트 - 목록 아이템 버튼 */
+            & .button {
+              @apply px-open-sm py-open-md;
+            }
+
+            /* Industries 1번째 섹션 - Snb 컴포넌트 - 목록 아이템 버튼 (현재 섹션 위치) */
+            & .item button {
+              @apply -text--open-accent-accent;
+            }
+          }
+        }
+      }
+
+      /* Industries 2번째 섹션 - Char 컴포넌트 */
+      .char {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:pt-open-5xl tablet:desktop:gap-open-2xl;
+
+        /* Industries 2번째 섹션 - Char 컴포넌트 - 타이틀 */
+        & .charTitle {
+          @apply text-open-font-large font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Industries 2번째 섹션 - Char 컴포넌트 - 설명 */
+        & .charDesc {
+          @apply text-open-font-medium font-open-paragraph;
+          @apply desktop:text-open-font-large;
+          @apply tablet:text-open-font-large;
+        }
+      }
+
+      /* Industries 3번째 섹션 - Product 컴포넌트 */
+      .product {
+        @apply flex flex-col gap-open-xl pt-open-3xl;
+        @apply desktop:gap-open-2xl desktop:pt-open-5xl;
+        @apply tablet:pt-open-5xl tablet:desktop:gap-open-2xl;
+
+        /* Industries 3번째 섹션 - Product 컴포넌트 - 타이틀 */
+        & .productTitle {
+          @apply text-open-font-large font-open-label;
+          @apply desktop:text-open-font-xxl;
+          @apply tablet:text-open-font-xxl;
+        }
+
+        /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 컨테이너 */
+        & .productContainer {
+          @apply flex flex-col gap-mobile-gap;
+          @apply desktop:gap-open-2xl;
+          @apply tablet:gap-open-2xl;
+
+          /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 */
+          & .productLink {
+            @apply flex gap-mobile-gap;
+            @apply desktop:gap-desktop-gap;
+            @apply tablet:gap-desktop-gap;
+
+            /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 hover 텍스트 형광펜 애니메이션 */
+            & dt span {
+              @apply relative;
+            }
+            & dt span::before {
+              @apply absolute bottom-0 left-0 h-[10px] w-[0%] -bg--open-accent-accent opacity-50 transition-all duration-500 ease-in-out content-[""];
+            }
+            &:hover {
+              @apply -translate-y-open-md;
+            }
+            &:hover dt span::before {
+              @apply w-[100%];
+            }
+
+            /* Industries 3번째 섹션 - Product 컴포넌트 - 링크 컨테이너 */
+            & .linkContainer {
+              @apply flex gap-mobile-gap py-open-lg;
+              @apply desktop:gap-desktop-gap;
+              @apply tablet:gap-desktop-gap;
+              @apply desktop:py-open-xl;
+              @apply tablet:py-open-xl;
+
+              /* Industries 3번째 섹션 - Product 컴포넌트 - 이미지 */
+              & .image {
+                @apply w-open-5xl;
+                @apply desktop:w-open-7xl;
+                @apply tablet:w-open-7xl;
+              }
+
+              /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 목록 */
+              & .list {
+                @apply flex flex-1 flex-col gap-open-xl;
+
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 이름 */
+                & .itemName {
+                  @apply mb-[-20px] text-open-font-large font-open-heading;
+                  @apply desktop:text-open-font-xxl;
+                  @apply tablet:text-open-font-xxl;
+                }
+
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 상세 이름 */
+                & .itemDetailName {
+                  @apply text-open-font-medium font-open-label;
+                  @apply desktop:text-open-font-xl;
+                  @apply tablet:text-open-font-xl;
+                }
+                /* Industries 3번째 섹션 - Product 컴포넌트 - 제품 설명 */
+                & .itemDesc {
+                  @apply text-open-font-medium font-open-paragraph;
+                  @apply desktop:text-open-font-large;
+                  @apply tablet:text-open-font-large;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* 모든 페이지 공통 header 컴포넌트 */
+/* 보이는 부분 중 가장 큰 항목의 왼쪽부터 -> 공통 항목 -> 추가 스타일링한 항목 -> 하위 항목 의 순서를 최대한 지켜 나열하였습니다 */
+.header {
+  /* header 전체 공통으로 적용되어야하는 모든 스타일링. header 의 높이, z-index, 정렬 방식, padding, 텍스트 색상, 폰트 크기, 폰트 weight 등 */
+  @apply fixed flex justify-between items-center w-full py-open-lg px-open-margin-mobile tablet:px-open-gutter-desktop desktop:px-open-4xl -text--openfoundation-secondary font-open-font text-open-font-large font-open-paragraph h-[50px] tablet:h-[80px] desktop:h-[80px] z-[9999];
+
+  /* 스크롤 시 header 의 배경 색상을 변경하기 위한 추가 항목 */
+  &.scrolled {
+    @apply -bg--openfoundation-primary
+  }
+
+  /* 특정 페이지 시 header 의 배경 색상을 변경하기 위한 추가 항목 */
+  &.black {
+    @apply -bg--openfoundation-primary
+  }
+
+  /* header 에 적용되어있는 제목 (오픈에스지) 을 위한 스타일링. screen reader 사용자 (저시력자 등) 의 사용 편의성을 위한 숨김 제목 */
+  & .headerTitle {
+    @apply sr-only
+  }
+
+  /* header 의 네비게이션 전체 박스 (오픈에스지 로고, About Us, Service & Solution, Support 만 포함) */
+  & .headerNavigation {
+    @apply flex
+  }
+
+  /* header 의 네비게이션 내 리스트 (오픈에스지 로고, About Us, Service & Solution, Support 만 포함) */
+  & .headerList {
+      @apply flex justify-center items-center gap-open-gutter-mobile desktop:gap-open-gutter-desktop
+    }
+
+  /* OpenSG 로고 여백 (padding) */
+  & .logoLink {
+      @apply px-open-md py-open-sm
+    }
+
+  /* OpenSG 로고 이미지 (모바일 (default), 타블렛, 데스크탑 구간에서 다른 크기의 로고 이미지 적용. 오른쪽에서 시작되는 메뉴와 간격 조절을 위해 margin right 를 적용함.  */
+  & .logoImage {
+      @apply w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl
+    }
+
+  /* 메뉴 (About Us, Service & Solution, Support 공통) */
+  & .menu {
+      @apply px-open-md py-open-sm desktop:block tablet:block hidden
+  }
+
+  /* header 의 메뉴 hover 시 파란색 밑줄 효과 (hover 전 세팅) */
+  & .menuLink:after {
+    @apply block content-[''] border-b-2 -border--open-accent-accent scale-x-0 origin-left transition-transform duration-300 ease-in-out;
+    }
+
+  /* header 의 메뉴 hover 시 파란색 밑줄 효과 (hover 후 효과) */
+  & .menuLink:hover:after {
+    @apply scale-x-100;
+  }
+
+  /* 서브 메뉴를 감싸고 있는 전체 블랙 박스 (About Us, Service & Solution, Support 공통) */
+  & .subMenuWrapper {
+    @apply absolute left-0 top-[80px] w-full backdrop-blur
+  }
+
+  /* 서브 메뉴 (회사소개 등) 리스트 (About Us, Service & Solution, Support 공통) */
+  & .subMenu {
+    @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary -text--openfoundation-secondary opacity-80 backdrop-blur-lg
+  }
+
+  /* 각 서브 메뉴 마다 별도로 적용되어야 하는 스타일 (서브 메뉴 위치를 절대값 px 로 잡아놓았기 때문 + Service & Solution 메뉴는 구조가 상이하기 때문) */
+  /* About Us 의 서브 메뉴 */
+  & .subMenuAbout {
+    @apply tablet:pl-[196px] desktop:pl-[230px] font-open-paragraph
+  }
+  /* Service & Solution 의 서브 메뉴 */
+  & .subMenuServiceAndSolution {
+    @apply flex-row tablet:pl-[308px] desktop:pl-[362px] gap-open-xl
+  }
+  /* Support 의 서브 메뉴 */
+  & .subMenuSupport {
+    @apply tablet:pl-[476px] desktop:pl-[550px] font-open-paragraph
+  }
+
+  /* 각 서브 메뉴 안의 링크 (MenuLink 컴포넌트) 공통 (회사소개, 연혁, 각 제품명, 커뮤니티 등) */
+  & .linkName {
+    @apply relative px-open-md py-open-sm font-open-paragraph;
+
+    /* 링크 hover 시 색상 변경 */
+    &:hover {
+      @apply -text--open-accent-accent-1
+    }
+
+    /* tooltip (hover 후) */
+    &:hover .tooltip {
+      @apply block visible opacity-100 px-open-md;
+    }
+
+    /* tooltip (hover 전 기본 세팅) */
+    & .tooltip {
+      @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
+    }
+
+  }
+
+  /* Service & Solutions 의 서브 메뉴를 위한 스타일링. 해당 메뉴는 구조가 단순하지 않기 때문에 추가 레이아웃 및 스타일링이 필요하였음 */
+  & .solutionsList {
+    @apply font-open-paragraph flex flex-col pt-open-lg gap-open-md
+  }
+
+  /* Service & Solutions 의 서브 메뉴 아이템들의 기본 폰트 속성 */
+  & .solutionsListItem {
+    @apply text-open-font-medium
+  }
+
+  /* Service & Solutions 의 서브 메뉴 리스트 중 파란색 아이템 스타일링을 위함. 폰트 사이즈 및 색상 지정 */
+  & .solutionsBlueItem {
+    @apply -text--open-accent-accent-1
+  }
+
+  /* Service & Solutions 의 서브 메뉴 리스트 중 추가 설명 문구를 위한 회색 문구 스타일링을 위함. 폰트 사이즈 및 색상 지정 */
+  & .solutionsGrayItem {
+    @apply -text--openfoundation-tertiary text-open-font-small
+  }
+
+  /* Service & Solutions 의 최하위 메뉴 리스트 (흰색 글자) 를 위한 정렬 방식, padding, gap */
+  & .solutionsWhiteList {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium
+  }
+
+  /* Solution, Smart Machine, Smart Device 와 Industries 사이의 구분선 */
+  & .solutionsSeperator {
+    @apply w-[1px] -bg--openfoundation-secondary
+  }
+
+  /* header 의 한글/영문 버튼과 햄버거 버튼을 감싸는 전체 */
+  & .headerButtonList {
+    @apply flex justify-center items-center gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop
+  }
+
+  /* header 의 한글/영문 버튼 전체 */
+  & .languageButton {
+    @apply flex justify-center items-center px-open-md py-open-sm text-open-font-small desktop:text-open-font-medium tablet:text-open-font-medium
+  }
+
+  /* header 의 한글/영문 버튼 전체를 감싼 박스 */
+  & .languageButtonBox {
+    @apply flex flex-row gap-open-md
+  }
+
+  /* header 의 한글/영문 버튼 구분선 */
+  & .languageSeperator {
+    @apply w-[1px] -bg--openfoundation-tertiary
+  }
+
+  /* header 의 한글/영문 버튼 비활성화 시 색상 */
+  & .languageInactive {
+    @apply -text--openfoundation-tertiary
+  }
+
+  /* header 의 햄버거 버튼 전체 */
+  & .hamburgerButton {
+    @apply flex justify-center items-center
+  }
+
+  /* hamburger 버튼 클릭 전 기본 크기 및 애니메이션 기초 setting (햄버거 상태) */
+  .hamburger {
+    @apply w-[24px] h-[20px] tablet:w-[30px] desktop:w-[30px] tablet:h-[24px] desktop:h-[24px] border-none bg-transparent relative cursor-pointer ;
+  }
+
+  .hamburger:after, .hamburger:before, .hamburger > span {
+    @apply w-full h-[2px] rounded-[100px] absolute block -bg--openfoundation-secondary;
+  }
+
+  .hamburger:after, .hamburger:before {
+    @apply content-[''] transition-[width] duration-300 delay-[0.4s];
+  }
+
+  .hamburger:after {
+    @apply top-0 left-0 mt-0;
+  }
+
+  .hamburger:before {
+    @apply bottom-0 right-0 mb-0;
+  }
+
+  .hamburger > span {
+    @apply top-1/2 mt-[-1px] transition-transform delay-300;
+  }
+
+  .hamburger > span:before {
+    @apply content-[''] -bg--openfoundation-secondary w-full h-[2px] rounded-[100px] absolute left-0 transition-transform delay-300;
+  }
+
+  /* hamburger 버튼 클릭 후 (닫기 상태) */
+  .hamburgerOn:after {
+    @apply transition-all delay-200 w-0 left-0;
+  }
+
+  .hamburgerOn:before {
+    @apply transition-all delay-200 w-0 right-0;
+  }
+
+  .hamburgerOn span {
+    @apply transition-transform duration-300 delay-[0.4s] rotate-45
+  }
+
+  .hamburgerOn span:before {
+    @apply transition-transform duration-300 delay-[0.4s] rotate-90
+  }
+}
+
+/* 데스크탑/태블릿용 Sitemap 전체. 전체 양쪽 padding 적용. mobile 크기에서는 보이지 않도록 hidden 처리. */
+.sitemapDesktop {
+    @apply w-full h-full hidden desktop:block tablet:block mobile:hidden px-open-gutter-desktop;
+
+  /* 데스크탑/태블릿용 Sitemap 내부 컨테이너. 정렬을 위한 스타일링 적용. */
+  & .container {
+    @apply w-full h-full flex justify-center
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 메뉴 전체 리스트 */
+  & .list {
+    @apply w-full h-full flex flex-row py-open-7xl -text--openfoundation-secondary justify-between gap-open-xl
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 각 메뉴 (About Us, Support 박스 전체) */
+  & .listItem {
+    @apply py-open-sm text-open-font-xl font-open-label text-center flex-1
+  }
+
+  /* 위와 동일. 단, Service & Solution 에 한함. (About Us, Support 는 화면 크기에 따라 늘어나고, Service & Solution 은 크기를 그대로 유지하기 위해 별도로 적용) */
+  & .listService {
+    @apply py-open-sm text-open-font-xl font-open-label text-center
+  }
+
+  /* 각 메뉴 타이틀 (About Us, Service & Solution, Support) */
+  & .menu {
+    @apply pb-open-md border-b-[1px] -border--open-gray-300
+  }
+
+  /* About Us 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .aboutUs {
+    @apply flex flex-col gap-open-md py-open-xl text-open-font-large  -text--open-gray-300 font-open-paragraph 
+  }
+
+  /* Service & Solution 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .serviceAndSolution {
+    @apply flex flex-row py-open-xl text-open-font-large font-open-label gap-open-gutter-desktop text-start
+  }
+
+  /* Solutions 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutions {
+    @apply font-open-paragraph flex flex-col pt-open-md gap-open-xl
+  }
+
+  /* Solutions 의 하위 메뉴 중 파란색 메뉴 스타일링 */
+  & .solutionsBlue {
+    @apply -text--open-accent-accent-1 text-open-font-medium
+  }
+
+  /* 각 Solutions 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutionsSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph px-1 pb-3 mt-2 rounded-b-xl border-x-2 border-b-2 -border--open-accent-accent-1 border-opacity-30 
+  }
+
+  /* Solutons 제외 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .othersSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph  
+  }
+
+  /* Support 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .support {
+    @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph -text--open-gray-300  py-open-xl
+  }
+
+    /* 각 서브 메뉴 안의 링크 (MenuLink 컴포넌트) 공통 (회사소개, 연혁, 각 제품명, 커뮤니티 등 모든 흰색 링크) */
+    & .linkName {
+      @apply relative px-open-md py-open-sm font-open-paragraph;
+
+      /* 링크 hover 시 색상 변경 */
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+
+      /* tooltip (hover 후) */
+      &:hover .tooltip {
+        @apply block visible opacity-100 px-open-md;
+      }
+
+      /* tooltip (hover 전 기본 세팅) */
+      & .tooltip {
+        @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
+      }
+
+    }
+}
+
+/* 모바일용 Sitemap 전체 */
+.sitemapMobile {
+  @apply block tablet:hidden desktop:hidden absolute left-0 top-0 pt-[40px] w-full h-full overflow-auto;
+
+  /* 모바일용 Sitemap 내부 container */
+  & .sitemapMobileContainer {
+    @apply flex flex-col justify-center px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary;
+
+  /* 메뉴 리스트 전체 */
+    & .menuList {
+      @apply py-open-md cursor-pointer;
+    }
+
+    /* 메뉴 이름 및 화살표 묶음 버튼 */
+    & .menuButton {
+      @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile;
+    }
+
+    /* 하위 메뉴 리스트 전체 (Service & Solution 제외) */
+    & .menuSubList {
+      @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph
+    }
+
+    /* 각 흰색 메뉴 링크 (모바일용) */
+    & .linkNameMobile {
+      @apply relative px-open-lg py-open-sm -text--openfoundation-secondary opacity-80;
+
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+    }
+
+    /* 화살표 아이콘 (아코디언 메뉴 열린 후) */
+    .arrowDefault {
+      @apply transition-all duration-300;
+    }
+
+    /* 화살표 아이콘 (아코디언 메뉴 열리기 전. 회전값 사전 설정.) */
+    .arrowDown {
+      @apply transition-all duration-300 rotate-180;
+    }
+
+    /* Service & Solution 의 하위 메뉴 리스트 전체 */
+    & .serviceAndSolutions {
+      @apply flex flex-col text-open-font-large font-open-label;
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 기본 스타일링 */
+      & .accordionItem {
+        @apply font-open-label;
+      }
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (bottom 에 흰색 border 있는 메뉴)  */
+      & .accordionItemMedium {
+        @apply px-open-lg py-open-lg mb-open-lg text-open-font-large font-open-label border-b-[1px] -border--openfoundation-tertiary border-opacity-30;
+      }
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (위 아코디언의 하위 메뉴로, 캡슐형, 텍스트 색상이 푸른 메뉴)  */
+      & .accordionItemSmall {
+        @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm my-open-sm rounded-[20px]  -text--open-accent-accent-1;
+      }
+
+      /* 각 아코디언 리스트의 하위 항목 기본 스타일 */
+      & .accordionItemList {
+        @apply flex flex-col gap-open-sm text-open-font-medium -text--open-gray-300 font-open-paragraph
+      }
+
+      /* 서브 메뉴 버튼 (화살표 포함) 공통  */
+      & .subMenuButton {
+        @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile
+      }
+
+      /* solutions 하위 메뉴 리스트 전체 */
+      & .solutionsSubList {
+        @apply flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-tertiary;
+      }
+
+      /* Smart Machine 하위 메뉴 리스트 전체 */
+      & .machineSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Smart Device 하위 메뉴 리스트 전체 */
+      & .deviceSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Industries 하위 메뉴 리스트 전체 */
+      & .industriesSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+    }
+  }
+
+}
+
+/* 오시는길 페이지 */
+.location {
+  @apply w-full flex flex-col -bg--openfoundation-primary;
+
+  /* 지도를 감싼 박스 (지도 위 핀 아이콘을 절댓값 위치로 지정하기 위해 relative 인 박스를 만들기 위함) */
+  & .mapContainer {
+    @apply w-full relative
+  }
+
+  /* 지도 이미지 */
+  & .mapImage {
+    @apply w-full block
+  }
+
+  /* 지도 위 핀 아이콘 (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
+  & .pinIcon {
+    @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[29.8%] left-[43.8%] translate-x-[-43.8%] translate-y-[-29.5%]
+  }
+
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
+  & .pinIcon::after {
+    @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["본사/자동화연구소"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[160px] tablet:w-[160px] w-[120px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+  }
+
+  /* 지도 위 핀 아이콘 (미국) (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
+  & .pinIconUSA {
+    @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[30.5%] left-[82.8%] translate-x-[-83.8%] translate-y-[-29.5%]
+  }
+
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (미국) (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
+  & .pinIconUSA::after {
+    @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["OpenSG\00a0USA"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[140px] tablet:w-[140px] w-[100px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+  }
+
+  /* 내용 전체 section */
+  & .locationSection {
+    @apply w-full h-full flex flex-col justify-center items-center desktop:py-open-7xl tablet:py-open-7xl py-open-5xl desktop:px-open-gutter-desktop tablet:px-open-gutter-desktop px-open-gutter-mobile -bg--openfoundation-primary -text--openfoundation-secondary
+  }
+
+  /* 내용 전체가 데스크탑 크기에서 1320px 보다 늘어나지 않도록 하기 위한 고정 박스 */
+  & .locationWrapper {
+    @apply desktop:w-[1320px] flex flex-col gap-open-3xl desktop:gap-open-5xl tablet:gap-open-5xl;
+
+    /* 각 위치 정보를 감싸는 박스 (위치 정보 정렬 및 위치 정보 사이의 gap 설정) */
+    & .locationContainer {
+      @apply flex flex-row w-full justify-between items-start gap-open-gutter-mobile desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop;
+
+      /* 각 위치 이미지 */
+      & .locationImage {
+        @apply desktop:w-[400px] desktop:h-[400px] tablet:w-[400px] tablet:h-[400px] w-[160px] h-[160px] object-cover;
+      }
+
+      /* 각 위치의 세부 정보를 감싸는 박스 (폰트 사이즈, 폰트 굵기, address 태그에 자동 적용되는 이탤릭체 제외, 세부 정보 정렬 및 세부 정보만을 위한 별도 gap 설정을 위함) */
+      & .locationInfo {
+        @apply flex flex-col justify-center w-full h-full desktop:gap-open-2xl tablet:gap-open-2xl gap-open-md desktop:text-open-font-large tablet:text-open-font-large text-open-font-small font-open-paragraph not-italic;
+
+        /* 각 위치의 세부 정보 중 링크 아이콘을 제외하고 감싼 박스 */
+        & .locationInfoContainer{
+          @apply flex flex-col desktop:gap-open-xl tablet:gap-open-xl gap-open-sm;
+
+          /* 각 위치명 */
+          & .locationName {
+            @apply desktop:text-open-font-xl desktop:font-open-heading tablet:text-open-font-xl tablet:font-open-heading text-open-font-medium font-open-label;
+          }
+
+          /* 각 위치의 전화번호, 팩스번호를 감싼 박스 */
+          & .locationContact {
+            @apply flex flex-col desktop:gap-open-md tablet:gap-open-md gap-0;
+          }
+
+        }
+      }
+    }
+  }
+
+  /* 각 위치 링크 및 아이콘을 감싼 박스 */
+  /* Cascading 이슈 (스타일링 겹침 현상) 로 인해 각 위치 링크 스타일링은 이곳에 작성하였습니다. */
+  & .locationLink {
+    @apply w-fit h-auto inline cursor-pointer;
+
+    /* 링크 아이콘 */
+    & .linkIcon {
+      @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px];
+    }
+  }
+}
+
+/* 연혁 페이지 */
+.history{
+  @apply w-full;
+
+  /* 연혁 전체 (데스크탑용) - 모바일 이하 크기에서는 hidden 처리하기 위한 최상위 박스 */
+  & .historyWrapper {
+    @apply w-full h-full desktop:block tablet:block hidden;
+
+    /* 연혁 전체 section */
+    & .historySection {
+      @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary py-open-5xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+      /* 연혁에 적용되어있는 제목 (오픈에스지 연혁) 을 위한 스타일링. screen reader 사용자 (저시력자 등) 의 사용 편의성을 위한 숨김 제목 */
+      & .srOnly {
+        @apply sr-only;
+      }
+
+      /* 2개의 swiper (연도, 연혁내용) 를 감싸기 위한 박스 */
+      & .swiperWrapper {
+        @apply w-full h-full flex flex-col font-open-font items-center justify-center  -text--openfoundation-secondary font-open-label max-w-[991px] tablet:max-w-[1311px] desktop:max-w-[1320px] py-open-4xl tablet:py-open-6xl desktop:py-open-6xl gap-open-2xl tablet:gap-open-4xl desktop:gap-open-4xl;
+
+        /* 연도 Swiper 전체 (전체 정렬 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
+        & .yearSwiper {
+          @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
+
+          /* 연도 Swiper 의 각 Slide 전체 박스 */
+          & .yearSwiperSlide {
+            @apply flex flex-col justify-center items-center;
+
+            /* 연도 Swiper 의 각 Slide 전체 박스 내부 */
+            & .yearSlide {
+              @apply flex flex-col justify-end items-center gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+
+              /* Swiper 가 active 된 상태일 때 - 폰트 사이즈만 조정. 폰트 색상은 상위 wrapper 에서 white 를 사용하기 있기 때문에 별도로 적용하지 않음 (해당하는 연도일 경우) */
+              &.isActive {
+                @apply text-open-font-xl tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+              }
+
+              /* Swiper 가 inactive 된 상태일 때 - 폰트 사이즈 및 폰트 색상 (gray) (해당하는 연도가 아닐 경우) */
+              &.isInActive {
+                @apply text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl -text--open-gray-300;
+              } 
+            }
+          }
+        }
+
+        /* 연혁 내용 Swiper 전체 (전체 정렬) */
+        & .historySwiper {
+          @apply w-full h-full flex flex-col justify-center items-center;
+
+          /* 연혁 Swiper 의 각 Slide 전체 박스 (박스 라운딩 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
+          & .historySwiperSlide{
+            @apply rounded-[20px] cursor-pointer;
+
+            /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
+            & .historySlide {
+              @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+              /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (가운데 위치하고 있을 때) */
+              &.isActive {
+                @apply -bg--open-gray-950;
+              } 
+
+              /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (가운데 위치한 카드 제외 전체) */
+              &.isInActive {
+                @apply -bg--openfoundation-black;
+              } 
+
+              /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
+              & .historySlideTitle {
+                @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+              }
+
+              /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
+              & .historySlideDescription {
+                @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+   /* 연혁 전체 (모바일용) */
+   & .historyMobileWrapper {
+    @apply hidden mobile:block w-full h-full -text--openfoundation-secondary -bg--openfoundation-primary px-open-margin-mobile py-open-5xl;
+
+    /* 연혁 section (모바일용) */
+    & .historyMobileSection {
+      @apply flex flex-col justify-center items-center gap-open-xl;
+
+       /* 연혁 Swiper 의 각 Slide 전체 박스 내부 (박스 라운딩, 박스 내 여백 (x축, y축), 박스 내 정렬 */
+       & .historySlide {
+        @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+        /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (화면에 일정 비율을 차지하고 있을 경우) */
+        &.isActive {
+          @apply -bg--open-gray-950;
+        } 
+
+        /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (화면 바깥으로 나가는 카드의 경우) */
+        &.isInActive {
+          @apply -bg--openfoundation-black;
+        } 
+
+        /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
+        & .historySlideTitle {
+          @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+        }
+
+        /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
+        & .historySlideDescription {
+          @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+        }
+      }
+    }
+   }
 }

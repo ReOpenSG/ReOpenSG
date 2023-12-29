@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styles from './Team.module.css';
+import styles from '@/styles/styles.module.css';
 
 function RoleCard({
   src, alt, title, text,

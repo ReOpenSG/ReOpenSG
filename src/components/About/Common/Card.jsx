@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Card({ title, desc, children, delay }) {
   return (
     <li
-      className={styles.CommomCard}
+      className={styles.commonCard}
       data-aos="fade-up"
       data-aos-duration="1500"
       data-aos-delay={delay}
     >
-      <div className={styles.carWrapper}>
-        <div className={styles.title}>
+      <div className={styles.cardContainer}>
+        <div className={styles.titleSubTitleContainer}>
           <span className={styles.titleText}>{title}</span>
           <div className={styles.subTitleText}>{children}</div>
         </div>

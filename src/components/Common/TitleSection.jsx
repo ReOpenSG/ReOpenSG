@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
-import styles from './TitleSection.module.css';
+import styles from '@/styles/styles.module.css';
 
 function TitleSection({
   background, category, title, subTitle, textAlign,
@@ -12,7 +12,7 @@ function TitleSection({
   });
 
   return (
-    <section className={`${styles.titleWrapper} ${background}`}>
+    <section className={`${styles.titleSection} ${background}`}>
       <div
         className={`${styles.titleInner} ${textAlign}`}
         data-aos={textAlign === 'text-center' ? 'fade-up' : 'fade-right'}
