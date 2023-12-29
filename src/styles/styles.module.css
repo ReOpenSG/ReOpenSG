@@ -263,33 +263,41 @@
 }
 
 /* Support 타이틀 */
+/* 타이틀를 감싸는 박스 영역 */
 .bannerSection {
   @apply flex flex-col-reverse gap-open-xl pb-open-5xl pt-open-6xl text-center tablet:gap-open-2xl tablet:pb-open-7xl tablet:pt-[160px] desktop:gap-open-2xl desktop:pb-open-7xl desktop:pt-[160px];
 
+  /* Support 텍스트 영역 */
   .titleCategory {
     @apply text-open-font-large font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
   }
 
+  /* 커뮤니티, 라이브러리, 고객문의 텍스트 영역 */
   .titleText {
     @apply text-open-font-xxl font-open-heading -text--openfoundation-primary tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
   }
 }
 
 /* AboutUs, Service&Solution 타이틀 */
+/* 타이틀를 감싸는 박스 영역 */
 .titleSection {
   @apply bg-cover px-open-margin-mobile pb-open-5xl pt-open-6xl tablet:px-open-margin-desktop tablet:pb-open-7xl tablet:pt-[160px] desktop:px-open-margin-desktop desktop:pb-open-7xl desktop:pt-[160px];
 
+  /* 2줄의 텍스트를 감싸는 영역 */
   .titleInner {
     @apply m-auto flex max-w-[1320px] flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
 
+    /* 회사개요, 연혁, 직무소개, 오시는길, Open Solution, Open Smart Machine, Open Device, Industries 등 텍스트 영역  */
     & h2 {
       @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xxl desktop:text-open-font-xxl;
     }
 
+    /* OpenSG가 걸어온 길, OpenSG의 업무 등 서브 타이틀을 감싸는 영역  */
     & p {
       @apply flex flex-col;
     }
 
+    /* OpenSG가 걸어온 길, OpenSG의 업무 등 서브 타이틀 텍스트 각각  */
     & span {
       @apply text-open-font-xl font-open-heading -text--openfoundation-secondary tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
     }
@@ -297,108 +305,134 @@
 }
 
 /* 고객문의 */
+/* 고객문의 전체를 감싸는 영역 */
 .contact {
   @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 
+  /* 문의유형 작성 폼 전체를 감싸는 영역 */
   .formWrapper {
     @apply m-auto w-full max-w-[1320px];
   }
 
+  /* label과 input을 감싸는 영역 */
   .wrapper {
     @apply flex grow items-center gap-open-xl;
   }
 
+  /* 소속, 성명, 받으실 이메일, 받으실 연락처, 제목, 내용 등 label 영역 */
   .label {
     @apply w-open-6xl text-open-font-medium font-open-label -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
   }
 
+  /* 소속, 성명, 받으실 이메일, 받으실 연락처, 제목, 내용 등을 직접 입력하는 작성 영역 */
   .input,
   .textarea {
     @apply w-full grow -bg--open-gray-50 px-open-xl py-open-lg text-open-font-small font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
   }
 
+  /* 문의유형 아이콘 크기 */
   .iconStyle {
     @apply h-10 w-10 tablet:h-20 tablet:w-20 desktop:h-20 desktop:w-20;
   }
 
+  /* 개인정보 활용동의를 감싸는 영역 */
   .agreementText {
     @apply text-open-font-medium font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
 
+    /* 개인정보 활용동의 텍스트 */
     & h3 {
       @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
     }
 
+    /* 제목 아래 1줄 설명(OpenSG는 개인정보보호법 및 관련 법령에 의거 고객님들의 의견 접수와 관련한 성실한 답변을 드리기 위해 필요한 최소한의 개인정보를 아래와 같이 수집, 이용하고자 합니다.) */
     & p {
       @apply my-open-xl tablet:my-open-2xl desktop:my-open-2xl;
     }
   }
 
+  /* 필수정보의 수집 목적, 필수 수집 항목, 보유 및 이용기간 등을 감싸는 영역 */
   .agreementOl {
     @apply rounded-[20px] border -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl tablet:py-open-2xl desktop:px-open-xl desktop:py-open-2xl;
 
+    /* 필수정보의 수집 목적, 필수 수집 항목, 보유 및 이용기간 등 텍스트 영역 */
     & li {
       @apply list-inside list-decimal;
     }
 
+    /* 경고문구(※ 고객님께서는 본 동의를 거부하실 수 있으나 거부 시 필수정보의 수집 목적에 해당하는 사항의 처리가 제한될 수 있습니다.) 텍스트 영역 */
     .warning {
       @apply mt-open-md list-none text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium;
     }
   }
 
+  /* 체크박스와 필수 동의 내용을 감싸는 영역 */
   .checkboxWrapper {
     @apply flex items-center justify-end pb-open-2xl pt-open-lg tablet:pb-open-3xl tablet:pt-open-2xl desktop:pb-open-3xl desktop:pt-open-2xl;
 
+    /* (필수) 위 개인정보 수집 및 이용에 동의합니다. */
     & label {
       @apply pl-open-lg;
     }
 
+    /* 체크박스 */
     & input {
       @apply h-open-xl w-open-xl appearance-none rounded-[2px] border-2 -border--open-gray-300 -bg--openfoundation-secondary;
       @apply bg-cover checked:-border--open-accent-accent checked:bg-[url('@/assets/contact_agreementCheck.svg')];
     }
   }
 
+  /* 문의내용(제목, 내용)을 감싸는 영역 */
   .contentWrapper {
     @apply flex grow flex-col gap-open-lg py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
   }
 
+  /* 문의유형 아이콘의 Tab 접근성을 위해 작성한 CSS */
   .industryWrapper {
     @apply rounded-[20px] focus-within:ring-2 focus-within:ring-[#3B82F6];
   }
 
+  /* 문의유형 체크박스 스타일링을 위해 기본 스타일을 숨겨둔 영역 */
   .inquiryInput {
     @apply sr-only;
   }
 
+  /* 제품 문의, 구매 문의, AS 문의, 기타 문의 등 텍스트 영역 */
   .inquiryLabel {
     @apply flex min-w-[100px] flex-1 flex-col items-center gap-open-lg rounded-[20px] -bg--open-gray-50 px-open-xl py-open-xl;
     @apply text-open-font-medium font-open-label tablet:text-open-font-large desktop:text-open-font-large;
   }
 
+  /* 문의유형 아이콘 클릭 시 배경색과 텍스트 색상을 변경하는 영역 */
   .inquiryInput:checked + .inquiryLabel {
     @apply -bg--open-accent-accent -text--openfoundation-secondary;
   }
 
+  /* 문의유형 글자와 아이콘 전체를 감싸는 영역 */
   .inquiryWrapper {
     @apply flex flex-row gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl;
 
+    /* 문의유형 4개의 아이콘을 감싸는 영역 */
     & div {
       @apply flex flex-1 flex-wrap gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
     }
   }
 
+  /* 소속 ~ 받으실 연락처를 감싸는 영역 */
   .personalInfoWrapper {
     @apply flex flex-col gap-open-lg border-b -border--open-gray-200 py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
   }
 
+  /* 소속과 성명 1쌍, 받으실 이메일과 받으실 연락처 1쌍을 짝을 지어 반응형에서의 배치를 위해 묶어둔 영역  */
   .personalInfoContainer {
     @apply flex grow flex-wrap gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
   }
 
+  /* 이메일과 연락처(유효성 검사(올바른 이메일을 입력했는가, 연락처 자동 하이픈 생성))의 작성 영역이 labal을 제외한 영역에 가득 차도록 설정한 영역 */
   .regWrapper {
     @apply grow;
   }
 
+  /* 올바른 이메일을 입력하지 않았을 때 나오는 메시지 스타일링 영역 */
   .message {
     @apply text-open-font-small font-open-paragraph text-red-500 tablet:text-open-font-medium desktop:text-open-font-medium;
     @apply block text-right;
@@ -406,162 +440,190 @@
 }
 
 /* 고객문의 전송 성공 페이지 */
+/* 고객문의 전송 성공 페이지를 감싸는 영역 */
 .contactSuccess {
   @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
 
+  /* 전송 성공 메시지를 감싸는 영역 */
   .noticeWrapper {
     @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
 
+    /* 1번째 줄 텍스트(문의가 정상적으로 접수되었습니다.) 영역 */
     .mainText {
       @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
     }
 
+    /* 2번째 줄 텍스트(담당자가 문의를 처리할 예정이니 잠시만 기다려 주세요.) 영역 */
     .subText {
       @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
     }
   }
 
+  /* 확인 버튼 */
   .mainButton {
     @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
   }
 }
 
 /* 고객문의 전송 실패 페이지 */
+/* 고객문의 전송 실패 페이지를 감싸는 영역 */
 .contactFail {
   @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
 
+  /* 전송 실패 메시지를 감싸는 영역 */
   .noticeWrapper {
     @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
 
+    /* 1번째 줄 텍스트(죄송합니다. 현재 일시적인 오류로 인해 접수가 불가합니다.) 영역 */
     .mainText {
       @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
     }
 
+    /* 2번째 줄 텍스트(담당자에게 별도로 문의하시면 최선을 다해 도움을 드리겠습니다. 문의 담당자 연락처: 031-373-2612) 영역 */
     .subText {
       @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
     }
   }
 
+  /* 다시 시도, 메인으로 버튼을 감싸는 영역 */
   .buttonWrapper {
     @apply flex gap-open-xl;
   }
 
+  /* 다시 시도 버튼 */
   .retryButton {
     @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
   }
 
+  /* 메인으로 버튼 */
   .mainButton {
     @apply rounded-[20px] border-2 -border--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--open-accent-accent tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
   }
 }
 
 /* 라이브러리 */
+/* 라이브러리 전체 페이지 */
 .library {
   @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 
+  /* 라이브러리 전체를 감싸는 영역 */
   .sectionWrapper {
     @apply m-auto w-full max-w-[1320px];
   }
 
+  /* 소개서 및 브로슈어 다운로드 영역을 감싸는 영역 */
   .sectionContainer {
     @apply flex grow flex-wrap justify-center gap-open-gutter-mobile py-open-xl tablet:gap-open-gutter-desktop tablet:py-open-5xl desktop:gap-open-gutter-desktop desktop:py-open-5xl;
   }
 
-  .downloadWrapper {
-    @apply flex flex-col items-center gap-open-sm;
-  }
-
-  .downloadText {
-    @apply text-open-font-small font-open-paragraph -text--openfoundation-primary tablet:text-open-font-medium desktop:text-open-font-medium;
-  }
-
+  /* 다운로드 카드 1개 */
   .cardWrapper {
     @apply flex-1 rounded-[20px] border-2 -border--open-gray-200 px-open-2xl py-open-2xl tablet:py-open-4xl tablet:hover:-border--open-accent-accent desktop:py-open-4xl desktop:hover:-border--open-accent-accent;
   }
 
+  /* 다운로드 카드 hover 시 효과 */
   .cardWrapper:hover {
     .iconChange {
       @apply tablet:-fill--open-accent-accent desktop:-fill--open-accent-accent;
     }
   }
 
+  /* 다운로드 카드 안쪽 텍스트, 아이콘 영역 */
   .cardContainer {
     @apply flex min-w-[248px] flex-col gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
   }
 
+  /* 다운로드 카드 안쪽 텍스트 영역 */
   .cardInner {
     @apply flex flex-col-reverse gap-open-xl;
   }
 
+  /* OpenSG 회사 소개서, OpenSG Company Overview, OpenSG 브로슈어, OpenSG Company Brochure 텍스트 영역 */
   .cardTitle {
     @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
   }
 
+  /* 소개서, Overview, 브로슈어, Brochure 글자 영역 */
   .cardCategoryText {
     @apply text-open-font-medium font-open-paragraph -text--open-gray-600 tablet:text-open-font-xl desktop:text-open-font-xl;
   }
 
+  /* 다운로드 아이콘 영역 */
   .cardLinkWrapper {
     @apply flex justify-end;
   }
 
+  /* 다운로드 아이콘 크기 */
   .iconStyle {
     @apply h-6 w-6 tablet:h-9 tablet:w-9 desktop:h-9 desktop:w-9;
   }
 
+  /* 다운로드 아이콘 색상 */
   .iconChange {
     @apply -fill--openfoundation-primary;
   }
 }
 
 /* 직무소개 */
+/* 직무소개 전체 페이지 */
 .team {
   @apply w-full -bg--openfoundation-primary;
 
+  /* 직무소개 x축 여백 지정  */
   .teamWrapper {
     @apply mx-open-margin-mobile my-open-xl tablet:mx-open-margin-desktop tablet:my-open-5xl desktop:mx-open-margin-desktop desktop:my-open-5xl;
   }
 
+  /* 직무소개 전체를 감싸는 영역  */
   .sectionWrapper {
     @apply m-auto w-full max-w-[1320px];
   }
 
+  /* 그룹(전체, FA, 경영지원, IT)을 감싸는 영역 */
   .lnbUl {
     @apply text-center text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
     @apply mb-open-margin-mobile flex gap-open-md tablet:mb-open-xl tablet:gap-open-gutter-desktop desktop:mb-open-xl desktop:gap-open-gutter-desktop;
 
+    /* 전체, FA, 경영지원, IT 각각의 요소 */
     & button {
       @apply rounded-[20px] -bg--openfoundation-quaternary px-open-xl py-open-sm tablet:px-open-2xl desktop:px-open-2xl;
       @apply border border-transparent tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
 
+      /* 전체, FA, 경영지원, IT 각각의 요소 클릭 시 색상 변경 */
       &.isClicked {
         @apply -bg--open-accent-accent;
       }
     }
   }
 
+  /* 팀 소개 카드 1개 */
   .cardWrapper {
     @apply mobile:mb-open-gutter-mobile mobile:w-full mobile:gap-open-xl mobile:p-open-xl;
     @apply flex items-center rounded-[20px] border-2 border-transparent -bg--openfoundation-quaternary tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
     @apply tablet:flex-1 tablet:flex-col tablet:gap-open-2xl tablet:p-open-2xl desktop:flex-1 desktop:flex-col desktop:gap-open-2xl desktop:p-open-2xl;
 
+    /* 팀명 및 팀 업무소개 내용을 감싸는 영역 */
     & div {
       @apply flex min-w-[248px] flex-col gap-open-xl tablet:text-center desktop:text-center;
     }
 
+    /* 팀명 */
     & h3 {
       @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
     }
 
+    /* 팀 업무소개 */
     & p {
       @apply text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-medium desktop:text-open-font-medium;
     }
 
+    /* 팀별 아이콘 크기 */
     & img {
       @apply mobile:w-12 tablet:w-32 desktop:w-32;
     }
   }
 
+  /* 팀 소개 카드들을 감싸는 영역 */
   .roleSectionWrapper {
     @apply flex mobile:w-full mobile:flex-col tablet:flex-wrap tablet:gap-open-gutter-desktop desktop:flex-wrap desktop:gap-open-gutter-desktop;
   }
@@ -569,53 +631,66 @@
 
 /* Footer */
 .footer {
+  /* Footer에서 고객문의 영역 */
   .contactUsWrapper {
     @apply bg-[url('@/assets/footer_background.png')] bg-cover;
 
+    /* Footer에서 고객문의 링크 클릭 영역 */
     .link {
       @apply block px-open-margin-mobile py-open-3xl tablet:px-open-margin-desktop tablet:py-open-6xl desktop:px-open-margin-desktop desktop:py-open-6xl;
     }
 
+    /* Footer에서 텍스트의 최대크기 지정 */
     .container {
       @apply m-auto w-full max-w-[1320px];
     }
 
+    /* Footer에서 고객문의 텍스트와 아이콘 영역 */
     .inner {
       @apply flex items-center justify-between;
     }
 
+    /* Footer에서 고객문의 텍스트 영역 */
     .content {
       @apply flex flex-col;
     }
 
+    /* Contact US 텍스트 */
     .title {
       @apply text-open-font-xxl font-open-label -text--openfoundation-secondary tablet:text-open-font-xxxxxl desktop:text-open-font-xxxxxl;
     }
 
+    /* 설명(OpenSG의 전문 엔지니어들과 미래를 열어 보세요.) 텍스트 영역 */
     .text {
       @apply text-open-font-small font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
     }
 
+    /* 이동 아이콘(>) */
     .moveButton {
       @apply mobile:hidden tablet:h-[158px] tablet:w-[158px] desktop:h-[158px] desktop:w-[158px];
     }
   }
 
+  /* 회사정보 영역 */
   .officeWrapper {
     @apply flex flex-wrap items-end justify-between gap-open-lg -bg--openfoundation-primary px-open-margin-mobile py-open-lg tablet:px-open-margin-desktop tablet:py-open-xl desktop:px-open-4xl desktop:py-open-xl;
 
+    /* 텍스트 크기, 색상 등을 지정한 영역 */
     .text {
       @apply text-open-font-small not-italic -text--openfoundation-tertiary tablet:text-open-font-medium desktop:text-open-font-medium;
     }
 
+    /* 회사정보, 연락처, 팩스번호를 감싸는 영역 */
     .info {
       @apply flex flex-col gap-open-sm font-open-paragraph;
 
+      /* 연락처, 팩스번호를 감싸는 영역 */
       & div {
         @apply flex gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
       }
     }
 
+    /* 저작권 정보 영역 */
     .copyright {
       @apply font-open-paragraph;
     }
@@ -623,9 +698,11 @@
 }
 
 /* 사이드바 */
+/* 유튜브, 페이스북, 상단으로 이동 버튼으로 구성된 영역 */
 .sideWrapper {
   @apply fixed bottom-open-2xl right-open-xl z-[99999999] flex flex-col gap-open-lg tablet:bottom-open-4xl tablet:gap-open-xl desktop:bottom-open-4xl desktop:right-open-2xl desktop:gap-open-xl;
 
+  /* 유튜브, 페이스북, 상단으로 이동 아이콘 크기 */
   .iconStyle {
     @apply h-8 w-8 tablet:h-10 tablet:w-10 desktop:h-[52px] desktop:w-[52px];
   }
