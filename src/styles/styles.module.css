@@ -813,12 +813,12 @@
       }
     }
 
-    /* 화살표 아이콘 */
+    /* 화살표 아이콘 (아코디언 메뉴 열린 후) */
     .arrowDefault {
       @apply transition-all duration-300;
     }
 
-    /* 화살표 아이콘 */
+    /* 화살표 아이콘 (아코디언 메뉴 열리기 전. 회전값 사전 설정.) */
     .arrowDown {
       @apply transition-all duration-300 rotate-180;
     }
@@ -890,22 +890,22 @@
     @apply w-full block
   }
   
-  /* 지도 위 핀 아이콘 */
+  /* 지도 위 핀 아이콘 (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
   & .pinIcon {
     @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[29.8%] left-[43.8%] translate-x-[-43.8%] translate-y-[-29.5%]
   }
   
-  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 */
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
   & .pinIcon::after {
     @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["본사/자동화연구소"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[160px] tablet:w-[160px] w-[120px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
   }
   
-  /* 지도 위 핀 아이콘 (미국) */
+  /* 지도 위 핀 아이콘 (미국) (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
   & .pinIconUSA {
     @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[30.5%] left-[82.8%] translate-x-[-83.8%] translate-y-[-29.5%]
   }
   
-  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (미국) */
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (미국) (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
   & .pinIconUSA::after {
     @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["OpenSG\00a0USA"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[140px] tablet:w-[140px] w-[100px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
   }
@@ -919,7 +919,7 @@
   & .locationWrapper {
     @apply desktop:w-[1320px] flex flex-col gap-open-3xl desktop:gap-open-5xl tablet:gap-open-5xl;
 
-    /* 각 위치 정보를 감싸는 박스 */
+    /* 각 위치 정보를 감싸는 박스 (위치 정보 정렬 및 위치 정보 사이의 gap 설정) */
     & .locationContainer {
       @apply flex flex-row w-full justify-between items-start gap-open-gutter-mobile desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop;
 
@@ -928,7 +928,7 @@
         @apply desktop:w-[400px] desktop:h-[400px] tablet:w-[400px] tablet:h-[400px] w-[160px] h-[160px] object-cover;
       }
 
-      /* 각 위치의 세부 정보를 감싸는 박스 */
+      /* 각 위치의 세부 정보를 감싸는 박스 (폰트 사이즈, 폰트 굵기, address 태그에 자동 적용되는 이탤릭체 제외, 세부 정보 정렬 및 세부 정보만을 위한 별도 gap 설정을 위함) */
       & .locationInfo {
         @apply flex flex-col justify-center w-full h-full desktop:gap-open-2xl tablet:gap-open-2xl gap-open-md desktop:text-open-font-large tablet:text-open-font-large text-open-font-small font-open-paragraph not-italic;
 
@@ -952,7 +952,7 @@
   }
 
   /* 각 위치 링크 및 아이콘을 감싼 박스 */
-  /* Cascading 이슈 (스타일링 겹침 현상) 으로 인해 각 위치 링크 스타일링은 이곳에 작성하였습니다. */
+  /* Cascading 이슈 (스타일링 겹침 현상) 로 인해 각 위치 링크 스타일링은 이곳에 작성하였습니다. */
   & .locationLink {
     @apply w-fit h-auto inline cursor-pointer;
 
@@ -984,7 +984,7 @@
       & .swiperWrapper {
         @apply w-full h-full flex flex-col font-open-font items-center justify-center  -text--openfoundation-secondary font-open-label max-w-[991px] tablet:max-w-[1311px] desktop:max-w-[1320px] py-open-4xl tablet:py-open-6xl desktop:py-open-6xl gap-open-2xl tablet:gap-open-4xl desktop:gap-open-4xl;
 
-        /* 연도 Swiper 전체 */
+        /* 연도 Swiper 전체 (전체 정렬 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
         & .yearSwiper {
           @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
 
@@ -996,12 +996,12 @@
             & .yearSlide {
               @apply flex flex-col justify-end items-center gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
             
-              /* Swiper 가 active 된 상태일 때 (해당하는 연도일 경우) */
+              /* Swiper 가 active 된 상태일 때 - 폰트 사이즈만 조정. 폰트 색상은 상위 wrapper 에서 white 를 사용하기 있기 때문에 별도로 적용하지 않음 (해당하는 연도일 경우) */
               &.isActive {
                 @apply text-open-font-xl tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
               }
             
-              /* Swiper 가 inactive 된 상태일 때 (해당하는 연도가 아닐 경우) */
+              /* Swiper 가 inactive 된 상태일 때 - 폰트 사이즈 및 폰트 색상 (gray) (해당하는 연도가 아닐 경우) */
               &.isInActive {
                 @apply text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl -text--open-gray-300;
               } 
@@ -1009,34 +1009,34 @@
           }
         }
         
-        /* 연혁 내용 Swiper 전체 */
+        /* 연혁 내용 Swiper 전체 (전체 정렬) */
         & .historySwiper {
           @apply w-full h-full flex flex-col justify-center items-center;
         
-          /* 연혁 Swiper 의 각 Slide 전체 박스 */
+          /* 연혁 Swiper 의 각 Slide 전체 박스 (박스 라운딩 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
           & .historySwiperSlide{
-            @apply rounded-[20px];
+            @apply rounded-[20px] cursor-pointer;
 
             /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
             & .historySlide {
               @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
               
-              /* Swiper 가 active 된 상태일 때 (가운데 위치하고 있을 때) */
+              /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (가운데 위치하고 있을 때) */
               &.isActive {
                 @apply -bg--open-gray-950;
               } 
             
-              /* Swiper 가 inactive 된 상태일 때 (가운데 위치한 카드 제외 전체) */
+              /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (가운데 위치한 카드 제외 전체) */
               &.isInActive {
                 @apply -bg--openfoundation-black;
               } 
             
-              /* 카드 내 연도 텍스트를 위한 스타일링 */
+              /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
               & .historySlideTitle {
                 @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
               }
             
-              /* 카드 내 연혁 내용을 위한 스타일링 */
+              /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
               & .historySlideDescription {
                 @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
               }
@@ -1055,26 +1055,26 @@
     & .historyMobileSection {
       @apply flex flex-col justify-center items-center gap-open-xl;
 
-       /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
+       /* 연혁 Swiper 의 각 Slide 전체 박스 내부 (박스 라운딩, 박스 내 여백 (x축, y축), 박스 내 정렬 */
        & .historySlide {
         @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
         
-        /* Swiper 가 active 된 상태일 때 (가운데 위치하고 있을 때) */
+        /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (화면에 일정 비율을 차지하고 있을 경우) */
         &.isActive {
           @apply -bg--open-gray-950;
         } 
       
-        /* Swiper 가 inactive 된 상태일 때 (가운데 위치한 카드 제외 전체) */
+        /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (화면 바깥으로 나가는 카드의 경우) */
         &.isInActive {
           @apply -bg--openfoundation-black;
         } 
       
-        /* 카드 내 연도 텍스트를 위한 스타일링 */
+        /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
         & .historySlideTitle {
           @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
         }
       
-        /* 카드 내 연혁 내용을 위한 스타일링 */
+        /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
         & .historySlideDescription {
           @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
         }
