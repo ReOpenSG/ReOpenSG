@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 import ProductIcon from './icons/ProductIcon';
 import PurchaseIcon from './icons/PurchaseIcon';
 import ASIcon from './icons/ASIcon';
@@ -10,7 +10,7 @@ function InquiryInput({
   type, id, name, defaultValue, labelText,
 }) {
   return (
-    <div className="focus-within:ring-2 focus-within:ring-[#3B82F6] rounded-[20px]">
+    <div className={styles.industryWrapper}>
       <input
         type={type}
         id={id}

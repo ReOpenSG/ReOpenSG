@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 import FillingInput from './FillingInput';
 
 function PersonalInfoRe() {
   return (
-    <fieldset className="py-open-2xl border-b -border--open-gray-200 flex flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl">
-      <div className={styles.personalInfoWrapper}>
+    <fieldset className={styles.personalInfoWrapper}>
+      <div className={styles.personalInfoContainer}>
         <div className={styles.regWrapper}>
           <FillingInput
             labelText="소속"
@@ -23,7 +23,7 @@ function PersonalInfoRe() {
           />
         </div>
       </div>
-      <div className={styles.personalInfoWrapper}>
+      <div className={styles.personalInfoContainer}>
         <FillingInput
           labelText="받으실 이메일"
           inputType="email"

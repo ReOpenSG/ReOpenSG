@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/components/Library/Library.module.css';
+import styles from '@/styles/styles.module.css';
 
 function DownloadIcon() {
   return (

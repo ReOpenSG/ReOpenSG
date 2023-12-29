@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from '@/styles/styles.module.css';
 import SuccessIcon from '@/components/Contact/icons/SuccessIcon';
 import NoticeButton from '@/components/Contact/CheckButton';
 import NoticeContent from '@/components/Contact/NoticeContent';
@@ -7,7 +8,7 @@ import NoticeContent from '@/components/Contact/NoticeContent';
 function ContactSuccess() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-open-5xl justify-center h-screen">
+    <div className={styles.contactSuccess}>
       <SuccessIcon />
       <NoticeContent
         mainTopText="문의가 정상적으로 접수되었습니다."
@@ -19,7 +20,7 @@ function ContactSuccess() {
           navigate('/');
           localStorage.clear();
         }}
-        className="-text--openfoundation-secondary font-open-label text-open-font-xl -bg--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
+        className={styles.mainButton}
         text="확인"
       />
     </div>

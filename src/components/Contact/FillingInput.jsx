@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 
 function FillingInput({
   labelText, inputType, name, placeholderText, maxLength, ...restProps

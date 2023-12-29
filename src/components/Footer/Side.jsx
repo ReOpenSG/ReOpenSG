@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from '@/components/Footer/Footer.module.css';
+import styles from '@/styles/styles.module.css';
 import FacebookIcon from './icons/FacebookIcon';
 import ScrollToIcon from './icons/ScrollToIcon';
 import YoutubeIcon from './icons/YoutubeIcon';
