@@ -9,7 +9,7 @@ import styles from '@/components/Location/Location.module.css';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Location() {
-  AOS.init();
+  AOS.init({ once: true });
   return (
     <div className={styles.wrapper}>
       <TitleSection
