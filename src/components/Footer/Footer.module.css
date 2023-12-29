@@ -30,7 +30,7 @@
   @apply -bg--openfoundation-primary flex flex-wrap gap-open-lg justify-between items-end py-open-lg tablet:py-open-xl desktop:py-open-xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-4xl;
 
   .text {
-    @apply -text--openfoundation-tertiary text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium not-italic;
+    @apply -text--open-gray-100 text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium not-italic;
   }
 
   .info {

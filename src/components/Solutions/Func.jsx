@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import styles from '@/styles/styles.module.css';
-import ImagArray from './solutionsFuncImage.js'; // 솔루션 기능 배너 변경을 원하시면 현재 파일과 동일한 위치의 "./solutionsFuncImage.js"로 이동 후
+import ImagArray from './solutionsFuncImage.js'; //
 
 function Func({ currentLocation, data, headingRef, sectionRef }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <section id="Func" ref={sectionRef} className={styles.func}>
       <h3 ref={headingRef} className={styles.title}>

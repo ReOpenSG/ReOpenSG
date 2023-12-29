@@ -1,15 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '@/styles/styles.module.css';
 
 function Char({ currentLocation, data, headingRef, sectionRef }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <section id="Char" ref={sectionRef} className={styles.char}>
       <span className={styles.subTitle}>
@@ -34,8 +28,8 @@ function Char({ currentLocation, data, headingRef, sectionRef }) {
                 data-aos="fade-up"
                 data-aos-duration="1500"
               >
-                <p className={styles.charItemTitle}>특징 제목</p>
-                <p>{item}</p>
+                <p className={styles.charItemTitle}>{Object.keys(item)}</p>
+                <p>{Object.values(item)}</p>
               </li>
             ))}
         </ul>

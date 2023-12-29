@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Char from '@/components/Industries/Char';
@@ -20,6 +22,12 @@ function Industries() {
     charSectionRef: useRef(null),
     productSectionRef: useRef(null),
   };
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
 
   useEffect(() => {
     const products = industryData.solutions.reduce((acc, item) => {

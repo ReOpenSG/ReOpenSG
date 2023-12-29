@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Data from '@/data/solutionsData.json';
@@ -8,7 +10,7 @@ import SoultionBanner from '@/components/Solutions/SoultionBanner';
 import Snb from '@/components/Solutions/Snb';
 import MeoizedChar from '@/components/Solutions/Char';
 import MemoizedFunc from '@/components/Solutions/Func';
-import Effect from '@/components/Solutions/Effect';
+import MemoizedEffect from '@/components/Solutions/Effect';
 import styles from '@/styles/styles.module.css';
 
 function Solutions() {
@@ -22,6 +24,12 @@ function Solutions() {
   const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refFuncHeading, inViewFunc] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refEffectHeading, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
 
   const LnbData = {
     array: data.map((item) => item[0]),
@@ -45,7 +53,7 @@ function Solutions() {
         textAlign="text-left"
       />
       <section className={styles.solutionsOuterContainer}>
-        <Lnb LnbArray={LnbData.array} />
+        {LnbData.array && LnbData.array.length > 1 && <Lnb LnbArray={LnbData.array} />}
         <SoultionBanner currentLocation={id} prevLocation={LnbData.prev} />
         <div className={styles.solutionsInnerContainer}>
           <Snb
@@ -71,7 +79,7 @@ function Solutions() {
               data={Data}
               sectionRef={serctionRefs.funcRef}
             />
-            <Effect
+            <MemoizedEffect
               headingRef={refEffectHeading}
               currentLocation={id}
               data={Data}

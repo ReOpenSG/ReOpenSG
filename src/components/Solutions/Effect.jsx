@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '@/styles/styles.module.css';
 
 function Effect({ currentLocation, data, headingRef, sectionRef }) {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
   return (
     <section id="Effect" ref={sectionRef} className={styles.effect}>
       <h3 ref={headingRef} className={styles.title}>
@@ -12,7 +20,13 @@ function Effect({ currentLocation, data, headingRef, sectionRef }) {
       <ul className={styles.effectList}>
         {data &&
           data[currentLocation].기대효과.map((item) => (
-            <li key={uuidv4()} className={styles.item}>
+            <li
+              key={uuidv4()}
+              className={styles.item}
+              data-aos="fade-down"
+              data-aos-duration="1500"
+              data-aos-delay="100"
+            >
               {item}
             </li>
           ))}
@@ -44,4 +58,6 @@ Effect.propTypes = {
   ]).isRequired,
 };
 
-export default Effect;
+const MemoizedEffect = React.memo(Effect);
+
+export default MemoizedEffect;

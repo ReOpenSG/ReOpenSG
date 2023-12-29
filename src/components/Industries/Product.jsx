@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
@@ -8,12 +6,7 @@ import styles from '@/styles/styles.module.css';
 import imageArray from './industriesProductImage.js';
 
 function Product({ industryProducts, headingRef, sectionRef }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   const productItems = Object.entries(industryProducts);
-
   return (
     <section ref={headingRef} id="Product" className={styles.product}>
       <h3 ref={sectionRef} className={styles.productTitle}>

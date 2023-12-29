@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import styles from '@/styles/styles.module.css';
 import iconMap from './machinesDevicesFuncCharImage.js';
 
 function FuncChar({ descProps, selectedProduct }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <div className={styles.funcChar}>
       <div className={styles.inner}>

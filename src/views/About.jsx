@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import TitleSection from '@/components/Common/TitleSection';
 import Group from '@/components/About/Group';
 import BannerImage from '@/components/About/BannerImage';
@@ -7,6 +9,11 @@ import Ci from '@/components/About/Ci';
 import styles from '@/styles/styles.module.css';
 
 function About() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
   return (
     <div className={styles.about}>
       <TitleSection

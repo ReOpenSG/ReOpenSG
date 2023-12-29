@@ -6,7 +6,7 @@ import styles from '@/styles/styles.module.css';
 function Vision() {
   return (
     <section className={styles.vision}>
-      <Title title="OUR VISION" subtitle="오픈에스지가 추구하는 길" />
+      <Title title="OUR VISION" subtitle="OpenSG가 추구하는 길" />
       <ul className={styles.cardList}>
         <Card
           title="Respect"
