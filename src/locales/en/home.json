@@ -1,0 +1,33 @@
+{
+  "slogan": {
+    "subtitle": ["A company open to customers, opening the future for customers", "OpenSG opens the way to the future with customers"]
+  },
+  "universe": {
+    "title": "Experience the Worldview of OPENSG"
+  },
+  "solutions": {
+    "title": "From Design to Simulation",
+    "desc": [
+      "Start your journey in logistics automation with OpenSG.",
+      "An integrated business system for smooth and rapid decision-making and flexible response to crises",
+      "A logistics control system using AGVs, enabling real-time AGV Traffic control",
+      "Conveyor equipment control system, enabling intelligent transport commands and various automatic interconnections",
+      "Stocker equipment control system, allowing remote monitoring and control",
+      "A program for controlling Indexers, responsible for efficient product supply to EQ equipment and logistics return via Stockers",
+      "An OHT logistics control system capable of real-time Traffic control for high-speed OHTs"
+    ]
+  },
+  "products": {
+    "mainKeyword": ["Everything in", "Smart Automation"],
+    "subKeyword": ["From planning to simulation", "From solutions to devices", "Everything you need for smart automation,", "OpenSG is with you."],
+    "product": ["Experience OpenSG's Solution.", "Experience OpenSG's Machine.", "Experience OpenSG's Device."]
+  },
+  "industries": {
+    "mainKeyword": "Shining in Various Industries",
+    "subKeyword": "Experience the limitless possibilities of OpenSG products."
+  },
+  "partner": {
+    "mainKeyword": "Chosen by Top Companies",
+    "subKeyword": ["With experience in partnering with top companies,", "we provide the optimal solutions our clients seek."]
+  }
+}
