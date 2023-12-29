@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import FillingInput from './FillingInput';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 
 function ContentRe() {
   const textareaId = uuidv4();

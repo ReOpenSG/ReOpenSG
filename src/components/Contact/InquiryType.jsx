@@ -1,7 +1,7 @@
 import React from 'react';
 import InquiryInput from './InquiryInput';
 import { data } from '@/data/contactData';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 
 function InquiryType() {
   return (

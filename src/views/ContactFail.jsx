@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from '@/styles/styles.module.css';
 import NoticeButton from '@/components/Contact/CheckButton';
 import NoticeContent from '@/components/Contact/NoticeContent';
 import FailIcon from '@/components/Contact/icons/FailIcon';
@@ -7,7 +8,7 @@ import FailIcon from '@/components/Contact/icons/FailIcon';
 function ContactFail() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-open-5xl justify-center h-screen">
+    <div className={styles.contactFail}>
       <FailIcon />
       <NoticeContent
         mainTopText="죄송합니다."
@@ -15,10 +16,10 @@ function ContactFail() {
         subTopText="담당자에게 별도로 문의하시면 최선을 다해 도움을 드리겠습니다."
         subBottomText="문의 담당자 연락처: 031-373-2612"
       />
-      <div className="flex gap-open-xl">
+      <div className={styles.buttonWrapper}>
         <NoticeButton
           type="button"
-          className="-text--openfoundation-secondary font-open-label text-open-font-xl -bg--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
+          className={styles.retryButton}
           text="다시 시도"
           onClick={() => {
             navigate('/contact/retry');
@@ -26,7 +27,7 @@ function ContactFail() {
         />
         <NoticeButton
           type="button"
-          className="-text--open-accent-accent font-open-label text-open-font-xl border-2 -border--open-accent-accent px-open-4xl py-open-lg rounded-[20px]"
+          className={styles.mainButton}
           text="메인으로"
           onClick={() => {
             navigate('/');

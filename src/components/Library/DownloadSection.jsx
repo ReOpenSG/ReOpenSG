@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/components/Library/Library.module.css';
+import styles from '@/styles/styles.module.css';
 import DownloadCard from './DownloadCard';
 import companyProfileKo from '@/assets/library_companyProfile_ko.pdf';
 import companyProfileEn from '@/assets/library_companyProfile_en.pdf';
@@ -8,7 +8,7 @@ import companyBrochureEn from '@/assets/library_companyBrochure_en.pdf';
 
 function DownloadSection() {
   return (
-    <div className={styles.sectionWrapper}>
+    <div className={styles.sectionContainer}>
       <DownloadCard
         mainText="OpenSG"
         subText="회사 소개서"

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Contact.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Agreement({ state, setState }) {
   const handleChangeCheck = () => {
@@ -32,9 +32,8 @@ function Agreement({ state, setState }) {
           required
           checked={state}
           onChange={handleChangeCheck}
-          className="peer"
         />
-        <label htmlFor="agreement" className="pl-open-lg">
+        <label htmlFor="agreement">
           (필수) 위 개인정보 수집 및 이용에 동의합니다.
         </label>
       </div>

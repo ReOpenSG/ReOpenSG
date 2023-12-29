@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/components/Footer/Footer.module.css';
+import styles from '@/styles/styles.module.css';
 
 function ScrollToIcon() {
   return (

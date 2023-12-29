@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { emailConfig } from '@/data/emailConfig';
-import styles from '@/components/Contact/Contact.module.css';
+import styles from '@/styles/styles.module.css';
 import BannerSection from '@/components/Common/BannerSection';
 import InquiryType from '@/components/Contact/InquiryType';
 import Agreement from '@/components/Contact/Agreement';
@@ -54,7 +54,7 @@ function ContactRe() {
   };
 
   return (
-    <div className="w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop">
+    <div className={styles.contact}>
       <form ref={formRe} onSubmit={sendEmail} className={styles.formWrapper}>
         <BannerSection category="Support" title="고객문의" />
         <InquiryType />

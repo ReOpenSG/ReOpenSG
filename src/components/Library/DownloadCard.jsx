@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DownloadIcon from './DownloadIcon';
-import styles from '@/components/Library/Library.module.css';
+import styles from '@/styles/styles.module.css';
 
-function DownloadCard({ mainText, subText, category, href, download, ariaLabel }) {
+function DownloadCard({
+  mainText, subText, category, href, download, ariaLabel,
+}) {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardContainer}>

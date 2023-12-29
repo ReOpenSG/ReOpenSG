@@ -260,3 +260,372 @@
     }
   }
 }
+
+/* Support 타이틀 */
+.bannerSection {
+  @apply flex flex-col-reverse gap-open-xl pb-open-5xl pt-open-6xl text-center tablet:gap-open-2xl tablet:pb-open-7xl tablet:pt-[160px] desktop:gap-open-2xl desktop:pb-open-7xl desktop:pt-[160px];
+
+  .titleCategory {
+    @apply text-open-font-large font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+  }
+
+  .titleText {
+    @apply text-open-font-xxl font-open-heading -text--openfoundation-primary tablet:text-open-font-xxxxl desktop:text-open-font-xxxxl;
+  }
+}
+
+/* AboutUs, Service&Solution 타이틀 */
+.titleSection {
+  @apply bg-cover px-open-margin-mobile pb-open-5xl pt-open-6xl tablet:px-open-margin-desktop tablet:pb-open-7xl tablet:pt-[160px] desktop:px-open-margin-desktop desktop:pb-open-7xl desktop:pt-[160px];
+
+  .titleInner {
+    @apply m-auto flex max-w-[1320px] flex-col gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+
+    & h2 {
+      @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    & p {
+      @apply flex flex-col;
+    }
+
+    & span {
+      @apply text-open-font-xl font-open-heading -text--openfoundation-secondary tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+  }
+}
+
+/* 고객문의 */
+.contact {
+  @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  .formWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  .wrapper {
+    @apply flex grow items-center gap-open-xl;
+  }
+
+  .label {
+    @apply w-open-6xl text-open-font-medium font-open-label -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  .input,
+  .textarea {
+    @apply w-full grow -bg--open-gray-50 px-open-xl py-open-lg text-open-font-small font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  .iconStyle {
+    @apply h-10 w-10 tablet:h-20 tablet:w-20 desktop:h-20 desktop:w-20;
+  }
+
+  .agreementText {
+    @apply text-open-font-medium font-open-paragraph -text--openfoundation-primary tablet:text-open-font-large desktop:text-open-font-large;
+
+    & h3 {
+      @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+
+    & p {
+      @apply my-open-xl tablet:my-open-2xl desktop:my-open-2xl;
+    }
+  }
+
+  .agreementOl {
+    @apply rounded-[20px] border -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl tablet:py-open-2xl desktop:px-open-xl desktop:py-open-2xl;
+
+    & li {
+      @apply list-inside list-decimal;
+    }
+
+    .warning {
+      @apply mt-open-md list-none text-open-font-small tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+  }
+
+  .checkboxWrapper {
+    @apply flex items-center justify-end pb-open-2xl pt-open-lg tablet:pb-open-3xl tablet:pt-open-2xl desktop:pb-open-3xl desktop:pt-open-2xl;
+
+    & label {
+      @apply pl-open-lg;
+    }
+
+    & input {
+      @apply h-open-xl w-open-xl appearance-none rounded-[2px] border-2 -border--open-gray-300 -bg--openfoundation-secondary;
+      @apply bg-cover checked:-border--open-accent-accent checked:bg-[url('@/assets/contact_agreementCheck.svg')];
+    }
+  }
+
+  .contentWrapper {
+    @apply flex grow flex-col gap-open-lg py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  .industryWrapper {
+    @apply rounded-[20px] focus-within:ring-2 focus-within:ring-[#3B82F6];
+  }
+
+  .inquiryInput {
+    @apply sr-only;
+  }
+
+  .inquiryLabel {
+    @apply flex min-w-[100px] flex-1 flex-col items-center gap-open-lg rounded-[20px] -bg--open-gray-50 px-open-xl py-open-xl;
+    @apply text-open-font-medium font-open-label tablet:text-open-font-large desktop:text-open-font-large;
+  }
+
+  .inquiryInput:checked + .inquiryLabel {
+    @apply -bg--open-accent-accent -text--openfoundation-secondary;
+  }
+
+  .inquiryWrapper {
+    @apply flex flex-row gap-open-xl tablet:gap-open-2xl desktop:gap-open-2xl;
+
+    & div {
+      @apply flex flex-1 flex-wrap gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+    }
+  }
+
+  .personalInfoWrapper {
+    @apply flex flex-col gap-open-lg border-b -border--open-gray-200 py-open-2xl tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  .personalInfoContainer {
+    @apply flex grow flex-wrap gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+  }
+
+  .regWrapper {
+    @apply grow;
+  }
+
+  .message {
+    @apply text-open-font-small font-open-paragraph text-red-500 tablet:text-open-font-medium desktop:text-open-font-medium;
+    @apply block text-right;
+  }
+}
+
+/* 고객문의 전송 성공 페이지 */
+.contactSuccess {
+  @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
+
+  .noticeWrapper {
+    @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
+
+    .mainText {
+      @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+
+    .subText {
+      @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  .mainButton {
+    @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+}
+
+/* 고객문의 전송 실패 페이지 */
+.contactFail {
+  @apply flex h-screen flex-col items-center justify-center gap-open-3xl tablet:gap-open-5xl desktop:gap-open-5xl;
+
+  .noticeWrapper {
+    @apply flex flex-col items-center gap-open-md -text--openfoundation-primary tablet:gap-open-xl desktop:gap-open-xl;
+
+    .mainText {
+      @apply flex flex-col items-center text-open-font-large font-open-label tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+    }
+
+    .subText {
+      @apply flex flex-col items-center text-open-font-small font-open-paragraph tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  .buttonWrapper {
+    @apply flex gap-open-xl;
+  }
+
+  .retryButton {
+    @apply rounded-[20px] -bg--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--openfoundation-secondary tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+
+  .mainButton {
+    @apply rounded-[20px] border-2 -border--open-accent-accent px-open-2xl py-open-md text-open-font-medium font-open-label -text--open-accent-accent tablet:px-open-4xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-4xl desktop:py-open-lg desktop:text-open-font-xl;
+  }
+}
+
+/* 라이브러리 */
+.library {
+  @apply w-full px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  .sectionWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  .sectionContainer {
+    @apply flex grow flex-wrap justify-center gap-open-gutter-mobile py-open-xl tablet:gap-open-gutter-desktop tablet:py-open-5xl desktop:gap-open-gutter-desktop desktop:py-open-5xl;
+  }
+
+  .downloadWrapper {
+    @apply flex flex-col items-center gap-open-sm;
+  }
+
+  .downloadText {
+    @apply text-open-font-small font-open-paragraph -text--openfoundation-primary tablet:text-open-font-medium desktop:text-open-font-medium;
+  }
+
+  .cardWrapper {
+    @apply flex-1 rounded-[20px] border-2 -border--open-gray-200 px-open-2xl py-open-2xl tablet:py-open-4xl tablet:hover:-border--open-accent-accent desktop:py-open-4xl desktop:hover:-border--open-accent-accent;
+  }
+
+  .cardWrapper:hover {
+    .iconChange {
+      @apply tablet:-fill--open-accent-accent desktop:-fill--open-accent-accent;
+    }
+  }
+
+  .cardContainer {
+    @apply flex min-w-[248px] flex-col gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+  }
+
+  .cardInner {
+    @apply flex flex-col-reverse gap-open-xl;
+  }
+
+  .cardTitle {
+    @apply text-open-font-xl font-open-label -text--openfoundation-primary tablet:text-open-font-xxl desktop:text-open-font-xxl;
+  }
+
+  .cardCategoryText {
+    @apply text-open-font-medium font-open-paragraph -text--open-gray-600 tablet:text-open-font-xl desktop:text-open-font-xl;
+  }
+
+  .cardLinkWrapper {
+    @apply flex justify-end;
+  }
+
+  .iconStyle {
+    @apply h-6 w-6 tablet:h-9 tablet:w-9 desktop:h-9 desktop:w-9;
+  }
+
+  .iconChange {
+    @apply -fill--openfoundation-primary;
+  }
+}
+
+/* 직무소개 */
+.team {
+  @apply w-full -bg--openfoundation-primary;
+
+  .teamWrapper {
+    @apply mx-open-margin-mobile my-open-xl tablet:mx-open-margin-desktop tablet:my-open-5xl desktop:mx-open-margin-desktop desktop:my-open-5xl;
+  }
+
+  .sectionWrapper {
+    @apply m-auto w-full max-w-[1320px];
+  }
+
+  .lnbUl {
+    @apply text-center text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    @apply mb-open-margin-mobile flex gap-open-md tablet:mb-open-xl tablet:gap-open-gutter-desktop desktop:mb-open-xl desktop:gap-open-gutter-desktop;
+
+    & button {
+      @apply rounded-[20px] -bg--openfoundation-quaternary px-open-xl py-open-sm tablet:px-open-2xl desktop:px-open-2xl;
+      @apply border border-transparent tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
+
+      &.isClicked {
+        @apply -bg--open-accent-accent;
+      }
+    }
+  }
+
+  .cardWrapper {
+    @apply mobile:mb-open-gutter-mobile mobile:w-full mobile:gap-open-xl mobile:p-open-xl;
+    @apply flex items-center rounded-[20px] border-2 border-transparent -bg--openfoundation-quaternary tablet:hover:-border--open-accent-accent desktop:hover:-border--open-accent-accent;
+    @apply tablet:flex-1 tablet:flex-col tablet:gap-open-2xl tablet:p-open-2xl desktop:flex-1 desktop:flex-col desktop:gap-open-2xl desktop:p-open-2xl;
+
+    & div {
+      @apply flex min-w-[248px] flex-col gap-open-xl tablet:text-center desktop:text-center;
+    }
+
+    & h3 {
+      @apply text-open-font-medium font-open-label -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+
+    & p {
+      @apply text-open-font-medium font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+
+    & img {
+      @apply mobile:w-12 tablet:w-32 desktop:w-32;
+    }
+  }
+
+  .roleSectionWrapper {
+    @apply flex mobile:w-full mobile:flex-col tablet:flex-wrap tablet:gap-open-gutter-desktop desktop:flex-wrap desktop:gap-open-gutter-desktop;
+  }
+}
+
+/* Footer */
+.footer {
+  .contactUsWrapper {
+    @apply bg-[url('@/assets/footer_background.png')] bg-cover;
+
+    .link {
+      @apply block px-open-margin-mobile py-open-3xl tablet:px-open-margin-desktop tablet:py-open-6xl desktop:px-open-margin-desktop desktop:py-open-6xl;
+    }
+
+    .container {
+      @apply m-auto w-full max-w-[1320px];
+    }
+
+    .inner {
+      @apply flex items-center justify-between;
+    }
+
+    .content {
+      @apply flex flex-col;
+    }
+
+    .title {
+      @apply text-open-font-xxl font-open-label -text--openfoundation-secondary tablet:text-open-font-xxxxxl desktop:text-open-font-xxxxxl;
+    }
+
+    .text {
+      @apply text-open-font-small font-open-paragraph -text--openfoundation-secondary tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+
+    .moveButton {
+      @apply mobile:hidden tablet:h-[158px] tablet:w-[158px] desktop:h-[158px] desktop:w-[158px];
+    }
+  }
+
+  .officeWrapper {
+    @apply flex flex-wrap items-end justify-between gap-open-lg -bg--openfoundation-primary px-open-margin-mobile py-open-lg tablet:px-open-margin-desktop tablet:py-open-xl desktop:px-open-4xl desktop:py-open-xl;
+
+    .text {
+      @apply text-open-font-small not-italic -text--openfoundation-tertiary tablet:text-open-font-medium desktop:text-open-font-medium;
+    }
+
+    .info {
+      @apply flex flex-col gap-open-sm font-open-paragraph;
+
+      & div {
+        @apply flex gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+      }
+    }
+
+    .copyright {
+      @apply font-open-paragraph;
+    }
+  }
+}
+
+/* 사이드바 */
+.sideWrapper {
+  @apply fixed bottom-open-2xl right-open-xl z-[99999999] flex flex-col gap-open-lg tablet:bottom-open-4xl tablet:gap-open-xl desktop:bottom-open-4xl desktop:right-open-2xl desktop:gap-open-xl;
+
+  .iconStyle {
+    @apply h-8 w-8 tablet:h-10 tablet:w-10 desktop:h-[52px] desktop:w-[52px];
+  }
+}
