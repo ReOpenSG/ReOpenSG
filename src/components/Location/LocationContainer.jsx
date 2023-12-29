@@ -1,10 +1,9 @@
 import React from 'react';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 import defaultImage from '@/assets/location_defaultImage.png';
 import linkIcon from '@/assets/location_link.svg';
-import styles from '@/components/Location/Location.module.css';
+import styles from '@/styles/styles.module.css';
 
 function LocationContainer({
   locationName,
@@ -16,14 +15,13 @@ function LocationContainer({
   locationLink,
   delay,
 }) {
-  AOS.init();
   return (
     <div data-aos="fade-up" data-aos-delay={delay} data-aos-duration="2000" className={styles.locationContainer}>
       <img className={styles.locationImage} src={locationImage} alt="본사 전경" />
-      <address className={styles.locationAddress}>
+      <address className={styles.locationInfo}>
         <div className={styles.locationInfoContainer}>
           <h3 className={styles.locationName}>{locationName}</h3>
-          <div className={styles.addressWrapper}>
+          <div>
             <p>{locationPostal}</p>
             <p>{locationAddress}</p>
           </div>

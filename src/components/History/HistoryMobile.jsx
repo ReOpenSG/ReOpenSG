@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import HistoryMobileSlide from './HistoryMobileSlide';
+import styles from '@/styles/styles.module.css'
 
 function HistoryMobile({ historyData }) {
   const historyDataSorted = Object.entries(historyData).toSorted((a, b) => b[0] - a[0]);
   return (
-    <div className="hidden mobile:block w-full h-full -text--openfoundation-secondary -bg--openfoundation-primary px-open-margin-mobile py-open-5xl">
-      <div className="flex flex-col justify-center items-center gap-open-xl">
+    <div className={styles.historyMobileWrapper}>
+      <section className={styles.historyMobileSection}>
         {historyDataSorted.map(([key, value]) => (
           <HistoryMobileSlide
             year={key}
@@ -14,7 +15,7 @@ function HistoryMobile({ historyData }) {
             key={key}
           />
         ))}
-      </div>
+      </section>
     </div>
   );
 }

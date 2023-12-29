@@ -1306,6 +1306,8 @@
           }
         }
       }
+    }
+  }
 
       /* Solutions 5번째 섹션 - Func 컴포넌트 */
       .func {
@@ -1372,8 +1374,6 @@
         }
       }
     }
-  }
-}
 
 /* Machines&Devices */
 .machinesDevice {
@@ -1712,4 +1712,601 @@
       }
     }
   }
+}
+
+
+/* 모든 페이지 공통 header 컴포넌트 */
+/* 보이는 부분 중 가장 큰 항목의 왼쪽부터 -> 공통 항목 -> 추가 스타일링한 항목 -> 하위 항목 의 순서를 최대한 지켜 나열하였습니다 */
+.header {
+  /* header 전체 공통으로 적용되어야하는 모든 스타일링. header 의 높이, z-index, 정렬 방식, padding, 텍스트 색상, 폰트 크기, 폰트 weight 등 */
+  @apply fixed flex justify-between items-center w-full py-open-lg px-open-margin-mobile tablet:px-open-gutter-desktop desktop:px-open-4xl -text--openfoundation-secondary font-open-font text-open-font-large font-open-paragraph h-[50px] tablet:h-[80px] desktop:h-[80px] z-[9999];
+
+  /* 스크롤 시 header 의 배경 색상을 변경하기 위한 추가 항목 */
+  &.scrolled {
+    @apply -bg--openfoundation-primary
+  }
+
+  /* 특정 페이지 시 header 의 배경 색상을 변경하기 위한 추가 항목 */
+  &.black {
+    @apply -bg--openfoundation-primary
+  }
+
+  /* header 에 적용되어있는 제목 (오픈에스지) 을 위한 스타일링. screen reader 사용자 (저시력자 등) 의 사용 편의성을 위한 숨김 제목 */
+  & .headerTitle {
+    @apply sr-only
+  }
+
+  /* header 의 네비게이션 전체 박스 (오픈에스지 로고, About Us, Service & Solution, Support 만 포함) */
+  & .headerNavigation {
+    @apply flex
+  }
+
+  /* header 의 네비게이션 내 리스트 (오픈에스지 로고, About Us, Service & Solution, Support 만 포함) */
+  & .headerList {
+      @apply flex justify-center items-center gap-open-gutter-mobile desktop:gap-open-gutter-desktop
+    }
+
+  /* OpenSG 로고 여백 (padding) */
+  & .logoLink {
+      @apply px-open-md py-open-sm
+    }
+
+  /* OpenSG 로고 이미지 (모바일 (default), 타블렛, 데스크탑 구간에서 다른 크기의 로고 이미지 적용. 오른쪽에서 시작되는 메뉴와 간격 조절을 위해 margin right 를 적용함.  */
+  & .logoImage {
+      @apply w-[60px] tablet:w-[100px] desktop:w-[100px] mr-open-2xl
+    }
+
+  /* 메뉴 (About Us, Service & Solution, Support 공통) */
+  & .menu {
+      @apply px-open-md py-open-sm desktop:block tablet:block hidden
+  }
+
+  /* header 의 메뉴 hover 시 파란색 밑줄 효과 (hover 전 세팅) */
+  & .menuLink:after {
+    @apply block content-[''] border-b-2 -border--open-accent-accent scale-x-0 origin-left transition-transform duration-300 ease-in-out;
+    }
+
+  /* header 의 메뉴 hover 시 파란색 밑줄 효과 (hover 후 효과) */
+  & .menuLink:hover:after {
+    @apply scale-x-100;
+  }
+
+  /* 서브 메뉴를 감싸고 있는 전체 블랙 박스 (About Us, Service & Solution, Support 공통) */
+  & .subMenuWrapper {
+    @apply absolute left-0 top-[80px] w-full backdrop-blur
+  }
+
+  /* 서브 메뉴 (회사소개 등) 리스트 (About Us, Service & Solution, Support 공통) */
+  & .subMenu {
+    @apply flex flex-col gap-open-md px-open-xl py-open-xl text-open-font-large font-open-label -bg--openfoundation-primary -text--openfoundation-secondary opacity-80 backdrop-blur-lg
+  }
+
+  /* 각 서브 메뉴 마다 별도로 적용되어야 하는 스타일 (서브 메뉴 위치를 절대값 px 로 잡아놓았기 때문 + Service & Solution 메뉴는 구조가 상이하기 때문) */
+  /* About Us 의 서브 메뉴 */
+  & .subMenuAbout {
+    @apply tablet:pl-[196px] desktop:pl-[230px] font-open-paragraph
+  }
+  /* Service & Solution 의 서브 메뉴 */
+  & .subMenuServiceAndSolution {
+    @apply flex-row tablet:pl-[308px] desktop:pl-[362px] gap-open-xl
+  }
+  /* Support 의 서브 메뉴 */
+  & .subMenuSupport {
+    @apply tablet:pl-[476px] desktop:pl-[550px] font-open-paragraph
+  }
+
+  /* 각 서브 메뉴 안의 링크 (MenuLink 컴포넌트) 공통 (회사소개, 연혁, 각 제품명, 커뮤니티 등) */
+  & .linkName {
+    @apply relative px-open-md py-open-sm font-open-paragraph;
+
+    /* 링크 hover 시 색상 변경 */
+    &:hover {
+      @apply -text--open-accent-accent-1
+    }
+
+    /* tooltip (hover 후) */
+    &:hover .tooltip {
+      @apply block visible opacity-100 px-open-md;
+    }
+
+    /* tooltip (hover 전 기본 세팅) */
+    & .tooltip {
+      @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
+    }
+
+  }
+
+  /* Service & Solutions 의 서브 메뉴를 위한 스타일링. 해당 메뉴는 구조가 단순하지 않기 때문에 추가 레이아웃 및 스타일링이 필요하였음 */
+  & .solutionsList {
+    @apply font-open-paragraph flex flex-col pt-open-lg gap-open-md
+  }
+
+  /* Service & Solutions 의 서브 메뉴 아이템들의 기본 폰트 속성 */
+  & .solutionsListItem {
+    @apply text-open-font-medium
+  }
+
+  /* Service & Solutions 의 서브 메뉴 리스트 중 파란색 아이템 스타일링을 위함. 폰트 사이즈 및 색상 지정 */
+  & .solutionsBlueItem {
+    @apply -text--open-accent-accent-1
+  }
+
+  /* Service & Solutions 의 서브 메뉴 리스트 중 추가 설명 문구를 위한 회색 문구 스타일링을 위함. 폰트 사이즈 및 색상 지정 */
+  & .solutionsGrayItem {
+    @apply -text--openfoundation-tertiary text-open-font-small
+  }
+
+  /* Service & Solutions 의 최하위 메뉴 리스트 (흰색 글자) 를 위한 정렬 방식, padding, gap */
+  & .solutionsWhiteList {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium
+  }
+
+  /* Solution, Smart Machine, Smart Device 와 Industries 사이의 구분선 */
+  & .solutionsSeperator {
+    @apply w-[1px] -bg--openfoundation-secondary
+  }
+
+  /* header 의 한글/영문 버튼과 햄버거 버튼을 감싸는 전체 */
+  & .headerButtonList {
+    @apply flex justify-center items-center gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop
+  }
+
+  /* header 의 한글/영문 버튼 전체 */
+  & .languageButton {
+    @apply flex justify-center items-center px-open-md py-open-sm text-open-font-small desktop:text-open-font-medium tablet:text-open-font-medium
+  }
+
+  /* header 의 한글/영문 버튼 전체를 감싼 박스 */
+  & .languageButtonBox {
+    @apply flex flex-row gap-open-md
+  }
+
+  /* header 의 한글/영문 버튼 구분선 */
+  & .languageSeperator {
+    @apply w-[1px] -bg--openfoundation-tertiary
+  }
+
+  /* header 의 한글/영문 버튼 비활성화 시 색상 */
+  & .languageInactive {
+    @apply -text--openfoundation-tertiary
+  }
+
+  /* header 의 햄버거 버튼 전체 */
+  & .hamburgerButton {
+    @apply flex justify-center items-center
+  }
+
+  /* hamburger 버튼 클릭 전 기본 크기 및 애니메이션 기초 setting (햄버거 상태) */
+  .hamburger {
+    @apply w-[24px] h-[20px] tablet:w-[30px] desktop:w-[30px] tablet:h-[24px] desktop:h-[24px] border-none bg-transparent relative cursor-pointer ;
+  }
+
+  .hamburger:after, .hamburger:before, .hamburger > span {
+    @apply w-full h-[2px] rounded-[100px] absolute block -bg--openfoundation-secondary;
+  }
+
+  .hamburger:after, .hamburger:before {
+    @apply content-[''] transition-[width] duration-300 delay-[0.4s];
+  }
+
+  .hamburger:after {
+    @apply top-0 left-0 mt-0;
+  }
+
+  .hamburger:before {
+    @apply bottom-0 right-0 mb-0;
+  }
+
+  .hamburger > span {
+    @apply top-1/2 mt-[-1px] transition-transform delay-300;
+  }
+
+  .hamburger > span:before {
+    @apply content-[''] -bg--openfoundation-secondary w-full h-[2px] rounded-[100px] absolute left-0 transition-transform delay-300;
+  }
+
+  /* hamburger 버튼 클릭 후 (닫기 상태) */
+  .hamburgerOn:after {
+    @apply transition-all delay-200 w-0 left-0;
+  }
+
+  .hamburgerOn:before {
+    @apply transition-all delay-200 w-0 right-0;
+  }
+
+  .hamburgerOn span {
+    @apply transition-transform duration-300 delay-[0.4s] rotate-45
+  }
+
+  .hamburgerOn span:before {
+    @apply transition-transform duration-300 delay-[0.4s] rotate-90
+  }
+}
+
+/* 데스크탑/태블릿용 Sitemap 전체. 전체 양쪽 padding 적용. mobile 크기에서는 보이지 않도록 hidden 처리. */
+.sitemapDesktop {
+    @apply w-full h-full hidden desktop:block tablet:block mobile:hidden px-open-gutter-desktop;
+
+  /* 데스크탑/태블릿용 Sitemap 내부 컨테이너. 정렬을 위한 스타일링 적용. */
+  & .container {
+    @apply w-full h-full flex justify-center
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 메뉴 전체 리스트 */
+  & .list {
+    @apply w-full h-full flex flex-row py-open-7xl -text--openfoundation-secondary justify-between gap-open-xl
+  }
+
+  /* 데스크탑/태블릿용 Sitemap 의 각 메뉴 (About Us, Support 박스 전체) */
+  & .listItem {
+    @apply py-open-sm text-open-font-xl font-open-label text-center flex-1
+  }
+
+  /* 위와 동일. 단, Service & Solution 에 한함. (About Us, Support 는 화면 크기에 따라 늘어나고, Service & Solution 은 크기를 그대로 유지하기 위해 별도로 적용) */
+  & .listService {
+    @apply py-open-sm text-open-font-xl font-open-label text-center
+  }
+
+  /* 각 메뉴 타이틀 (About Us, Service & Solution, Support) */
+  & .menu {
+    @apply pb-open-md border-b-[1px] -border--open-gray-300
+  }
+
+  /* About Us 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .aboutUs {
+    @apply flex flex-col gap-open-md py-open-xl text-open-font-large  -text--open-gray-300 font-open-paragraph 
+  }
+
+  /* Service & Solution 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .serviceAndSolution {
+    @apply flex flex-row py-open-xl text-open-font-large font-open-label gap-open-gutter-desktop text-start
+  }
+
+  /* Solutions 의 하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutions {
+    @apply font-open-paragraph flex flex-col pt-open-md gap-open-xl
+  }
+
+  /* Solutions 의 하위 메뉴 중 파란색 메뉴 스타일링 */
+  & .solutionsBlue {
+    @apply -text--open-accent-accent-1 text-open-font-medium
+  }
+
+  /* 각 Solutions 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .solutionsSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph px-1 pb-3 mt-2 rounded-b-xl border-x-2 border-b-2 -border--open-accent-accent-1 border-opacity-30 
+  }
+
+  /* Solutons 제외 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .othersSubMenu {
+    @apply flex flex-col pt-open-md gap-open-md text-open-font-medium -text--open-gray-300 font-open-paragraph  
+  }
+
+  /* Support 의 최하위 메뉴 정렬, 폰트, 여백 등 스타일링 */
+  & .support {
+    @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph -text--open-gray-300  py-open-xl
+  }
+
+    /* 각 서브 메뉴 안의 링크 (MenuLink 컴포넌트) 공통 (회사소개, 연혁, 각 제품명, 커뮤니티 등 모든 흰색 링크) */
+    & .linkName {
+      @apply relative px-open-md py-open-sm font-open-paragraph;
+
+      /* 링크 hover 시 색상 변경 */
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+
+      /* tooltip (hover 후) */
+      &:hover .tooltip {
+        @apply block visible opacity-100 px-open-md;
+      }
+
+      /* tooltip (hover 전 기본 세팅) */
+      & .tooltip {
+        @apply absolute  w-[200px] invisible opacity-0 overflow-hidden transition-all duration-300 ease-in rounded text-open-font-small left-full z-20 -bg--open-accent-accent -text--openfoundation-secondary ml-2;
+      }
+
+    }
+}
+
+/* 모바일용 Sitemap 전체 */
+.sitemapMobile {
+  @apply block tablet:hidden desktop:hidden absolute left-0 top-0 pt-[40px] w-full h-full overflow-auto;
+
+  /* 모바일용 Sitemap 내부 container */
+  & .sitemapMobileContainer {
+    @apply flex flex-col justify-center px-open-gutter-mobile py-open-gutter-mobile text-open-font-xl font-open-label -text--openfoundation-secondary;
+
+  /* 메뉴 리스트 전체 */
+    & .menuList {
+      @apply py-open-md cursor-pointer;
+    }
+
+    /* 메뉴 이름 및 화살표 묶음 버튼 */
+    & .menuButton {
+      @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile;
+    }
+
+    /* 하위 메뉴 리스트 전체 (Service & Solution 제외) */
+    & .menuSubList {
+      @apply flex flex-col gap-open-md text-open-font-large font-open-paragraph
+    }
+
+    /* 각 흰색 메뉴 링크 (모바일용) */
+    & .linkNameMobile {
+      @apply relative px-open-lg py-open-sm -text--openfoundation-secondary opacity-80;
+
+      &:hover {
+        @apply -text--open-accent-accent-1
+      }
+    }
+
+    /* 화살표 아이콘 (아코디언 메뉴 열린 후) */
+    .arrowDefault {
+      @apply transition-all duration-300;
+    }
+
+    /* 화살표 아이콘 (아코디언 메뉴 열리기 전. 회전값 사전 설정.) */
+    .arrowDown {
+      @apply transition-all duration-300 rotate-180;
+    }
+
+    /* Service & Solution 의 하위 메뉴 리스트 전체 */
+    & .serviceAndSolutions {
+      @apply flex flex-col text-open-font-large font-open-label;
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 기본 스타일링 */
+      & .accordionItem {
+        @apply font-open-label;
+      }
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (bottom 에 흰색 border 있는 메뉴)  */
+      & .accordionItemMedium {
+        @apply px-open-lg py-open-lg mb-open-lg text-open-font-large font-open-label border-b-[1px] -border--openfoundation-tertiary border-opacity-30;
+      }
+
+      /* 각 서브 아코디언 메뉴 (접히는 메뉴) 스타일링 (위 아코디언의 하위 메뉴로, 캡슐형, 텍스트 색상이 푸른 메뉴)  */
+      & .accordionItemSmall {
+        @apply text-open-font-medium -bg--open-gray-950 px-open-gutter-mobile py-open-sm my-open-sm rounded-[20px]  -text--open-accent-accent-1;
+      }
+
+      /* 각 아코디언 리스트의 하위 항목 기본 스타일 */
+      & .accordionItemList {
+        @apply flex flex-col gap-open-sm text-open-font-medium -text--open-gray-300 font-open-paragraph
+      }
+
+      /* 서브 메뉴 버튼 (화살표 포함) 공통  */
+      & .subMenuButton {
+        @apply flex flex-row w-full items-center justify-between gap-open-gutter-mobile
+      }
+
+      /* solutions 하위 메뉴 리스트 전체 */
+      & .solutionsSubList {
+        @apply flex flex-col text-open-font-large font-open-paragraph -text--openfoundation-tertiary;
+      }
+
+      /* Smart Machine 하위 메뉴 리스트 전체 */
+      & .machineSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Smart Device 하위 메뉴 리스트 전체 */
+      & .deviceSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+
+      /* Industries 하위 메뉴 리스트 전체 */
+      & .industriesSubList {
+        @apply flex flex-col gap-open-md text-open-font-medium font-open-paragraph
+      } 
+    }
+  }
+
+}
+
+/* 오시는길 페이지 */
+.location {
+  @apply w-full flex flex-col -bg--openfoundation-primary;
+
+  /* 지도를 감싼 박스 (지도 위 핀 아이콘을 절댓값 위치로 지정하기 위해 relative 인 박스를 만들기 위함) */
+  & .mapContainer {
+    @apply w-full relative
+  }
+
+  /* 지도 이미지 */
+  & .mapImage {
+    @apply w-full block
+  }
+
+  /* 지도 위 핀 아이콘 (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
+  & .pinIcon {
+    @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[29.8%] left-[43.8%] translate-x-[-43.8%] translate-y-[-29.5%]
+  }
+
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
+  & .pinIcon::after {
+    @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["본사/자동화연구소"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[160px] tablet:w-[160px] w-[120px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+  }
+
+  /* 지도 위 핀 아이콘 (미국) (viewport 크기 별 핀 아이콘 크기, 핀 아이콘의 절대값 위치 조정을 위한 스타일링) */
+  & .pinIconUSA {
+    @apply absolute w-2 h-3 desktop:w-[24px] desktop:h-[58px] tablet:w-[16px] tablet:h-[42px] mobile:w-[12px] mobile:h-[24px] top-[30.5%] left-[82.8%] translate-x-[-83.8%] translate-y-[-29.5%]
+  }
+
+  /* 지도 위 핀 아이콘 hover 시 나타나는 툴팁 (미국) (툴팁의 절대값 위치, 툴팁 사이즈, 투명도, 툴팁 폰트 크기 등) */
+  & .pinIconUSA::after {
+    @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["OpenSG\00a0USA"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[140px] tablet:w-[140px] w-[100px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+  }
+
+  /* 내용 전체 section */
+  & .locationSection {
+    @apply w-full h-full flex flex-col justify-center items-center desktop:py-open-7xl tablet:py-open-7xl py-open-5xl desktop:px-open-gutter-desktop tablet:px-open-gutter-desktop px-open-gutter-mobile -bg--openfoundation-primary -text--openfoundation-secondary
+  }
+
+  /* 내용 전체가 데스크탑 크기에서 1320px 보다 늘어나지 않도록 하기 위한 고정 박스 */
+  & .locationWrapper {
+    @apply desktop:w-[1320px] flex flex-col gap-open-3xl desktop:gap-open-5xl tablet:gap-open-5xl;
+
+    /* 각 위치 정보를 감싸는 박스 (위치 정보 정렬 및 위치 정보 사이의 gap 설정) */
+    & .locationContainer {
+      @apply flex flex-row w-full justify-between items-start gap-open-gutter-mobile desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop;
+
+      /* 각 위치 이미지 */
+      & .locationImage {
+        @apply desktop:w-[400px] desktop:h-[400px] tablet:w-[400px] tablet:h-[400px] w-[160px] h-[160px] object-cover;
+      }
+
+      /* 각 위치의 세부 정보를 감싸는 박스 (폰트 사이즈, 폰트 굵기, address 태그에 자동 적용되는 이탤릭체 제외, 세부 정보 정렬 및 세부 정보만을 위한 별도 gap 설정을 위함) */
+      & .locationInfo {
+        @apply flex flex-col justify-center w-full h-full desktop:gap-open-2xl tablet:gap-open-2xl gap-open-md desktop:text-open-font-large tablet:text-open-font-large text-open-font-small font-open-paragraph not-italic;
+
+        /* 각 위치의 세부 정보 중 링크 아이콘을 제외하고 감싼 박스 */
+        & .locationInfoContainer{
+          @apply flex flex-col desktop:gap-open-xl tablet:gap-open-xl gap-open-sm;
+
+          /* 각 위치명 */
+          & .locationName {
+            @apply desktop:text-open-font-xl desktop:font-open-heading tablet:text-open-font-xl tablet:font-open-heading text-open-font-medium font-open-label;
+          }
+
+          /* 각 위치의 전화번호, 팩스번호를 감싼 박스 */
+          & .locationContact {
+            @apply flex flex-col desktop:gap-open-md tablet:gap-open-md gap-0;
+          }
+
+        }
+      }
+    }
+  }
+
+  /* 각 위치 링크 및 아이콘을 감싼 박스 */
+  /* Cascading 이슈 (스타일링 겹침 현상) 로 인해 각 위치 링크 스타일링은 이곳에 작성하였습니다. */
+  & .locationLink {
+    @apply w-fit h-auto inline cursor-pointer;
+
+    /* 링크 아이콘 */
+    & .linkIcon {
+      @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px];
+    }
+  }
+}
+
+/* 연혁 페이지 */
+.history{
+  @apply w-full;
+
+  /* 연혁 전체 (데스크탑용) - 모바일 이하 크기에서는 hidden 처리하기 위한 최상위 박스 */
+  & .historyWrapper {
+    @apply w-full h-full desktop:block tablet:block hidden;
+
+    /* 연혁 전체 section */
+    & .historySection {
+      @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary py-open-5xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+      /* 연혁에 적용되어있는 제목 (오픈에스지 연혁) 을 위한 스타일링. screen reader 사용자 (저시력자 등) 의 사용 편의성을 위한 숨김 제목 */
+      & .srOnly {
+        @apply sr-only;
+      }
+
+      /* 2개의 swiper (연도, 연혁내용) 를 감싸기 위한 박스 */
+      & .swiperWrapper {
+        @apply w-full h-full flex flex-col font-open-font items-center justify-center  -text--openfoundation-secondary font-open-label max-w-[991px] tablet:max-w-[1311px] desktop:max-w-[1320px] py-open-4xl tablet:py-open-6xl desktop:py-open-6xl gap-open-2xl tablet:gap-open-4xl desktop:gap-open-4xl;
+
+        /* 연도 Swiper 전체 (전체 정렬 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
+        & .yearSwiper {
+          @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
+
+          /* 연도 Swiper 의 각 Slide 전체 박스 */
+          & .yearSwiperSlide {
+            @apply flex flex-col justify-center items-center;
+
+            /* 연도 Swiper 의 각 Slide 전체 박스 내부 */
+            & .yearSlide {
+              @apply flex flex-col justify-end items-center gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+
+              /* Swiper 가 active 된 상태일 때 - 폰트 사이즈만 조정. 폰트 색상은 상위 wrapper 에서 white 를 사용하기 있기 때문에 별도로 적용하지 않음 (해당하는 연도일 경우) */
+              &.isActive {
+                @apply text-open-font-xl tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+              }
+
+              /* Swiper 가 inactive 된 상태일 때 - 폰트 사이즈 및 폰트 색상 (gray) (해당하는 연도가 아닐 경우) */
+              &.isInActive {
+                @apply text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl -text--open-gray-300;
+              } 
+            }
+          }
+        }
+
+        /* 연혁 내용 Swiper 전체 (전체 정렬) */
+        & .historySwiper {
+          @apply w-full h-full flex flex-col justify-center items-center;
+
+          /* 연혁 Swiper 의 각 Slide 전체 박스 (박스 라운딩 및 마우스 커서를 pointer 로 설정하여 클릭하도록 유도함) */
+          & .historySwiperSlide{
+            @apply rounded-[20px] cursor-pointer;
+
+            /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
+            & .historySlide {
+              @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+              /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (가운데 위치하고 있을 때) */
+              &.isActive {
+                @apply -bg--open-gray-950;
+              } 
+
+              /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (가운데 위치한 카드 제외 전체) */
+              &.isInActive {
+                @apply -bg--openfoundation-black;
+              } 
+
+              /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
+              & .historySlideTitle {
+                @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+              }
+
+              /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
+              & .historySlideDescription {
+                @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+   /* 연혁 전체 (모바일용) */
+   & .historyMobileWrapper {
+    @apply hidden mobile:block w-full h-full -text--openfoundation-secondary -bg--openfoundation-primary px-open-margin-mobile py-open-5xl;
+
+    /* 연혁 section (모바일용) */
+    & .historyMobileSection {
+      @apply flex flex-col justify-center items-center gap-open-xl;
+
+       /* 연혁 Swiper 의 각 Slide 전체 박스 내부 (박스 라운딩, 박스 내 여백 (x축, y축), 박스 내 정렬 */
+       & .historySlide {
+        @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+        /* Swiper 가 active 된 상태일 때 - 카드 gray 색상 (화면에 일정 비율을 차지하고 있을 경우) */
+        &.isActive {
+          @apply -bg--open-gray-950;
+        } 
+
+        /* Swiper 가 inactive 된 상태일 때 - 카드 black 색상 (화면 바깥으로 나가는 카드의 경우) */
+        &.isInActive {
+          @apply -bg--openfoundation-black;
+        } 
+
+        /* 카드 내 연도 텍스트를 위한 스타일링 (텍스트 정렬, 폰트 굵기, 폰트 사이즈) */
+        & .historySlideTitle {
+          @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+        }
+
+        /* 카드 내 연혁 내용을 위한 스타일링 (padding, 폰트 사이즈, 폰트 굵기, 정렬) */
+        & .historySlideDescription {
+          @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+        }
+      }
+    }
+   }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import MenuLinkMobile from '@/components/Header/MenuLinkMobile';
-import styles from '@/components/Header/Sitemap.module.css';
+import styles from '@/styles/styles.module.css';
 import SitemapArrow from '@/icons/SitemapArrow';
 
 function IndustriesSubList({
@@ -20,7 +20,7 @@ function IndustriesSubList({
     <>
       <motion.li onClick={() => setSubExpanded(isOpen ? 'none' : 'industries')}>
         <div className={styles.accordionItemMedium}>
-          <button type="button" className="flex flex-row w-full items-center justify-between gap-open-gutter-mobile">
+          <button type="button" className={styles.subMenuButton}>
             <div>Industries</div>
             <SitemapArrow down={!isOpen} />
           </button>
@@ -29,7 +29,7 @@ function IndustriesSubList({
       <AnimatePresence initial>
         {isOpen && (
         <motion.ul
-          className="flex flex-col gap-open-md text-open-font-medium font-open-paragraph"
+          className={styles.industriesSubList}
           key="content"
           initial="collapsed"
           animate="open"
