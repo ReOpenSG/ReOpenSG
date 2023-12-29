@@ -20,31 +20,22 @@ function ContactRe() {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm(emailConfig.serviceId, emailConfig.templateId, formRe.current, emailConfig.apiKey)
-      .then(
-        () => {
-          navigate('/contact/success');
-        },
-        () => {
-          navigate('/contact/fail');
-        },
-      );
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.apiKey)
+      .then(() => {
+        navigate('/contact/success');
+      })
+      .catch(() => {
+        navigate('/contact/fail');
+      });
 
     emailjs
-      .sendForm(
-        emailConfig.serviceId,
-        emailConfig.templateId,
-        formRe.current,
-        emailConfig.ctoApiKey,
-      )
-      .then(
-        () => {
-          navigate('/contact/success');
-        },
-        () => {
-          navigate('/contact/fail');
-        },
-      );
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ctoApiKey)
+      .then(() => {
+        navigate('/contact/success');
+      })
+      .catch(() => {
+        navigate('/contact/fail');
+      });
   };
 
   const handleErrorMessage = () => {
