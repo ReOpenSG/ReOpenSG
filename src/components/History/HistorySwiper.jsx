@@ -17,7 +17,8 @@ function HistorySwiper({ historyData }) {
   const [historySwiper, setHistorySwiper] = useState(null);
 
   // 연혁 내림차순으로 정렬
-  const historyDataSorted = Object.entries(historyData).toSorted((a, b) => b[0] - a[0]);
+  const historyDataSorted = Object.entries(historyData);
+
   return (
     <div className={styles.sectionWrapper}>
       <section className={styles.section}>
@@ -52,6 +53,7 @@ function HistorySwiper({ historyData }) {
             controller={{ by: 'container', control: historySwiper }}
             className={styles.yearSwiper}
             slideToClickedSlide
+            initialSlide={historyDataSorted.length - 1}
           >
             {historyDataSorted.map(([key]) => (
               <SwiperSlide className={styles.yearSwiperSlide} key={key}>
@@ -93,6 +95,7 @@ function HistorySwiper({ historyData }) {
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             }}
+            initialSlide={historyDataSorted.length - 1}
           >
             {historyDataSorted.map(([key, value]) => (
               <SwiperSlide className={styles.historySwiperSlide} key={key}>

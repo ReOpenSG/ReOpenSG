@@ -7,7 +7,7 @@
 }
 
 .label {
-  @apply -text--openfoundation-primary font-open-label text-open-font-medium tablet:text-open-font-large desktop:text-open-font-large w-open-6xl;
+  @apply -text--openfoundation-primary font-open-label text-open-font-medium tablet:text-open-font-large desktop:text-open-font-large w-open-7xl;
 }
 
 .input,

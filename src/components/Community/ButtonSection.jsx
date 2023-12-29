@@ -2,7 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function ButtonSection({ isEditing, handleSave }) {
   const navigate = useNavigate();

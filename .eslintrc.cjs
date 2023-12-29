@@ -13,7 +13,7 @@ module.exports = {
   settings: {
     react: { version: '18.2' },
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'prettier', 'prettier-plugin-tailwindcss'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'import/no-unresolved': 'off',

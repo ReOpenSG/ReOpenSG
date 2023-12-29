@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import Notice from './Notice';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function NoticeList({ notices, currentNotices }) {
   return (

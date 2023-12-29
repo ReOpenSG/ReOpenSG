@@ -16,6 +16,7 @@ import { db, storage } from '../../firebase';
 import BannerSection from '@/components/Common/BannerSection';
 import InputSection from '@/components/Community/InputSection';
 import ButtonSection from '@/components/Community/ButtonSection';
+import styles from '@/styles/styles.module.css';
 
 function CommunityForm({ isEditing = false, data = null }) {
   const [title, setTitle] = useState('');
@@ -126,7 +127,7 @@ function CommunityForm({ isEditing = false, data = null }) {
   };
 
   return (
-    <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
+    <div className={styles.communityForm}>
       <BannerSection category="Support" title="커뮤니티" />
       <div className="flex flex-col px-open-gutter-mobile desktop:px-open-gutter-desktop ">
         <InputSection
