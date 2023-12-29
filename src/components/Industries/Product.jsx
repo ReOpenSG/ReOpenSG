@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
@@ -9,10 +7,6 @@ import styles from './Industries.module.css';
 import imageArray from './importImage.js';
 
 function Product({ industryProducts, headingRef, sectionRef }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <section ref={headingRef} id="Product" className={styles.Product}>
       <h4 ref={sectionRef} className={styles.ProductTitle}>
@@ -33,7 +27,10 @@ function Product({ industryProducts, headingRef, sectionRef }) {
               </div>
               <dl className={styles.list}>
                 <dt className={styles.itemName}>
-                  <span>Open {item[0]}</span>
+                  <span>
+                    Open
+                    {item[0]}
+                  </span>
                 </dt>
                 <dt className={styles.itemSubName}>
                   <span>{item[1].제품명}</span>
