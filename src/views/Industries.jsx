@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Char from '@/components/Industries/Char';
@@ -20,14 +22,18 @@ function Industries() {
   };
 
   useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
+  useEffect(() => {
     setIndustryChar(IndustriesData[id].desc);
 
-    IndustriesData[id].solutions.map((item) =>
-      setIndustryProducts((prev) => ({
-        ...prev,
-        [item]: solutionsData[item],
-      })),
-    );
+    IndustriesData[id].solutions.map((item) => setIndustryProducts((prev) => ({
+      ...prev,
+      [item]: solutionsData[item],
+    })));
   }, [id]);
 
   return (
@@ -35,7 +41,7 @@ function Industries() {
       <TitleSection
         category="Industries"
         title={IndustriesData[id].name === '배터리' ? '2차 전지' : IndustriesData[id].name}
-        subTitle={id}
+        subTitle={id.charAt(0).toUpperCase() + id.slice(1)}
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
