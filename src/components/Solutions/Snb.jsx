@@ -1,8 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Solutions.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Snb({ inViewChar, inViewFunc, inViewEffect, refs }) {
+  const snbList = [
+    { title: '제품 및 특징', ref: refs.charSectionRef, isActive: inViewChar && inViewChar },
+    { title: '기능', ref: refs.funcSectionRef, isActive: !inViewChar && inViewFunc },
+    { title: '기대 효과', ref: refs.effectSectionRef, isActive: !inViewFunc && inViewEffect },
+  ];
+
   function onClickToSection(e) {
     const offset = 80;
     const targetElement = e.current;
@@ -17,36 +23,20 @@ function Snb({ inViewChar, inViewFunc, inViewEffect, refs }) {
   }
 
   return (
-    <aside className={styles.Snb}>
+    <aside className={styles.snb}>
       <nav className={styles.nav}>
-        <ul className={styles.list}>
-          <li className={inViewChar && inViewChar ? styles.item : ''}>
-            <button
-              type="button"
-              className={styles.link}
-              onClick={() => onClickToSection(refs.charSectionRef)}
-            >
-              제품 및 특징
-            </button>
-          </li>
-          <li className={!inViewChar && inViewFunc ? styles.item : ''}>
-            <button
-              type="button"
-              className={styles.link}
-              onClick={() => onClickToSection(refs.funcSectionRef)}
-            >
-              기능
-            </button>
-          </li>
-          <li className={!inViewFunc && inViewEffect ? styles.item : ''}>
-            <button
-              type="button"
-              className={styles.link}
-              onClick={() => onClickToSection(refs.effectSectionRef)}
-            >
-              기대 효과
-            </button>
-          </li>
+        <ul className={styles.sectionList}>
+          {snbList.map((section) => (
+            <li key={section.title} className={section.isActive ? styles.isActive : ''}>
+              <button
+                type="button"
+                className={styles.button}
+                onClick={() => onClickToSection(section.ref)}
+              >
+                {section.title}
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

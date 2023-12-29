@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../About.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Palette({ rgb, cmyk, hex, roundedLeft, roundedRight, delay }) {
   return (
     <li
       style={{ backgroundColor: hex }}
       className={`
-        ${styles.CommonPalette}
+        ${styles.commonPalette}
         ${roundedLeft && styles.left}
         ${roundedRight && styles.right}
       `}
