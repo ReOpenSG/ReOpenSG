@@ -1,17 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import styles from './MachinesDevices.module.css';
-import imageMap from './importImage.js';
+import styles from '@/styles/styles.module.css';
+import imageMap from './machinesDevicesProuductImage.js';
 
 function Card({ title, subTitle, currentLocation, data }) {
+  const imageKey = Object.keys(data[title][subTitle])[0];
+  const cardImageUrl = imageMap[imageKey];
+
   return (
-    <NavLink to={`/${currentLocation}/${subTitle}`} className={styles.Card}>
-      <div className={styles.linkTextWrapper}>
-        <div className={styles.image}>
-          <img src={imageMap[Object.keys(data[title][subTitle])[0]]} alt="Card 이미지" />
+    <NavLink to={`/${currentLocation}/${subTitle}`} className={styles.card}>
+      <div className={styles.cardInner}>
+        <div className={styles.imageContainer}>
+          <img src={cardImageUrl} alt="Card 이미지" />
         </div>
-        <div className={styles.textWrapper}>
+        <div className={styles.textContainer}>
           <p className={styles.title}>{title}</p>
           <p className={styles.subtitle}>{subTitle}</p>
         </div>

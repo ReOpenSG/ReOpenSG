@@ -7,6 +7,7 @@ import { db } from '../../firebase';
 import BannerSection from '@/components/Common/BannerSection';
 import NoticeSection from '@/components/Community/NoticeSection';
 import { isLoggedInState } from '@/recoil/atoms/authStore';
+import styles from '@/styles/styles.module.css';
 
 function Community() {
   const [notices, setNotices] = useState([]);
@@ -40,17 +41,17 @@ function Community() {
     navigate('write', { state: { notices: sortedNotices } });
   };
   return (
-    <div className="mb-open-5xl w-full h-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
+    <div className={styles.community}>
       <BannerSection category="Support" title="커뮤니티" />
       {isLoggedIn ? (
         <div
-          className="w-full flex justify-end
-      p-open-gutter-mobile
-      tablet:p-open-gutter-desktop desktop:p-open-gutter-desktop  animate-bounce"
+          className="flex w-full animate-bounce
+      justify-end
+      p-open-gutter-mobile tablet:p-open-gutter-desktop  desktop:p-open-gutter-desktop"
         >
           <button
             type="button"
-            className="p-open-lg tablet:p-open-xl desktop:p-open-xl text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl bg-slate-400 -text--openfoundation-black rounded-md"
+            className="rounded-md bg-slate-400 p-open-lg text-open-font-medium -text--openfoundation-black tablet:p-open-xl tablet:text-open-font-large desktop:p-open-xl desktop:text-open-font-xl"
             onClick={handleWrite}
           >
             글쓰러 가기

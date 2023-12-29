@@ -31,7 +31,7 @@ function Contact() {
       );
 
     emailjs
-      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ceoApiKey)
+      .sendForm(emailConfig.serviceId, emailConfig.templateId, form.current, emailConfig.ctoApiKey)
       .then(
         () => {
           navigate('/contact/success');

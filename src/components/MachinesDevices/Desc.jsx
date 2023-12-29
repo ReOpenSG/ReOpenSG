@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-import styles from './MachinesDevices.module.css';
-import imageMap from './importImage.js';
+import styles from '@/styles/styles.module.css';
+import imageMap from './machinesDevicesProuductImage.js';
 
 function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProduct }) {
   const [typesLength, setTypesLength] = useState(0);
   const selectedProductImage = imageMap[selectedProduct];
-
-  useEffect(() => {
-    AOS.init();
-  });
-
   useEffect(() => {
     setTypesLength(Object.keys(descProps.types).length);
   }, [descProps.types]);
@@ -29,52 +22,56 @@ function Desc({ descProps, id, currentLocation, selectedProduct, setSelectedProd
   }
 
   return (
-    <div className={styles.Desc}>
-      <h3 className={`${styles.title} ${currentLocation === 'devices' ? 'text-center' : ''}`}>
-        {descProps.product}
-        <span> - </span>
-        {id}
-      </h3>
-      {typesLength > 1 && (
-        <ul className={styles.buttonList}>
-          {descProps.types &&
-            Object.keys(descProps.types).map((item) => (
-              <li key={uuidv4()}>
-                <button
-                  type="button"
-                  value={item}
-                  onClick={clickProduct}
-                  className={`${selectedProduct === item ? styles.isClicked : ''} ${styles.button}`}
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-        </ul>
-      )}
-      <div className={styles.descContentsWrapper}>
-        <div className={styles.imgWrapper} data-aos="fade-in" data-aos-duration="1500">
-          {selectedProductImage && (
-            <img src={selectedProductImage} alt="Machines" className={styles.img} />
-          )}
-        </div>
-        <div
-          className={styles.textWrapper}
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="500"
-        >
-          <ul>
+    <section className={styles.desc}>
+      <div className={styles.inner}>
+        <h3 className={`${styles.title} ${currentLocation === 'devices' && styles.titleCenter}`}>
+          {descProps.product}
+          <span> - </span>
+          {id}
+        </h3>
+        {typesLength > 1 && (
+          <ul className={styles.buttonList}>
             {descProps.types &&
-              descProps.types[selectedProduct]?.desc.map((item) => (
-                <li key={uuidv4()} className={styles.description}>
-                  {item}
+              Object.keys(descProps.types).map((item) => (
+                <li key={uuidv4()}>
+                  <button
+                    type="button"
+                    value={item}
+                    onClick={clickProduct}
+                    className={`${selectedProduct === item ? styles.isClicked : ''} ${
+                      styles.button
+                    }`}
+                  >
+                    {item}
+                  </button>
                 </li>
               ))}
           </ul>
+        )}
+        <div className={styles.descContainer}>
+          <div className={styles.imgContainer} data-aos="fade-in" data-aos-duration="1500">
+            {selectedProductImage && (
+              <img src={selectedProductImage} alt="Machines" className={styles.img} />
+            )}
+          </div>
+          <div
+            className={styles.textContainer}
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="500"
+          >
+            <ul className={styles.descList}>
+              {descProps.types &&
+                descProps.types[selectedProduct]?.desc.map((item) => (
+                  <li key={uuidv4()} className={styles.descText}>
+                    {item}
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

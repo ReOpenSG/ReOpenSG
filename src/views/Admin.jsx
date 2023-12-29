@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { authService } from '../../firebase';
 import { isLoggedInState } from '@/recoil/atoms/authStore';
 import BannerSection from '@/components/Common/BannerSection';
-import styles from '@/components/Admin/Admin.module.css';
+import styles from '@/styles/styles.module.css';
 
 function Admin() {
   const [id, setId] = useState('');
@@ -39,7 +39,7 @@ function Admin() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.admin}>
       <BannerSection category="Admin" title="관리자 페이지" />
       <section className={styles.section}>
         {!isLoggedIn ? (

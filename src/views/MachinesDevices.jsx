@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useLocation, useParams } from 'react-router-dom';
 import CradsWrapper from '@/components/MachinesDevices/CradsWrapper';
 import machinesData from '@/data/machinesData';
@@ -6,6 +8,7 @@ import devicesData from '@/data/devicesData';
 import Desc from '@/components/MachinesDevices/Desc';
 import FuncChar from '@/components/MachinesDevices/FuncChar';
 import TitleSection from '@/components/Common/TitleSection';
+import styles from '@/styles/styles.module.css';
 
 function MachinesDevices() {
   const [data, setData] = useState({});
@@ -16,13 +19,21 @@ function MachinesDevices() {
   const { id } = useParams();
 
   useEffect(() => {
-    if (location.pathname.includes('machines')) {
-      setData(machinesData);
-      setCurrentLocation('machines');
-    } else if (location.pathname.includes('devices')) {
-      setData(devicesData);
-      setCurrentLocation('devices');
-    }
+    AOS.init({
+      once: true,
+    });
+  });
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
+  useEffect(() => {
+    const isMachines = location.pathname.includes('machines');
+    setData(isMachines ? machinesData : devicesData);
+    setCurrentLocation(isMachines ? 'machines' : 'devices');
   }, [location]);
 
   useEffect(() => {
@@ -39,47 +50,26 @@ function MachinesDevices() {
     }
   }, [data, id]);
 
+  const titleProps = location.pathname.includes('machines')
+    ? { category: 'Open Smart Machine', title: '자동화의 시작과 끝,', subTitle: 'Smart Machine' }
+    : { category: 'Open Device', title: '미래를 여는', subTitle: '오픈 디바이스' };
+
   return (
-    <div className="w-full">
-      {location.pathname.includes('machines') ? (
-        <TitleSection
-          category="Open Smart Machine"
-          title="자동화의 시작과 끝,"
-          subTitle="Smart Machine"
-          background="bg-[url('@/assets/products_background.png')]"
-          textAlign="text-left"
-        />
-      ) : (
-        <TitleSection
-          category="Open Device"
-          title="미래를 여는"
-          subTitle="오픈 디바이스"
-          background="bg-[url('@/assets/products_background.png')]"
-          textAlign="text-left"
-        />
-      )}
-      <section className="w-full flex flex-col items-center">
-        <section className="desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile flex flex-col items-center w-full">
-          <CradsWrapper data={data} currentLocation={currentLocation} />
-        </section>
-        <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile">
-          <div className="w-full flex flex-col items-center">
-            <Desc
-              descProps={desc}
-              id={id}
-              currentLocation={currentLocation}
-              selectedProduct={selectedProduct}
-              setSelectedProduct={setSelectedProduct}
-            />
-          </div>
-        </section>
-        <section className="-bg--open-gray-50 w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-margin-mobile ">
-          <div className="w-full flex flex-col items-center">
-            <h4 className="sr-only">기능 및 특징</h4>
-            <FuncChar descProps={desc} id={id} selectedProduct={selectedProduct} />
-          </div>
-        </section>
-      </section>
+    <div className={styles.machinesDevice}>
+      <TitleSection
+        {...titleProps}
+        background="bg-[url('@/assets/products_background.png')]"
+        textAlign="text-left"
+      />
+      <CradsWrapper data={data} currentLocation={currentLocation} />
+      <Desc
+        descProps={desc}
+        id={id}
+        currentLocation={currentLocation}
+        selectedProduct={selectedProduct}
+        setSelectedProduct={setSelectedProduct}
+      />
+      <FuncChar descProps={desc} id={id} selectedProduct={selectedProduct} />
     </div>
   );
 }

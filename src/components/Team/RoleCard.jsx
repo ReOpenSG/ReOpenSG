@@ -8,11 +8,11 @@ function RoleCard({
   src, alt, title, text,
 }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({ once: true });
   });
 
   return (
-    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+    <div className={styles.cardWrapper} data-aos="fade-up" data-aos-duration="800">
       <img
         src={src}
         alt={alt}

@@ -1,41 +1,30 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-import styles from './MachinesDevices.module.css';
-import iconMap from './imporIcon.js';
+import styles from '@/styles/styles.module.css';
+import iconMap from './machinesDevicesFuncCharImage.js';
 
 function FuncChar({ descProps, selectedProduct }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
-    <div className={styles.FuncChar}>
-      <p className={styles.title}>기능 및 특징</p>
-      <ul className={styles.list}>
-        {descProps.types &&
-          descProps.types[selectedProduct]?.char.map((item, index) => (
-            <li
-              key={uuidv4()}
-              className={styles.item}
-              data-aos="fade-up"
-              data-aos-duration="1500"
-              data-aos-delay={index * 350}
-            >
-              {/* <img src="http://via.placeholder.com/120x120" alt="Machines" /> */}
-              <img
-                src={iconMap[item.icon]}
-                alt="Machines"
-                className="desktop:w-open-5xl tablet:w-open-5xl w-open-2xl desktop:h-open-5xl tablet:h-open-5xl h-open-w-open-2xl"
-              />
-
-              {/* <div>iconMap[item[1]]</div> */}
-              <span className={styles.itemText}>{item.text}</span>
-            </li>
-          ))}
-      </ul>
+    <div className={styles.funcChar}>
+      <div className={styles.inner}>
+        <p className={styles.title}>기능 및 특징</p>
+        <ul className={styles.funcCharList}>
+          {descProps.types &&
+            descProps.types[selectedProduct]?.char.map((item, index) => (
+              <li
+                key={uuidv4()}
+                className={styles.item}
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-delay={index * 350}
+              >
+                <img src={iconMap[item.icon]} alt="Machines" className={styles.img} />
+                <span className={styles.itemText}>{item.text}</span>
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
