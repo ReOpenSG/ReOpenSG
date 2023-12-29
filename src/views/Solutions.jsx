@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Data from '@/data/solutionsData.json';
@@ -7,7 +9,7 @@ import SoultionBanner from '@/components/Solutions/SoultionBanner';
 import MeoizedChar from '@/components/Solutions/Char';
 import Snb from '@/components/Solutions/Snb';
 import MemoizedFunc from '@/components/Solutions/Func';
-import Effect from '@/components/Solutions/Effect';
+import MemoizedEffect from '@/components/Solutions/Effect';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Solutions() {
@@ -28,6 +30,12 @@ function Solutions() {
   const [refEffectHeading, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
 
   useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
+  useEffect(() => {
     const filteredData = Object.entries(Data).filter(
       (item) => item[1].솔루션.trim() === Data[id].솔루션.trim(),
     );
@@ -44,7 +52,11 @@ function Solutions() {
         textAlign="text-left"
       />
       <section className="w-full desktop:px-open-margin-desktop tablet:px-open-margin-desktop px-open-gutter-mobile">
-        <Lnb LnbArray={LnbData.array} />
+        {
+          LnbData.array && LnbData.array.length > 1 && (
+            <Lnb LnbArray={LnbData.array} />
+          )
+        }
         <SoultionBanner currentLocation={LnbData.current} prevLocation={LnbData.prev} />
         <div className="flex justify-center">
           <div className="w-full max-w-[1320px] flex desktop:gap-open-gutter-desktop tablet:gap-open-gutter-desktop">
@@ -71,7 +83,7 @@ function Solutions() {
                 data={Data}
                 sectionRef={refs.funcSectionRef}
               />
-              <Effect
+              <MemoizedEffect
                 headingRef={refEffectHeading}
                 currentLocation={LnbData.current}
                 data={Data}

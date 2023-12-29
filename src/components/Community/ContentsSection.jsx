@@ -7,7 +7,7 @@ import { useRecoilValue } from 'recoil';
 import { PropTypes } from 'prop-types';
 import { db, storage } from '../../../firebase';
 import { isLoggedInState } from '@/recoil/atoms/authStore';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function ContentsSection({ currentNotice, nextNotice, prevNotice, notices, params }) {
   const navigate = useNavigate();

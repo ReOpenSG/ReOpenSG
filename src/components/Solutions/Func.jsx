@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import styles from './Solutions.module.css';
 import ImagArray from './imageImport';
 
-function Func({ currentLocation, data, headingRef, sectionRef }) {
-  useEffect(() => {
-    AOS.init();
-  });
-
+function Func({
+  currentLocation, data, headingRef, sectionRef,
+}) {
   return (
     <section id="Func" ref={sectionRef} className={styles.Func}>
       <h4 ref={headingRef} className={styles.title}>
@@ -19,9 +15,11 @@ function Func({ currentLocation, data, headingRef, sectionRef }) {
       <div className={styles.imageWrapper} data-aos="fade-in" data-aos-duration="2000">
         <img src={ImagArray[currentLocation]} className={styles.image} alt="솔루션 기능" />
       </div>
-      <ul className={styles.list}>
-        {data &&
-          data[currentLocation].기능.map((item) => (
+      <ul
+        className={styles.list}
+      >
+        {data
+          && data[currentLocation].기능.map((item) => (
             <li
               key={uuidv4()}
               className={styles.item}

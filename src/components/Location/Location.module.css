@@ -23,7 +23,7 @@
 }
 
 .pinIconUSA::after {
-  @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["미국지사"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[120px] tablet:w-[120px] w-[80px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
+  @apply hidden hover:block absolute right-4 bottom-5 desktop:right-8 desktop:bottom-10 tablet:right-8 tablet:bottom-10 content-["OpenSG\00a0USA"] bg-[#151F2D] -text--openfoundation-secondary text-center z-20 desktop:w-[140px] tablet:w-[140px] w-[100px] px-open-md rounded-[30px] opacity-80 desktop:text-open-font-medium tablet:text-open-font-medium text-open-font-small
 }
 
 .locationSection {
@@ -69,7 +69,6 @@
 .locationLink {
   @apply w-fit h-auto inline cursor-pointer
 }
-
 
 .linkIcon {
   @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px]

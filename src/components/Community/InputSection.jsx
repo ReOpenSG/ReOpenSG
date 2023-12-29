@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Community.module.css';
+import styles from '@/styles/styles.module.css';
 
 function InputSection({
   title,
@@ -75,7 +75,7 @@ function InputSection({
               </label>
             </>
           )}
-          <input type="file" id="file" onChange={handleFileChange} className="w-0 h-0" />
+          <input type="file" id="file" onChange={handleFileChange} className="h-0 w-0" />
         </div>
         <textarea
           placeholder="내용을 입력해주세요."
