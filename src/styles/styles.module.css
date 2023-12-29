@@ -262,7 +262,231 @@
   }
 }
 
-<<<<<<< HEAD
+/* 커뮤니티 페이지(게시글 리스트) */
+.community {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  & .noticeWrapper {
+    @apply flex w-full flex-col items-end px-open-gutter-mobile;
+    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    & .pageCount {
+      @apply p-open-lg tablet:p-open-xl desktop:p-open-xl;
+      @apply text-right text-open-font-small font-open-paragraph;
+      @apply tablet:text-open-font-large desktop:text-open-font-large;
+    }
+
+    & .noticeList {
+      @apply w-full border-b -border--open-gray-300;
+
+      & .noticeItem {
+        @apply flex w-full items-center justify-between border-t -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl desktop:px-open-xl;
+        @apply tablet:py-open-2xl desktop:py-open-2xl;
+
+        & .noticeTitle {
+          @apply text-open-font-large font-open-label -decoration--open-gray-600;
+          @apply hover:underline hover:decoration-1 hover:underline-offset-4 tablet:text-open-font-xxl
+        desktop:text-open-font-xxl;
+        }
+
+        & .noticeCreatedAt {
+          @apply text-open-font-small font-open-paragraph -text--open-gray-600;
+          @apply tablet:text-open-font-large desktop:text-open-font-large;
+        }
+      }
+    }
+
+    & .listButtons {
+      @apply flex w-full justify-center gap-open-gutter-mobile py-open-2xl;
+      @apply text-open-font-small font-open-label;
+      @apply tablet:gap-open-gutter-desktop tablet:text-open-font-medium desktop:gap-open-gutter-desktop desktop:text-open-font-medium;
+
+      & .pageNum {
+        @apply h-6 w-6;
+        @apply rounded-full -text--openfoundation-black;
+        @apply tablet:h-6 tablet:w-6  desktop:h-9 desktop:w-9;
+      }
+
+      & .currentPage {
+        @apply rounded-full -bg--openfoundation-black -text--openfoundation-white;
+      }
+    }
+  }
+}
+
+/* 커뮤니티 게시글 상세 페이지 */
+.communityDetail {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+  & .detailWrapper {
+    @apply flex w-full flex-col px-open-gutter-mobile;
+    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+
+    & .titleWrapper {
+      @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg tablet:px-open-2xl desktop:px-open-2xl;
+
+      & .title {
+        @apply text-open-font-xl decoration-slate-600;
+        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+      }
+
+      & .updatedAt {
+        @apply text-open-font-medium -text--open-gray-600;
+        @apply tablet:text-open-font-large desktop:text-open-font-large;
+      }
+    }
+
+    & .buttonWrapper {
+      @apply flex flex-row justify-end gap-open-xl px-open-xl py-open-md;
+      @apply tablet:gap-open-2xl tablet:py-open-lg
+    desktop:gap-open-2xl desktop:py-open-lg;
+
+      & .button {
+        @apply rounded px-open-xl py-open-md;
+        @apply text-open-font-large  -text--openfoundation-white;
+        @apply tablet:px-open-2xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-lg desktop:text-open-font-xl;
+      }
+      & .editButton {
+        @apply bg-gray-700;
+      }
+
+      & .deleteButton {
+        @apply bg-gray-400;
+      }
+    }
+
+    & .contentWrapper {
+      @apply flex h-full flex-col items-start overflow-y-scroll border-b -border--open-gray-300 p-open-xl tablet:p-open-2xl desktop:p-open-2xl;
+
+      & .imagePreview {
+        @apply h-[200px] w-[200px] object-cover;
+        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
+      }
+
+      & .contentText {
+        @apply text-open-font-large;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+    & .navWrapper {
+      @apply flex list-none flex-col;
+
+      & .list {
+        @apply border-b -border--open-gray-300  px-open-xl py-open-lg text-open-font-large tablet:px-open-2xl tablet:py-open-xl  desktop:px-open-2xl desktop:py-open-xl;
+        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+      }
+    }
+
+    & .comebackButton {
+      @apply flex justify-end gap-open-lg p-open-lg tablet:p-open-xl desktop:p-open-xl;
+      @apply text-open-font-large;
+      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+}
+
+/* 커뮤니티 게시글 작성/수정 페이지(관리자 로그인 전제) */
+.communityForm {
+  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  & .titleWrapper {
+    @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg;
+
+    @apply tablet:px-open-2xl tablet:py-open-xl desktop:px-open-2xl desktop:py-open-xl;
+
+    & .title {
+      @apply text-open-font-large font-open-label;
+      @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+    }
+  }
+  & .contentWrapper {
+    @apply flex h-full flex-col items-center gap-open-xl overflow-y-scroll  border-b -border--open-gray-300 border-opacity-0 p-open-2xl;
+
+    & .imageContainer {
+      @apply flex w-full items-center justify-center gap-open-xl py-open-md;
+      @apply tablet:gap-open-4xl desktop:gap-open-4xl;
+
+      & .imagePreview {
+        @apply h-[200px] w-[200px] object-cover;
+        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
+      }
+      & .imageLabel {
+        @apply inline-block cursor-pointer rounded -bg--open-gray-400  p-open-md;
+        @apply align-middle text-open-font-medium font-open-paragraph -text--openfoundation-white;
+        @apply tablet:p-open-lg tablet:text-open-font-large desktop:p-open-lg desktop:text-open-font-large;
+      }
+      & .imageInput {
+        @apply inline-block w-1/3 rounded border -border--open-gray-400 p-open-lg;
+        @apply align-middle;
+        @apply tablet:p-open-xl desktop:p-open-xl;
+      }
+    }
+    & .contentText {
+      @apply h-auto w-full;
+      @apply text-open-font-large;
+      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+
+  & .buttonWrapper {
+    @apply flex justify-center gap-open-xl px-open-md py-open-2xl;
+    @apply tablet:gap-open-3xl tablet:px-open-xl desktop:gap-open-3xl desktop:px-open-xl;
+
+    & .button {
+      @apply flex items-center justify-center gap-open-md rounded px-open-xl py-open-lg;
+      @apply text-open-font-large -text--openfoundation-white;
+      @apply tablet:px-open-2xl tablet:py-open-xl tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-xl desktop:text-open-font-xl;
+    }
+  }
+}
+
+/* 관리자 로그인 페이지 */
+.admin {
+  @apply flex w-full flex-col items-center justify-center;
+  @apply mx-auto h-screen max-w-[500px] gap-open-gutter-mobile tablet:max-w-[700px] tablet:gap-open-gutter-desktop desktop:max-w-[700px] desktop:gap-open-gutter-desktop;
+  @apply px-open-gutter-mobile tablet:px-open-gutter-desktop desktop:px-open-gutter-desktop;
+
+  & .section {
+    @apply mx-auto flex w-full flex-col items-center justify-center gap-open-gutter-mobile pb-open-7xl tablet:pb-open-8xl desktop:pb-open-8xl;
+    @apply tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+
+    & .form {
+      @apply mx-auto flex w-full flex-col items-center justify-center gap-open-2xl;
+      @apply tablet:gap-open-3xl desktop:gap-open-3xl;
+
+      & .inputWrapper {
+        @apply flex w-full items-center justify-center gap-open-xl;
+
+        & .label {
+          @apply min-w-[80px] text-center text-open-font-large tablet:w-[200px] desktop:w-[200px];
+          @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+        }
+
+        & .input {
+          @apply w-full flex-1 rounded  border -border--open-gray-300 p-open-lg text-open-font-medium;
+          @apply tablet:p-open-xl tablet:text-open-font-xl desktop:p-open-xl desktop:text-open-font-xl;
+        }
+      }
+      & .button {
+        @apply w-2/3 -bg--open-accent-accent py-open-xl;
+        @apply my-open-2xl  rounded-xl text-open-font-large -text--openfoundation-white;
+        @apply tablet:py-open-xl tablet:text-open-font-xl desktop:py-open-xl desktop:text-open-font-xl;
+      }
+    }
+  }
+
+  & .buttonWrapper {
+    @apply flex w-full flex-col items-center justify-center gap-open-4xl;
+    @apply tablet:gap-open-6xl desktop:gap-open-6xl;
+
+    & .button {
+      @apply w-2/3 -bg--open-accent-accent;
+      @apply rounded-xl  text-open-font-large -text--openfoundation-white;
+      @apply py-open-xl tablet:text-open-font-xl desktop:text-open-font-xl;
+    }
+  }
+}
+
+
 /* 모든 페이지 공통 header 컴포넌트 */
 /* 보이는 부분 중 가장 큰 항목의 왼쪽부터 -> 공통 항목 -> 추가 스타일링한 항목 -> 하위 항목 의 순서를 최대한 지켜 나열하였습니다 */
 .header {
@@ -727,228 +951,125 @@
   
   & .linkIcon {
     @apply w-[32px] h-[32px] desktop:w-[64px] desktop:h-[64px] tablet:w-[64px] tablet:h-[64px]
-=======
-/* 커뮤니티 페이지(게시글 리스트) */
-.community {
-  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
-
-  & .noticeWrapper {
-    @apply flex w-full flex-col items-end px-open-gutter-mobile;
-    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
-
-    & .pageCount {
-      @apply p-open-lg tablet:p-open-xl desktop:p-open-xl;
-      @apply text-right text-open-font-small font-open-paragraph;
-      @apply tablet:text-open-font-large desktop:text-open-font-large;
-    }
-
-    & .noticeList {
-      @apply w-full border-b -border--open-gray-300;
-
-      & .noticeItem {
-        @apply flex w-full items-center justify-between border-t -border--open-gray-300 px-open-lg py-open-xl tablet:px-open-xl desktop:px-open-xl;
-        @apply tablet:py-open-2xl desktop:py-open-2xl;
-
-        & .noticeTitle {
-          @apply text-open-font-large font-open-label -decoration--open-gray-600;
-          @apply hover:underline hover:decoration-1 hover:underline-offset-4 tablet:text-open-font-xxl
-        desktop:text-open-font-xxl;
-        }
-
-        & .noticeCreatedAt {
-          @apply text-open-font-small font-open-paragraph -text--open-gray-600;
-          @apply tablet:text-open-font-large desktop:text-open-font-large;
-        }
-      }
-    }
-
-    & .listButtons {
-      @apply flex w-full justify-center gap-open-gutter-mobile py-open-2xl;
-      @apply text-open-font-small font-open-label;
-      @apply tablet:gap-open-gutter-desktop tablet:text-open-font-medium desktop:gap-open-gutter-desktop desktop:text-open-font-medium;
-
-      & .pageNum {
-        @apply h-6 w-6;
-        @apply rounded-full -text--openfoundation-black;
-        @apply tablet:h-6 tablet:w-6  desktop:h-9 desktop:w-9;
-      }
-
-      & .currentPage {
-        @apply rounded-full -bg--openfoundation-black -text--openfoundation-white;
-      }
-    }
   }
 }
 
-/* 커뮤니티 게시글 상세 페이지 */
-.communityDetail {
-  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+/* 연혁 페이지 */
+.history{
+  @apply w-full;
 
-  & .detailWrapper {
-    @apply flex w-full flex-col px-open-gutter-mobile;
-    @apply tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
+  /* 연혁 전체 (데스크탑용) - 모바일 이하 크기에서는 hidden 처리하기 위한 최상위 박스 */
+  & .historyWrapper {
+    @apply w-full h-full desktop:block tablet:block hidden;
 
-    & .titleWrapper {
-      @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg tablet:px-open-2xl desktop:px-open-2xl;
+    /* 연혁 전체 section */
+    & .historySection {
+      @apply flex justify-center items-center w-full h-full -bg--openfoundation-primary py-open-5xl px-open-margin-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
 
-      & .title {
-        @apply text-open-font-xl decoration-slate-600;
-        @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+      /* 연혁에 적용되어있는 제목 (오픈에스지 연혁) 을 위한 스타일링. screen reader 사용자 (저시력자 등) 의 사용 편의성을 위한 숨김 제목 */
+      & .srOnly {
+        @apply sr-only;
       }
 
-      & .updatedAt {
-        @apply text-open-font-medium -text--open-gray-600;
-        @apply tablet:text-open-font-large desktop:text-open-font-large;
-      }
-    }
+      /* 2개의 swiper (연도, 연혁내용) 를 감싸기 위한 박스 */
+      & .swiperWrapper {
+        @apply w-full h-full flex flex-col font-open-font items-center justify-center  -text--openfoundation-secondary font-open-label max-w-[991px] tablet:max-w-[1311px] desktop:max-w-[1320px] py-open-4xl tablet:py-open-6xl desktop:py-open-6xl gap-open-2xl tablet:gap-open-4xl desktop:gap-open-4xl;
 
-    & .buttonWrapper {
-      @apply flex flex-row justify-end gap-open-xl px-open-xl py-open-md;
-      @apply tablet:gap-open-2xl tablet:py-open-lg
-    desktop:gap-open-2xl desktop:py-open-lg;
+        /* 연도 Swiper 전체 */
+        & .yearSwiper {
+          @apply w-full h-full flex flex-col justify-center items-center cursor-pointer;
 
-      & .button {
-        @apply rounded px-open-xl py-open-md;
-        @apply text-open-font-large  -text--openfoundation-white;
-        @apply tablet:px-open-2xl tablet:py-open-lg tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-lg desktop:text-open-font-xl;
-      }
-      & .editButton {
-        @apply bg-gray-700;
-      }
+          /* 연도 Swiper 의 각 Slide 전체 박스 */
+          & .yearSwiperSlide {
+            @apply flex flex-col justify-center items-center;
 
-      & .deleteButton {
-        @apply bg-gray-400;
-      }
-    }
-
-    & .contentWrapper {
-      @apply flex h-full flex-col items-start overflow-y-scroll border-b -border--open-gray-300 p-open-xl tablet:p-open-2xl desktop:p-open-2xl;
-
-      & .imagePreview {
-        @apply h-[200px] w-[200px] object-cover;
-        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
-      }
-
-      & .contentText {
-        @apply text-open-font-large;
-        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
-      }
-    }
-    & .navWrapper {
-      @apply flex list-none flex-col;
-
-      & .list {
-        @apply border-b -border--open-gray-300  px-open-xl py-open-lg text-open-font-large tablet:px-open-2xl tablet:py-open-xl  desktop:px-open-2xl desktop:py-open-xl;
-        @apply tablet:text-open-font-xl desktop:text-open-font-xl;
-      }
-    }
-
-    & .comebackButton {
-      @apply flex justify-end gap-open-lg p-open-lg tablet:p-open-xl desktop:p-open-xl;
-      @apply text-open-font-large;
-      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
-    }
-  }
-}
-
-/* 커뮤니티 게시글 작성/수정 페이지(관리자 로그인 전제) */
-.communityForm {
-  @apply mb-open-5xl h-full w-full px-open-gutter-mobile tablet:px-open-margin-desktop desktop:px-open-margin-desktop;
-  & .titleWrapper {
-    @apply flex items-center justify-between border-b -border--open-gray-300 px-open-xl py-open-lg;
-
-    @apply tablet:px-open-2xl tablet:py-open-xl desktop:px-open-2xl desktop:py-open-xl;
-
-    & .title {
-      @apply text-open-font-large font-open-label;
-      @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
-    }
-  }
-  & .contentWrapper {
-    @apply flex h-full flex-col items-center gap-open-xl overflow-y-scroll  border-b -border--open-gray-300 border-opacity-0 p-open-2xl;
-
-    & .imageContainer {
-      @apply flex w-full items-center justify-center gap-open-xl py-open-md;
-      @apply tablet:gap-open-4xl desktop:gap-open-4xl;
-
-      & .imagePreview {
-        @apply h-[200px] w-[200px] object-cover;
-        @apply tablet:h-[300px] tablet:w-[300px] desktop:h-[300px] desktop:w-[300px];
-      }
-      & .imageLabel {
-        @apply inline-block cursor-pointer rounded -bg--open-gray-400  p-open-md;
-        @apply align-middle text-open-font-medium font-open-paragraph -text--openfoundation-white;
-        @apply tablet:p-open-lg tablet:text-open-font-large desktop:p-open-lg desktop:text-open-font-large;
-      }
-      & .imageInput {
-        @apply inline-block w-1/3 rounded border -border--open-gray-400 p-open-lg;
-        @apply align-middle;
-        @apply tablet:p-open-xl desktop:p-open-xl;
-      }
-    }
-    & .contentText {
-      @apply h-auto w-full;
-      @apply text-open-font-large;
-      @apply tablet:text-open-font-xl desktop:text-open-font-xl;
-    }
-  }
-
-  & .buttonWrapper {
-    @apply flex justify-center gap-open-xl px-open-md py-open-2xl;
-    @apply tablet:gap-open-3xl tablet:px-open-xl desktop:gap-open-3xl desktop:px-open-xl;
-
-    & .button {
-      @apply flex items-center justify-center gap-open-md rounded px-open-xl py-open-lg;
-      @apply text-open-font-large -text--openfoundation-white;
-      @apply tablet:px-open-2xl tablet:py-open-xl tablet:text-open-font-xl desktop:px-open-2xl desktop:py-open-xl desktop:text-open-font-xl;
-    }
-  }
-}
-
-/* 관리자 로그인 페이지 */
-.admin {
-  @apply flex w-full flex-col items-center justify-center;
-  @apply mx-auto h-screen max-w-[500px] gap-open-gutter-mobile tablet:max-w-[700px] tablet:gap-open-gutter-desktop desktop:max-w-[700px] desktop:gap-open-gutter-desktop;
-  @apply px-open-gutter-mobile tablet:px-open-gutter-desktop desktop:px-open-gutter-desktop;
-
-  & .section {
-    @apply mx-auto flex w-full flex-col items-center justify-center gap-open-gutter-mobile pb-open-7xl tablet:pb-open-8xl desktop:pb-open-8xl;
-    @apply tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
-
-    & .form {
-      @apply mx-auto flex w-full flex-col items-center justify-center gap-open-2xl;
-      @apply tablet:gap-open-3xl desktop:gap-open-3xl;
-
-      & .inputWrapper {
-        @apply flex w-full items-center justify-center gap-open-xl;
-
-        & .label {
-          @apply min-w-[80px] text-center text-open-font-large tablet:w-[200px] desktop:w-[200px];
-          @apply tablet:text-open-font-xxl desktop:text-open-font-xxl;
+            /* 연도 Swiper 의 각 Slide 전체 박스 내부 */
+            & .yearSlide {
+              @apply flex flex-col justify-end items-center gap-open-lg tablet:gap-open-xl desktop:gap-open-xl;
+            
+              /* Swiper 가 active 된 상태일 때 (해당하는 연도일 경우) */
+              &.isActive {
+                @apply text-open-font-xl tablet:text-open-font-xxxl desktop:text-open-font-xxxl;
+              }
+            
+              /* Swiper 가 inactive 된 상태일 때 (해당하는 연도가 아닐 경우) */
+              &.isInActive {
+                @apply text-open-font-large tablet:text-open-font-xxl desktop:text-open-font-xxl -text--open-gray-300;
+              } 
+            }
+          }
         }
+        
+        /* 연혁 내용 Swiper 전체 */
+        & .historySwiper {
+          @apply w-full h-full flex flex-col justify-center items-center;
+        
+          /* 연혁 Swiper 의 각 Slide 전체 박스 */
+          & .historySwiperSlide{
+            @apply rounded-[20px];
 
-        & .input {
-          @apply w-full flex-1 rounded  border -border--open-gray-300 p-open-lg text-open-font-medium;
-          @apply tablet:p-open-xl tablet:text-open-font-xl desktop:p-open-xl desktop:text-open-font-xl;
+            /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
+            & .historySlide {
+              @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+              
+              /* Swiper 가 active 된 상태일 때 (가운데 위치하고 있을 때) */
+              &.isActive {
+                @apply -bg--open-gray-950;
+              } 
+            
+              /* Swiper 가 inactive 된 상태일 때 (가운데 위치한 카드 제외 전체) */
+              &.isInActive {
+                @apply -bg--openfoundation-black;
+              } 
+            
+              /* 카드 내 연도 텍스트를 위한 스타일링 */
+              & .historySlideTitle {
+                @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+              }
+            
+              /* 카드 내 연혁 내용을 위한 스타일링 */
+              & .historySlideDescription {
+                @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+              }
+            }
+          }
         }
       }
-      & .button {
-        @apply w-2/3 -bg--open-accent-accent py-open-xl;
-        @apply my-open-2xl  rounded-xl text-open-font-large -text--openfoundation-white;
-        @apply tablet:py-open-xl tablet:text-open-font-xl desktop:py-open-xl desktop:text-open-font-xl;
+    }
+  }
+
+   /* 연혁 전체 (모바일용) */
+   & .historyMobileWrapper {
+    @apply hidden mobile:block w-full h-full -text--openfoundation-secondary -bg--openfoundation-primary px-open-margin-mobile py-open-5xl;
+
+    /* 연혁 section (모바일용) */
+    & .historyMobileSection {
+      @apply flex flex-col justify-center items-center gap-open-xl;
+
+       /* 연혁 Swiper 의 각 Slide 전체 박스 내부 */
+       & .historySlide {
+        @apply w-full h-full flex flex-col items-center justify-start rounded-[20px] px-open-xl tablet:px-open-xl desktop:px-open-2xl py-open-2xl tablet:py-open-4xl desktop:py-open-4xl gap-open-gutter-mobile tablet:gap-open-gutter-desktop desktop:gap-open-gutter-desktop;
+        
+        /* Swiper 가 active 된 상태일 때 (가운데 위치하고 있을 때) */
+        &.isActive {
+          @apply -bg--open-gray-950;
+        } 
+      
+        /* Swiper 가 inactive 된 상태일 때 (가운데 위치한 카드 제외 전체) */
+        &.isInActive {
+          @apply -bg--openfoundation-black;
+        } 
+      
+        /* 카드 내 연도 텍스트를 위한 스타일링 */
+        & .historySlideTitle {
+          @apply block text-center font-open-heading text-open-font-xxl tablet:text-open-font-xxxl desktop:text-open-font-xxxxl;
+        }
+      
+        /* 카드 내 연혁 내용을 위한 스타일링 */
+        & .historySlideDescription {
+          @apply pl-open-xl tablet:pl-open-2xl desktop:pl-open-2xl list-disc font-open-paragraph text-open-font-medium tablet:text-open-font-large desktop:text-open-font-xl flex flex-col gap-open-lg;
+        }
       }
     }
-  }
-
-  & .buttonWrapper {
-    @apply flex w-full flex-col items-center justify-center gap-open-4xl;
-    @apply tablet:gap-open-6xl desktop:gap-open-6xl;
-
-    & .button {
-      @apply w-2/3 -bg--open-accent-accent;
-      @apply rounded-xl  text-open-font-large -text--openfoundation-white;
-      @apply py-open-xl tablet:text-open-font-xl desktop:text-open-font-xl;
-    }
->>>>>>> develop
-  }
+   }
 }

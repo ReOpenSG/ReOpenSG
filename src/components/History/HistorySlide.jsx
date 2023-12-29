@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@/components/History/History.module.css';
+import styles from '@/styles/styles.module.css';
 
 function HistorySlide({
   isActive, year, history,

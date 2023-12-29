@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@/components/History/History.module.css';
+import styles from '@/styles/styles.module.css';
 import HistoryCircleIcon from './icons/HistoryCircleIcon';
 
 function YearSlide({ isActive, year }) {
