@@ -45,7 +45,7 @@ function Location() {
             delay="20"
           />
           <LocationContainer
-            locationName="OPENSG USA INC"
+            locationName="OpenSG USA INC"
             locationAddress="2180 Satellite Blvd Suite 400-02, Duluth, GA 30097"
             locationTel="TBD"
             locationFax="TBD"
