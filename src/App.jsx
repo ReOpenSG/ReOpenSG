@@ -6,7 +6,7 @@ import router from './routes/routes';
 import { isLoggedInState } from '@/recoil/atoms/authStore';
 import { authService } from '../firebase';
 import Spinner from './components/Common/Spinner';
-
+import './locales/i18n';
 function App() {
   const setIsLoggedIn = useSetRecoilState(isLoggedInState);
 
