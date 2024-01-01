@@ -1,3 +1,3 @@
 import home from './home.json';
-
-export { home };
+import footer from './footer.json';
+export { home, footer };
