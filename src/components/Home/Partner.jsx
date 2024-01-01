@@ -14,6 +14,7 @@ import Image7 from '@/assets/home_partner7.png';
 import Image8 from '@/assets/home_partner8.png';
 
 import styles from '@/styles/styles.module.css';
+import { t } from 'i18next';
 
 function Partner() {
   const partnerData = [
@@ -72,14 +73,14 @@ function Partner() {
 
       <div className={styles.titleWrapper}>
         <p className={styles.mainKeyword} data-aos="fade-up">
-          <span>최고 기업들이 선택한&nbsp;</span>
+          <span>{t('home:partner.mainKeyword')}&nbsp;</span>
           <span className={styles.gradient}>OpenSG</span>
         </p>
 
         <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="150">
-          <span>최정상 기업들과 함께한 경험으로,</span>
+          <span>{t('home:partner.subKeyword.0')}</span>
 
-          <span>고객사가 찾는 최적의 솔루션을 제공합니다</span>
+          <span>{t('home:partner.subKeyword.1')}</span>
         </small>
       </div>
 

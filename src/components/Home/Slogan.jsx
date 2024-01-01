@@ -2,12 +2,19 @@ import React from 'react';
 import styles from '@/styles/styles.module.css';
 import BgVideo from '@/assets/home_slogan.mp4';
 import Arrow from '@/assets/home_arrow.svg';
+import { t } from 'i18next';
 
 function Slogan() {
   return (
     <section className={styles.slogan}>
-      <div className="absolute z-10 h-screen w-full -bg--openfoundation-black opacity-90">
-        <video muted autoPlay loop playsInline className="absolute h-screen w-full object-cover">
+      <div className="relative z-10 flex h-screen w-full -bg--openfoundation-black opacity-90">
+        <video
+          muted
+          autoPlay
+          loop
+          playsInline
+          className="absolute block h-screen w-full object-cover"
+        >
           <source src={BgVideo} type="video/mp4" />
         </video>
         <div className={styles.wrapper}>
@@ -18,9 +25,9 @@ function Slogan() {
             <span className={styles.gradient}>OpenSG</span>
           </h3>
           <small className={styles.subtitle}>
-            고객에게 열려있는 기업, 고객의 미래를 여는 기업
+            {t('home:slogan.subtitle.0')}
             <br />
-            OpenSG가 고객과 함께 미래로 가는 길을 엽니다
+            {t('home:slogan.subtitle.1')}
           </small>
         </div>
         <div className="w-full">

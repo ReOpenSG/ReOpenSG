@@ -8,6 +8,7 @@ import Industries from '@/components/Home/Industries';
 import Partner from '@/components/Home/Partner';
 import styles from '@/styles/styles.module.css';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next';
 
 function Home() {
   useEffect(() => {
@@ -19,6 +20,8 @@ function Home() {
       duration: 1000,
     });
   }, []);
+  const { t } = useTranslation();
+
   return (
     <section className={styles.home}>
       <h2 className="sr-only">메인 페이지</h2>
