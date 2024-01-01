@@ -6,16 +6,61 @@
     "title": "Experience the Worldview of OPENSG"
   },
   "solutions": {
-    "title": "From Design to Simulation",
-    "desc": [
-      "Start your journey in logistics automation with OpenSG.",
-      "An integrated business system for smooth and rapid decision-making and flexible response to crises",
-      "A logistics control system using AGVs, enabling real-time AGV Traffic control",
-      "Conveyor equipment control system, enabling intelligent transport commands and various automatic interconnections",
-      "Stocker equipment control system, allowing remote monitoring and control",
-      "A program for controlling Indexers, responsible for efficient product supply to EQ equipment and logistics return via Stockers",
-      "An OHT logistics control system capable of real-time Traffic control for high-speed OHTs"
-    ]
+    "0": {
+      "id": 0,
+      "name": "View All",
+      "title": "From Design to Simulation",
+      "desc": "Start your journey in logistics automation with OpenSG.",
+      "img": "Solution0"
+    },
+    "1": {
+      "id": 1,
+      "name": "AIMS",
+      "title": "AIMS",
+      "desc": "An integrated business system for smooth and rapid decision-making and flexible response to crises",
+      "img": "Solution1",
+      "route": "/solutions/AIMS"
+    },
+    "2": {
+      "id": 2,
+      "name": "ACS",
+      "title": "ACS",
+      "desc": "A logistics control system using AGVs, enabling real-time AGV Traffic control",
+      "img": "Solution2",
+      "route": "/solutions/ACS"
+    },
+    "3": {
+      "id": 3,
+      "name": "CCS",
+      "title": "CCS",
+      "desc": "Conveyor equipment control system, enabling intelligent transport commands and various automatic interconnections",
+      "img": "Solution3",
+      "route": "/solutions/CCS"
+    },
+    "4": {
+      "id": 4,
+      "name": "SCS",
+      "title": "SCS",
+      "desc": "Stocker equipment control system, allowing remote monitoring and control",
+      "img": "Solution4",
+      "route": "/solutions/"
+    },
+    "5": {
+      "id": 5,
+      "name": "IDX",
+      "title": "IDX",
+      "desc": "A program for controlling Indexers, responsible for efficient product supply to EQ equipment and logistics return via Stockers",
+      "img": "Solution5",
+      "route": "/solutions/IDX Controller"
+    },
+    "6": {
+      "id": 6,
+      "name": "OCS",
+      "title": "OCS",
+      "desc": "An OHT logistics control system capable of real-time Traffic control for high-speed OHTs",
+      "img": "Solution6",
+      "route": "/solutions/OCS"
+    }
   },
   "products": {
     "mainKeyword": ["Everything in", "Smart Automation"],
