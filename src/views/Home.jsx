@@ -7,7 +7,6 @@ import Products from '@/components/Home/Products';
 import Industries from '@/components/Home/Industries';
 import Partner from '@/components/Home/Partner';
 import styles from '@/styles/styles.module.css';
-import 'aos/dist/aos.css';
 import { useTranslation } from 'react-i18next';
 
 function Home() {
