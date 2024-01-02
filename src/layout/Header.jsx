@@ -314,7 +314,7 @@ function Header() {
             onClick={() => handleBurgerActive(!activeBurger)}
             className={`${styles.hamburger} ${activeBurger ? styles.hamburgerOn : ''}`}
           >
-            <span />
+            <span className="sr-only">전체보기</span>
           </button>
           <Sitemap isOpen={isSitemapOpen} />
         </li>
