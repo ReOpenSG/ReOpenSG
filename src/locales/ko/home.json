@@ -31,11 +31,11 @@
     },
     "3": {
       "id": 3,
-      "name": "CCS",
-      "title": "CCS",
-      "desc": "Conveyor 장비 제어 시스템으로 지능형 물동 운송 지령과 각종 자동 연동이 가능한 솔루션",
-      "img": "Solution3",
-      "route": "/solutions/CCS"
+      "name": "OCS",
+      "title": "OCS",
+      "desc": "고속으로 이동하는 OHT 의 실시간 Traffic 제어가 가능한 OHT 물류 제어 시스템",
+      "img": "Solution6",
+      "route": "/solutions/OCS"
     },
     "4": {
       "id": 4,
@@ -47,19 +47,20 @@
     },
     "5": {
       "id": 5,
+      "name": "CCS",
+      "title": "CCS",
+      "desc": "Conveyor 장비 제어 시스템으로 지능형 물동 운송 지령과 각종 자동 연동이 가능한 솔루션",
+      "img": "Solution3",
+      "route": "/solutions/CCS"
+    },
+
+    "6": {
+      "id": 6,
       "name": "IDX",
       "title": "IDX",
       "desc": "Indexer를 제어하기 위한 프로그램으로, EQ 설비에 효율적인 Product 공급, Stocker의 물류 반송을 담당하는 솔루션",
       "img": "Solution5",
       "route": "/solutions/IDX Controller"
-    },
-    "6": {
-      "id": 6,
-      "name": "OCS",
-      "title": "OCS",
-      "desc": "고속으로 이동하는 OHT 의 실시간 Traffic 제어가 가능한 OHT 물류 제어 시스템",
-      "img": "Solution6",
-      "route": "/solutions/OCS"
     }
   },
 
