@@ -3,7 +3,7 @@
     "subtitle": ["고객에게 열려있는 기업, 고객의 미래를 여는 기업", "OpenSG가 고객과 함께 미래로 가는 길을 엽니다"]
   },
   "universe": {
-    "title": "OPENSG의 세계관을 만나보세요"
+    "title": "OpenSG의 세계관을 만나 보세요"
   },
   "solutions": {
     "0": {
@@ -43,7 +43,7 @@
       "title": "SCS",
       "desc": "Stocker 장비 제어 시스템으로 원격지 모니터링 및 제어가 가능한 솔루션",
       "img": "Solution4",
-      "route": "/solutions/"
+      "route": "/solutions/SCS"
     },
     "5": {
       "id": 5,
