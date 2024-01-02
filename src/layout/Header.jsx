@@ -311,10 +311,11 @@ function Header() {
         <li className={styles.hamburgerButton}>
           <button
             type="button"
+            name="전체보기"
             onClick={() => handleBurgerActive(!activeBurger)}
             className={`${styles.hamburger} ${activeBurger ? styles.hamburgerOn : ''}`}
           >
-            <span className="sr-only">전체보기</span>
+            <span />
           </button>
           <Sitemap isOpen={isSitemapOpen} />
         </li>
