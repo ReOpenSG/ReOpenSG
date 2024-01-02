@@ -6,8 +6,12 @@ import Image1 from '@/assets/home_industry4.png';
 import Image3 from '@/assets/home_industry2.png';
 import Image4 from '@/assets/home_industry3.png';
 import styles from '@/styles/styles.module.css';
+import { t } from 'i18next';
+import { useRecoilValue } from 'recoil';
+import { languageState } from '@/recoil/atoms/languageStore';
 
 function Industries() {
+  const language = useRecoilValue(languageState);
   const industryData = [
     {
       id: uuid(),
@@ -45,11 +49,11 @@ function Industries() {
         <h3 className={styles.title}>Industries</h3>
         <div className="flex flex-col  gap-open-lg">
           <p className={styles.mainKeyword} data-aos="fade-up">
-            다양한 산업군에서 빛나는&nbsp;
+            {t('home:industries.mainKeyword')}&nbsp;
             <span className={styles.gradient}>OpenSG</span>
           </p>
           <small className={styles.subKeyword} data-aos="fade-up" data-aos-delay="150">
-            OpenSG 제품의 무한한 가능성을 경험하세요.
+            {t('home:industries.subKeyword')}
           </small>
         </div>
       </div>
@@ -66,7 +70,7 @@ function Industries() {
               data-aos-delay="50"
             >
               <Link to={`/industries/${item.route}`} className="block h-full p-open-2xl ">
-                <p className={styles.krTitle}>{item.krTitle}</p>
+                {language === 'KOR' && <p className={styles.krTitle}>{item.krTitle}</p>}
                 <p className={styles.enTitle}>{item.enTitle}</p>
               </Link>
             </div>
