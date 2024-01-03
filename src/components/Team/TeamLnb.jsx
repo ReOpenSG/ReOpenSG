@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes, { array } from 'prop-types';
 import styles from '@/styles/styles.module.css';
 
 function TeamLnb({ data, state, setState }) {
   const id = useParams();
-
-  useEffect(() => {
-    AOS.init();
-  });
-
   return (
     <ul className={styles.lnbUl} data-aos="fade-in" data-aos-duration="1200">
       <li>

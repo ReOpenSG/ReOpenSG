@@ -1,6 +1,4 @@
 import React from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import mapImage from '@/assets/location_map.png';
 import LocationPinIcon from '@/components/Location/LocationPinIcon';
 import mTowerImage from '@/assets/location_mTower.png';
@@ -9,7 +7,6 @@ import styles from '@/styles/styles.module.css';
 import TitleSection from '@/components/Common/TitleSection';
 
 function Location() {
-  AOS.init({ once: true });
   return (
     <div className={styles.location}>
       <TitleSection
@@ -19,7 +16,14 @@ function Location() {
         textAlign="text-center"
       />
       <div className={styles.mapContainer}>
-        <img data-aos="fade-in" data-aos-delay="100" data-aos-duration="2000" className={styles.mapImage} src={mapImage} alt="세계지도" />
+        <img
+          data-aos="fade-in"
+          data-aos-delay="100"
+          data-aos-duration="2000"
+          className={styles.mapImage}
+          src={mapImage}
+          alt="세계지도"
+        />
         <LocationPinIcon />
         <LocationPinIcon usa />
       </div>

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useLocation, useParams } from 'react-router-dom';
 import CradsWrapper from '@/components/MachinesDevices/CradsWrapper';
 import machinesData from '@/data/machinesData';
@@ -17,19 +15,6 @@ function MachinesDevices() {
   const [selectedProduct, setSelectedProduct] = useState('');
   const location = useLocation();
   const { id } = useParams();
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  });
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  });
-
   useEffect(() => {
     const isMachines = location.pathname.includes('machines');
     setData(isMachines ? machinesData : devicesData);

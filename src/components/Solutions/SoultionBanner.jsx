@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import styles from '@/styles/styles.module.css';
 import ImagArray from './solutionsBannerImage.js'; // 솔루션 배너 아이콘 이미지 변경을 원하시면 현재 파일과 동일한 위치의 "./solutionsBannerImage.js"로 이동 후
 
 function SoultionBanner({ currentLocation, prevLocation }) {
   const [isSimulator, setIsSimulator] = useState(false);
-  useEffect(() => {
-    AOS.init();
-  });
 
   useEffect(() => {
     setIsSimulator(currentLocation.split(' ')[1] === 'Simulator');

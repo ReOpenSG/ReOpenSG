@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import Data from '@/data/solutionsData.json';
@@ -24,12 +22,6 @@ function Solutions() {
   const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refFuncHeading, inViewFunc] = useInView({ triggerOnce: false, threshold: 0.3 });
   const [refEffectHeading, inViewEffect] = useInView({ triggerOnce: false, threshold: 0.3 });
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-  });
 
   const LnbData = {
     array: data.map((item) => item[0]),

@@ -9,9 +9,11 @@ function Side() {
   return (
     <div className={styles.sideWrapper}>
       <Link to="https://www.youtube.com/@opensg" target="_blank">
+        <span className="sr-only">OpenSG YouTube</span>
         <YoutubeIcon />
       </Link>
       <Link to="https://www.facebook.com/OpenSG.net?mibextid=LQQJ4d" target="_blank">
+        <span className="sr-only">OpenSG Facebook</span>
         <FacebookIcon />
       </Link>
       <button

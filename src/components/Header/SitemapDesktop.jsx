@@ -1,12 +1,16 @@
 import React from 'react';
-import AOS from 'aos';
 import MenuLink from '@/components/Header/MenuLink';
 import styles from '@/styles/styles.module.css';
 
 function SitemapDesktop() {
-  AOS.init();
   return (
-    <div data-aos="fade-up" data-aos-offset="10" data-aos-delay="100" data-aos-duration="1200" className={styles.sitemapDesktop}>
+    <div
+      data-aos="fade-up"
+      data-aos-offset="10"
+      data-aos-delay="100"
+      data-aos-duration="1200"
+      className={styles.sitemapDesktop}
+    >
       <div className={styles.container}>
         <ul className={styles.list}>
           <li className={styles.listItem}>
@@ -27,25 +31,57 @@ function SitemapDesktop() {
                   <li className={styles.solutionsBlue}>
                     <div>Equipment Control System</div>
                     <ul className={styles.solutionsSubMenu}>
-                      <MenuLink linkName="ACS/FMS" tooltip="AGV Control System / Fleet Management System" linkAddress="solutions/ACS" />
-                      <MenuLink linkName="OCS" tooltip="OHT Control System" linkAddress="solutions/OCS" />
-                      <MenuLink linkName="SCS" tooltip="Stocker Control System" linkAddress="solutions/SCS" />
-                      <MenuLink linkName="CCS" tooltip="Conveyor Control System" linkAddress="solutions/CCS" />
-                      <MenuLink linkName="IDX Controller" tooltip="Index Control System" linkAddress="solutions/IDX Controller" />
+                      <MenuLink
+                        linkName="ACS/FMS"
+                        tooltip="AGV Control System / Fleet Management System"
+                        linkAddress="solutions/ACS"
+                      />
+                      <MenuLink
+                        linkName="OCS"
+                        tooltip="OHT Control System"
+                        linkAddress="solutions/OCS"
+                      />
+                      <MenuLink
+                        linkName="SCS"
+                        tooltip="Stocker Control System"
+                        linkAddress="solutions/SCS"
+                      />
+                      <MenuLink
+                        linkName="CCS"
+                        tooltip="Conveyor Control System"
+                        linkAddress="solutions/CCS"
+                      />
+                      <MenuLink
+                        linkName="IDX Controller"
+                        tooltip="Index Control System"
+                        linkAddress="solutions/IDX Controller"
+                      />
                     </ul>
                   </li>
                   <li className={styles.solutionsBlue}>
                     <div>Smart Tools</div>
                     <ul className={styles.solutionsSubMenu}>
                       <MenuLink linkName="Map Designer" linkAddress="solutions/Map Designer" />
-                      <MenuLink linkName="ACS Simulator" tooltip="AGV Control System Simulator" linkAddress="solutions/ACS Simulator" />
-                      <MenuLink linkName="SCS Simulator" tooltip="Stocker Control System Simulator" linkAddress="solutions/SCS Simulator" />
+                      <MenuLink
+                        linkName="ACS Simulator"
+                        tooltip="AGV Control System Simulator"
+                        linkAddress="solutions/ACS Simulator"
+                      />
+                      <MenuLink
+                        linkName="SCS Simulator"
+                        tooltip="Stocker Control System Simulator"
+                        linkAddress="solutions/SCS Simulator"
+                      />
                     </ul>
                   </li>
                   <li className={styles.solutionsBlue}>
                     <div>Monitoring Solution</div>
                     <ul className={styles.solutionsSubMenu}>
-                      <MenuLink linkName="AIMS" tooltip="Advanced Integrated Monitoring Solution" linkAddress="solutions/AIMS" />
+                      <MenuLink
+                        linkName="AIMS"
+                        tooltip="Advanced Integrated Monitoring Solution"
+                        linkAddress="solutions/AIMS"
+                      />
                     </ul>
                   </li>
                   <li className={styles.solutionsBlue}>
@@ -61,7 +97,10 @@ function SitemapDesktop() {
                 <ul className={styles.othersSubMenu}>
                   <MenuLink linkName="AGV - Lift Type1" linkAddress="/machines/Lift Type1" />
                   <MenuLink linkName="AGV - Lift Type2" linkAddress="/machines/Lift Type2" />
-                  <MenuLink linkName="AGV - Fork-Lift Type" linkAddress="/machines/Fork-Lift Type" />
+                  <MenuLink
+                    linkName="AGV - Fork-Lift Type"
+                    linkAddress="/machines/Fork-Lift Type"
+                  />
                   <MenuLink linkName="AGV - Foup Type" linkAddress="/machines/Foup Type" />
                 </ul>
               </li>

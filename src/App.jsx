@@ -7,7 +7,16 @@ import { isLoggedInState } from '@/recoil/atoms/authStore';
 import { authService } from '../firebase';
 import Spinner from './components/Common/Spinner';
 import './locales/i18n';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  });
+
   const setIsLoggedIn = useSetRecoilState(isLoggedInState);
 
   useEffect(() => {
