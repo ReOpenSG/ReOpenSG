@@ -11,7 +11,7 @@ import styles from '@/styles/styles.module.css';
 
 function Industries() {
   const { id } = useParams();
-  const industryData = IndustriesData[id];
+  const [industryData, setIndustryData] = useState(IndustriesData[id]);
   const [industryChar, setIndustryChar] = useState(industryData.desc);
   const [industryProducts, setIndustryProducts] = useState({});
   const [refCharHeading, inViewChar] = useInView({ triggerOnce: false, threshold: 0.2 });
@@ -26,7 +26,8 @@ function Industries() {
       acc[item] = solutionsData[item];
       return acc;
     }, {});
-
+    setIndustryData(IndustriesData[id]);
+    setIndustryChar(industryData.desc);
     setIndustryProducts(products);
   }, [id, industryData]);
 
@@ -37,7 +38,7 @@ function Industries() {
       <TitleSection
         category="Industries"
         title={title}
-        subTitle={id}
+        subTitle={id.replace(/^[a-z]/, (str) => str.toUpperCase())}
         background="bg-[url('@/assets/products_background.png')]"
         textAlign="text-left"
       />
